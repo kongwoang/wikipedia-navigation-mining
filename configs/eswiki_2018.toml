@@ -1,0 +1,34 @@
+# Event-time retrospective protocol. Data gate is NOT passed by this config.
+protocol_version = 1
+task = "source_conditioned_next_article"
+edition = "eswiki"
+graph_snapshot = "2018-03-01"
+mapping_snapshot = "2018-03-01"
+train_months = ["2018-01", "2018-02", "2018-03"]
+validation_month = "2018-04"
+test_month = "2018-05"
+candidate_policy = "frozen_outgoing_hyperlinks"
+seed = 2026
+selection_metric = "macro_ndcg_all@10"
+gain = "log2_1p"
+tie_policy = "sha256_seed_source_target"
+data_gate = "pending"
+
+[resources]
+max_audit_rows = 100000
+reference_max_nodes = 10000
+reference_max_edges = 100000
+
+[models]
+damping = 0.5
+tolerance = 1e-10
+max_iterations = 1000
+markov_mu = 100.0
+markov_eta = 1.0
+hybrid_click_weight = 0.5
+
+[sources]
+clickstream_base = "https://dumps.wikimedia.org/other/clickstream/"
+hyperlink_url = "https://zenodo.org/records/2539424/files/eswiki.wikilink_graph.2018-03-01.csv.gz"
+hyperlink_md5 = "9f56ab28f123837c1f998d313d676b09"
+redirect_metadata = "unverified"

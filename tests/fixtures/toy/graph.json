@@ -1,0 +1,6 @@
+{
+  "data_kind": "synthetic",
+  "snapshot": "2018-03-01",
+  "nodes": ["A", "B", "C", "D", "E", "F"],
+  "edges": [["A", "B"], ["A", "C"], ["A", "E"], ["B", "A"], ["B", "D"], ["C", "A"], ["E", "B"]]
+}
