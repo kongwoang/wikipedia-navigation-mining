@@ -1,0 +1,3 @@
+month,queries,q_all,q_conditional,label_pairs,label_mass,eligible_pairs,eligible_mass,pair_candidate_coverage,mass_candidate_coverage,service_coverage
+2018-05,200,127,126,1172,62768,1089,59966,0.9291808873720137,0.9553594188121336,1.0
+2018-06,200,122,119,1277,63809,1167,60025,0.9138606108065779,0.9406980206553934,1.0

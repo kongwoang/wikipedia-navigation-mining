@@ -1,5 +1,7 @@
 # Kiểm toán tính khả thi dữ liệu
 
+> **Lưu trữ planning:** các trạng thái “chưa chạy”, blockers và effort dưới đây phản ánh thời điểm thiết kế. Implementation và real study hiện đã hoàn tất trong scope đã chốt; xem [trạng thái hiện hành](IMPLEMENTATION_STATUS.md), [frozen protocol](RUN_PROTOCOL.md) và [báo cáo kết quả](../reports/REPORT.md). Không dùng proposal như chứng nhận experiment đã chạy.
+
 Nguồn và listing được kiểm tra **20/10/2026**, cập nhật bằng audit cục bộ **21/10/2026**. Đây là tài liệu quyết định dữ liệu, không phải báo cáo benchmark. Những số ghi “raw theo paper/listing” phải phân biệt với số đo sau canonicalization. Bằng chứng mới nằm trong [DATA_AUDIT](DATA_AUDIT.md) và [manifest preparation](evidence/preparation-study-v2.json); không tải thêm dữ liệu trong lượt hoàn thiện planning này.
 
 ## 1. Quyết định dữ liệu

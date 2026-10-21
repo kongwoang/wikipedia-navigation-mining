@@ -1,0 +1,110 @@
+{
+  "2018-05": {
+    "A4_WH - A4_H": {
+      "ci95": [
+        0.5625143474374096,
+        0.6527629703592565
+      ],
+      "difference": 0.6084672159072654,
+      "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+      "method": "paired_percentile_bootstrap",
+      "resamples": 2000,
+      "seed": 2026,
+      "sources": 127,
+      "unit": "source_article"
+    },
+    "A5_weighted_matched - M5H_node2vec": {
+      "ci95": [
+        0.16678017220371422,
+        0.25930924874834466
+      ],
+      "difference": 0.21423255289455606,
+      "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+      "method": "paired_percentile_bootstrap",
+      "resamples": 2000,
+      "seed": 2026,
+      "sources": 127,
+      "unit": "source_article"
+    },
+    "M3_ppr_h - M1B_backoff": {
+      "ci95": [
+        -0.6312993307563715,
+        -0.539853762293471
+      ],
+      "difference": -0.5864785100876931,
+      "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+      "method": "paired_percentile_bootstrap",
+      "resamples": 2000,
+      "seed": 2026,
+      "sources": 127,
+      "unit": "source_article"
+    },
+    "M6B_fusion - M1B_backoff": {
+      "ci95": [
+        -0.0007576595419197886,
+        0.010351920091248112
+      ],
+      "difference": 0.0042937389686346205,
+      "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+      "method": "paired_percentile_bootstrap",
+      "resamples": 2000,
+      "seed": 2026,
+      "sources": 127,
+      "unit": "source_article"
+    }
+  },
+  "2018-06": {
+    "A4_WH - A4_H": {
+      "ci95": [
+        0.5572547640561242,
+        0.6552776174919204
+      ],
+      "difference": 0.6078268042545804,
+      "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+      "method": "paired_percentile_bootstrap",
+      "resamples": 2000,
+      "seed": 2026,
+      "sources": 122,
+      "unit": "source_article"
+    },
+    "A5_weighted_matched - M5H_node2vec": {
+      "ci95": [
+        0.18218631697036847,
+        0.2826507390236943
+      ],
+      "difference": 0.2338485836996559,
+      "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+      "method": "paired_percentile_bootstrap",
+      "resamples": 2000,
+      "seed": 2026,
+      "sources": 122,
+      "unit": "source_article"
+    },
+    "M3_ppr_h - M1B_backoff": {
+      "ci95": [
+        -0.6300844345108768,
+        -0.5360708571040942
+      ],
+      "difference": -0.5844077235602734,
+      "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+      "method": "paired_percentile_bootstrap",
+      "resamples": 2000,
+      "seed": 2026,
+      "sources": 122,
+      "unit": "source_article"
+    },
+    "M6B_fusion - M1B_backoff": {
+      "ci95": [
+        -0.0001937516873340616,
+        0.009946713010666432
+      ],
+      "difference": 0.0037297810994734336,
+      "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+      "method": "paired_percentile_bootstrap",
+      "resamples": 2000,
+      "seed": 2026,
+      "sources": 122,
+      "unit": "source_article"
+    }
+  }
+}

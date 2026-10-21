@@ -14,6 +14,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: PYTHONPATH=src python -m unittest discover -s tests -p test_core.py -v
+      - run: PYTHONPATH=src python -m wikinav.verify_bundle
   sparse-and-data:
     runs-on: ubuntu-latest
     steps:

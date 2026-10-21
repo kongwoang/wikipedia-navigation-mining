@@ -1,5 +1,7 @@
 # Kế hoạch dự án Wikipedia Navigation Mining
 
+> **Lưu trữ planning:** các trạng thái “chưa chạy”, blockers và effort dưới đây phản ánh thời điểm thiết kế. Implementation và real study hiện đã hoàn tất trong scope đã chốt; xem [trạng thái hiện hành](IMPLEMENTATION_STATUS.md), [frozen protocol](RUN_PROTOCOL.md) và [báo cáo kết quả](../reports/REPORT.md). Không dùng proposal như chứng nhận experiment đã chạy.
+
 **Trạng thái:** kế hoạch hoàn thiện, cập nhật 21/10/2026. Repository đã có code nền và audit dữ liệu từ các lượt trước; chưa có benchmark held-out hoàn chỉnh. Mọi “giả thuyết” là điều cần kiểm định. Phạm vi bàn giao hiện tại là planning, không coi roadmap bên dưới là danh sách công việc đã hoàn thành. Xem [trạng thái thực tế](IMPLEMENTATION_STATUS.md) và [bằng chứng audit](DATA_AUDIT.md).
 
 **Tên đề xuất:** *Topology-Aware Next-Article Ranking on Wikipedia: A Temporal Comparison of Click Frequency and Historical Hyperlink Structure*.

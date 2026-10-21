@@ -1,0 +1,102 @@
+{
+  "2018-05": {
+    "duplicate_key_groups": 4,
+    "file": "clickstream-eswiki-2018-05.tsv.gz",
+    "input_sha256": "a6451093338b31cebb2dc97f5d4e7819c24ab97aa97d989f17aa4764ead24467",
+    "ledger": {
+      "duplicate_raw_quarantined": {
+        "mass": 3880,
+        "rows": 160
+      },
+      "kept": {
+        "mass": 96427298,
+        "rows": 1504214
+      },
+      "non_link": {
+        "mass": 909912068,
+        "rows": 2031919
+      },
+      "self_loop": {
+        "mass": 13060,
+        "rows": 94
+      },
+      "unmapped": {
+        "mass": 3586061,
+        "rows": 19562
+      }
+    },
+    "types": [
+      {
+        "mass": 100028219,
+        "max": 197031,
+        "min": 10,
+        "rows": 1523950,
+        "type": "link"
+      },
+      {
+        "mass": 905692189,
+        "max": 1647566,
+        "min": 10,
+        "rows": 1913393,
+        "type": "external"
+      },
+      {
+        "mass": 4221959,
+        "max": 9529,
+        "min": 10,
+        "rows": 118606,
+        "type": "other"
+      }
+    ]
+  },
+  "2018-06": {
+    "duplicate_key_groups": 4,
+    "file": "clickstream-eswiki-2018-06.tsv.gz",
+    "input_sha256": "3ad57457df1a1f737466cf358f05dd2fa8a00f8df9456f35c0995be709d53fc2",
+    "ledger": {
+      "duplicate_raw_quarantined": {
+        "mass": 4760,
+        "rows": 160
+      },
+      "kept": {
+        "mass": 80765103,
+        "rows": 1369637
+      },
+      "non_link": {
+        "mass": 774519188,
+        "rows": 1900234
+      },
+      "self_loop": {
+        "mass": 15585,
+        "rows": 100
+      },
+      "unmapped": {
+        "mass": 2401664,
+        "rows": 24413
+      }
+    },
+    "types": [
+      {
+        "mass": 3727180,
+        "max": 12761,
+        "min": 10,
+        "rows": 105886,
+        "type": "other"
+      },
+      {
+        "mass": 770794528,
+        "max": 1837850,
+        "min": 10,
+        "rows": 1794428,
+        "type": "external"
+      },
+      {
+        "mass": 83184592,
+        "max": 67137,
+        "min": 10,
+        "rows": 1394230,
+        "type": "link"
+      }
+    ]
+  }
+}

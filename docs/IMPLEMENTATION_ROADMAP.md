@@ -1,5 +1,7 @@
 # Kiến trúc triển khai và roadmap 8 tuần
 
+> **Lưu trữ planning:** các trạng thái “chưa chạy”, blockers và effort dưới đây phản ánh thời điểm thiết kế. Implementation và real study hiện đã hoàn tất trong scope đã chốt; xem [trạng thái hiện hành](IMPLEMENTATION_STATUS.md), [frozen protocol](RUN_PROTOCOL.md) và [báo cáo kết quả](../reports/REPORT.md). Không dùng proposal như chứng nhận experiment đã chạy.
+
 **Roadmap thiết kế, cập nhật trạng thái 21/10/2026.** Một phần đã triển khai trong repository; các tên module/lệnh bên dưới vẫn là kiến trúc đích, không phải tất cả đều executable. [IMPLEMENTATION_STATUS](IMPLEMENTATION_STATUS.md) phân biệt phần đã kiểm tra và phần chưa hoàn tất; bảo tồn core hiện có, không tạo scaffold thay thế.
 
 ## 1. Audit repository và môi trường

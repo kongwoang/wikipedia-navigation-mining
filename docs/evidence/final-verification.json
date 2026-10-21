@@ -1,0 +1,74 @@
+{
+  "model_commit": "9b1f28ba90e21591afb23ed65c5fd0a17f4195d2",
+  "freeze_git_dirty": true,
+  "algorithm_signature_matches": true,
+  "frozen_config_protocol_dependencies_match": true,
+  "algorithm_files": {
+    "src/wikinav/experiment.py": {
+      "sha256": "1ead00a806ac784d66796b39e843b76ef881a1f23febfdbca7940b8d97ade104",
+      "identical_to_model_commit": true
+    },
+    "src/wikinav/embeddings.py": {
+      "sha256": "a9cca3eb9d4893fb2c6438d05a77647c0006d47d8b82ecd4ab48132ac46c60bd",
+      "identical_to_model_commit": true
+    },
+    "src/wikinav/sparse_models.py": {
+      "sha256": "f341faeee02d228440993f6da6dfd0cffdb8df1fcbf2624e98d6b349ffdbbb6d",
+      "identical_to_model_commit": true
+    },
+    "src/wikinav/study_data.py": {
+      "sha256": "c596acebcfe15ba26acb845e57ad73c68681393e5ab689802714430ad286c31e",
+      "identical_to_model_commit": true
+    },
+    "src/wikinav/redirects.py": {
+      "sha256": "afb124ce960260e880d05872537be1cc442b3069c091b61c667985b639f4ce2c",
+      "identical_to_model_commit": true
+    },
+    "src/wikinav/evaluation.py": {
+      "sha256": "6ad97e6c95d60774e2bc66bf4d87ff2aece6876dc467d5311fe61a3b5ba0cc21",
+      "identical_to_model_commit": true
+    },
+    "src/wikinav/ranking.py": {
+      "sha256": "961763066ed876164200c42c377a23cd891c7423d6fdec9ff5a6f7c38b4bcccd",
+      "identical_to_model_commit": true
+    },
+    "src/wikinav/utils.py": {
+      "sha256": "2f257b1f483a80db9af3d5dfefb54f98fef97db0e50e6c2b269e4d57730b20ca",
+      "identical_to_model_commit": true
+    }
+  },
+  "local_tests": {
+    "count": 72,
+    "skipped": 0,
+    "status": "pass",
+    "python": "3.13.13",
+    "log_sha256": "a7e5811e627f216398e30409a146019bd40ac4876749481d72c0deb9f7d074b1"
+  },
+  "portable_bundle": {
+    "source_model_period_evaluations": 5600,
+    "main_models": 14,
+    "queries": 200,
+    "periods": [
+      "2018-05",
+      "2018-06"
+    ],
+    "status": "verified"
+  },
+  "preparation_replay": "preparation-replay.json",
+  "browser_qa": {
+    "status": "blocked",
+    "reason": "browser origin approval denied for http://127.0.0.1:8765; no bypass attempted",
+    "claims": "No direct rendering/interaction QA certification"
+  },
+  "model_code_ci": {
+    "run": 39589611155,
+    "status": "success",
+    "scope": "Linux tiny correctness checks, not real dataset retraining"
+  },
+  "post_test_changes": "acquisition integrity, analysis presentation, docs/demo captions, bundle verification in CI; no model selection changes",
+  "reproduction_orchestrator_resume": {
+    "status": "pass",
+    "command": "WIKINAV_RUN_DIR=results/study-v3 WIKINAV_REPORT_DIR=reports/generated sh scripts/reproduce.sh",
+    "scope": "existing env/raw/prepared/completed run: dependency checks,72 tests,raw hashes,demo regeneration,bundle re-evaluation; not clean retraining"
+  }
+}

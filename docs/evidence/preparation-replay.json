@@ -1,0 +1,27 @@
+{
+  "scope": "fresh preparation from the same pinned raw files; no model retraining",
+  "artifacts": {
+    "train.parquet": {
+      "original": "daab66438da5bd326e47701b584f3986fa52ee59da81261315a7f9268f7ea813",
+      "replayed": "daab66438da5bd326e47701b584f3986fa52ee59da81261315a7f9268f7ea813",
+      "identical": true
+    },
+    "queries.parquet": {
+      "original": "51ec52ef8c0ab37ff31f6d0ce2df64282d4d78112c29fd3af04fe67f9ff3e93d",
+      "replayed": "51ec52ef8c0ab37ff31f6d0ce2df64282d4d78112c29fd3af04fe67f9ff3e93d",
+      "identical": true
+    },
+    "nodes.parquet": {
+      "original": "c267dd6d9e756be95cfa08247e7219a72f4faddc89261562557b84c6ca392b8c",
+      "replayed": "c267dd6d9e756be95cfa08247e7219a72f4faddc89261562557b84c6ca392b8c",
+      "identical": true
+    },
+    "edges.parquet": {
+      "original": "58c4a881f5bb6a111c55eefd379809bafa4168a5624d278dece5e3a1c412a0a8",
+      "replayed": "58c4a881f5bb6a111c55eefd379809bafa4168a5624d278dece5e3a1c412a0a8",
+      "identical": true
+    }
+  },
+  "all_parquet_identical": true,
+  "full_counters_identical": true
+}

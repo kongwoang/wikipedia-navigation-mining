@@ -1,0 +1,29 @@
+model,parameters
+A4_CH,"{""damping"": 0.5, ""mode"": ""CH"", ""mu"": 100.0}"
+A4_H,"{""damping"": 0.5, ""mode"": ""H"", ""mu"": 100.0}"
+A4_WH,"{""damping"": 0.5, ""mode"": ""WH"", ""mu"": 100.0}"
+A5_weighted_matched,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 17}"
+A8_M1B_backoff_1month,"{""eta"": 0.0, ""months"": [""2018-03""], ""mu"": 0.0}"
+A8_M1B_backoff_2month,"{""eta"": 0.0, ""months"": [""2018-02"", ""2018-03""], ""mu"": 0.0}"
+A8_M1_local_1month,"{""months"": [""2018-03""]}"
+A8_M1_local_2month,"{""months"": [""2018-02"", ""2018-03""]}"
+A8_fusion_1month,"{""eta"": 0.0, ""months"": [""2018-03""], ""mu"": 0.0}"
+A8_fusion_2month,"{""eta"": 0.0, ""months"": [""2018-02"", ""2018-03""], ""mu"": 0.0}"
+HITS,{}
+M0_global,{}
+M1B_backoff,"{""eta"": 0.0, ""mu"": 0.0}"
+M1_local,{}
+M2D_indegree,{}
+M2_uniform,{}
+M3_ppr_h,"{""damping"": 0.15, ""mode"": ""H"", ""mu"": 100.0}"
+M4CH_ppr_ch,"{""damping"": 0.15, ""mode"": ""CH"", ""mu"": 100.0}"
+M4C_ppr_c,"{""damping"": 0.15, ""mode"": ""C"", ""mu"": 100.0}"
+M4H_ppr_wh,"{""damping"": 0.15, ""mode"": ""WH"", ""mu"": 100.0}"
+M5H_node2vec,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 17}"
+M5H_node2vec_s29,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 29}"
+M5H_node2vec_s43,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 43}"
+M5W_node2vec,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 17}"
+M5W_node2vec_s29,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 29}"
+M5W_node2vec_s43,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 43}"
+M6A_matrix,"{""damping"": 0.5, ""lambda"": 0.75}"
+M6B_fusion,"{""lambda"": 0.5}"

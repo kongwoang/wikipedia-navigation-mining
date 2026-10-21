@@ -1,13 +1,18 @@
-# Bằng chứng audit được lưu cùng kế hoạch
+# Bằng chứng dữ liệu, backend và final verification
 
-Các JSON nhỏ được sao chép nguyên trạng từ artifacts đã tồn tại ngày 21/10/2026. Đây là audit/provenance, **không phải final benchmark results**. Không chứa raw datasets, embeddings hoặc user-level data.
+Các JSON nhỏ lưu audit/provenance, không raw datasets hoặc individual user logs. Final benchmark artifacts nằm trong [reports/generated](../../reports/generated/); không coi audit counts là ranking results.
 
-| File | Artifact gốc tương đối repository | Nội dung |
-|---|---|---|
-| [acquisition-eswiki-2018.json](acquisition-eswiki-2018.json) | `data/raw/eswiki/manifest-v2.json` | URL, bytes, local SHA256, upstream checksum nếu có, license, verification timestamp |
-| [preparation-study-v2.json](preparation-study-v2.json) | `data/processed/study-v2/manifest.json` | Config, input/output hashes, mapping/graph/sample counts, training attrition, preparation time |
-| [validation-april-2018.json](validation-april-2018.json) | `results/study-v1/validation_audit.json` | April schema/min-count and attrition audit; không có ranking accuracy |
+| Evidence | Nội dung |
+|---|---|
+| [acquisition-eswiki-2018](acquisition-eswiki-2018.json) |9URLs,bytes,SHA256,upstream checksums/license |
+| [preparation-study-v2](preparation-study-v2.json) | Canonicalization,training attrition,sampling,graph counts và prepared hashes; v2 là data version dùng cho final study-v3 |
+| [validation-april-2018](validation-april-2018.json) | April schema/mapping audit từ lần chuẩn bị trước; không final test accuracy |
+| [preparation-replay](preparation-replay.json) | Fresh preprocessing cùng raw files:4 Parquet hashes/full counters identical |
+| [gensim-build-wnm2](gensim-build-wnm2.json) | Pinned source hashes,build tools,wheel fingerprint; final native backend |
+| [embedding-backend-smoke-wnm2](embedding-backend-smoke-wnm2.json) | Real training graph finite vectors/loss,negative-dot smoke; không test tuning |
+| [final-runtime](final-runtime.json) | Platform/dependencies,245s model run,RSS và measurement limitations |
+| [final-verification](final-verification.json) | Frozen algorithm bytes/signature check,72 tests,5600 portable re-evaluations,CI reference,browser QA limitation |
 
-Không sửa những bản sao này để khớp một run mới; tạo version/file khác khi thực sự rerun. Local SHA256 chứng minh fingerprint của bytes đã đọc, không tự chứng minh tính xác thực của publisher. Acquisition có checksum May/June bytes nhưng không có parsed test labels; việc xác minh hash khác việc mở labels để tuning.
+wnm1 evidence nếu có được giữ như lịch sử, **không** chứng nhận backend final. Run history và frozen policy nằm trong [RUN_PROTOCOL](../RUN_PROTOCOL.md).
 
-Prepared graph hashes chỉ chứng minh artifacts của policy đã mô tả. Chúng không chứng minh redirect history hoàn hảo, labels đầy đủ, graph không thiếu template links hoặc sample đại diện toàn Wikipedia. Các giới hạn đó nằm trong [DATA_AUDIT](../DATA_AUDIT.md).
+SHA256 xác định bytes; checksum không tự chứng minh mọi mapping/graph label đều đúng. Query candidates giữ đầy đủ nhưng intermediate boundary loss lớn; redirects/title moves và exposure/suppression vẫn là limitations. Future raw-file checksum verification khác việc parse test labels để tuning.

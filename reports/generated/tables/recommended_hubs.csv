@@ -1,0 +1,71 @@
+model,target,title,top10_appearances,induced_indegree,full_training_inbound_mass
+M0_global,2400722,Estados Unidos,36,2335,158951
+M0_global,972,España,29,1977,89972
+M0_global,1173,Francia,26,1601,38271
+M0_global,10,Argentina,19,1111,55734
+M0_global,252,Alemania,19,1151,35189
+M1_local,2400722,Estados Unidos,13,2335,158951
+M1_local,10,Argentina,6,1111,55734
+M1_local,1173,Francia,6,1601,38271
+M1_local,866600,2015,5,728,10735
+M1_local,252,Alemania,5,1151,35189
+M1B_backoff,2400722,Estados Unidos,13,2335,158951
+M1B_backoff,10,Argentina,6,1111,55734
+M1B_backoff,1173,Francia,6,1601,38271
+M1B_backoff,866600,2015,5,728,10735
+M1B_backoff,252,Alemania,5,1151,35189
+M2_uniform,2400722,Estados Unidos,9,2335,158951
+M2_uniform,866600,2015,7,728,10735
+M2_uniform,972,España,7,1977,89972
+M2_uniform,5037,2003,6,896,8664
+M2_uniform,5343,Reino Unido,6,1048,80349
+M2D_indegree,2400722,Estados Unidos,36,2335,158951
+M2D_indegree,972,España,29,1977,89972
+M2D_indegree,1173,Francia,26,1601,38271
+M2D_indegree,252,Alemania,20,1151,35189
+M2D_indegree,10,Argentina,19,1111,55734
+M3_ppr_h,2400722,Estados Unidos,33,2335,158951
+M3_ppr_h,972,España,25,1977,89972
+M3_ppr_h,1173,Francia,18,1601,38271
+M3_ppr_h,10,Argentina,12,1111,55734
+M3_ppr_h,3544,Italia,11,1142,31084
+M4C_ppr_c,2400722,Estados Unidos,8,2335,158951
+M4C_ppr_c,972,España,6,1977,89972
+M4C_ppr_c,3544,Italia,6,1142,31084
+M4C_ppr_c,10,Argentina,5,1111,55734
+M4C_ppr_c,5343,Reino Unido,5,1048,80349
+M4CH_ppr_ch,2400722,Estados Unidos,8,2335,158951
+M4CH_ppr_ch,3544,Italia,6,1142,31084
+M4CH_ppr_ch,972,España,6,1977,89972
+M4CH_ppr_ch,5343,Reino Unido,5,1048,80349
+M4CH_ppr_ch,1173,Francia,5,1601,38271
+M4H_ppr_wh,2400722,Estados Unidos,11,2335,158951
+M4H_ppr_wh,1173,Francia,11,1601,38271
+M4H_ppr_wh,972,España,10,1977,89972
+M4H_ppr_wh,10,Argentina,8,1111,55734
+M4H_ppr_wh,8739,Buenos Aires,6,675,29847
+M6B_fusion,2400722,Estados Unidos,17,2335,158951
+M6B_fusion,972,España,13,1977,89972
+M6B_fusion,1173,Francia,13,1601,38271
+M6B_fusion,10,Argentina,10,1111,55734
+M6B_fusion,3544,Italia,10,1142,31084
+M6A_matrix,2400722,Estados Unidos,13,2335,158951
+M6A_matrix,972,España,12,1977,89972
+M6A_matrix,1173,Francia,11,1601,38271
+M6A_matrix,10,Argentina,9,1111,55734
+M6A_matrix,252,Alemania,7,1151,35189
+HITS,2400722,Estados Unidos,36,2335,158951
+HITS,972,España,29,1977,89972
+HITS,1173,Francia,26,1601,38271
+HITS,252,Alemania,20,1151,35189
+HITS,10,Argentina,19,1111,55734
+M5H_node2vec,166565,Prefijo telefónico,3,58,85
+M5H_node2vec,235,Animalia,3,96,25569
+M5H_node2vec,2252743,Código ZIP,3,21,311
+M5H_node2vec,65490,Cuenca (España),2,46,1896
+M5H_node2vec,340650,Raza (censo de los Estados Unidos),2,36,750
+M5W_node2vec,10,Argentina,3,1111,55734
+M5W_node2vec,235,Animalia,3,96,25569
+M5W_node2vec,2252743,Código ZIP,3,21,311
+M5W_node2vec,166565,Prefijo telefónico,3,58,85
+M5W_node2vec,35101,Estado de los Estados Unidos,3,85,8591

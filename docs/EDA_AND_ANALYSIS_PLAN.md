@@ -1,5 +1,7 @@
 # EDA, phân tích kết quả và thiết kế hình/bảng
 
+> **Lưu trữ planning:** các trạng thái “chưa chạy”, blockers và effort dưới đây phản ánh thời điểm thiết kế. Implementation và real study hiện đã hoàn tất trong scope đã chốt; xem [trạng thái hiện hành](IMPLEMENTATION_STATUS.md), [frozen protocol](RUN_PROTOCOL.md) và [báo cáo kết quả](../reports/REPORT.md). Không dùng proposal như chứng nhận experiment đã chạy.
+
 Planning ngày 20/10/2026. Không có hình từ dữ liệu thật trong giai đoạn này. Plot inventory dưới đây chỉ định câu hỏi, dữ liệu, cách đọc và quyết định; không dự đoán trước distribution hoặc improvement.
 
 ## 1. Nguyên tắc

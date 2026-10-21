@@ -1,5 +1,7 @@
 # Review bàn giao planning — 21/10/2026
 
+> **Lưu trữ planning:** các trạng thái “chưa chạy”, blockers và effort dưới đây phản ánh thời điểm thiết kế. Implementation và real study hiện đã hoàn tất trong scope đã chốt; xem [trạng thái hiện hành](IMPLEMENTATION_STATUS.md), [frozen protocol](RUN_PROTOCOL.md) và [báo cáo kết quả](../reports/REPORT.md). Không dùng proposal như chứng nhận experiment đã chạy.
+
 ## Kết luận và phạm vi
 
 Bộ kế hoạch đáp ứng phạm vi university course project: một task source-conditioned có định nghĩa toán học, independent historical topology, strong behavioral baselines, held-out temporal labels, controlled ablations và analysis có thể bảo vệ. **Không cần hybrid hoặc Node2Vec thắng để dự án có giá trị.**

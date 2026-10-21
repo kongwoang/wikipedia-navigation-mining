@@ -1,0 +1,18 @@
+{
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "python": "3.13.13",
+  "logical_cpus": 12,
+  "dependencies": {
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "duckdb": "1.5.6",
+    "gensim": "4.4.0+wnm2",
+    "matplotlib": "3.11.2"
+  },
+  "elapsed_seconds": 245.32156041701091,
+  "maximum_resident_set_bytes": 1954955264,
+  "peak_memory_footprint_bytes": 1201637896,
+  "measurement": "macOS /usr/bin/time -l; one complete validation/test run; no isolated-machine latency claim",
+  "native_warnings": false,
+  "completed_run": "study-v3"
+}

@@ -1,0 +1,22 @@
+{
+  "artifacts": {
+    "freeze.json": "8cb57243af68aced9cde9f8fda84762ac0bd0c74d4fda1ff9d407e2617ec477d",
+    "labels-2018-05.json": "b209afe8f4a7e10b0545e387dea7fe562b1d98734e22fa4b5a87dd629ee2ed63",
+    "labels-2018-06.json": "9cf5e405feb0fcc462831b48489ba47ebdd6ba6909a0271d2920d7749a89489d",
+    "model_diagnostics.json": "fff46faa32ccc576e9c4ef013901284b003f1a49a38cc598c9fab24fee1b9bbe",
+    "paired_comparisons.json": "f03f500f632c1af99671ead0fcdf0e752dd39fc3900fd17d80a30f48f10146be",
+    "predictions.json": "43dc0fe28f7fb3dddb6ed857c9655c8bd52a8286d19e03e7c6038796e4e43cea",
+    "run_signature.json": "22cff0308f01d3cc38a9717c0dd6a8f11737badda1c276ef8dd1c609507f9745",
+    "source_metrics.json": "7c85174a52a24357d49ca1fee07f9db14c699917cdf758b260115a45afdef7f0",
+    "test_audits.json": "6b591a0b40a606a8dcf0934057388a74c865609dce61282e3e175b63f5908ff6",
+    "test_results.json": "c0df3e99454f2b12a094aa2cbdb9694b6a6e8adb2d437caf3328405bc3d46e6f",
+    "validation_audit.json": "d1c44c83d2767b0321fb8c5cd3c1038c1af4afe6d8c653a6ff75e5faea4db6b0",
+    "validation_results.json": "9b53dcd139802a944da21ca0dea83153b11f5bc138b48542593abaddedc9845b"
+  },
+  "data_kind": "real_clickstream",
+  "elapsed_seconds": 245.32156041701091,
+  "models": 28,
+  "queries": 200,
+  "scope": "sample-conditional induced outgoing closure; not full-graph PPR",
+  "status": "complete"
+}

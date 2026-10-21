@@ -1,0 +1,46 @@
+[
+  {
+    "caption": "Training traffic and transition count tails; nodes/edges in induced sample, not a population estimate.",
+    "figure": "01_traffic_tail"
+  },
+  {
+    "caption": "Induced graph degree distributions and boundary loss; query nodes retain all eligible outgoing links.",
+    "figure": "02_graph_degree_boundary"
+  },
+  {
+    "caption": "Structural popularity is compared with observed traffic; per-query click concentration motivates local baselines.",
+    "figure": "03_topology_traffic"
+  },
+  {
+    "caption": "Main test month: shared queries/candidates. Node2Vec rows use preregistered seed 17; other seeds are reported separately.",
+    "figure": "04_main_comparison"
+  },
+  {
+    "caption": "Hyperparameters selected using validation only; lambda endpoints and damping sensitivity are displayed.",
+    "figure": "05_validation_sensitivity"
+  },
+  {
+    "caption": "PPR residual for the first fixed query; Node2Vec loss deltas are optimization diagnostics, not navigation validation loss.",
+    "figure": "06_numerical_diagnostics"
+  },
+  {
+    "caption": "History ablation recomputes all behavior priors. Monthly aggregate curves may change composition; common-source results are in tables.",
+    "figure": "07_history_and_horizon"
+  },
+  {
+    "caption": "Training-defined groups; each group uses only sources with observable test labels, with sample sizes in the table.",
+    "figure": "08_source_sparsity"
+  },
+  {
+    "caption": "Selected configuration cost excludes tuning and ingestion; score fusion includes both component computations; shared data preparation is excluded for all models.",
+    "figure": "09_cost_accuracy"
+  },
+  {
+    "caption": "All observed training targets of fixed queries; missing mass remains censored. Monthly JSD is descriptive, not a test of user-level behavioral drift.",
+    "figure": "10_concentration_and_drift"
+  },
+  {
+    "caption": "All declared backoff configurations; ties keep first grid option. Uniform smoothing alone does not reorder distinct local counts.",
+    "figure": "11_markov_tuning"
+  }
+]

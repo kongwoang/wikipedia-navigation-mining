@@ -1,0 +1,14 @@
+{
+  "dangling_nodes": 218,
+  "degree_popularity_spearman": 0.7066079233931041,
+  "edges": 319694,
+  "nodes": 8094,
+  "query_candidate_preservation": true,
+  "reciprocity": 0.310246673381421,
+  "retained_outgoing_fraction_sample_nodes": 0.30824604995087446,
+  "strong_components": 388,
+  "strong_largest": 7664,
+  "unobserved_h_edge_fraction": 0.9026475317021903,
+  "weak_components": 1,
+  "weak_largest": 8094
+}

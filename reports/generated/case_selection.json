@@ -1,0 +1,44 @@
+[
+  {
+    "reason": "PPR_gain",
+    "selection_value": 0.19592299243200806,
+    "source": "7754838",
+    "title": "Danza posmoderna"
+  },
+  {
+    "reason": "Markov_gain",
+    "selection_value": 1.0,
+    "source": "2205329",
+    "title": "Remora"
+  },
+  {
+    "reason": "Hybrid_gain",
+    "selection_value": 0.1304435512598343,
+    "source": "4515299",
+    "title": "Ultimate Avengers"
+  },
+  {
+    "reason": "Hybrid_failure",
+    "selection_value": 0.12630715830146588,
+    "source": "119152",
+    "title": "Tragacete"
+  },
+  {
+    "reason": "Many_links",
+    "selection_value": 485.0,
+    "source": "9972",
+    "title": "1944"
+  },
+  {
+    "reason": "Low_traffic",
+    "selection_value": -10.0,
+    "source": "1875596",
+    "title": "Repollo relleno"
+  },
+  {
+    "reason": "Fixed_hash_example",
+    "selection_value": null,
+    "source": "7145962",
+    "title": "Th1"
+  }
+]

@@ -1,5 +1,7 @@
 # Risk register, phản hồi giảng viên và chuẩn bị bảo vệ
 
+> **Lưu trữ planning:** các trạng thái “chưa chạy”, blockers và effort dưới đây phản ánh thời điểm thiết kế. Implementation và real study hiện đã hoàn tất trong scope đã chốt; xem [trạng thái hiện hành](IMPLEMENTATION_STATUS.md), [frozen protocol](RUN_PROTOCOL.md) và [báo cáo kết quả](../reports/REPORT.md). Không dùng proposal như chứng nhận experiment đã chạy.
+
 Planning 20/10/2026. Xác suất là assessment định tính trước pilot, không phải frequency đo được. Severity: **C**=critical/blocker, **H**=high, **M**=medium. Likelihood: H/M/L. Chủ sở hữu các mitigation là người phụ trách module tương ứng trong roadmap; với một sinh viên thì cùng một người nhưng checklist vẫn tách vai trò.
 
 **Cập nhật 21/10 — risks đã gặp:** D4 (supplied redirect mapping sai lệch), D8 (ngưỡng count/header khác giả định), D9 (duplicate raw groups), M12 (boundary loss khi sampling) và E6 (Gensim native warning) đã xảy ra, không còn chỉ là xác suất dự báo. [DATA_AUDIT](DATA_AUDIT.md) ghi cách xử lý dữ liệu và bằng chứng; [IMPLEMENTATION_STATUS](IMPLEMENTATION_STATUS.md) ghi backend blocker. Mapping dựng lại vẫn cần giới hạn về title moves/extraction; Node2Vec chưa được coi là validated trên dữ liệu thật. Các câu trả lời bảo vệ phía dưới là câu trả lời thiết kế, chưa phải kết luận thực nghiệm.

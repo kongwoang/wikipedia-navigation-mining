@@ -1,51 +1,60 @@
 # Wikipedia Navigation Mining
 
-**Bộ kế hoạch nghiên cứu đã hoàn thiện; chưa có benchmark held-out hoàn chỉnh.** Repository cũng chứa code nền và audit dữ liệu từ các lượt làm việc trước. Lượt cập nhật 21/10/2026 tập trung hoàn thiện planning, không chạy thêm benchmark hoặc tải dữ liệu lớn.
+**Đã hoàn thiện implementation, thực nghiệm dữ liệu thật và báo cáo cho scope học phần.** Final study so sánh14 model chính và28 configurations gồm ablations/seeds; không phải benchmark toàn Wikipedia.
 
-Tên đề xuất: **Topology-Aware Next-Article Ranking on Wikipedia: A Temporal Comparison of Click Frequency and Historical Hyperlink Structure**.
+**Topology-Aware Next-Article Ranking on Wikipedia: A Temporal Comparison of Click Frequency and Historical Hyperlink Structure**
 
-Dự án nghiên cứu khi nào hyperlink topology bổ sung thông tin cho historical click frequency trong **source-conditioned next-article ranking**. Clickstream là aggregate counts; không tuyên bố user personalization hoặc session-aware prediction.
-
-## Đọc kế hoạch
-
-Bắt đầu từ [PROJECT_PLAN](docs/PROJECT_PLAN.md), gồm đủ 10 phần: executive assessment, formulation, dataset, experiments, EDA, architecture, roadmap, defense, risks và immediate actions.
-
-| Tài liệu | Nội dung |
+| Đọc / sử dụng | Nội dung |
 |---|---|
-| [PROJECT_PLAN](docs/PROJECT_PLAN.md) | Research questions, scope, roadmap 8 tuần, acceptance, report/presentation/demo |
-| [DATASET_FEASIBILITY](docs/DATASET_FEASIBILITY.md) | Dataset comparison, nguồn đã xác minh, primary/fallback, tài nguyên và blockers |
-| [EXPERIMENT_DESIGN](docs/EXPERIMENT_DESIGN.md) | Formalization, model matrix, chronological split, candidates, metrics, tuning, A1–A9, leakage audit |
-| [EDA_AND_ANALYSIS_PLAN](docs/EDA_AND_ANALYSIS_PLAN.md) | Mỗi chart gắn research question/decision; error analysis, sensitivity, tables |
-| [IMPLEMENTATION_ROADMAP](docs/IMPLEMENTATION_ROADMAP.md) | Kiến trúc, interfaces, artifacts, tests, dependencies, milestones và definition of done |
-| [LITERATURE_REVIEW](docs/LITERATURE_REVIEW.md) | 11 công trình, bibliography, comparison matrix và positioning |
-| [RISKS_AND_DEFENSE](docs/RISKS_AND_DEFENSE.md) | Risk register, Feedback-to-Action Matrix và 25 câu hỏi bảo vệ |
+| [Báo cáo kết quả](reports/REPORT.md) | 17 phần: methodology, results, ablations, error analysis, limitations |
+| [Bảng kết quả](reports/RESULT_TABLES.md) | Required ranking metrics, macro/weighted, full/conditional, CI, history/seeds |
+| [Case studies](reports/CASE_STUDIES.md) | Bảy cases, Top-10 thật, train/future counts và scores |
+| [Demo offline](reports/generated/demo.html) | Clone/tải HTML rồi mở trong browser; GitHub chỉ hiển thị source |
+| [Tái lập](reports/REPRODUCIBILITY.md) | Quick verification và raw-to-model reproduction |
+| [Thuyết trình](reports/PRESENTATION.md) · [Bảo vệ](reports/DEFENSE.md) | Outline12–15 phút, demo script,25 câu hỏi có evidence |
+| [Trạng thái và kiểm chứng](docs/IMPLEMENTATION_STATUS.md) | Phạm vi hoàn tất, test/CI/provenance và giới hạn QA |
 
-[Planning review](docs/PLANNING_REVIEW.md) đối chiếu yêu cầu với deliverables. [Implementation status](docs/IMPLEMENTATION_STATUS.md) ghi phần thực sự đã có; tài liệu thiết kế không phải chứng nhận mọi thí nghiệm đã chạy.
+Dữ liệu eswiki: Jan–Mar2018 train, April validation, May primary test và June fixed-model horizon. Independent hyperlink snapshot01/03/2018; mẫu200 queries,8.094 nodes,319.694 edges. Nhiệm vụ là **source-conditioned ranking**, không user personalization hoặc true-session prediction.
 
-## Quyết định chính
+Kết quả chính: May macro full NDCG@10 của Markov **0,8991**, PPR-H **0,3126**, score fusion **0,9034**. Fusion−Markov Δ**0,00429**,95%CI**[−0,00076;0,01035]**: chưa có bằng chứng improvement đáng tin cậy. Topology giúp một số training-unobserved transitions nhưng không thắng frequency tổng thể. Cold-start thiếu labels để kết luận. Chi tiết/limitations trong báo cáo.
 
-- Primary: eswiki Clickstream Jan–Mar 2018 train, April validation, May test; June là fixed-model temporal extension. Independent WikiLinkGraphs snapshot 01/03/2018.
-- Ranking trên outgoing editorial hyperlinks được khóa trước evaluation; mọi model dùng cùng candidates và source sample.
-- Báo Recall@5/10/20, MRR@10, NDCG@10 với full observable denominator và conditional denominator, macro/traffic-weighted aggregation, candidate coverage và paired uncertainty.
-- P0: popularity/Markov/backoff, uniform/in-degree, PPR-H/PPR-C và score fusion. P1: fixed-support weighting, matrix fusion, Node2Vec H/W, HITS và temporal robustness. Không cần GPU.
-- Fallback: Wikispeedia; phải đổi claim sang goal-directed game navigation.
+## Xem và kiểm tra nhanh — không tải dữ liệu lớn
 
-[Data audit](docs/DATA_AUDIT.md) và [manifests nhỏ được version-control](docs/evidence/README.md) ghi nhận count bằng 10, raw duplicate groups và sai lệch supplied redirect mapping. Mẫu đã chuẩn bị có 200 queries, 8.094 nodes, 319.694 edges; giữ query candidates nhưng mất boundary edges ở intermediate nodes. Không gọi kết quả tương lai trên mẫu này là full-Wikipedia benchmark.
-
-## Kiểm tra nhẹ, không tải dữ liệu
-
-Core cần Python ≥3.11, dùng standard library. Môi trường đã kiểm tra là Python 3.13.13 trên macOS arm64. Chạy tại gốc repository:
+Python≥3.11; verifier/core dùng standard library:
 
 ```bash
-python3 -m venv .venv
-PYTHONPATH=src .venv/bin/python -m wikinav doctor
-PYTHONPATH=src .venv/bin/python -m wikinav validate-config
-PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_core.py
-PYTHONPATH=src .venv/bin/python -m wikinav toy-run --output results/toy-review
+PYTHONPATH=src python3 -m wikinav.verify_bundle
+PYTHONPATH=src python3 -m unittest discover -s tests -p test_core.py
+python3 scripts/build_report_tables.py
 ```
 
-`toy-run` cần output directory chưa tồn tại. Fixtures là synthetic; không dùng điểm toy làm bằng chứng model tốt trên Wikipedia. Core có 57 tests. Trong môi trường study cục bộ hiện có, toàn suite gồm 69 tests đạt; study tests dùng tiny synthetic data, không đọc labels test thật. Môi trường chưa có scientific dependencies sẽ skip study tests, vì vậy phải đọc cả số skipped.
+Mở `reports/generated/demo.html` trực tiếp bằng browser. Có200 frozen queries,14 models,2 test months và controls đổi source/model/denominator. Predictions đến từ pipeline thật; tháng khác chỉ đổi evidence/metrics. Agent chưa kiểm tra rendering/interactions trực tiếp vì browser origin approval bị từ chối; xem checklist rehearsal trong presentation.
 
-Core có 9 scorers, metric engine và freeze-before-test workflow. Sparse backend bổ sung DuckDB/Parquet, SciPy CSR, historical redirect resolver và experiment runner. Các thành phần này chưa có clean end-to-end benchmark certificate. Gensim phát sinh native warning trong lần thử Node2Vec thật; không dùng cache đó làm kết quả chính thức. Không chạy automation tải dữ liệu/training chỉ để xem planning.
+Verifier kiểm tra hashes và tính lại5600 source×model×month evaluations từ frozen payload; **không retrain**. Core57 tests; full scientific suite72 tests đạt cục bộ. [GitHub Actions](https://github.com/kongwoang/wikipedia-navigation-mining/actions) kiểm tra core Python 3.11/3.13, portable bundle và scientific backend Linux. CI không tải real datasets.
 
-Raw datasets, prepared graph, embeddings và model caches được Git-ignore. Manifests nhỏ chứa URLs, fingerprints và audit counters; không chứa credentials. Git CLI đã push được repository; lỗi quyền GitHub integration trước đó không còn là blocker cho cách dùng Git này.
+## Tái tạo toàn bộ thực nghiệm
+
+Cần Python 3.13, C/C++compiler, RAM16–18 GB và dự trù10–20 GB disk. Raw download khoảng1 GB; không cần GPU:
+
+```bash
+sh scripts/reproduce.sh
+```
+
+Script cài pinned dependencies + audited Gensim compatibility build, kiểm tra tests/checksums, chuẩn bị data, chọn knobs trên validation, freeze predictions rồi evaluate test, sinh figures/tables/demo. Output mới nằm ở `results/reproduction/` và `reports/reproduced/`; không overwrite published bundle. [Hướng dẫn chi tiết](reports/REPRODUCIBILITY.md) mô tả overrides, native patch và giới hạn cross-platform repeatability.
+
+Full final model run245,32 s/RSS~1,82GiB trên máy đo macOS arm64; số này không gồm download/ingestion/build và không cam kết thời gian trên máy khác. Preparation replay tạo lại bốn Parquet hashes giống hệt. Chưa chứng nhận full raw-to-model replication trên Linux.
+
+## Kiến trúc
+
+- `src/wikinav/`: core reference models/metrics, sparse CSR scorers, directed Node2Vec, historical redirects, acquisition/preprocessing, experiment/analysis/demo/verifier.
+- `configs/`: TOML protocol/settings; `requirements-study.lock`: pinned scientific environment.
+- `scripts/`: reproduction, audited native installer và Markdown evidence-table generator.
+- `tests/`: analytic graph/metric oracles, leakage/temporal contracts, synthetic integration, backend regression và data-hash checks.
+- `reports/generated/`: portable frozen results,11figures(PNG/SVG),CSVtables,real-prediction demo và manifests.
+- `data/`, `results/`, `.cache/`: raw/prepared/model artifacts Git-ignored; small audit evidence được version-control.
+
+## Kế hoạch, protocol và nguồn
+
+Bảy tài liệu planning được giữ để truy nguyên quyết định: [Project plan](docs/PROJECT_PLAN.md), [Dataset feasibility](docs/DATASET_FEASIBILITY.md), [Experiment design](docs/EXPERIMENT_DESIGN.md), [EDA/analysis](docs/EDA_AND_ANALYSIS_PLAN.md), [Implementation roadmap](docs/IMPLEMENTATION_ROADMAP.md), [Literature review](docs/LITERATURE_REVIEW.md), [Risks/feedback matrix](docs/RISKS_AND_DEFENSE.md).
+
+[RUN_PROTOCOL](docs/RUN_PROTOCOL.md) chốt chi tiết thực thi trước phân tích test; [Data audit](docs/DATA_AUDIT.md), [Evidence](docs/evidence/README.md) và [Attributions](docs/ATTRIBUTIONS.md) ghi nguồn, hashes, xử lý redirects/duplicates, licenses. Missing clicks không phải reliable negatives; query candidates giữ đủ nhưng intermediate boundary loss lớn, nên conclusions chỉ áp dụng cho induced sample đã mô tả.

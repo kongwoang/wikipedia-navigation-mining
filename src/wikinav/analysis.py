@@ -179,17 +179,20 @@ def generate(prepared: Path, run: Path, output: Path):
             seed_rows.append({'month':month,'model':model,'seeds':'17,29,43','mean':float(np.mean(values)),
                               'std_sample':float(np.std(values,ddof=1)),'min':min(values),'max':max(values)})
     save_table(tables/'embedding_seed_stability.csv',seed_rows)
-    fig,ax=plt.subplots(figsize=(8,4))
+    fig,axs=plt.subplots(1,2,figsize=(12,6),sharey=True)
     costs=[]
     for model in MAIN:
         seconds=diagnostics[model].get('wall_seconds')
         if model == 'M6B_fusion':
             seconds += sum(diagnostics[m]['wall_seconds'] for m in ('M1B_backoff','M3_ppr_h'))
         costs.append({'model':model,'selected_preparation_scoring_seconds':seconds})
-        if seconds and seconds>0:
-            value=results[first_month][model]['all']['ndcg@10']['macro']
-            ax.scatter(seconds,value,s=25); ax.annotate(model,(seconds,value),fontsize=6,xytext=(3,3),textcoords='offset points')
-    ax.set(xscale='log',xlabel='Selected configuration preparation + scoring seconds',ylabel='Test full macro NDCG@10')
+    positions=np.arange(len(MAIN))
+    axs[0].barh(positions,[r['selected_preparation_scoring_seconds'] for r in costs])
+    axs[0].set(yticks=positions,yticklabels=MAIN,xscale='log',xlabel='Preparation + scoring seconds (log scale)')
+    axs[0].invert_yaxis()
+    values=[results[first_month][model]['all']['ndcg@10']['macro'] for model in MAIN]
+    axs[1].barh(positions,values,color='#d78533')
+    axs[1].set(xlim=(0,1),xlabel='May full macro NDCG@10')
     finish('09_cost_accuracy','Selected configuration cost excludes tuning and ingestion; score fusion includes both component computations; shared data preparation is excluded for all models.')
     save_table(tables/'runtime.csv',costs)
     graph_stats={'nodes':n,'edges':int(data.adjacency.nnz),'dangling_nodes':int((degree==0).sum()),
@@ -228,7 +231,9 @@ def generate(prepared: Path, run: Path, output: Path):
                         contrast=paired_bootstrap(left,right,seed=2026,resamples=2000)
                         group_contrasts.append({'month':month,'axis':axis,'group':group,'model':model,
                             'sources':len(left),'delta_vs_markov':contrast['difference'],
-                            'ci_low':contrast['ci95'][0],'ci_high':contrast['ci95'][1]})
+                            'ci_low':contrast['ci95'][0] if len(left)>1 else None,
+                            'ci_high':contrast['ci95'][1] if len(left)>1 else None,
+                            'uncertainty_status':'exploratory' if len(left)>1 else 'insufficient_sources'})
     save_table(tables/'group_coverage.csv',group_audit)
     save_table(tables/'subgroup_paired_bootstrap.csv',group_contrasts)
     # Training distributions only, including all observed targets of frozen queries.

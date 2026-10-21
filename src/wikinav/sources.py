@@ -35,6 +35,22 @@ CATALOG = [
 ]
 
 
+# Exact bytes audited for the published historical benchmark.
+PINNED_SHA256 = {
+    "clickstream-eswiki-2018-01.tsv.gz": "4131d738c34a32befda41620e30b89d2c083d7cab945ceae521428e037768fa8",
+    "clickstream-eswiki-2018-02.tsv.gz": "8886d7d75c65470cc3da317a9d1f7244cc859e3468197b6278361e281fa5a91d",
+    "clickstream-eswiki-2018-03.tsv.gz": "80ce9555307003dd6490f742e6b754309ae20504b173de5a9ab05e3d379f9724",
+    "clickstream-eswiki-2018-04.tsv.gz": "43025e1e975bbaaf453f56f686a7bf90e30c65e08901dca12a521ea7015e0bec",
+    "clickstream-eswiki-2018-05.tsv.gz": "a6451093338b31cebb2dc97f5d4e7819c24ab97aa97d989f17aa4764ead24467",
+    "clickstream-eswiki-2018-06.tsv.gz": "3ad57457df1a1f737466cf358f05dd2fa8a00f8df9456f35c0995be709d53fc2",
+    "eswiki.wikilink_graph.2018-03-01.csv.gz": "5d0fba8c8500cd1e273b4c46f2d34d780cd30df20187e8e015fcd33d32fd8122",
+    "eswiki.snapshot.resolve_redirect.2018-03-01.csv.gz": "201513b3c9cdd81b3614203460a3009f051cbfb23ed55982deca73a2d3895d0d",
+    "eswiki.redirects.20180301.csv.gz": "4444d6da300b76d73cd825800ef9ba142abd734f73593ad974634ec5b3c2aa42"
+}
+for _source in CATALOG:
+    _source["sha256"] = PINNED_SHA256[_source["name"]]
+
+
 def acquire(root: Path) -> dict:
     root.mkdir(parents=True, exist_ok=True)
 
@@ -72,7 +88,7 @@ def acquire(root: Path) -> dict:
 def check_file(path: Path, source: dict) -> None:
     if "bytes" in source and path.stat().st_size != source["bytes"]:
         raise ValueError(f"Byte mismatch: {source['name']}")
-    for algorithm in ("md5", "sha512"):
+    for algorithm in ("md5", "sha512", "sha256"):
         if algorithm in source:
             h = hashlib.new(algorithm)
             with path.open("rb") as stream:

@@ -1,0 +1,247 @@
+{
+  "case_selection": [
+    {
+      "reason": "PPR_gain",
+      "selection_value": 0.19592299243200806,
+      "source": "7754838",
+      "title": "Danza posmoderna"
+    },
+    {
+      "reason": "Markov_gain",
+      "selection_value": 1.0,
+      "source": "2205329",
+      "title": "Remora"
+    },
+    {
+      "reason": "Hybrid_gain",
+      "selection_value": 0.1304435512598343,
+      "source": "4515299",
+      "title": "Ultimate Avengers"
+    },
+    {
+      "reason": "Hybrid_failure",
+      "selection_value": 0.12630715830146588,
+      "source": "119152",
+      "title": "Tragacete"
+    },
+    {
+      "reason": "Many_links",
+      "selection_value": 485.0,
+      "source": "9972",
+      "title": "1944"
+    },
+    {
+      "reason": "Low_traffic",
+      "selection_value": -10.0,
+      "source": "1875596",
+      "title": "Repollo relleno"
+    },
+    {
+      "reason": "Fixed_hash_example",
+      "selection_value": null,
+      "source": "7145962",
+      "title": "Th1"
+    }
+  ],
+  "coverage": [
+    {
+      "eligible_mass": 59966,
+      "eligible_pairs": 1089,
+      "label_mass": 62768,
+      "label_pairs": 1172,
+      "mass_candidate_coverage": 0.9553594188121336,
+      "month": "2018-05",
+      "pair_candidate_coverage": 0.9291808873720137,
+      "q_all": 127,
+      "q_conditional": 126,
+      "queries": 200,
+      "service_coverage": 1.0
+    },
+    {
+      "eligible_mass": 60025,
+      "eligible_pairs": 1167,
+      "label_mass": 63809,
+      "label_pairs": 1277,
+      "mass_candidate_coverage": 0.9406980206553934,
+      "month": "2018-06",
+      "pair_candidate_coverage": 0.9138606108065779,
+      "q_all": 122,
+      "q_conditional": 119,
+      "queries": 200,
+      "service_coverage": 1.0
+    }
+  ],
+  "figures": 11,
+  "graph": {
+    "dangling_nodes": 218,
+    "degree_popularity_spearman": 0.7066079233931041,
+    "edges": 319694,
+    "nodes": 8094,
+    "query_candidate_preservation": true,
+    "reciprocity": 0.310246673381421,
+    "retained_outgoing_fraction_sample_nodes": 0.30824604995087446,
+    "strong_components": 388,
+    "strong_largest": 7664,
+    "unobserved_h_edge_fraction": 0.9026475317021903,
+    "weak_components": 1,
+    "weak_largest": 8094
+  },
+  "main_models": [
+    "M0_global",
+    "M1_local",
+    "M1B_backoff",
+    "M2_uniform",
+    "M2D_indegree",
+    "M3_ppr_h",
+    "M4C_ppr_c",
+    "M4CH_ppr_ch",
+    "M4H_ppr_wh",
+    "M6B_fusion",
+    "M6A_matrix",
+    "HITS",
+    "M5H_node2vec",
+    "M5W_node2vec"
+  ],
+  "scope": "sample-conditional induced outgoing closure; not full-graph PPR",
+  "selected": {
+    "A4_CH": {
+      "damping": 0.5,
+      "mode": "CH",
+      "mu": 100.0
+    },
+    "A4_H": {
+      "damping": 0.5,
+      "mode": "H",
+      "mu": 100.0
+    },
+    "A4_WH": {
+      "damping": 0.5,
+      "mode": "WH",
+      "mu": 100.0
+    },
+    "A5_weighted_matched": {
+      "dimension": 32,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 17
+    },
+    "A8_M1B_backoff_1month": {
+      "eta": 0.0,
+      "months": [
+        "2018-03"
+      ],
+      "mu": 0.0
+    },
+    "A8_M1B_backoff_2month": {
+      "eta": 0.0,
+      "months": [
+        "2018-02",
+        "2018-03"
+      ],
+      "mu": 0.0
+    },
+    "A8_M1_local_1month": {
+      "months": [
+        "2018-03"
+      ]
+    },
+    "A8_M1_local_2month": {
+      "months": [
+        "2018-02",
+        "2018-03"
+      ]
+    },
+    "A8_fusion_1month": {
+      "eta": 0.0,
+      "months": [
+        "2018-03"
+      ],
+      "mu": 0.0
+    },
+    "A8_fusion_2month": {
+      "eta": 0.0,
+      "months": [
+        "2018-02",
+        "2018-03"
+      ],
+      "mu": 0.0
+    },
+    "HITS": {},
+    "M0_global": {},
+    "M1B_backoff": {
+      "eta": 0.0,
+      "mu": 0.0
+    },
+    "M1_local": {},
+    "M2D_indegree": {},
+    "M2_uniform": {},
+    "M3_ppr_h": {
+      "damping": 0.15,
+      "mode": "H",
+      "mu": 100.0
+    },
+    "M4CH_ppr_ch": {
+      "damping": 0.15,
+      "mode": "CH",
+      "mu": 100.0
+    },
+    "M4C_ppr_c": {
+      "damping": 0.15,
+      "mode": "C",
+      "mu": 100.0
+    },
+    "M4H_ppr_wh": {
+      "damping": 0.15,
+      "mode": "WH",
+      "mu": 100.0
+    },
+    "M5H_node2vec": {
+      "dimension": 32,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 17
+    },
+    "M5H_node2vec_s29": {
+      "dimension": 32,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 29
+    },
+    "M5H_node2vec_s43": {
+      "dimension": 32,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 43
+    },
+    "M5W_node2vec": {
+      "dimension": 64,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 17
+    },
+    "M5W_node2vec_s29": {
+      "dimension": 64,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 29
+    },
+    "M5W_node2vec_s43": {
+      "dimension": 64,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 43
+    },
+    "M6A_matrix": {
+      "damping": 0.5,
+      "lambda": 0.75
+    },
+    "M6B_fusion": {
+      "lambda": 0.5
+    }
+  },
+  "source_artifacts_sha256": {
+    "freeze.json": "8cb57243af68aced9cde9f8fda84762ac0bd0c74d4fda1ff9d407e2617ec477d",
+    "predictions.json": "43dc0fe28f7fb3dddb6ed857c9655c8bd52a8286d19e03e7c6038796e4e43cea",
+    "test_results.json": "c0df3e99454f2b12a094aa2cbdb9694b6a6e8adb2d437caf3328405bc3d46e6f"
+  }
+}

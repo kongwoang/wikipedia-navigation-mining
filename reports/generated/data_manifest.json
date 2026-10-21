@@ -1,0 +1,339 @@
+{
+  "artifacts": {
+    "edges.parquet": "58c4a881f5bb6a111c55eefd379809bafa4168a5624d278dece5e3a1c412a0a8",
+    "nodes.parquet": "c267dd6d9e756be95cfa08247e7219a72f4faddc89261562557b84c6ca392b8c",
+    "queries.parquet": "51ec52ef8c0ab37ff31f6d0ce2df64282d4d78112c29fd3af04fe67f9ff3e93d",
+    "train.parquet": "daab66438da5bd326e47701b584f3986fa52ee59da81261315a7f9268f7ea813"
+  },
+  "config_sha256": "fecba02ba78dacd65e7e8ead433815287c1a6c915fb811d8ddb7af4721552ba2",
+  "elapsed_seconds": 27.791945792007027,
+  "full": {
+    "ambiguous_titles_quarantined": 0,
+    "canonical_nodes": 2077467,
+    "h_self_loops": 20709,
+    "h_unique_edges": 36333722,
+    "h_unmapped_edges": 170271,
+    "mapping_nonidentity_rows": 961977,
+    "metadata_rows": 3063959,
+    "queries": 200,
+    "query_pool_by_stratum": [
+      [
+        0,
+        1032009
+      ],
+      [
+        1,
+        105664
+      ],
+      [
+        2,
+        91955
+      ],
+      [
+        3,
+        37470
+      ]
+    ],
+    "query_sample_by_stratum": [
+      [
+        0,
+        50
+      ],
+      [
+        1,
+        50
+      ],
+      [
+        2,
+        50
+      ],
+      [
+        3,
+        50
+      ]
+    ],
+    "raw_h_edges": 38348163,
+    "sample_edges": 319694,
+    "sample_nodes": 8094,
+    "sample_outgoing_full_edges": 1037139,
+    "sample_train_rows": 81598,
+    "train_h_matched_mass": 237539317,
+    "train_h_matched_pairs": 1702067,
+    "train_mass": 246733682,
+    "train_pairs": 1802996
+  },
+  "inputs": {
+    "clickstream-eswiki-2018-01.tsv.gz": {
+      "bytes": 35123848,
+      "sha256": "4131d738c34a32befda41620e30b89d2c083d7cab945ceae521428e037768fa8"
+    },
+    "clickstream-eswiki-2018-02.tsv.gz": {
+      "bytes": 33883323,
+      "sha256": "8886d7d75c65470cc3da317a9d1f7244cc859e3468197b6278361e281fa5a91d"
+    },
+    "clickstream-eswiki-2018-03.tsv.gz": {
+      "bytes": 37221600,
+      "sha256": "80ce9555307003dd6490f742e6b754309ae20504b173de5a9ab05e3d379f9724"
+    },
+    "eswiki.redirects.20180301.csv.gz": {
+      "bytes": 38083785,
+      "sha256": "4444d6da300b76d73cd825800ef9ba142abd734f73593ad974634ec5b3c2aa42"
+    },
+    "eswiki.snapshot.resolve_redirect.2018-03-01.csv.gz": {
+      "bytes": 92415686,
+      "sha256": "201513b3c9cdd81b3614203460a3009f051cbfb23ed55982deca73a2d3895d0d"
+    },
+    "eswiki.wikilink_graph.2018-03-01.csv.gz": {
+      "bytes": 477431253,
+      "sha256": "5d0fba8c8500cd1e273b4c46f2d34d780cd30df20187e8e015fcd33d32fd8122"
+    }
+  },
+  "mapping_policy": "latest raw redirect event per page <= UTC snapshot; resolve chains; quarantine cycles/dangling; exclude redirect sources",
+  "protocol": {
+    "bootstrap_resamples": 2000,
+    "controlled_damping": 0.5,
+    "controlled_weight_mu": 100.0,
+    "damping": [
+      0.15,
+      0.5,
+      0.85
+    ],
+    "duplicate_policy": "quarantine",
+    "edition": "eswiki",
+    "embedding_dimensions": [
+      32,
+      64
+    ],
+    "embedding_epochs": 5,
+    "embedding_negative": 5,
+    "embedding_pq": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        0.5,
+        2.0
+      ],
+      [
+        2.0,
+        0.5
+      ]
+    ],
+    "embedding_seeds": [
+      17,
+      29,
+      43
+    ],
+    "embedding_walk_length": 20,
+    "embedding_walks": 3,
+    "embedding_weight_mu": 100.0,
+    "embedding_window": 5,
+    "eta": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "graph_sampling": "induced_query_outgoing_closure",
+    "lambda": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "max_iterations": 1000,
+    "max_sample_edges": 3000000,
+    "max_sample_nodes": 50000,
+    "minimum_published_count": 10,
+    "mu": [
+      0.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "query_degree_max": 500,
+    "query_degree_min": 5,
+    "query_per_stratum": 50,
+    "residual_tolerance": 1e-08,
+    "seed": 2026,
+    "selection_metric": "macro_ndcg_all@10",
+    "snapshot": "2018-03-01",
+    "test_months": [
+      "2018-05",
+      "2018-06"
+    ],
+    "traffic_strata": [
+      0,
+      100,
+      1000
+    ],
+    "train_months": [
+      "2018-01",
+      "2018-02",
+      "2018-03"
+    ],
+    "validation_month": "2018-04"
+  },
+  "redirect_audit": {
+    "conflicting_states": 0,
+    "disagreements_with_supplied_mapping": 986434,
+    "empty_targets_quarantined": 349,
+    "future_events_excluded": 292,
+    "latest_states": 1029524,
+    "quarantined_pages": 24515,
+    "redirect_nodes_in_inventory": 986492,
+    "resolution_status": {
+      "dangling": 24515,
+      "resolved": 961977
+    },
+    "rows": 1526274,
+    "whitespace_normalized_targets": 157
+  },
+  "scope": "sample-conditional induced outgoing closure; not full-graph PPR",
+  "training_audits": [
+    {
+      "duplicate_key_groups": 4,
+      "file": "clickstream-eswiki-2018-01.tsv.gz",
+      "ledger": {
+        "duplicate_raw_quarantined": {
+          "mass": 4320,
+          "rows": 160
+        },
+        "kept": {
+          "mass": 86564540,
+          "rows": 1388083
+        },
+        "non_link": {
+          "mass": 725038703,
+          "rows": 1705614
+        },
+        "self_loop": {
+          "mass": 1639,
+          "rows": 18
+        },
+        "unmapped": {
+          "mass": 164847,
+          "rows": 1543
+        }
+      },
+      "types": [
+        {
+          "mass": 3321659,
+          "max": 16917,
+          "min": 10,
+          "rows": 99303,
+          "type": "other"
+        },
+        {
+          "mass": 86733866,
+          "max": 127132,
+          "min": 10,
+          "rows": 1389724,
+          "type": "link"
+        },
+        {
+          "mass": 721718524,
+          "max": 1108883,
+          "min": 10,
+          "rows": 1606391,
+          "type": "external"
+        }
+      ]
+    },
+    {
+      "duplicate_key_groups": 4,
+      "file": "clickstream-eswiki-2018-02.tsv.gz",
+      "ledger": {
+        "duplicate_raw_quarantined": {
+          "mass": 7920,
+          "rows": 160
+        },
+        "kept": {
+          "mass": 77015177,
+          "rows": 1308108
+        },
+        "non_link": {
+          "mass": 765894045,
+          "rows": 1688477
+        },
+        "unmapped": {
+          "mass": 32442,
+          "rows": 502
+        }
+      },
+      "types": [
+        {
+          "mass": 77049579,
+          "max": 48769,
+          "min": 10,
+          "rows": 1308690,
+          "type": "link"
+        },
+        {
+          "mass": 762654426,
+          "max": 1193600,
+          "min": 10,
+          "rows": 1590795,
+          "type": "external"
+        },
+        {
+          "mass": 3245579,
+          "max": 9050,
+          "min": 10,
+          "rows": 97762,
+          "type": "other"
+        }
+      ]
+    },
+    {
+      "duplicate_key_groups": 4,
+      "file": "clickstream-eswiki-2018-03.tsv.gz",
+      "ledger": {
+        "duplicate_raw_quarantined": {
+          "mass": 4160,
+          "rows": 160
+        },
+        "kept": {
+          "mass": 83153965,
+          "rows": 1376051
+        },
+        "non_link": {
+          "mass": 831982617,
+          "rows": 2027504
+        },
+        "self_loop": {
+          "mass": 2227,
+          "rows": 23
+        },
+        "unmapped": {
+          "mass": 415785,
+          "rows": 5473
+        }
+      },
+      "types": [
+        {
+          "mass": 3578881,
+          "max": 11030,
+          "min": 10,
+          "rows": 104898,
+          "type": "other"
+        },
+        {
+          "mass": 828406176,
+          "max": 3030228,
+          "min": 10,
+          "rows": 1922686,
+          "type": "external"
+        },
+        {
+          "mass": 83573697,
+          "max": 169979,
+          "min": 10,
+          "rows": 1381627,
+          "type": "link"
+        }
+      ]
+    }
+  ]
+}

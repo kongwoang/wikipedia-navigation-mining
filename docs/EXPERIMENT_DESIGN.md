@@ -1,5 +1,7 @@
 # Thiết kế thí nghiệm và hợp đồng đánh giá
 
+> **Lưu trữ planning:** các trạng thái “chưa chạy”, blockers và effort dưới đây phản ánh thời điểm thiết kế. Implementation và real study hiện đã hoàn tất trong scope đã chốt; xem [trạng thái hiện hành](IMPLEMENTATION_STATUS.md), [frozen protocol](RUN_PROTOCOL.md) và [báo cáo kết quả](../reports/REPORT.md). Không dùng proposal như chứng nhận experiment đã chạy.
+
 Protocol v1 đề xuất, 20/10/2026. Chưa có kết quả. Mọi quyết định cần khóa trước khi mở test được đánh dấu trong phần 11. Đọc cùng [dataset audit](DATASET_FEASIBILITY.md).
 
 **Cập nhật 21/10:** đây là specification; không phải mọi sensitivity/ablation đã được triển khai. [Config study hiện có](../configs/study.toml) chọn 200 queries (50 mỗi stratum 0/1–99/100–999/≥1000 training mass), degree 5–500 và induced outgoing closure 8.094 nodes/319.694 edges. Mọi graph method trong bảng study phải dùng subgraph này; global popularity vẫn tính từ toàn corpus train. Node2Vec dự kiến chọn knobs bằng seed 17, báo thêm seeds 29/43 với knobs cố định. Các lựa chọn đó thay thế đề xuất sample size/quartiles/seed-selection bên dưới cho run này; xem [DATA_AUDIT](DATA_AUDIT.md). Lần thử validation chưa hoàn tất, chưa có test results.
