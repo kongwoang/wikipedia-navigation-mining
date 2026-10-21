@@ -15,7 +15,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 URL = 'https://files.pythonhosted.org/packages/1a/80/fe9d2e1ace968041814dbcfce4e8499a643a36c41267fa4b6c4f54cce420/gensim-4.4.0.tar.gz'
 SHA256 = 'a3f5b626da5518e79a479140361c663089fe7998df8ba52d56e1ded71ac5bdf5'
-VERSION = '4.4.0+wnm1'
+VERSION = '4.4.0+wnm2'
 FASTSS_URL = 'https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/similarities/fastss.pyx'
 FASTSS_SHA256 = '28ef4b96570b64b674959f7900cc8786ab22df0c5871b6b9c9ee75a8a0241d1e'
 PROBE = '''
@@ -64,7 +64,27 @@ def run():
             raise RuntimeError('Unexpected upstream BLAS declarations')
         pxd.write_text(original.replace('except -1 nogil', 'noexcept nogil'))
         pyx = source / 'gensim/models/word2vec_inner.pyx'
-        pyx.write_text(pyx.read_text() + PROBE)
+        text = pyx.read_text()
+        wrappers = "\ncimport scipy.linalg.cython_blas as wnm_blas\n"
+        signatures = {
+            'scopy': ('void', 'const int *N, const float *X, const int *incX, float *Y, const int *incY', 'scopy', '<int*>N,<float*>X,<int*>incX,Y,<int*>incY'),
+            'saxpy': ('void', 'const int *N, const float *alpha, const float *X, const int *incX, float *Y, const int *incY', 'saxpy', '<int*>N,<float*>alpha,<float*>X,<int*>incX,Y,<int*>incY'),
+            'sdot': ('float', 'const int *N, const float *X, const int *incX, const float *Y, const int *incY', 'sdot', '<int*>N,<float*>X,<int*>incX,<float*>Y,<int*>incY'),
+            'dsdot': ('double', 'const int *N, const float *X, const int *incX, const float *Y, const int *incY', 'sdot', '<int*>N,<float*>X,<int*>incX,<float*>Y,<int*>incY'),
+            'snrm2': ('double', 'const int *N, const float *X, const int *incX', 'snrm2', '<int*>N,<float*>X,<int*>incX'),
+            'sscal': ('void', 'const int *N, const float *alpha, const float *X, const int *incX', 'sscal', '<int*>N,<float*>alpha,<float*>X,<int*>incX'),
+        }
+        for name,(result,args,operation,values) in signatures.items():
+            prefix = '' if result == 'void' else 'return '
+            wrappers += f"cdef {result} _wnm_{name}({args}) noexcept nogil:\n    {prefix}wnm_blas.{operation}({values})\n"
+        lines = text.splitlines()
+        for name in signatures:
+            matches=[i for i,line in enumerate(lines) if line.startswith(f'cdef {name}_ptr {name} =')]
+            if len(matches)!=1: raise RuntimeError('Unexpected upstream BLAS initialization')
+            lines[matches[0]]=f'cdef {name}_ptr {name} = _wnm_{name}'
+        text='\n'.join(lines)+'\n'
+        text=text.replace('REAL = np.float32',wrappers+'\nREAL = np.float32')
+        pyx.write_text(text + PROBE)
         setup = source / 'setup.py'
         assert setup.read_text().count("version='4.4.0'") == 1
         setup.write_text(setup.read_text().replace("version='4.4.0'", f"version='{VERSION}'"))

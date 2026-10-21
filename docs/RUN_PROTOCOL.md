@@ -1,4 +1,4 @@
-# Protocol thực thi đã khóa — study-v2
+# Protocol thực thi đã khóa — study-v3
 
 Người dùng chuyển sang hoàn thiện toàn dự án ngày 21/10/2026. Tài liệu này chốt các chi tiết thực thi trước lần mở held-out labels, thay các lựa chọn còn mở trong planning. Không thay research question để tìm kết quả tốt hơn.
 
@@ -29,8 +29,12 @@ Case selection: chọn source có chênh lớn nhất cho PPR gain, Markov gain,
 
 ## Backend fix và freeze barrier
 
-Gensim 4.4.0 có BLAS dot-pointer typedef `except -1`; giá trị -1 có thể hợp lệ. Installer `scripts/install_gensim_fix.py` tạo local version `4.4.0+wnm1`: đổi hai dot typedef sang `noexcept`, thêm negative-dot probe. Upstream source SHA256 và supplementary fastss.pyx SHA256 cố định; regenerate Cython bằng 3.1.2 cho Python3.13, giữ upstream license. Không thay SGNS objective, walks hoặc ranking formula. Không dùng cache từ incomplete study-v1.
+Gensim 4.4.0 có BLAS dot-pointer typedef `except -1`; giá trị -1 có thể hợp lệ. Installer `scripts/install_gensim_fix.py` tạo local version `4.4.0+wnm2`: đổi hai dot typedef sang `noexcept`, thêm negative-dot probe và dùng typed `scipy.linalg.cython_blas` wrappers cho scopy/saxpy/sdot/snrm2/sscal thay raw Fortran function-pointer casts. Upstream source SHA256 và supplementary fastss.pyx SHA256 cố định; regenerate Cython bằng 3.1.2 cho Python3.13, giữ upstream license. Không thay SGNS objective, walks hoặc ranking formula. Không dùng cache từ incomplete study-v1.
 
 Run signature gồm algorithm hash, config/data hash, Python/dependency versions, lock hash và installer hash. Mọi model/ablation predictions cùng freeze manifest phải ghi xong **trước** lần đầu evaluator đọc May/June. Test results không được dùng để mở rộng grid. Completed run không overwrite. Preparation/audit artifacts từ các lượt trước được giữ; real-training smoke chỉ đọc training graph.
 
 Acceptance trước test: toy tests, negative-dot regression, real graph finite-vector/loss smoke không native warning, validation candidate coverage có ledger. Final acceptance: required tables/figures/cases/report/demo tái tạo từ frozen artifacts, resource measurements và limitations rõ; không yêu cầu model phức tạp phải thắng.
+
+Portability correction trước khi phân tích test: study-v2 đã kết thúc trên macOS, nhưng CI Linux thất bại ở negative-dot probe của backend wnm1. Không đọc test scores/cases để quyết định sửa. Study-v3 chạy lại nguyên grid trên wnm2; không dùng v2 làm final results hoặc chọn giữa v2/v3 theo accuracy. Native call interface thay đổi, không thay objective/split/hyperparameters.
+
+Typed BLAS API tham chiếu: https://docs.scipy.org/doc/scipy/reference/linalg.cython_blas.html; build study khóa SciPy1.16.3, dùng đúng `int*` signatures từ installed cython_blas.pxd. Không tuyên bố hỗ trợ tùy ý SciPy ILP64/new major versions.

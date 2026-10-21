@@ -15,3 +15,5 @@ results/
 .env
 .env.*
 !.env.example
+
+reports/reproduced/

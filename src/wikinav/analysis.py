@@ -334,6 +334,6 @@ if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser()
     parser.add_argument('--prepared',type=Path,default=Path('data/processed/study-v2'))
-    parser.add_argument('--run',type=Path,default=Path('results/study-v2'))
+    parser.add_argument('--run',type=Path,default=Path('results/study-v3'))
     parser.add_argument('--output',type=Path,default=Path('reports/generated'))
     args=parser.parse_args(); generate(args.prepared,args.run,args.output)

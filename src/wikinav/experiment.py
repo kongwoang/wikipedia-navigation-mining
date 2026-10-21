@@ -252,7 +252,7 @@ if __name__ == "__main__":
     parser=argparse.ArgumentParser()
     parser.add_argument("--raw",type=Path,default=Path("data/raw/eswiki"))
     parser.add_argument("--prepared",type=Path,default=Path("data/processed/study-v2"))
-    parser.add_argument("--output",type=Path,default=Path("results/study-v2"))
+    parser.add_argument("--output",type=Path,default=Path("results/study-v3"))
     parser.add_argument("--config",type=Path,default=Path("configs/study.toml"))
     args=parser.parse_args()
     run(args.raw,args.prepared,args.output,args.config)
