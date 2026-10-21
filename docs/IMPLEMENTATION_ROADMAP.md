@@ -1,10 +1,10 @@
 # Kiến trúc triển khai và roadmap 8 tuần
 
-**Chỉ thiết kế, chưa triển khai.** Các tên module, lệnh và interfaces trong tài liệu là đề xuất cho giai đoạn development, không phải tuyên bố đã có executable code.
+**Roadmap thiết kế, cập nhật trạng thái 21/10/2026.** Một phần đã triển khai trong repository; các tên module/lệnh bên dưới vẫn là kiến trúc đích, không phải tất cả đều executable. [IMPLEMENTATION_STATUS](IMPLEMENTATION_STATUS.md) phân biệt phần đã kiểm tra và phần chưa hoàn tất; bảo tồn core hiện có, không tạo scaffold thay thế.
 
 ## 1. Audit repository và môi trường
 
-Kiểm tra ngày 20/10/2026:
+Audit ban đầu ngày 20/10/2026 (lịch sử, không phải trạng thái hiện tại):
 
 - Workspace ban đầu trống, không `.git`, README, source, config, dependency lock hay dữ liệu.
 - GitHub `kongwoang/wikipedia-navigation-mining` có default branch dự kiến `main`; API trả repository empty và branch list rỗng khi kiểm tra.
@@ -12,7 +12,9 @@ Kiểm tra ngày 20/10/2026:
 - Filesystem báo ~576 GiB free; RAM/CPU query bị sandbox chặn, nên không ghi cấu hình phần cứng suy đoán.
 - Shell truy cập GitHub lỗi DNS; GitHub connector đọc repository được nhưng thao tác tạo README bị từ chối **403 “Resource not accessible by integration”**. Chưa có remote commit được tạo trong phiên planning; local documents không đồng nghĩa một Git checkout hay push thành công. Cần kết nối GitHub có quyền ghi repository để publish.
 
-Kế hoạch không cần GPU. Development dùng venv và dependency lock riêng; không thay global Python hoặc cài hàng loạt thư viện trong planning.
+Ngày 21/10, Git CLI đã truy cập và push được remote; local `main` đã đồng bộ commit `de87341` trước lần cập nhật tài liệu này. Máy có 19.327.352.832 bytes RAM (~18 GiB); `.venv` Python 3.13.13 chạy được 69 tests. Code thực tế dùng DuckDB/Parquet và SciPy CSR thay Polars; không cần chuyển backend chỉ để khớp sơ đồ đề xuất. Gensim chưa đạt real-data training gate dù toy tests pass. Không lấy tests pass làm bằng chứng benchmark hoàn thành.
+
+Kế hoạch không cần GPU. Development dùng venv và dependency lock riêng; không thay global Python. Trong lượt hoàn thiện planning này không tải thêm datasets hoặc chạy benchmark.
 
 ## 2. Repository structure đề xuất
 

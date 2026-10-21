@@ -1,0 +1,50 @@
+{
+  "duplicate_key_groups": 4,
+  "file": "clickstream-eswiki-2018-04.tsv.gz",
+  "input_sha256": "43025e1e975bbaaf453f56f686a7bf90e30c65e08901dca12a521ea7015e0bec",
+  "ledger": {
+    "duplicate_raw_quarantined": {
+      "mass": 4240,
+      "rows": 160
+    },
+    "kept": {
+      "mass": 87999181,
+      "rows": 1434782
+    },
+    "non_link": {
+      "mass": 841442346,
+      "rows": 2010732
+    },
+    "self_loop": {
+      "mass": 8007,
+      "rows": 63
+    },
+    "unmapped": {
+      "mass": 1292428,
+      "rows": 12769
+    }
+  },
+  "types": [
+    {
+      "mass": 3843144,
+      "max": 12297,
+      "min": 10,
+      "rows": 110775,
+      "type": "other"
+    },
+    {
+      "mass": 837601442,
+      "max": 1302918,
+      "min": 10,
+      "rows": 1900037,
+      "type": "external"
+    },
+    {
+      "mass": 89301616,
+      "max": 83673,
+      "min": 10,
+      "rows": 1447694,
+      "type": "link"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Kiểm toán tính khả thi dữ liệu
 
-Ngày kiểm tra: **20/10/2026**. Đây là planning; chưa tải dataset, chưa kiểm tra các dòng dữ liệu thật, chưa có kết quả thực nghiệm. “Đã xác minh” dưới đây nghĩa là đã đọc nguồn sơ cấp hoặc directory listing, không đồng nghĩa đã chạy pipeline.
+Nguồn và listing được kiểm tra **20/10/2026**, cập nhật bằng audit cục bộ **21/10/2026**. Đây là tài liệu quyết định dữ liệu, không phải báo cáo benchmark. Những số ghi “raw theo paper/listing” phải phân biệt với số đo sau canonicalization. Bằng chứng mới nằm trong [DATA_AUDIT](DATA_AUDIT.md) và [manifest preparation](evidence/preparation-study-v2.json); không tải thêm dữ liệu trong lượt hoàn thiện planning này.
 
 ## 1. Quyết định dữ liệu
 
@@ -14,7 +14,7 @@ Chọn `eswiki` vì chi phí file graph thấp hơn English và có đủ các t
 
 ## 2. Bằng chứng về Clickstream
 
-Nguồn [Meta-Wiki](https://meta.wikimedia.org/wiki/Research:Wikipedia_clickstream) mô tả bốn trường `prev`, `curr`, `type`, `n`: các cặp referrer–resource được tổng hợp theo tháng. `link` là cặp bài có hyperlink; `other` là điều hướng nội bộ không được xác định là link; `external` là referral bên ngoài. Tài liệu mô tả loại bỏ cặp có **10 quan sát trở xuống**, nên kiểm tra kỳ vọng `n > 10`, không viết `n >= 10`. Có xử lý redirect ở upstream và khác biệt giữa các release lịch sử. Dữ liệu không cung cấp user/session hay thời điểm từng click.
+Nguồn [Meta-Wiki](https://meta.wikimedia.org/wiki/Research:Wikipedia_clickstream) mô tả bốn trường `prev`, `curr`, `type`, `n`: các cặp referrer–resource được tổng hợp theo tháng. `link` là cặp bài có hyperlink; `other` là điều hướng nội bộ không được xác định là link; `external` là referral bên ngoài. Mô tả lịch sử về suppression không được dùng để ép mọi release có `n>10`: **file eswiki Jan–Mar 2018 và audit validation April thực tế có `n=10`**. Study chốt minimum count 10 theo audit release; không tự loại các dòng này. Missing vẫn bị censor, không phải true zero. Có xử lý redirect ở upstream và khác biệt giữa các release. Dữ liệu không cung cấp user/session hay thời điểm từng click.
 
 Từ đó, thiết kế đề xuất chỉ dùng `type=link`; các type khác được thống kê rồi tách khỏi target. Đây là bài toán conditional on an observed internal-link transition, không dự đoán người đọc có tiếp tục đọc hay thoát trang. Không thể tính CTR triển khai thực tế khi thiếu impressions/exposure.
 
@@ -29,7 +29,7 @@ Từ đó, thiết kế đề xuất chỉ dùng `type=link`; các type khác đ
 | [clickstream-eswiki-2018-05.tsv.gz](https://dumps.wikimedia.org/other/clickstream/2018-05/) | Test | 39,037,289 |
 | [clickstream-eswiki-2018-06.tsv.gz](https://dumps.wikimedia.org/other/clickstream/2018-06/) | P1 temporal robustness | 36,221,902 |
 
-Năm file chính cộng **183,083,654 bytes**, khoảng 183.1 MB decimal. Số row, unique node, link pair, tổng click và dung lượng giải nén: **chưa đo**, không lấy thống kê English năm khác thay thế. Listing có thời điểm xuất bản sau tháng quan sát; benchmark tháng liền nhau không mô phỏng publication latency. Một deployment backtest phải dùng `available_at` và thêm gap, được mô tả trong [protocol](EXPERIMENT_DESIGN.md).
+Năm file chính cộng **183,083,654 bytes**, khoảng 183.1 MB decimal. Manifest preparation đo được 1.802.996 canonical training pairs và 246.733.682 published count mass Jan–Mar; đây không phải số test pairs hoặc tổng mọi điều hướng. Dung lượng giải nén chưa đo. Listing có thời điểm xuất bản sau tháng quan sát; benchmark tháng liền nhau không mô phỏng publication latency. Một deployment backtest phải dùng `available_at` và thêm gap, được mô tả trong [protocol](EXPERIMENT_DESIGN.md).
 
 ## 3. Graph độc lập: đã biết và chưa biết
 
@@ -44,7 +44,7 @@ Các hệ quả thiết kế:
 - Gọi graph là **historical editorial-link graph**. Một cặp `type=link` không khớp graph không tự động là lỗi Clickstream: có thể do template, link mới, move, redirect hoặc extraction.
 - Không thêm test edges để “sửa” coverage. Không dùng live Wikipedia API để canonicalize historical features.
 - Không nhận diện redirect bằng heuristic `in_degree=0, out_degree=1`: bài thật cũng có thể có cấu trúc đó.
-- Ưu tiên lấy bảng redirect/page cùng thời điểm từ tài liệu supporting data của tác giả; xác minh URL truy cập, schema, checksum, provenance trước khi dùng. **Chưa xác nhận được artifact phụ này trong phiên planning.**
+- Supporting page/redirect artifacts đã có checksum trong [acquisition manifest](evidence/acquisition-eswiki-2018.json). **Không dùng supplied resolved targets trực tiếp:** audit tìm thấy sai lệch; resolver dùng raw event history trước UTC cutoff và snapshot inventory. Chi tiết chain/dangling policy và limitations ở [DATA_AUDIT](DATA_AUDIT.md).
 - Nếu thiếu redirect metadata: giữ graph raw để traversal, chỉ nhận query/candidate qua phép khớp canonical title rõ ràng theo bảng đã khóa; ghi lại alias/ambiguous nodes. Không gọi đó là canonical article graph hoàn chỉnh. Nếu không thể bảo đảm candidate là bài hợp lệ, không vượt gate primary.
 - Một edge list không chứng minh bao phủ các isolated articles. Node universe phải ghi rõ là endpoint inventory hay page inventory; báo cáo thiếu coverage tương ứng.
 
@@ -77,7 +77,7 @@ Số liệu Wikispeedia từ [SNAP](https://snap.stanford.edu/data/wikispeedia.h
 
 ## 6. Resource budget: tính toán, không phải benchmark
 
-Môi trường thực sự đã kiểm tra: macOS Darwin arm64; Python 3.13.13; GitHub CLI 2.95.0; filesystem báo khoảng 576 GiB còn trống. Đọc RAM/CPU bằng `sysctl` bị chặn; **chưa biết RAM/CPU khả dụng**. Không có dependency project hay GPU requirement. Giả định lập kế hoạch: máy CPU, 16 GB RAM; nếu thực tế thấp hơn, giảm pilot.
+Môi trường đã kiểm tra: macOS Darwin arm64; Python 3.13.13; RAM 19.327.352.832 bytes (~18 GiB). Bước preparation dùng DuckDB memory limit 4 GB, mất khoảng 27,8 giây ở lần đo đã lưu; chưa có peak RSS. Core dùng standard library, backend sparse dùng NumPy/SciPy. Node2Vec/Gensim còn native warning trên graph thật; toy smoke pass không đủ bảo đảm tương thích. Không cần GPU; không suy runtime toàn benchmark từ thời gian preparation.
 
 Với `N=3,034,113`, `M=38,348,163` raw Spanish, CSR int32 indices + float32 values + int64 indptr cần:
 
@@ -87,7 +87,7 @@ Với `N=3,034,113`, `M=38,348,163` raw Spanish, CSR int32 indices + float32 val
 
 | Thành phần | Ước lượng theo công thức / giới hạn đề xuất | Quyết định |
 |---|---|---|
-| Raw download primary | 183.1 MB click + 477.4 MB graph ≈ 660.5 MB | Không download trong planning |
+| Raw download primary | 183.1 MB click + 477.4 MB graph ≈ 660.5 MB, chưa tính metadata | Dữ liệu từ lượt trước đã có; không tải lại trong planning |
 | Disk làm việc | Dự trù 10–20 GB, chưa đo; streaming không giữ nhiều bản text giải nén | Đo bytes thực, dừng nếu dự phóng >20 GB |
 | RAM pipeline | Hard budget đề xuất 8 GB peak RSS trên máy 16 GB | Partitioned joins, giới hạn batch |
 | PPR chính xác | Một source: `I × (M+N)` work; S sources nhân S | Không all-pairs; pilot timing trước |
@@ -141,11 +141,13 @@ Graph static game là môi trường có sẵn cho mọi lượt. Labels lấy t
 
 | Vấn đề | Trạng thái | Bước xác minh |
 |---|---|---|
-| Schema/header thật các file 2018 | Documentation-only | Đọc bounded sample sau khi bắt đầu implementation |
-| Count suppression đúng từng release | Theo docs, chưa audit file | Min/count histogram, upstream code/version nếu bất thường |
-| Canonical nodes và redirect artifact | **Blocker có điều kiện** | Tải metadata nhỏ từ supporting archive, kiểm tra provenance |
-| WLG vs Clickstream candidate coverage | Chưa biết | Join train/validation và coverage ledger |
-| Số canonical node/edge | Chưa biết | Recount sau xử lý; không dùng raw node count làm article count |
-| RAM/CPU thực và dependency wheels | Chưa biết | Environment smoke test; không giả định Python 3.13 tương thích mọi package |
-| File còn tải được toàn vẹn | Listing có, chưa download | Checksum + gzip integrity |
+| Schema/header thật các file 2018 | Đã audit train; validation audit đã lưu | Test chỉ evaluator parse sau freeze; không suy mọi release giống nhau |
+| Count suppression đúng từng release | Jan–Apr có min 10 | Không suy ra privacy rule của tháng khác; log schema/range khi evaluator đọc |
+| Canonical nodes và redirect artifact | Có history resolver và manifest; supplied targets bị thay | Review history completeness/title-move limitations; không dùng live mappings |
+| WLG vs Clickstream candidate coverage | Train mass khớp H 96,27%; chưa có final validation candidate table | Tính pair/mass coverage cho frozen query sample trước test; khác node coverage |
+| Số canonical node/edge | 2.077.467 / 36.333.722 theo policy audit | Không gọi raw node count là content article count |
+| RAM và dependency backend | ~18 GiB; 69 toy/integration tests pass; Gensim training gate chưa đạt | Fix/replace backend có regression evidence hoặc bỏ M5H/M5W trước test |
+| File còn tải được toàn vẹn | Acquisition manifest có bytes/hashes; graph/metadata có upstream checksum | Local SHA256 của Clickstream là fingerprint, không phải chữ ký nguồn |
 | Fallback paths header | Chưa đọc | Small package inspection khi cần |
+
+**Dataset decision hiện tại:** tiếp tục primary eswiki ở mức sample-conditional study; không cần chuyển dataset chỉ vì Node2Vec P1 lỗi. Chưa chốt “benchmark ready” cho đến khi có validation coverage table, protocol/code review và resource diagnostics. Nếu topology provenance/matching thất bại thì mới dùng Wikispeedia hoặc đổi hẳn câu hỏi sang behavior-only. Mẫu 8.094 nodes/319.694 edges giữ query candidates nhưng chỉ giữ khoảng 30,8% tổng outgoing edges của toàn bộ sampled nodes; không diễn giải PPR đó như full-graph PPR.

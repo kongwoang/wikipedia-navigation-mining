@@ -2,6 +2,8 @@
 
 Audit thực hiện 20–21/10/2026, trước khi đọc validation/test labels cho study. Kết quả dưới đây thay thế các giả định tương ứng trong bản kế hoạch. Dataset vẫn là **Spanish Wikipedia Clickstream + historical editorial hyperlinks**, không cần fallback Wikispeedia.
 
+Bằng chứng preparation được version-control tại [preparation manifest](evidence/preparation-study-v2.json) và [acquisition manifest](evidence/acquisition-eswiki-2018.json). Sau preparation, lần thử validation đã chạy một phần rồi dừng; [April audit](evidence/validation-april-2018.json) được lưu riêng. Không có final held-out benchmark. Mốc “trước validation/test” ở trên nói về quyết định preprocessing/sampling, không có nghĩa validation chưa từng được đọc.
+
 ## Các vấn đề thực sự tìm thấy
 
 1. **Count threshold:** file Clickstream 2018-01..03 chứa `n=10`. Vì thế study dùng `minimum_published_count=10`; không giữ giả định `n>10` từ mô tả tổng quát. Core toy parser vẫn cho phép caller cấu hình threshold. Missing observations không là true negatives.

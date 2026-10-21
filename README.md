@@ -1,63 +1,51 @@
 # Wikipedia Navigation Mining
 
-**Đã có core P0 chạy offline và 57 tests đạt. Chưa có benchmark trên Wikipedia thật.**
+**Bộ kế hoạch nghiên cứu đã hoàn thiện; chưa có benchmark held-out hoàn chỉnh.** Repository cũng chứa code nền và audit dữ liệu từ các lượt làm việc trước. Lượt cập nhật 21/10/2026 tập trung hoàn thiện planning, không chạy thêm benchmark hoặc tải dữ liệu lớn.
 
 Tên đề xuất: **Topology-Aware Next-Article Ranking on Wikipedia: A Temporal Comparison of Click Frequency and Historical Hyperlink Structure**.
 
-Dự án học phần nghiên cứu khi nào hyperlink topology bổ sung thông tin cho historical click frequency trong **source-conditioned next-article ranking**. Không tuyên bố user personalization hay session-aware prediction từ aggregate Clickstream.
+Dự án nghiên cứu khi nào hyperlink topology bổ sung thông tin cho historical click frequency trong **source-conditioned next-article ranking**. Clickstream là aggregate counts; không tuyên bố user personalization hoặc session-aware prediction.
 
-## Chạy bản tham chiếu
+## Đọc kế hoạch
 
-Yêu cầu Python ≥3.11; đã kiểm tra bằng Python 3.13.13 trên macOS arm64. Core hiện tại chỉ dùng standard library, không cần GPU hoặc cài thư viện từ mạng. Chạy các lệnh sau tại thư mục gốc dự án:
+Bắt đầu từ [PROJECT_PLAN](docs/PROJECT_PLAN.md), gồm đủ 10 phần: executive assessment, formulation, dataset, experiments, EDA, architecture, roadmap, defense, risks và immediate actions.
+
+| Tài liệu | Nội dung |
+|---|---|
+| [PROJECT_PLAN](docs/PROJECT_PLAN.md) | Research questions, scope, roadmap 8 tuần, acceptance, report/presentation/demo |
+| [DATASET_FEASIBILITY](docs/DATASET_FEASIBILITY.md) | Dataset comparison, nguồn đã xác minh, primary/fallback, tài nguyên và blockers |
+| [EXPERIMENT_DESIGN](docs/EXPERIMENT_DESIGN.md) | Formalization, model matrix, chronological split, candidates, metrics, tuning, A1–A9, leakage audit |
+| [EDA_AND_ANALYSIS_PLAN](docs/EDA_AND_ANALYSIS_PLAN.md) | Mỗi chart gắn research question/decision; error analysis, sensitivity, tables |
+| [IMPLEMENTATION_ROADMAP](docs/IMPLEMENTATION_ROADMAP.md) | Kiến trúc, interfaces, artifacts, tests, dependencies, milestones và definition of done |
+| [LITERATURE_REVIEW](docs/LITERATURE_REVIEW.md) | 11 công trình, bibliography, comparison matrix và positioning |
+| [RISKS_AND_DEFENSE](docs/RISKS_AND_DEFENSE.md) | Risk register, Feedback-to-Action Matrix và 25 câu hỏi bảo vệ |
+
+[Planning review](docs/PLANNING_REVIEW.md) đối chiếu yêu cầu với deliverables. [Implementation status](docs/IMPLEMENTATION_STATUS.md) ghi phần thực sự đã có; tài liệu thiết kế không phải chứng nhận mọi thí nghiệm đã chạy.
+
+## Quyết định chính
+
+- Primary: eswiki Clickstream Jan–Mar 2018 train, April validation, May test; June là fixed-model temporal extension. Independent WikiLinkGraphs snapshot 01/03/2018.
+- Ranking trên outgoing editorial hyperlinks được khóa trước evaluation; mọi model dùng cùng candidates và source sample.
+- Báo Recall@5/10/20, MRR@10, NDCG@10 với full observable denominator và conditional denominator, macro/traffic-weighted aggregation, candidate coverage và paired uncertainty.
+- P0: popularity/Markov/backoff, uniform/in-degree, PPR-H/PPR-C và score fusion. P1: fixed-support weighting, matrix fusion, Node2Vec H/W, HITS và temporal robustness. Không cần GPU.
+- Fallback: Wikispeedia; phải đổi claim sang goal-directed game navigation.
+
+[Data audit](docs/DATA_AUDIT.md) và [manifests nhỏ được version-control](docs/evidence/README.md) ghi nhận count bằng 10, raw duplicate groups và sai lệch supplied redirect mapping. Mẫu đã chuẩn bị có 200 queries, 8.094 nodes, 319.694 edges; giữ query candidates nhưng mất boundary edges ở intermediate nodes. Không gọi kết quả tương lai trên mẫu này là full-Wikipedia benchmark.
+
+## Kiểm tra nhẹ, không tải dữ liệu
+
+Core cần Python ≥3.11, dùng standard library. Môi trường đã kiểm tra là Python 3.13.13 trên macOS arm64. Chạy tại gốc repository:
 
 ```bash
 python3 -m venv .venv
 PYTHONPATH=src .venv/bin/python -m wikinav doctor
 PYTHONPATH=src .venv/bin/python -m wikinav validate-config
-PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
-PYTHONPATH=src .venv/bin/python -m wikinav toy-run --output results/toy-smoke
+PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_core.py
+PYTHONPATH=src .venv/bin/python -m wikinav toy-run --output results/toy-review
 ```
 
-`toy-run` yêu cầu thư mục output **chưa tồn tại**, tránh ghi đè một run cũ. Khi chạy lại, đổi thành `results/toy-smoke-02`. Fixtures hoàn toàn synthetic, gồm 6 nodes; lệnh này không tải dữ liệu hoặc đọc validation để tuning.
+`toy-run` cần output directory chưa tồn tại. Fixtures là synthetic; không dùng điểm toy làm bằng chứng model tốt trên Wikipedia. Core có 57 tests. Trong môi trường study cục bộ hiện có, toàn suite gồm 69 tests đạt; study tests dùng tiny synthetic data, không đọc labels test thật. Môi trường chưa có scientific dependencies sẽ skip study tests, vì vậy phải đọc cả số skipped.
 
-Đã có 9 scorers: Global Popularity, Local Markov, Backoff Markov, Uniform, In-degree, PPR-H, PPR-C, PPR trên `C ∩ H`, và score fusion. PPR dùng directed transitions, dangling → source và ghi convergence residual. Graph tham chiếu giới hạn 10.000 nodes/100.000 edges; đây chưa phải backend xử lý toàn bộ Wikipedia.
+Core có 9 scorers, metric engine và freeze-before-test workflow. Sparse backend bổ sung DuckDB/Parquet, SciPy CSR, historical redirect resolver và experiment runner. Các thành phần này chưa có clean end-to-end benchmark certificate. Gensim phát sinh native warning trong lần thử Node2Vec thật; không dùng cache đó làm kết quả chính thức. Không chạy automation tải dữ liệu/training chỉ để xem planning.
 
-Mỗi run lưu `freeze.json`, `predictions.json`, `source_metrics.json`, `metrics.json`, `coverage.json`, `ppr_diagnostics.json` và `completion.json`. Train/graph/candidates/models được khóa và predictions được ghi **trước khi mở test labels**. Các artifacts đều ghi `data_kind=synthetic`, `benchmark_result=false`.
-
-Các metrics gồm Recall@5/10/20, MRR@10, NDCG@10, massRecall và ExpectedRR, cùng macro/traffic-weighted aggregation, full/conditional denominators và candidate coverage. Không có labels quan sát được → `null`; có labels nhưng không có candidates → full metric bằng 0. Ngoài ra có paired bootstrap theo source trong Python API.
-
-Audit một prefix Clickstream cục bộ:
-
-```bash
-PYTHONPATH=src .venv/bin/python -m wikinav audit-clickstream tests/fixtures/toy/2018-01.tsv --month 2018-01 --max-rows 3
-```
-
-Parser nhận TSV hoặc TSV.gz, kiểm tra 4 trường, type, count, duplicates và giới hạn dòng. Prefix audit không phải random sample, không xác nhận checksum/toàn vẹn toàn bộ file nếu chưa đọc hết. Ngưỡng count mặc định 11 phục vụ protocol đã chọn; release khác cần xác minh trước khi dùng.
-
-Xem [trạng thái triển khai và việc còn lại](docs/IMPLEMENTATION_STATUS.md). Packaging qua `pip install` và các phiên bản Python khác chưa được kiểm chứng.
-
-## Bộ tài liệu kế hoạch
-
-| Tài liệu | Nội dung |
-|---|---|
-| [PROJECT_PLAN](docs/PROJECT_PLAN.md) | Executive assessment, 10 phần kế hoạch, research questions, scope, report/presentation/demo |
-| [DATASET_FEASIBILITY](docs/DATASET_FEASIBILITY.md) | Nguồn đã xác minh, dataset decision, resource budget, preprocessing và blockers |
-| [EXPERIMENT_DESIGN](docs/EXPERIMENT_DESIGN.md) | Formalization, models, temporal splits, candidates, metrics, tuning, ablations và leakage audit |
-| [EDA_AND_ANALYSIS_PLAN](docs/EDA_AND_ANALYSIS_PLAN.md) | Figure inventory, EDA-to-decision mapping, error analysis và result tables |
-| [IMPLEMENTATION_ROADMAP](docs/IMPLEMENTATION_ROADMAP.md) | Modules/interfaces, artifacts, dependency gate, tests, milestones 8 tuần |
-| [LITERATURE_REVIEW](docs/LITERATURE_REVIEW.md) | Verified bibliography, literature matrix, positioning và baseline rationale |
-| [RISKS_AND_DEFENSE](docs/RISKS_AND_DEFENSE.md) | Risk register, instructor feedback-to-action matrix, 25 defense questions |
-
-## Quyết định chính
-
-- Primary có điều kiện: **eswiki Clickstream tháng 01–05/2018 + WikiLinkGraphs 01/03/2018**; train 01–03, validation 04, test 05.
-- Candidate setting chính: outgoing links trong historical editorial-link graph được khóa trước evaluation.
-- Báo full observable denominator và conditional-candidate metrics cùng coverage; unobserved không đồng nghĩa zero-click.
-- P0: strong popularity/Markov baselines, uniform/in-degree, PPR-H/PPR-C và score fusion. P1: fixed-support weighting, matrix fusion, Node2Vec H/W trên graph nhỏ chung, HITS và temporal robustness.
-- Fallback: Wikispeedia, với scope đổi thành goal-directed game navigation.
-
-**Chưa vượt dataset gate:** redirect/page metadata, schema thực tế, graph–click coverage và runtime/RAM cần được xác minh bằng pilot. Có file trong listing không đồng nghĩa đã kiểm tra toàn vẹn file hoặc hoàn tất matching.
-
-Đọc [kế hoạch tổng thể](docs/PROJECT_PLAN.md) và [definition of done](docs/IMPLEMENTATION_ROADMAP.md). Các CLI trong tài liệu kế hoạch là thiết kế đích; chỉ các lệnh liệt kê ở README này đã được triển khai và kiểm tra.
-
-Nguồn và facts được kiểm tra ngày **20/10/2026**; các giả định, ước lượng và điểm chưa xác minh được ghi riêng. Không có experimental improvement được khẳng định trước khi đo.
+Raw datasets, prepared graph, embeddings và model caches được Git-ignore. Manifests nhỏ chứa URLs, fingerprints và audit counters; không chứa credentials. Git CLI đã push được repository; lỗi quyền GitHub integration trước đó không còn là blocker cho cách dùng Git này.

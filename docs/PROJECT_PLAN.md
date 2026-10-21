@@ -1,6 +1,6 @@
 # Kế hoạch dự án Wikipedia Navigation Mining
 
-**Trạng thái:** planning, 20/10/2026. Chưa huấn luyện model, chưa tải dataset lớn, chưa có điểm benchmark. Mọi “giả thuyết” trong bộ tài liệu là điều cần kiểm định.
+**Trạng thái:** kế hoạch hoàn thiện, cập nhật 21/10/2026. Repository đã có code nền và audit dữ liệu từ các lượt trước; chưa có benchmark held-out hoàn chỉnh. Mọi “giả thuyết” là điều cần kiểm định. Phạm vi bàn giao hiện tại là planning, không coi roadmap bên dưới là danh sách công việc đã hoàn thành. Xem [trạng thái thực tế](IMPLEMENTATION_STATUS.md) và [bằng chứng audit](DATA_AUDIT.md).
 
 **Tên đề xuất:** *Topology-Aware Next-Article Ranking on Wikipedia: A Temporal Comparison of Click Frequency and Historical Hyperlink Structure*.
 
@@ -43,7 +43,7 @@ PPR “personalized” nghĩa restart về query article; không nghĩa personal
 
 Primary có điều kiện: **eswiki Clickstream 2018-01…05 + WikiLinkGraphs 2018-03-01**, lịch sử train 01–03, val 04, test 05. Graph nhỏ hơn English, các file được xác minh tồn tại trong listing. Chọn giai đoạn lịch sử để có topology độc lập có provenance thay vì ghép graph hiện tại với click quá khứ.
 
-Các blocker chưa giải quyết: redirect/page metadata; nội dung thực của schema; tỷ lệ khớp title/edge; tài nguyên RAM và query-level PPR. Tuần đầu có go/no-go gate. Nếu không đạt: Wikispeedia và điều chỉnh claim về goal-directed gameplay. Xem [dataset audit](DATASET_FEASIBILITY.md) cho nguồn, kích thước, chi phí và fallback protocol.
+Audit đã xác nhận schema và metadata lịch sử, đồng thời phát hiện supplied redirect mapping không đủ tin cậy; mapping được dựng lại từ raw redirect history. Training mass khớp H khoảng 96,27%. Mẫu đã chuẩn bị có 200 queries, 8.094 nodes và 319.694 edges, giữ đầy đủ outgoing candidates của query nhưng mất boundary edges ở intermediate nodes. Do đó chỉ có thể kết luận về **sample-graph ranking**, không full Wikipedia graph. Benchmark, validation candidate coverage và resource gate cho toàn bộ models chưa hoàn tất; Node2Vec còn lỗi backend cần xử lý. Xem [DATA_AUDIT](DATA_AUDIT.md), [dataset strategy](DATASET_FEASIBILITY.md) và fallback Wikispeedia nếu cần.
 
 ## Phần 4 — Experimental design
 
@@ -69,11 +69,11 @@ EDA phải quyết định model/evaluation: concentration → Markov baseline; 
 
 ## Phần 6 — Kiến trúc
 
-Repository kiểm tra ban đầu: workspace trống, không `.git`, không code/config/dependencies; GitHub target cũng được API xác nhận empty. Không có `AGENTS.md` tại workspace/các parent đã kiểm tra. Vì vậy chưa có architecture cần bảo tồn; bộ tài liệu này là baseline thiết kế.
+Audit ban đầu ngày 20/10 ghi nhận workspace trống. Khi tiếp tục ngày 21/10, repository đã có Git, configs, package `src/wikinav`, fixtures và tests; phải bảo tồn cấu trúc đó. Không có `AGENTS.md` trong các đường dẫn đã kiểm tra. Không dựng lại repository hoặc coi nó còn trống.
 
 Package dự kiến `src/wikinav/` với `data`, `graph`, `models`, `evaluation`, `analysis`, `utils`; configs tách dataset/model/experiment; artifacts Parquet/CSR/JSON; notebooks chỉ exploration. Một shared candidate provider, một metric engine, model adapters không được đọc test.
 
-Dependencies ưu tiên Polars, NumPy, SciPy; NetworkX chỉ toy/small graph; matplotlib/seaborn cho scientific plots; pytest; Gensim chỉ khi mở Node2Vec; igraph nếu cần scalable component analysis. Không cần PyTorch/GPU, database server, Kubernetes hay distributed training.
+Backend hiện có dùng DuckDB embedded cho ingestion/Parquet joins, NumPy/SciPy CSR, matplotlib và `unittest`; core reference dùng standard library. Gensim dành cho Node2Vec P1 và chưa đạt gate training thật. Polars, NetworkX, seaborn và igraph là lựa chọn thay thế nếu có nhu cầu đo được, không cài thêm chỉ vì nằm trong đề xuất ban đầu. Không cần PyTorch/GPU hoặc database server.
 
 API, manifests, tests và compatibility gate ở [IMPLEMENTATION_ROADMAP](IMPLEMENTATION_ROADMAP.md).
 
@@ -122,6 +122,8 @@ Stop-the-line risks: graph có future information, test counts vào features, ca
 Resource risks xử lý bằng sparse matrices, bounded query evaluation, streaming và separate Node2Vec subgraph. Dataset failure dẫn đến fallback có đổi problem statement. Coverage thấp có thể là finding; không “sửa” bằng thêm edges từ test. Detailed register và feedback-to-action matrix ở [RISKS_AND_DEFENSE](RISKS_AND_DEFENSE.md).
 
 ## Phần 10 — Năm việc đầu tiên khi chuyển sang development
+
+Danh sách này là trình tự khởi đầu ban đầu; một phần đã có trong repository. Khi tiếp tục development, dùng năm việc còn lại ở [IMPLEMENTATION_STATUS](IMPLEMENTATION_STATUS.md#5-năm-việc-tiếp-theo-khi-chuyển-sang-development), tránh chạy lại ingestion hoặc mở test không cần thiết.
 
 1. **Khóa protocol v1:** edition, months, graph snapshot, candidate policy, query sampling seed, metrics, P0/P1 scope và release-lag disclaimer trong config/manifest.
 2. **Environment smoke test:** xác nhận RAM/CPU; thử lock dependencies trên Python 3.11/3.12 hoặc 3.13 nếu wheels tương thích; không cài mọi graph library cùng lúc.

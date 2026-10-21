@@ -2,6 +2,10 @@
 
 Protocol v1 đề xuất, 20/10/2026. Chưa có kết quả. Mọi quyết định cần khóa trước khi mở test được đánh dấu trong phần 11. Đọc cùng [dataset audit](DATASET_FEASIBILITY.md).
 
+**Cập nhật 21/10:** đây là specification; không phải mọi sensitivity/ablation đã được triển khai. [Config study hiện có](../configs/study.toml) chọn 200 queries (50 mỗi stratum 0/1–99/100–999/≥1000 training mass), degree 5–500 và induced outgoing closure 8.094 nodes/319.694 edges. Mọi graph method trong bảng study phải dùng subgraph này; global popularity vẫn tính từ toàn corpus train. Node2Vec dự kiến chọn knobs bằng seed 17, báo thêm seeds 29/43 với knobs cố định. Các lựa chọn đó thay thế đề xuất sample size/quartiles/seed-selection bên dưới cho run này; xem [DATA_AUDIT](DATA_AUDIT.md). Lần thử validation chưa hoàn tất, chưa có test results.
+
+**Gate trước benchmark:** reviewer phải đối chiếu config/code với specification, đặc biệt tie trong model selection (runner hiện giữ option đầu tiên khi metric bằng nhau, còn mục 7.2 đề xuất runtime rồi simplicity), scope của history ablation và fallback khi solver lỗi. Chốt một policy deterministic và ghi vào manifest trước test; không mô tả policy chưa thực thi như đã chạy. A5 chỉ bắt buộc khi báo Node2Vec; có thể bỏ cả cặp M5H/M5W trước test nếu backend không qua gate.
+
 ## 1. Task và ký hiệu
 
 Chọn **Task A: source-conditioned next-article ranking**. Input chỉ là article hiện tại, không có chuỗi `u1,…,ut` (Task B) hay danh tính/lịch sử user (Task C). Điều kiện của target là đã có điều hướng nội bộ thuộc `type=link`; không mô hình hóa stop/external search.
@@ -248,7 +252,7 @@ Không giả định improvement dương. Cùng split/candidates/queries/solver 
 | A10 P1 | Global authority giải thích PPR gain | Scorer | M2D/HITS-global/M3 | All + hub bins | Trả lời “why not HITS” |
 | A11 P1 | Fusion phụ thuộc scaling | L1 vs percentile | Same components, λ tuned val separately | Macro NDCG, runtime | Role of normalization |
 
-A7 source bins dùng thresholds/quantiles từ train, zero là nhóm riêng. Pair bins: `unobserved all train months`, observable low (positive count ≤train median), medium, high (>train p90); các thresholds fit trên training positive pairs. Có thể thêm per-month 11–20 band để xem gần suppression threshold, không gọi “all rare transitions”.
+A7 source bins dùng thresholds/quantiles từ train, zero là nhóm riêng. Pair bins: `unobserved all train months`, observable low (positive count ≤train median), medium, high (>train p90); các thresholds fit trên training positive pairs. Với release eswiki đã audit, có thể thêm per-month **10–20** band để xem gần suppression threshold, không gọi “all rare transitions”. Count cộng ba tháng không có cùng ý nghĩa với count một tháng; ghi cả số tháng pair được quan sát khi diễn giải low-frequency group.
 
 Pair-bin Recall tính numerator relevant items trong bin xuất hiện ở **original full ranking**, denominator các future observed targets thuộc bin; không lọc candidates theo bin rồi rerank. NDCG theo pair bin chỉ auxiliary với gain mask và IDCG tương ứng, phải giải thích không cùng estimand main table.
 

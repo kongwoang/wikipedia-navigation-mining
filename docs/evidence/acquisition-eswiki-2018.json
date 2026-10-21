@@ -1,0 +1,100 @@
+{
+  "content_snapshot": "2018-03-01",
+  "files": [
+    {
+      "actual_bytes": 35123848,
+      "bytes": 35123848,
+      "license": "CC0",
+      "name": "clickstream-eswiki-2018-01.tsv.gz",
+      "role": "train",
+      "sha256": "4131d738c34a32befda41620e30b89d2c083d7cab945ceae521428e037768fa8",
+      "url": "https://dumps.wikimedia.org/other/clickstream/2018-01/clickstream-eswiki-2018-01.tsv.gz",
+      "verified_at": "2026-10-21T00:53:26.460236+00:00"
+    },
+    {
+      "actual_bytes": 33883323,
+      "bytes": 33883323,
+      "license": "CC0",
+      "name": "clickstream-eswiki-2018-02.tsv.gz",
+      "role": "train",
+      "sha256": "8886d7d75c65470cc3da317a9d1f7244cc859e3468197b6278361e281fa5a91d",
+      "url": "https://dumps.wikimedia.org/other/clickstream/2018-02/clickstream-eswiki-2018-02.tsv.gz",
+      "verified_at": "2026-10-21T00:53:26.461279+00:00"
+    },
+    {
+      "actual_bytes": 37221600,
+      "bytes": 37221600,
+      "license": "CC0",
+      "name": "clickstream-eswiki-2018-03.tsv.gz",
+      "role": "train",
+      "sha256": "80ce9555307003dd6490f742e6b754309ae20504b173de5a9ab05e3d379f9724",
+      "url": "https://dumps.wikimedia.org/other/clickstream/2018-03/clickstream-eswiki-2018-03.tsv.gz",
+      "verified_at": "2026-10-21T00:53:26.465476+00:00"
+    },
+    {
+      "actual_bytes": 37817594,
+      "bytes": 37817594,
+      "license": "CC0",
+      "name": "clickstream-eswiki-2018-04.tsv.gz",
+      "role": "validation",
+      "sha256": "43025e1e975bbaaf453f56f686a7bf90e30c65e08901dca12a521ea7015e0bec",
+      "url": "https://dumps.wikimedia.org/other/clickstream/2018-04/clickstream-eswiki-2018-04.tsv.gz",
+      "verified_at": "2026-10-21T00:53:26.484390+00:00"
+    },
+    {
+      "actual_bytes": 39037289,
+      "bytes": 39037289,
+      "license": "CC0",
+      "name": "clickstream-eswiki-2018-05.tsv.gz",
+      "role": "test",
+      "sha256": "a6451093338b31cebb2dc97f5d4e7819c24ab97aa97d989f17aa4764ead24467",
+      "url": "https://dumps.wikimedia.org/other/clickstream/2018-05/clickstream-eswiki-2018-05.tsv.gz",
+      "verified_at": "2026-10-21T00:53:26.488760+00:00"
+    },
+    {
+      "actual_bytes": 36221902,
+      "bytes": 36221902,
+      "license": "CC0",
+      "name": "clickstream-eswiki-2018-06.tsv.gz",
+      "role": "test",
+      "sha256": "3ad57457df1a1f737466cf358f05dd2fa8a00f8df9456f35c0995be709d53fc2",
+      "url": "https://dumps.wikimedia.org/other/clickstream/2018-06/clickstream-eswiki-2018-06.tsv.gz",
+      "verified_at": "2026-10-21T00:53:26.493885+00:00"
+    },
+    {
+      "actual_bytes": 477431253,
+      "bytes": 477431253,
+      "license": "CC BY 4.0",
+      "md5": "9f56ab28f123837c1f998d313d676b09",
+      "name": "eswiki.wikilink_graph.2018-03-01.csv.gz",
+      "role": "historical_hyperlinks",
+      "sha256": "5d0fba8c8500cd1e273b4c46f2d34d780cd30df20187e8e015fcd33d32fd8122",
+      "url": "https://zenodo.org/records/2539424/files/eswiki.wikilink_graph.2018-03-01.csv.gz",
+      "verified_at": "2026-10-21T00:53:27.297096+00:00"
+    },
+    {
+      "actual_bytes": 92415686,
+      "checksum_source": "https://cricca.disi.unitn.it/datasets/wikilinkgraphs-resolved-redirects/eswiki/20180301/eswiki.resolved-redirects.sha512sums.txt",
+      "license": "CC BY 4.0",
+      "name": "eswiki.snapshot.resolve_redirect.2018-03-01.csv.gz",
+      "role": "historical_mapping",
+      "sha256": "201513b3c9cdd81b3614203460a3009f051cbfb23ed55982deca73a2d3895d0d",
+      "sha512": "b7eff2d5cd88ad0380caccbfd7ca294fb95e5cc38d52c39b14e7e01c19008d3c342aee9817009b448d2ec13aa833a1e4883d5a1393e99f1a2eace06d3daff898",
+      "url": "https://cricca.disi.unitn.it/datasets/wikilinkgraphs-resolved-redirects/eswiki/20180301/eswiki.snapshot.resolve_redirect.2018-03-01.csv.gz",
+      "verified_at": "2026-10-21T00:53:26.595333+00:00"
+    },
+    {
+      "actual_bytes": 38083785,
+      "bytes": 38083785,
+      "checksum_source": "https://cricca.disi.unitn.it/datasets/wikilinkgraphs-redirects/eswiki/20180301/eswiki.redirects.sha512sums.txt",
+      "license": "CC BY 4.0",
+      "name": "eswiki.redirects.20180301.csv.gz",
+      "role": "raw_historical_redirect_events",
+      "sha256": "4444d6da300b76d73cd825800ef9ba142abd734f73593ad974634ec5b3c2aa42",
+      "sha512": "8a4fda12e48379a516bde75b9c2dacdc7c229db2b8c00ee6ff8c41fa313937ae050741a540b30a6daf3fc24a265eeeee9f23c734000215f6bafc14aa3019ecb4",
+      "url": "https://cricca.disi.unitn.it/datasets/wikilinkgraphs-redirects/eswiki/20180301/eswiki.redirects.20180301.csv.gz",
+      "verified_at": "2026-10-21T00:53:26.539636+00:00"
+    }
+  ],
+  "note": "Downloaded held-out bytes are opaque; only evaluator may parse test labels."
+}

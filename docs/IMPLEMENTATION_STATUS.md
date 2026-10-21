@@ -1,125 +1,71 @@
-# Trạng thái triển khai — 20/10/2026
+# Trạng thái thực tế — 21/10/2026
 
-## 1. Phạm vi đã hoàn thành
+## 1. Phân biệt planning và thực nghiệm
 
-Đã triển khai **nền tảng correctness của P0**, với một workflow synthetic từ raw TSV đến predictions, ranking metrics và manifests. Chưa hoàn thành M1 dataset gate, pipeline Wikipedia thật hoặc toàn bộ P0 của đề tài. Bảy tài liệu kế hoạch vẫn là thiết kế đích, không phải mô tả tất cả chức năng hiện có.
+Bảy tài liệu planning đã có đầy đủ nội dung yêu cầu. Repository cũng đã có code, datasets cục bộ và một lần thử validation từ các lượt trước; không mô tả repository là rỗng hoặc chưa từng tải dữ liệu. **Chưa hoàn tất benchmark held-out, report kết quả thật hoặc demo đã kiểm chứng trên real predictions.**
 
-| Thành phần | Hiện trạng | Giới hạn |
+Trong lượt hoàn thiện planning này: kiểm tra repository, đọc manifests đã có, chạy tiny tests, sửa tài liệu và push. Không tải thêm raw datasets, không mở test labels thật và không chạy lại expensive experiments.
+
+## 2. Những gì có bằng chứng
+
+| Thành phần | Trạng thái | Bằng chứng / giới hạn |
 |---|---|---|
-| Protocol/config | TOML; kiểm tra train < validation < test, snapshot/mapping ≤ cutoff, fingerprint | Ngày mapping trong config là yêu cầu, chưa là bằng chứng đã có historical mapping |
-| Clickstream parser | UTF-8 TSV/TSV.gz, 4 trường, types, count int64, ngưỡng mặc định 11, line-size cap | Chưa audit file eswiki thật; không suy từ synthetic rằng schema release đã xác nhận |
-| Prefix audit | Count/type summary, duplicates, scope, EOF/gzip status | Tối đa 100.000 dòng; có thể đọc thêm 1 record để xác định truncation; không representative |
-| Normalization | Unicode NFC, underscore → space, giữ case/accents/literal `%`/`#` | Không phải redirect resolver; không tự URL-decode hoặc heuristic merge |
-| Training bundle | Loại non-link/pseudo/unmapped/self-loops, ledger rows/mass, aggregate aliases/tháng, immutable counts | Nhận mapping lịch sử từ bên ngoài; tối đa 100.000 records |
-| Hyperlink graph | Directed, immutable nodes/edges, provenance hash, candidates cố định, self-loop rejection | Reference graph ≤10.000 nodes/100.000 edges; chưa có WLG ingestion |
-| Models | 9 scorers, shared ranking/tie policy, hyperparameter fingerprints | Config cố định cho correctness; chưa validation search |
-| Metrics | Full/conditional Recall, MRR, log-gain NDCG, massRecall, ExpectedRR; macro/weighted; coverage | Observable-label metrics; không diễn giải missing là zero |
-| Statistical API | Paired source bootstrap với CI percentile | Chưa wiring thành experiment CLI; source independence chỉ là approximation |
-| Reproducibility | Input/config/code/model/candidate hashes; exclusive output; completion marker | Không thay thế dependency lock cho backend tương lai |
-| Tests | 57 unit/integration tests đạt | Chưa CI remote; chưa cross-version/cross-platform |
+| Planning | Hoàn thiện | 7 docs, 10 phần master plan, feedback matrix, 25 defense questions |
+| Core reference | Đã kiểm tra | 57 tests; directed graph, aggregation, PPR analytic oracle, ranking metrics, no-leakage, synthetic pipeline |
+| Sparse data pipeline | Đã có code và preparation artifact | DuckDB/Parquet, historical redirects, train-only sampling, SciPy CSR; manifest đính kèm |
+| Full test suite | 69 tests đạt ngày 21/10 | Python 3.13.13/macOS arm64; tiny synthetic data; không phải real benchmark |
+| Historical mapping | Đã dựng lại từ raw event history | Supplied resolved targets không dùng trực tiếp; có dangling/title-move/extraction limitations |
+| Real-data sample | Đã chuẩn bị | 200 queries; 8.094 nodes; 319.694 edges; không full-graph PPR |
+| Validation | Đã chạy một phần, chưa benchmark-ready | `results/study-v1` có cache và validation audit; run chưa hoàn tất |
+| Node2Vec | Chưa qua real-data gate | Native warning của Gensim; toy embedding tests pass không đủ |
+| Held-out evaluation | Chưa có artifact hoàn chỉnh | Không có `freeze.json`, `test_results.json`, `completion.json` của real study-v1 ở lần kiểm tra này |
+| Report/demo/CI | Chưa xác minh hoàn chỉnh | Có code/draft cục bộ, không tuyên bố real-model demo hoặc CI đã pass |
+| Git publishing | Git CLI hoạt động | Remote main trước lượt này là `de87341`; dùng commit cập nhật docs tiếp theo |
 
-## 2. Models và hành vi cần biết
+## 3. Kiến trúc hiện có và môi trường
 
-| ID | Scoring/transition input | Hành vi |
-|---|---|---|
-| M0 | Global training inbound counts | Score chỉ trên candidates chung |
-| M1 | Local training counts/total outgoing observed counts | Nếu không có eligible observed destination, backoff về M0; không thêm pseudo-click |
-| M1B | Local counts + Dirichlet prior | `mu`, `eta`; prior phối uniform và global popularity có epsilon=1 |
-| M2 | Candidate set | Uniform; tie bằng SHA256(seed, source, target) |
-| M2D | In-degree của H | Không sử dụng click weights |
-| M3 | Unweighted H | Source-seeded PPR, candidate filtering sau propagation |
-| M4C | Training click graph C trên frozen V | Behavior-only transitions; hỗ trợ cạnh C ngoài H khi propagation |
-| M4CH | C ∩ H | Control về support; thiếu observed click không được xem là measured zero |
-| M6B | M1B + M3 | L1-normalize topology trên candidates rồi convex fusion; λ=1 là M1B, λ=0 là PPR order |
+Core `src/wikinav/{config,data,graph,models,ranking,evaluation,pipeline,utils}.py` tách mathematical contracts và orchestration. Backend study có `sources.py`, `redirects.py`, `study_data.py`, `sparse_models.py`, `embeddings.py`, `experiment.py`, `analysis.py`. Không cần tái cấu trúc thành hàng chục package rỗng để khớp cây đề xuất trong roadmap.
 
-`fit(train, graph)` nhận `TrainBundle`, `score(source, candidates)` trả mapping target → finite score. `recommend(source, candidates, k, seed)` dùng cùng ranking helper. Caller phải truyền candidate set từ frozen graph; pipeline thực hiện điều này và evaluator từ chối prediction ngoài set.
+- Python 3.13.13, macOS arm64; RAM ~18 GiB. Không yêu cầu GPU.
+- Ingestion dùng DuckDB embedded thay Polars; không có database server.
+- Config TOML đọc bằng `tomllib`; tests dùng `unittest`.
+- Scientific environment cục bộ có NumPy 2.3.5, SciPy 1.16.3, Gensim 4.4.0, DuckDB 1.5.6. Lockfile đang có thay đổi thử nghiệm chưa được coi là production-ready.
+- Packaging/editable install, cross-platform CI và clean full reproduction chưa được xác nhận.
 
-PPR dùng power iteration trên dictionary sparse để làm **reference oracle**. Với damping `d`, trả vector khi absolute fixed-point L1 residual ≤ tolerance và ghi bound `residual / (1-d)`. Không dùng default tolerance nhân với số nodes. Dangling mass trở về source. Nếu hết iteration budget, solver báo `ConvergenceError`; runner ghi rõ fallback uniform và số query bị fallback, không âm thầm coi là solver thành công.
-
-PPR reference mỗi source cần khoảng `O(I·(|V|+|E|))` phép tính; implementation còn có sorting overhead. Cache chỉ giữ candidate scores và diagnostics theo query, không giữ bảng dense source × mọi node. Giới hạn kích thước bảo vệ smoke/reference run, không phải cam kết thời gian chạy ở giới hạn tối đa.
-
-## 3. Bằng chứng kiểm tra
-
-Các lệnh đã chạy thành công:
+Lệnh kiểm tra đã chạy trong lượt này:
 
 ```bash
-PYTHONPATH=src python3 -m unittest discover -s tests -v
-python3 -m venv .venv
 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests
-PYTHONPATH=src .venv/bin/python -m wikinav toy-run --output results/toy-smoke
-PYTHONPATH=src .venv/bin/python -m wikinav audit-clickstream tests/fixtures/toy/2018-01.tsv --month 2018-01 --max-rows 3
 ```
 
-- **57 tests đạt** trên Python 3.13.13, macOS arm64, cả interpreter sẵn có và virtual environment riêng không cài dependencies.
-- PPR được đối chiếu nghiệm analytic của two-cycle và directed chain có dangling node; residual được tính lại từ vector trả về.
-- Metrics được kiểm tra bằng ví dụ tính tay, perfect ranking, randomized boundedness, out-of-candidate positives, empty candidate set và no-label cases.
-- Integration thay test labels nhưng giữ nguyên train/H/config: `freeze.json` và `predictions.json` không đổi.
-- Instrumented read kiểm tra `freeze.json` và `predictions.json` đã tồn tại trước lần đầu đọc test file.
-- Hai lần chạy cùng input cho các artifacts deterministic giống nhau. `completion.json` có timestamp/timing riêng nên không yêu cầu byte-identical.
-- Gzip bị cắt, raw duplicate, count overflow, malformed mapping, future snapshot, held-out rows trong fit, invalid ranking và overwrite output đều bị từ chối.
+Kết quả: `Ran 69 tests ... OK`. Test integration dùng raw fixtures tổng hợp; một số log in `validation NDCG=...` thuộc fixture, không phải benchmark Wikipedia. Không trích chúng vào report kết quả.
 
-Smoke run ghi nhận **9 models, 6 query sources**. Fixture có 5 sources với future labels và 4 sources với eligible labels; 8 observed positive pairs, trong đó 5 pairs thuộc candidates; tổng label mass 119, eligible mass 72. Đây là giá trị **được thiết kế trong dữ liệu tổng hợp để kiểm thử denominator/coverage**, không phải thống kê Wikipedia và không cho phép kết luận model nào tốt hơn.
+## 4. Các gate còn mở
 
-Artifacts cục bộ nằm ở `results/toy-smoke/` và bị `.gitignore` loại khỏi Git. Không cần commit output: fixtures, config và code đủ tái tạo run.
+### Backend Node2Vec
 
-| Artifact | Nội dung kiểm chứng |
-|---|---|
-| `freeze.json` | Protocol, input/code/config/model hashes, queries, candidate hash, fixed settings |
-| `predictions.json` | Rankings, candidate scores, status và fallback reason trước khi đọc test |
-| `source_metrics.json` | Từng source, full/conditional metrics, labels/candidate counts và mass |
-| `metrics.json` | Aggregation và coverage của từng model; synthetic flag |
-| `coverage.json` | Training attrition ledger; held-out eligibility/out-of-universe ledger |
-| `ppr_diagnostics.json` | Iterations, fixed-point residual, residual curve và error bound |
-| `completion.json` | Run thành công, môi trường, elapsed time, test hash, output checksums |
+Lần thử study-v1 gặp `Exception ignored in: 'gensim.models.word2vec_inner.our_dot_float'` và bị dừng trước held-out evaluation. Local Gensim source có typedef BLAS dot dùng `except -1 nogil`; đó là đầu mối cần kiểm tra vì dot product có thể hợp lệ bằng -1. Chưa có patched build và regression test chứng minh nguyên nhân/fix hoàn chỉnh. Không gọi hạ NumPy/SciPy version là đã sửa lỗi.
 
-## 4. Điều chỉnh kiến trúc so với kế hoạch
+Khi vào development: ưu tiên upstream fix hoặc audited patch có pinned source/hash/build instructions; kiểm tra negative-dot regression, finite vectors/loss, stderr và repeatability. Nếu không xử lý trong budget, loại **cả** M5H/M5W và A5 trước test, ghi lý do. P0 frequency/topology/PPR/fusion vẫn trả lời research question; không chuyển dataset chỉ vì optional embedding backend lỗi.
 
-Khi triển khai reference layer, môi trường có Python nhưng chưa có NumPy/SciPy/Polars/pytest/Gensim; shell lúc đó không resolve được host tải dữ liệu. Vì vậy dùng standard library và `unittest` để có thể chạy, kiểm tra và review ngay.
+### Protocol/code consistency
 
-Đây là quyết định triển khai theo giai đoạn:
+- Config study dùng 200 stratified queries và shared induced graph; thay các con số pilot đề xuất trong kế hoạch, không suy rộng population average.
+- Runner hiện chọn option đầu tiên khi validation metric bằng nhau; specification ban đầu đề xuất runtime rồi simplicity. Phải chốt policy và manifest trước test.
+- Solver failure policy, convergence tolerance và history controls cần review cùng evaluator. Không tự loại failed sources.
+- Validation audit có node mapping ledger nhưng chưa thay thế candidate pair/mass coverage table trên query sample.
+- Giữ `study-v1` là incomplete diagnostic run; không dùng làm final benchmark, không trộn cache khi code/dependency signature khác. Run mới cần output mới và provenance.
 
-1. Giữ mathematical contracts, candidate policy và metric oracles độc lập backend.
-2. Thêm Polars/Parquet ingestion và SciPy CSR sau khi dependency/resource gate đạt.
-3. Đối chiếu sparse backend với reference trên cùng toy graphs trước benchmark thật.
-4. Khóa versions sau khi cài và test thành công; chưa tạo lockfile chứa version chưa kiểm tra.
+### Trạng thái working tree khi bàn giao planning
 
-TOML thay YAML ở core để đọc bằng `tomllib` có sẵn từ Python 3.11. Các interfaces và nội dung protocol không đổi. `pyproject.toml` khai báo package và console entry point; workflow đã kiểm tra dùng `PYTHONPATH=src`. Build/editable installation qua setuptools chưa được kiểm tra.
+Các thay đổi code/dependency từ lượt trước được giữ nguyên để không mất công việc: `.gitignore`, `requirements-study.lock`, `src/wikinav/analysis.py`, `src/wikinav/experiment.py`, `.github/`, `scripts/`, `src/wikinav/demo.py`. Chúng chưa được đưa vào commit tài liệu này và chưa được quảng bá là pipeline hoàn chỉnh. Git history đã có code nền ở `96fb16e` và `de87341`.
 
-Các file chính:
+## 5. Năm việc tiếp theo khi chuyển sang development
 
-```text
-configs/eswiki_2018.toml
-src/wikinav/
-  cli.py           doctor, validate-config, audit-clickstream, toy-run
-  config.py        temporal protocol và hashes
-  data.py          parser, normalization, bounded training bundle
-  graph.py         directed graph, candidates, transition rows
-  models.py        reference scorers và PPR
-  ranking.py       candidate restrictions và deterministic ties
-  evaluation.py    metrics, aggregation, paired bootstrap
-  pipeline.py      synthetic workflow và artifact freeze
-  utils.py         canonical serialization/checksums/exclusive writes
-tests/test_core.py
-tests/fixtures/toy/
-```
+1. **P0 — Review/freeze protocol:** đối chiếu spec/config/runner, ghi model-selection tie, candidate/failure rules, independent graph provenance; kiểm tra validation candidate coverage. Done: một protocol manifest không còn policy mâu thuẫn.
+2. **P0/P1 — Chốt environment:** kiểm chứng sparse backend và giải quyết/loại Node2Vec theo gate; pin dependency và provenance. Done: tiny regression tests đạt và backend được chọn có smoke evidence phù hợp.
+3. **P0 — Hoàn tất train/validation diagnostics:** EDA theo inventory, coverage/boundary tables, PPR residual, hyperparameter/history curves, timing/RSS. Done: mỗi model có rationale và resource budget; chưa đọc test để tuning.
+4. **P0 — Freeze rồi evaluate một lần:** lưu config/code/data hashes và predictions trước khi evaluator mở May/June labels; xuất common-source metrics, full/conditional coverage, paired bootstrap. Done: completion manifest và tables tái lập được; run thất bại không trộn vào kết quả.
+5. **P0 — Phân tích và bảo vệ:** viết report 17 sections, 6–8 systematic cases, limitations/negative results, presentation/demo đọc real artifacts; clean rerun. Done: claim–evidence review đạt, không có fabricated findings.
 
-## 5. Blockers và thứ tự làm tiếp
-
-| Ưu tiên | Việc tiếp theo | Điều kiện hoàn thành |
-|---|---|---|
-| P0 | Xác minh historical page/redirect inventory cho graph 2018-03-01 | Nguồn, timestamp, checksum, namespace/redirect semantics đủ để bảo vệ canonical join; nếu không có, chốt fallback theo kế hoạch |
-| P0 | Audit real Clickstream và WikiLinkGraphs bằng mẫu giới hạn | Schema/header/delimiter/type/count được kiểm tra từ file; lưu manifest, không dùng prefix để ước lượng quality toàn graph |
-| P0 | Thiết lập scalable dependencies và resource pilot | Lock versions thật; streaming/Parquet/CSR; đo RSS/time; đối chiếu reference |
-| P0 | Canonical mapping + real-data pilot coverage/EDA | Ledger reconciliation, graph–click edge match, unobserved semantics, same candidates; chốt dataset go/no-go |
-| P0 | Validation tuner và frozen experiment runner | Chỉ đọc train/validation khi chọn knobs; tự sinh sensitivity/diagnostic tables; khóa trước test thật |
-
-Không tải full datasets, training Node2Vec hoặc chạy grid search trước các bước trên. Graph snapshot và node inventory phải độc lập held-out click transitions.
-
-### Tình trạng truy cập
-
-- Phiên ban đầu gặp lỗi DNS qua shell và lỗi `403 Resource not accessible by integration` khi ghi qua GitHub integration.
-- Sau khi môi trường được cấp network access, kiểm tra lại ngày 20/10/2026 bằng Git CLI đã truy cập được `kongwoang/wikipedia-navigation-mining`. Remote chưa có refs tại lần kiểm tra trước initial commit. Sử dụng Git CLI để quản lý và push repository.
-- Chưa tải/cài dependency từ mạng, chưa có real-data pilot. Kết nối GitHub thành công không xác nhận nguồn dữ liệu hoặc historical mapping đã truy cập/kiểm chứng được.
-- Smoke run được tạo trước initial Git commit nên manifest dùng code-content hash. Khi bổ sung experiment runner thật, ghi cả commit SHA và dirty-worktree status bên cạnh content hash.
-
-Dataset gate vẫn chưa hoàn tất. Không coi tests synthetic đạt là bằng chứng dữ liệu thật hoặc phương pháp thực nghiệm đã hợp lệ.
+Hoàn thành planning không đồng nghĩa hoàn thành các bước development này. Các mốc 6–8 tuần trong roadmap là effort dự kiến, không phải lịch chạy đã diễn ra.

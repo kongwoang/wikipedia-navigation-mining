@@ -58,6 +58,8 @@ Không tự điền DOI/page ranges còn thiếu. Các bibliography entries này
 
 **L1 liên quan trực tiếp synthetic navigation và first-order limitation.** Kết quả downstream của paper không cấp phép gọi walks sinh từ aggregate counts là “sessions người dùng thực”. Code repository cũng ghi không chia sẻ navigation sequences sử dụng trong công trình cho công chúng. Không đưa private data vào dependencies.
 
+Kiểm tra lại [L1, §6.1 và §7.2](https://arxiv.org/html/2201.00812) ngày 21/10 xác nhận order-2 Markov trên triples cho next-article/MRR; paper cũng nêu khả năng bổ sung unweighted hyperlink graph khi privacy filtering làm mất nhiều links. Vì vậy cả ý tưởng dùng topology để hỗ trợ censored click data đã có trong prior work; contribution của dự án phải là protocol và phân tích thực nghiệm cụ thể, không claim ý tưởng kết hợp này là mới.
+
 **L5 và L8 giới hạn external validity.** Một bên natural browsing, một bên đi tìm goal được chỉ định. Mọi fallback phải giữ khác biệt về mục tiêu hành động và sampling population.
 
 **L6/L7/L9 làm rõ mục đích embedding.** “Representations tốt” cho semantics/classification không tự kéo theo tốt cho next-article ranking. Đó là hypothesis M5 phải kiểm tra, không là lý do bỏ strong frequency baseline.
