@@ -87,10 +87,17 @@ def train_embedding(data, matrix, *, dimension=32, p=1.0, q=1.0, seed=17,
     model = Word2Vec(vector_size=dimension, window=window, min_count=1, workers=1,
                      sg=1, negative=negative, hs=0, sample=0, seed=seed,
                      hashfxn=stable_hash, shrink_windows=False, sorted_vocab=1)
+    from gensim.models.word2vec_inner import _wikinav_negative_dot_check
+    if _wikinav_negative_dot_check() != -1.0:
+        raise RuntimeError("Install verified backend: python scripts/install_gensim_fix.py")
     model.build_vocab(corpus)
     model.train(corpus, total_examples=len(corpus), epochs=epochs, compute_loss=True,
                 callbacks=[callback])
     vectors = np.stack([model.wv[str(i)] for i in range(len(data.ids))])
+    if not np.isfinite(vectors).all():
+        raise ArithmeticError("Nonfinite embedding vectors")
+    if not all(np.isfinite(r["epoch_loss_delta"]) and r["epoch_loss_delta"] >= 0 for r in callback.history):
+        raise ArithmeticError("Invalid SGNS loss diagnostics")
     norms = np.linalg.norm(vectors, axis=1, keepdims=True)
     normalized = np.divide(vectors, norms, out=np.zeros_like(vectors), where=norms>0)
     scores = {s: normalized[data.candidates(s)] @ normalized[s] for s in data.queries}

@@ -67,14 +67,14 @@ def solve_ppr(matrix, source, damping=0.5, tolerance=1e-8, max_iterations=1000):
     raise ConvergenceError(f"Sparse PPR residual {residual} exceeds {tolerance}")
 
 
-def ppr_scores(data, matrix, damping, tolerance=1e-8):
+def ppr_scores(data, matrix, damping, tolerance=1e-8, max_iterations=1000):
     scores, diagnostics = {}, {}
     for source in data.queries:
         candidates = data.candidates(source)
         if len(candidates) == 0:
             scores[source], diagnostics[source] = np.empty(0), {"status": "empty_candidates"}
             continue
-        r, diagnostic = solve_ppr(matrix, source, damping, tolerance)
+        r, diagnostic = solve_ppr(matrix, source, damping, tolerance, max_iterations)
         scores[source] = r[candidates]
         diagnostics[source] = diagnostic
     return scores, diagnostics

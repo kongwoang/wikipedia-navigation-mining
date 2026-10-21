@@ -1,0 +1,14 @@
+{
+  "queries": 200,
+  "q_all": 126,
+  "q_conditional": 124,
+  "label_pairs": 1173,
+  "label_mass": 67884,
+  "eligible_pairs": 1099,
+  "eligible_mass": 65430,
+  "pair_candidate_coverage": 0.9369138959931799,
+  "mass_candidate_coverage": 0.9638500972246774,
+  "period": "2018-04",
+  "purpose": "pre-test candidate feasibility; empty rankings only for coverage accounting",
+  "test_labels_read": false
+}

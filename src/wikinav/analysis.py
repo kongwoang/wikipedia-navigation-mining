@@ -12,7 +12,7 @@ import numpy as np
 from scipy.sparse import csgraph
 from scipy.stats import spearmanr
 
-from .evaluation import evaluate_source, aggregate_results
+from .evaluation import evaluate_source, aggregate_results, paired_bootstrap
 from .experiment import save_table
 from .study_data import load_study, connection
 from .utils import file_digest, write_json
@@ -86,7 +86,7 @@ def generate(prepared: Path, run: Path, output: Path):
     axs[0].set(xscale='log',yscale='log',xlabel='Full in-degree + 1',ylabel='Training inbound mass + 1')
     top=[]
     for s in data.queries:
-        vals=data.counts[s].data; top.append(float(vals.max()/vals.sum()) if vals.size else 0)
+        vals=data.counts[s].data; top.append(float(vals.max()/vals.sum()) if vals.size else np.nan)
     axs[1].scatter(degree[data.queries],top,s=15,alpha=.6)
     axs[1].set(xlabel='Query out-degree',ylabel='Largest observed destination share')
     finish('03_topology_traffic','Structural popularity is compared with observed traffic; per-query click concentration motivates local baselines.')
@@ -180,13 +180,18 @@ def generate(prepared: Path, run: Path, output: Path):
                               'std_sample':float(np.std(values,ddof=1)),'min':min(values),'max':max(values)})
     save_table(tables/'embedding_seed_stability.csv',seed_rows)
     fig,ax=plt.subplots(figsize=(8,4))
+    costs=[]
     for model in MAIN:
         seconds=diagnostics[model].get('wall_seconds')
+        if model == 'M6B_fusion':
+            seconds += sum(diagnostics[m]['wall_seconds'] for m in ('M1B_backoff','M3_ppr_h'))
+        costs.append({'model':model,'selected_preparation_scoring_seconds':seconds})
         if seconds and seconds>0:
             value=results[first_month][model]['all']['ndcg@10']['macro']
             ax.scatter(seconds,value,s=25); ax.annotate(model,(seconds,value),fontsize=6,xytext=(3,3),textcoords='offset points')
     ax.set(xscale='log',xlabel='Selected configuration preparation + scoring seconds',ylabel='Test full macro NDCG@10')
-    finish('09_cost_accuracy','Cached selected configuration cost excludes tuning and ingestion; global baselines include only scoring in this shared preprocessed pipeline.')
+    finish('09_cost_accuracy','Selected configuration cost excludes tuning and ingestion; score fusion includes both component computations; shared data preparation is excluded for all models.')
+    save_table(tables/'runtime.csv',costs)
     graph_stats={'nodes':n,'edges':int(data.adjacency.nnz),'dangling_nodes':int((degree==0).sum()),
                  'reciprocity':float(data.adjacency.multiply(data.adjacency.T).sum()/data.adjacency.nnz)}
     for kind in ('strong','weak'):
@@ -200,6 +205,78 @@ def generate(prepared: Path, run: Path, output: Path):
     if not graph_stats['query_candidate_preservation']:
         raise ValueError('Query candidates were truncated')
     write_json(output/'graph_statistics.json',graph_stats)
+    # Analysis uses frozen predictions; it never feeds back into model selection.
+    group_audit=[]; group_contrasts=[]
+    for month in sources:
+        reference={r['source']:r for r in sources[month]['M1B_backoff']}
+        for axis in ('traffic','degree'):
+            assignments=groups if axis=='traffic' else {data.ids[s]:('5-19' if degree[s]<20 else '20-99' if degree[s]<100 else '100-500') for s in data.queries}
+            for group in sorted(set(assignments.values())):
+                members={s for s,g in assignments.items() if g==group}
+                rows=[reference[s] for s in members]
+                total=sum(r['label_mass'] for r in rows)
+                group_audit.append({'month':month,'axis':axis,'group':group,'sampled_sources':len(rows),
+                    'observable_sources':sum(r['label_mass']>0 for r in rows),
+                    'conditional_sources':sum(r['eligible_mass']>0 for r in rows),
+                    'label_pairs':sum(r['label_pairs'] for r in rows),'label_mass':total,
+                    'candidate_mass_coverage':sum(r['eligible_mass'] for r in rows)/total if total else None})
+                for model in ('M3_ppr_h','M6B_fusion'):
+                    left={r['source']:r['all_metrics']['ndcg@10'] for r in sources[month][model]
+                          if r['source'] in members and r['all_metrics']['ndcg@10'] is not None}
+                    right={key:reference[key]['all_metrics']['ndcg@10'] for key in left}
+                    if left:
+                        contrast=paired_bootstrap(left,right,seed=2026,resamples=2000)
+                        group_contrasts.append({'month':month,'axis':axis,'group':group,'model':model,
+                            'sources':len(left),'delta_vs_markov':contrast['difference'],
+                            'ci_low':contrast['ci95'][0],'ci_high':contrast['ci95'][1]})
+    save_table(tables/'group_coverage.csv',group_audit)
+    save_table(tables/'subgroup_paired_bootstrap.csv',group_contrasts)
+    # Training distributions only, including all observed targets of frozen queries.
+    monthly={m:{} for m in ('2018-01','2018-02','2018-03')}
+    for m,source,target,count in con.execute('SELECT t.month,t.s,t.t,t.n FROM train_monthly t JOIN queries q ON t.s=q.s').fetchall():
+        monthly[m].setdefault(str(source),{})[str(target)]=int(count)
+    concentration=[]; drift=[]
+    for source in [data.ids[s] for s in data.queries]:
+        counts=sorted([n for (u,v),n in train_pairs.items() if u==source],reverse=True)
+        mass=sum(counts)
+        concentration.append({'source':source,'train_mass':mass,'observed_destinations':len(counts),
+            **{f'top{k}_share':sum(counts[:k])/mass if mass else None for k in (1,5,10)}})
+        for first,last in (('2018-01','2018-02'),('2018-02','2018-03')):
+            a,b=monthly[first].get(source,{}),monthly[last].get(source,{})
+            if not a or not b: continue
+            keys=sorted(a.keys()|b.keys()); pa=np.array([a.get(k,0) for k in keys],float); pb=np.array([b.get(k,0) for k in keys],float)
+            pa/=pa.sum();pb/=pb.sum(); mix=(pa+pb)/2
+            js=.5*sum(float((x[x>0]*np.log2(x[x>0]/mix[x>0])).sum()) for x in (pa,pb))
+            drift.append({'source':source,'months':first+' to '+last,'js_divergence_bits':js,
+                          'observed_edge_jaccard':len(a.keys()&b.keys())/len(keys)})
+    save_table(tables/'training_concentration.csv',concentration);save_table(tables/'training_drift.csv',drift)
+    fig,axs=plt.subplots(1,2,figsize=(10,3.7))
+    for k in (1,5,10):
+        vals=sorted(r[f'top{k}_share'] for r in concentration if r[f'top{k}_share'] is not None)
+        axs[0].plot(vals,np.arange(1,len(vals)+1)/len(vals),label=f'Top {k}')
+    axs[0].set(xlabel='Share of published training mass',ylabel='Empirical CDF (observable sources)');axs[0].legend()
+    for months in sorted({r['months'] for r in drift}):
+        vals=sorted(r['js_divergence_bits'] for r in drift if r['months']==months)
+        axs[1].plot(vals,np.arange(1,len(vals)+1)/len(vals),label=months)
+    axs[1].set(xlabel='Jensen–Shannon divergence (bits)',ylabel='CDF (observed in both months)');axs[1].legend(fontsize=8)
+    finish('10_concentration_and_drift','All observed training targets of fixed queries; missing mass remains censored. Monthly JSD is descriptive, not a test of user-level behavioral drift.')
+    fig,ax=plt.subplots(figsize=(6,3.7))
+    mus=sorted({json.loads(r['parameters'])['mu'] for r in trials if r['model']=='M1B_backoff'})
+    etas=sorted({json.loads(r['parameters'])['eta'] for r in trials if r['model']=='M1B_backoff'})
+    values=np.array([[next(float(r['validation_macro_ndcg_all@10']) for r in trials if r['model']=='M1B_backoff' and json.loads(r['parameters'])=={'mu':mu,'eta':eta}) for eta in etas] for mu in mus])
+    im=ax.imshow(values,aspect='auto',cmap='viridis');fig.colorbar(im,ax=ax,label='Validation full macro NDCG@10')
+    ax.set(xticks=range(len(etas)),xticklabels=etas,yticks=range(len(mus)),yticklabels=mus,xlabel='Global-prior mixing eta',ylabel='Smoothing mass mu')
+    finish('11_markov_tuning','All declared backoff configurations; ties keep first grid option. Uniform smoothing alone does not reorder distinct local counts.')
+    hubs=[]
+    for model in MAIN:
+        recommended=[idx[t] for pred in predictions[model].values() for t in pred['ranked'][:10]]
+        unique,counts=np.unique(recommended,return_counts=True)
+        for i in np.argsort(counts)[-5:][::-1]:
+            target=int(unique[i]);hubs.append({'model':model,'target':data.ids[target],'title':data.titles[target],
+                'top10_appearances':int(counts[i]),'induced_indegree':int(indegree[target]),
+                'full_training_inbound_mass':int(data.features['popularity'][target])})
+    save_table(tables/'recommended_hubs.csv',hubs)
+
     # Deep cases selected descriptively after test; selection is not evidence of average gains.
     by_source={model:{r['source']:r for r in sources[first_month][model]} for model in MAIN}
     valid=[s for s in groups if by_source['M1B_backoff'][s]['all_metrics']['ndcg@10'] is not None]
@@ -210,13 +287,23 @@ def generate(prepared: Path, run: Path, output: Path):
                ('Hybrid_failure',lambda s:max(metric('M1B_backoff',s),metric('M3_ppr_h',s))-metric('M6B_fusion',s)),
                ('Many_links',lambda s:degree[idx[s]]),('Low_traffic',lambda s:-data.features['traffic'][idx[s]])]
     labels_all={month:read(f'labels-{month}.json') for month in results}
-    cases=[]; chosen=set()
+    outside_ids=sorted({int(t) for labels in labels_all.values() for row in labels.values() for t in row if t not in idx and t.isdigit()})
+    outside_titles=dict(con.execute('SELECT id,title FROM pages WHERE id IN ('+','.join(map(str,outside_ids))+')').fetchall()) if outside_ids else {}
+    cases=[]; chosen=set(); absent_cases=[]
     for reason,key in selectors:
         available=[s for s in valid if s not in chosen]
         if not available: break
-        source=max(sorted(available),key=key); chosen.add(source)
+        source=max(sorted(available),key=key)
+        if reason in ('PPR_gain','Markov_gain','Hybrid_gain','Hybrid_failure') and key(source)<=0:
+            absent_cases.append(reason); continue
+        chosen.add(source)
         cases.append({'reason':reason,'source':source,'title':data.titles[idx[source]],'selection_value':float(key(source))})
+    remaining=[s for s in valid if s not in chosen]
+    if remaining:
+        source=min(remaining,key=lambda s:__import__('hashlib').sha256(('2026:'+s).encode()).hexdigest())
+        cases.append({'reason':'Fixed_hash_example','source':source,'title':data.titles[idx[source]],'selection_value':None})
     write_json(output/'case_selection.json',cases)
+    write_json(output/'absent_case_categories.json',absent_cases)
     payload={'scope':data.manifest['scope'],'snapshot':'2018-03-01','train':['2018-01','2018-02','2018-03'],
              'months':list(results),'models':MAIN,'cases':cases,'queries':[]}
     for s in data.queries:
@@ -226,12 +313,13 @@ def generate(prepared: Path, run: Path, output: Path):
         payload['queries'].append({'id':node,'title':data.titles[s],'degree':int(degree[s]),
             'traffic':int(data.features['traffic'][s]),'group':groups[node],
             'predictions':{model:predictions[model][node] for model in MAIN},
-            'destinations':{target:{'title':data.titles[idx[target]] if target in idx else target.removeprefix('oov:'),
+            'destinations':{target:{'title':data.titles[idx[target]] if target in idx else outside_titles.get(int(target),target) if target.isdigit() else target.removeprefix('oov:'),
                 'hyperlink':target in candidates,'train_count':train_pairs.get((node,target),0),
                 'future':{month:labels_all[month].get(node,{}).get(target,0) for month in labels_all}} for target in sorted(destinations)},
             'metrics':{month:{model:{'all':next(r for r in sources[month][model] if r['source']==node)['all_metrics'],
                                    'conditional':next(r for r in sources[month][model] if r['source']==node)['conditional_metrics']}
                               for model in MAIN} for month in results}})
+    payload['provenance']={'config_sha256':freeze['signature']['config'],'predictions_sha256':file_digest(run/'predictions.json')}
     write_json(output/'demo_data.json',payload)
     write_json(output/'figure_inventory.json',inventory)
     write_json(output/'summary.json',{'scope':data.manifest['scope'],'coverage':coverage,'graph':graph_stats,
@@ -246,6 +334,6 @@ if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser()
     parser.add_argument('--prepared',type=Path,default=Path('data/processed/study-v2'))
-    parser.add_argument('--run',type=Path,default=Path('results/study-v1'))
+    parser.add_argument('--run',type=Path,default=Path('results/study-v2'))
     parser.add_argument('--output',type=Path,default=Path('reports/generated'))
     args=parser.parse_args(); generate(args.prepared,args.run,args.output)

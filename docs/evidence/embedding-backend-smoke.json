@@ -1,0 +1,47 @@
+{
+  "shape": [
+    8094,
+    32
+  ],
+  "diagnostics": {
+    "seconds": 6.477506833994994,
+    "walks": 24282,
+    "tokens": 460241,
+    "seed": 17,
+    "dimension": 32,
+    "p": 1.0,
+    "q": 1.0,
+    "loss": [
+      {
+        "epoch": 1,
+        "cumulative_sgns_loss": 9498454.0,
+        "epoch_loss_delta": 9498454.0
+      },
+      {
+        "epoch": 2,
+        "cumulative_sgns_loss": 16214983.0,
+        "epoch_loss_delta": 6716529.0
+      },
+      {
+        "epoch": 3,
+        "cumulative_sgns_loss": 22878678.0,
+        "epoch_loss_delta": 6663695.0
+      },
+      {
+        "epoch": 4,
+        "cumulative_sgns_loss": 29583604.0,
+        "epoch_loss_delta": 6704926.0
+      },
+      {
+        "epoch": 5,
+        "cumulative_sgns_loss": 34955440.0,
+        "epoch_loss_delta": 5371836.0
+      }
+    ],
+    "norm_min": 0.08012647181749344,
+    "norm_max": 3.9583792686462402,
+    "workers": 1,
+    "loss_semantics": "cumulative within one train() call; epoch deltas auxiliary SGNS loss",
+    "directed_convention": "next->previous adjacency"
+  }
+}

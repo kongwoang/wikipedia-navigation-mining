@@ -32,6 +32,16 @@ class SparseTests(unittest.TestCase):
         self.data = StudyData(["A","B","C","D"],["A","B","C","D"],a,c,[0,1,2,3],
                               {"popularity":np.array([0,4,2,0])},{})
 
+    def test_native_backend_accepts_negative_one_dot(self):
+        from gensim.models.word2vec_inner import _wikinav_negative_dot_check
+        self.assertEqual(_wikinav_negative_dot_check(), -1.0)
+
+    def test_iteration_budget_is_enforced(self):
+        from wikinav.models import ConvergenceError
+        from wikinav.sparse_models import ppr_scores
+        with self.assertRaises(ConvergenceError):
+            ppr_scores(self.data, normalize(self.data.adjacency), .85, 1e-12, max_iterations=0)
+
     def test_sparse_matches_dictionary_oracle(self):
         p = normalize(self.data.adjacency)
         rows = {str(i):{str(j):float(p[i,j]) for j in p[i].indices} for i in range(4)}

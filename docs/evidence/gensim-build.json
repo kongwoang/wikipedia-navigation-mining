@@ -1,0 +1,15 @@
+{
+  "upstream_url": "https://files.pythonhosted.org/packages/1a/80/fe9d2e1ace968041814dbcfce4e8499a643a36c41267fa4b6c4f54cce420/gensim-4.4.0.tar.gz",
+  "upstream_sha256": "a3f5b626da5518e79a479140361c663089fe7998df8ba52d56e1ded71ac5bdf5",
+  "version": "4.4.0+wnm1",
+  "fastss_url": "https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/similarities/fastss.pyx",
+  "fastss_sha256": "28ef4b96570b64b674959f7900cc8786ab22df0c5871b6b9c9ee75a8a0241d1e",
+  "installer_sha256": "8c13edd5d58bf4afbb5bab8289660d923ee0073fdb6082aafd8d67db7e5435d4",
+  "wheel_sha256": "a85df7e5f37ecd370943755e545ef86a81ebbff311be917076738ce168e5c34b",
+  "build_versions": {
+    "Cython": "3.1.2",
+    "setuptools": "80.9.0",
+    "wheel": "0.45.1",
+    "numpy": "2.3.5"
+  }
+}

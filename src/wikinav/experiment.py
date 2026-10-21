@@ -5,6 +5,7 @@ test evaluation is never overwritten or used to expand the search space.
 """
 
 import csv
+import importlib.metadata
 import json
 from pathlib import Path
 import platform
@@ -78,7 +79,12 @@ def run(raw: Path, prepared: Path, output: Path, config_path: Path):
     if (output/"test_results.json").exists():
         raise FileExistsError("Test results exist; use analysis command, do not rerun/tune against test")
     signature = {"config":file_digest(config_path),"data":file_digest(prepared/"manifest.json"),
-                 "code":algorithm_hash(),"python":platform.python_version()}
+                 "code":algorithm_hash(),"python":platform.python_version(),
+                 "run_protocol":file_digest(Path(__file__).resolve().parents[2]/"docs/RUN_PROTOCOL.md"),
+                 "dependency_lock":file_digest(Path(__file__).resolve().parents[2]/"requirements-study.lock"),
+                 "native_patch_installer":file_digest(Path(__file__).resolve().parents[2]/"scripts/install_gensim_fix.py"),
+                 "dependencies":{name:importlib.metadata.version(name) for name in
+                                 ('numpy','scipy','gensim','duckdb')}}
     if (output/"run_signature.json").exists():
         if json.loads((output/"run_signature.json").read_text()) != signature:
             raise ValueError("Cache signature changed; start a new run before opening test")
@@ -127,21 +133,21 @@ def run(raw: Path, prepared: Path, output: Path, config_path: Path):
     for name,mode in (("M3_ppr_h","H"),("M4C_ppr_c","C"),("M4CH_ppr_ch","CH"),("M4H_ppr_wh","WH")):
         matrix=transitions(data,mode,mu=c["controlled_weight_mu"])
         choose(name,[({"damping":d,"mode":mode,"mu":c["controlled_weight_mu"]},
-                      lambda d=d,matrix=matrix:ppr_scores(data,matrix,d,c["residual_tolerance"]))
+                      lambda d=d,matrix=matrix:ppr_scores(data,matrix,d,c["residual_tolerance"],c["max_iterations"]))
                      for d in c["damping"]])
     choose("M6B_fusion",[
         ({"lambda":w},lambda w=w:(fusion(scores_by_model["M1B_backoff"],scores_by_model["M3_ppr_h"],w),{}))
         for w in c["lambda"]])
     choose("M6A_matrix",[
         ({"lambda":w,"damping":c["controlled_damping"]},
-         lambda w=w:ppr_scores(data,transitions(data,"MIX",mixing=w),c["controlled_damping"],c["residual_tolerance"]))
+         lambda w=w:ppr_scores(data,transitions(data,"MIX",mixing=w),c["controlled_damping"],c["residual_tolerance"],c["max_iterations"]))
         for w in c["lambda"]])
     choose("HITS",[({},lambda:hits_scores(data))])
     # Fixed-damping support-preserving ablation; not additional test-selected models.
     for name,mode in (("A4_H","H"),("A4_WH","WH"),("A4_CH","CH")):
         params={"damping":c["controlled_damping"],"mu":c["controlled_weight_mu"],"mode":mode}
         scores,info=cached(name,params,lambda mode=mode:ppr_scores(
-            data,transitions(data,mode,mu=c["controlled_weight_mu"]),c["controlled_damping"],c["residual_tolerance"]))
+            data,transitions(data,mode,mu=c["controlled_weight_mu"]),c["controlled_damping"],c["residual_tolerance"],c["max_iterations"]))
         selected[name]=params; scores_by_model[name]=scores; model_info[name]=info
     embedding_fixed={"walks":c["embedding_walks"],"length":c["embedding_walk_length"],
                      "window":c["embedding_window"],"epochs":c["embedding_epochs"],
@@ -183,7 +189,8 @@ def run(raw: Path, prepared: Path, output: Path, config_path: Path):
                 selected[key]=params; model_info[key]={"wall_seconds":None}
     prediction={name:predictions(data,scores,c["seed"]) for name,scores in scores_by_model.items()}
     validation_results={name:evaluate(data,p,validation)[0] for name,p in prediction.items()}
-    freeze={"signature":signature,"selected":selected,"selection":"validation macro NDCG full@10",
+    freeze={"signature":signature,"selected":selected,"selection":"validation macro NDCG full@10; ties <=1e-15 keep first declared grid option",
+            "failure_policy":"fail run before test; no model-specific source removal",
             "queries":[data.ids[i] for i in data.queries],
             "candidates_hash":digest({data.ids[s]:[data.ids[i] for i in data.candidates(s)] for s in data.queries}),
             "prepared_artifacts":data.manifest["artifacts"],
@@ -245,7 +252,7 @@ if __name__ == "__main__":
     parser=argparse.ArgumentParser()
     parser.add_argument("--raw",type=Path,default=Path("data/raw/eswiki"))
     parser.add_argument("--prepared",type=Path,default=Path("data/processed/study-v2"))
-    parser.add_argument("--output",type=Path,default=Path("results/study-v1"))
+    parser.add_argument("--output",type=Path,default=Path("results/study-v2"))
     parser.add_argument("--config",type=Path,default=Path("configs/study.toml"))
     args=parser.parse_args()
     run(args.raw,args.prepared,args.output,args.config)
