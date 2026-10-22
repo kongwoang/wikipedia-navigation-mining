@@ -1,0 +1,22 @@
+{
+  "artifacts": {
+    "C.npz": "b56085f96d4f02ef6db8069636f2ceed72a7a79cfb33715c72270a6039e2eb28",
+    "H.npz": "eebfc643f80016e097471a48998ee6c3ccec44540bd4795145b69d2df8ec1980",
+    "ids.npy": "c90bdd8d368318e791441da37801f3cd0e40d2b9da6b87215d97a1cb11390686"
+  },
+  "graphs": {
+    "C": {
+      "csr_bytes": 29945824,
+      "edges": 1802996,
+      "nodes": 2077467
+    },
+    "H": {
+      "csr_bytes": 189978482,
+      "edges": 36333722,
+      "nodes": 2077467
+    }
+  },
+  "max_rss_native_units": 2472394752,
+  "prepared_manifest_sha256": "a58139ba2e541f4b2d3ac04a1baf53362d70ea15d999e2cba7c637b8e509583e",
+  "seconds": 22.483889167022426
+}

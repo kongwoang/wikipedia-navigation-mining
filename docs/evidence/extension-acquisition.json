@@ -1,0 +1,33 @@
+{
+  "source_reference": "https://phabricator.wikimedia.org/T415193",
+  "parsed_labels": false,
+  "files": [
+    {
+      "month": "2018-07",
+      "file": "clickstream-eswiki-2018-07.tsv.gz",
+      "url": "https://dumps.wikimedia.your.org/other/clickstream/2018-07/clickstream-eswiki-2018-07.tsv.gz",
+      "bytes": 36083360,
+      "sha256": "7686a4555b7d67627ad3b80c7342700a36c54cc01083ff76a5cb9f8b6dc527f8",
+      "license": "CC0",
+      "upstream_checksum": null
+    },
+    {
+      "month": "2018-08",
+      "file": "clickstream-eswiki-2018-08.tsv.gz",
+      "url": "https://dumps.wikimedia.your.org/other/clickstream/2018-08/clickstream-eswiki-2018-08.tsv.gz",
+      "bytes": 38059784,
+      "sha256": "1b4d5dd3e4bcec9f1526aaa0a2cf7b00701ff2f93326af14ecc6edd967dd56ef",
+      "license": "CC0",
+      "upstream_checksum": null
+    },
+    {
+      "month": "2018-09",
+      "file": "clickstream-eswiki-2018-09.tsv.gz",
+      "url": "https://dumps.wikimedia.your.org/other/clickstream/2018-09/clickstream-eswiki-2018-09.tsv.gz",
+      "bytes": 37187782,
+      "sha256": "d85ed370e54ed0c70f60f7bfa84d753fd13d8b4d0ee33e8303ca31e186e67688",
+      "license": "CC0",
+      "upstream_checksum": null
+    }
+  ]
+}
