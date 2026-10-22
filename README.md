@@ -13,6 +13,8 @@
 | [Tái lập](reports/REPRODUCIBILITY.md) | Quick verification và raw-to-model reproduction |
 | [Thuyết trình](reports/PRESENTATION.md) · [Bảo vệ](reports/DEFENSE.md) | Outline12–15 phút, demo script,25 câu hỏi có evidence |
 | [Trạng thái và kiểm chứng](docs/IMPLEMENTATION_STATUS.md) | Phạm vi hoàn tất, test/CI/provenance và giới hạn QA |
+| [Kế hoạch nâng chất lượng](docs/QUALITY_IMPROVEMENT_PLAN.md) | Review 22/10: boundary sensitivity, fresh holdout, tie-break controls và ưu tiên học thuật |
+| [Phân tích cơ chế bổ sung](reports/extensions/mechanism-v1/ANALYSIS.md) | Post-hoc decomposition từ frozen predictions; không thay kết quả hoặc protocol gốc |
 
 Dữ liệu eswiki: Jan–Mar2018 train, April validation, May primary test và June fixed-model horizon. Independent hyperlink snapshot01/03/2018; mẫu200 queries,8.094 nodes,319.694 edges. Nhiệm vụ là **source-conditioned ranking**, không user personalization hoặc true-session prediction.
 

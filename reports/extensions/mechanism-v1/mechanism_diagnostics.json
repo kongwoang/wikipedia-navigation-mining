@@ -1,0 +1,205 @@
+{
+  "status": "post-hoc exploratory analysis of the existing study-v3 holdout",
+  "definition": "Additive NDCG components share the FULL per-source IDCG; rankings unchanged.",
+  "oracle": "Future-label same-candidate upper bound, not a deployable model or candidate generator.",
+  "limitations": "Published training absence is censored. Query bootstrap assumes approximate exchangeability; no causal claim.",
+  "bundle_verification": {
+    "source_model_period_evaluations": 5600,
+    "main_models": 14,
+    "queries": 200,
+    "periods": [
+      "2018-05",
+      "2018-06"
+    ],
+    "status": "verified"
+  },
+  "payload_sha256": "527841a3cfbfe8060d291a4bf3a892f4e86cbeb7ad96f6b1bf26bfcfec4fcc98",
+  "periods": {
+    "2018-05": {
+      "sources": 127,
+      "candidate_oracle_ndcg": 0.970324608363869,
+      "model_ndcg": {
+        "M1B_backoff": 0.8991222548932142,
+        "M3_ppr_h": 0.31264374480552093,
+        "M6B_fusion": 0.9034159938618488
+      },
+      "contrasts": {
+        "M3_ppr_h - M1B_backoff": {
+          "ndcg": {
+            "difference": -0.5864785100876931,
+            "ci95": [
+              -0.6312993307563715,
+              -0.539853762293471
+            ],
+            "sources": 127,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          },
+          "train_observed": {
+            "difference": -0.600714022911889,
+            "ci95": [
+              -0.6418324788463319,
+              -0.5567944572834505
+            ],
+            "sources": 127,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          },
+          "train_unobserved": {
+            "difference": 0.014235512824195846,
+            "ci95": [
+              0.005717860951299587,
+              0.024646415350049834
+            ],
+            "sources": 127,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          }
+        },
+        "M6B_fusion - M1B_backoff": {
+          "ndcg": {
+            "difference": 0.004293738968634624,
+            "ci95": [
+              -0.0007576595419197877,
+              0.010351920091248124
+            ],
+            "sources": 127,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          },
+          "train_observed": {
+            "difference": 0.00035616057829973785,
+            "ci95": [
+              -9.990983952713175e-05,
+              0.0010938106037739134
+            ],
+            "sources": 127,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          },
+          "train_unobserved": {
+            "difference": 0.0039375783903348865,
+            "ci95": [
+              -0.0010853677555459176,
+              0.010068979697806263
+            ],
+            "sources": 127,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          }
+        }
+      }
+    },
+    "2018-06": {
+      "sources": 122,
+      "candidate_oracle_ndcg": 0.9543625919836286,
+      "model_ndcg": {
+        "M1B_backoff": 0.8898883656781644,
+        "M3_ppr_h": 0.305480642117891,
+        "M6B_fusion": 0.8936181467776378
+      },
+      "contrasts": {
+        "M3_ppr_h - M1B_backoff": {
+          "ndcg": {
+            "difference": -0.5844077235602734,
+            "ci95": [
+              -0.6300844345108768,
+              -0.5360708571040942
+            ],
+            "sources": 122,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          },
+          "train_observed": {
+            "difference": -0.593982242715634,
+            "ci95": [
+              -0.6381409809257781,
+              -0.5455677760801527
+            ],
+            "sources": 122,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          },
+          "train_unobserved": {
+            "difference": 0.009574519155360733,
+            "ci95": [
+              0.0035664388339215185,
+              0.017344014862527686
+            ],
+            "sources": 122,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          }
+        },
+        "M6B_fusion - M1B_backoff": {
+          "ndcg": {
+            "difference": 0.0037297810994734327,
+            "ci95": [
+              -0.00019375168733406259,
+              0.009946713010666436
+            ],
+            "sources": 122,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          },
+          "train_observed": {
+            "difference": 0.0006193829974283774,
+            "ci95": [
+              -0.0002785952192419958,
+              0.002019271714678633
+            ],
+            "sources": 122,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          },
+          "train_unobserved": {
+            "difference": 0.003110398102045056,
+            "ci95": [
+              -0.0006020489569974587,
+              0.009138507515197682
+            ],
+            "sources": 122,
+            "resamples": 2000,
+            "seed": 2026,
+            "unit": "source_article",
+            "method": "paired_percentile_bootstrap",
+            "limitation": "Conditional query-level approximation; graph sources may be dependent."
+          }
+        }
+      }
+    }
+  }
+}
