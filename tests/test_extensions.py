@@ -102,3 +102,19 @@ class PeriodIntegrityTests(unittest.TestCase):
             self.assertEqual(frozen_predictions(p),{'model':{'fixture':1}})
             (p/'predictions.json').write_text(json.dumps({'model':{'fixture':2}}))
             with self.assertRaisesRegex(ValueError,'predictions changed'):frozen_predictions(p)
+
+    def test_query_panels_are_disjoint_train_only_stratified_samples(self):
+        import tempfile
+        from pathlib import Path
+        import duckdb
+        from wikinav.extension_data import source_panels
+        with tempfile.TemporaryDirectory() as tmp:
+            p=Path(tmp);c=duckdb.connect(str(p/'study.duckdb'))
+            c.execute('CREATE TABLE query_pool AS SELECT i::BIGINT s,(i//200)::INTEGER stratum FROM range(800) t(i)')
+            c.close()
+            original=[str(i) for group in range(4) for i in range(group*200,group*200+50)]
+            panels=source_panels(p,original)
+            self.assertEqual([len(p) for p in panels.values()],[200,200,200])
+            self.assertEqual(len(set(sum(panels.values(),[]))),600)
+            for panel in panels.values():
+                self.assertEqual([sum(int(s)//200==g for s in panel) for g in range(4)],[50]*4)

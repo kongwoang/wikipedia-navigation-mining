@@ -64,9 +64,9 @@ def source_panels(prepared, original_ids):
         exclusion=','.join(str(int(i)) for i in seen)
         rows=con.execute(f'''SELECT s FROM
             (SELECT *,row_number() OVER(PARTITION BY stratum ORDER BY
-             sha256(concat('{seed}',':',s::VARCHAR)),s) position
+             sha256(concat('{seed}',':',s::VARCHAR)),s) sample_rank
              FROM query_pool WHERE s NOT IN ({exclusion}))
-             WHERE position<=50 ORDER BY s''').fetchall()
+             WHERE sample_rank<=50 ORDER BY s''').fetchall()
         panel=[str(s) for s, in rows]
         if len(panel)!=200 or set(panel)&set(seen):raise ValueError('Invalid disjoint panel')
         panels[str(seed)]=panel;seen.extend(panel)
