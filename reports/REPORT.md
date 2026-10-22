@@ -1,7 +1,9 @@
 # Topology-Aware Next-Article Ranking on Wikipedia
 
 **A Temporal Comparison of Click Frequency and Historical Hyperlink Structure**  
-Báo cáo thực nghiệm học phần — hoàn thiện ngày 21/10/2026. Dataset: eswiki 2018. Final run: `study-v3`.
+Báo cáo thực nghiệm học phần — study gốc ngày 21/10/2026, bổ sung ngày 22/10/2026. Dataset: eswiki 2018. Original run: `study-v3`; extension: `extensions-v2`.
+
+Phần 1–17 trình bày study gốc, với giới hạn được cập nhật khi có evidence mới. Xem [EXTENSION_RESULTS](EXTENSION_RESULTS.md) và phần 18 cho full-graph/rolling/null/panel experiments; không trộn hai protocol thành một lần test.
 
 Bố cục lập luận:
 
@@ -15,6 +17,8 @@ Bố cục lập luận:
 ## 1. Abstract
 
 Historical click frequency là tín hiệu mạnh cho source-conditioned next-article ranking trong nghiên cứu này. Chúng tôi so sánh 14 model chính trên Clickstream Wikipedia tiếng Tây Ban Nha, training tháng 01–03/2018, validation tháng 04 và held-out tháng 05–06. Hyperlink topology lấy độc lập từ snapshot 01/03/2018; mẫu có 200 source queries, 8.094 nodes và 319.694 directed edges. Mọi model xếp hạng cùng outgoing candidates. Trên 127 nguồn có nhãn quan sát được trong tháng 05, Markov đạt macro full NDCG@10 **0,8991**, PPR-H **0,3126**, và score fusion **0,9034**. Chênh fusion–Markov **0,00429**, paired source bootstrap 95% CI **[−0,00076; 0,01035]**, chưa chứng minh improvement đáng tin cậy. Weighted Node2Vec tốt hơn unweighted khi giữ cùng knobs, nhưng vẫn kém Markov. Topology hữu ích trong một số transitions chưa có count training; lợi ích đó không chuyển thành gain tổng thể chắc chắn. Kết luận giới hạn ở historical induced sample và published, censored labels; không suy ra online CTR, user personalization hoặc full-Wikipedia performance.
+
+Extension khóa protocol trước July–September labels và đánh giá thêm ba rolling windows. Topology tie-break−Markov có Δ0,00804/0,00249/−0,00043, cả ba source-bootstrap CI chứa0. Full-H PPR trên 36.333.722 edges vẫn kém Markov ở sampled queries; real H cao hơn năm degree-preserving rewired controls. Evidence củng cố vai trò của structure beyond degree, đồng thời cho thấy thông tin topology không tự tạo net improvement trên baseline behavior mạnh.
 
 ## 2. Introduction and Motivation
 
@@ -257,9 +261,9 @@ Một negative/uncertain result vẫn đáp ứng mục tiêu học phần: vấ
 1. **Censoring/exposure:** missing labels không phải negatives đáng tin cậy; counts phản ánh link exposure, popularity và suppression, không unbiased preference.
 2. **No sessions/users:** không sequence-aware/personalized recommendation; không suy path length hoặc individual behavior từ month aggregates.
 3. **Historical mapping:** redirects/title moves, namespace/extraction differences và quarantine gây selection/coverage losses; full metrics vẫn không khôi phục rows không map được source.
-4. **Graph sample boundary:** query candidates giữ đủ nhưng chỉ30,82% outgoing edges của sampled nodes còn lại. PPR/cosine topology bị ảnh hưởng; không biết full-graph ranking có giữ kết luận hay không.
+4. **Graph sample boundary:** query candidates giữ đủ nhưng chỉ30,82% outgoing edges của sampled nodes còn lại. PPR/cosine topology bị ảnh hưởng. Extension đã kiểm tra full-H PPR/fusion với candidates/knobs giữ nguyên; PPR vẫn kém Markov ở sample. Full-graph Node2Vec không được chạy.
 5. **Sampling/population:** 200 train-stratified queries, out-degree5–500, một language/time period; macro không population-representative. Low observability làm cold-start claim không khả thi.
-6. **Temporal scope:** hai held-out months dùng cùng frozen model; chưa rolling origins, seasonal robustness hoặc pandemic/current Wikipedia. Publication time khác snapshot/event time.
+6. **Temporal scope:** study gốc có hai held-out months dùng cùng frozen model; extension bổ sung ba rolling origins July–September với fixed historical H. Chưa seasonal/cross-language/current-Wikipedia replication. Publication time khác snapshot/event time.
 7. **Statistics:** source dependence, small subgroups, exploratory contrasts và ba seeds; không claim statistical significance từ mọi bảng hoặc independent sample size nhân theo clicks/seeds.
 8. **Model scope:** cosine symmetric dù walks directed; grid nhỏ, fixed walk budget; không chứng minh mọi Node2Vec configuration kém hoặc mọi topology model vô ích.
 9. **Software/reproducibility:** native Gensim local patch cần compiler/pinned SciPy. Linux CI kiểm tra tiny fixtures, không retrain real dataset. Cross-platform bitwise equivalence chưa được chứng nhận.
@@ -269,7 +273,7 @@ Một negative/uncertain result vẫn đáp ứng mục tiêu học phần: vấ
 
 Trong sample lịch sử này, local frequency là lựa chọn mạnh và rẻ. Topology cung cấp một số tín hiệu cho transitions chưa quan sát trong training; fusion không cho gain tổng thể đủ chắc chắn để khẳng định superiority. Counts hỗ trợ rõ cho graph walks, nhưng không biến embeddings thành phương án vượt Markov. Kết luận này dựa trên common candidates, chronology, coverage accounting và uncertainty, không dựa vào mong muốn model phức tạp phải thắng.
 
-Extensions có giá trị là nhiều rolling cutoffs, graph samples có boundary controls lớn hơn, independent language replication và directed source-target embedding scores. CycleRank/CoCit có thể bổ sung baseline nếu còn thời gian. True sessions chỉ được dùng dưới một task/protocol mới với dữ liệu phù hợp. Chưa cần GNN/LLM để giải quyết các giới hạn căn bản đó.
+Full-graph boundary, ba rolling cutoffs, CycleRank, adaptive/tie-break và degree/query controls đã được thực hiện trong extension. Future work còn hợp lý là independent language replication, directed source-target embedding scores và CoCit khi có câu hỏi rõ. True sessions chỉ được dùng dưới một task/protocol mới với dữ liệu phù hợp. Chưa cần GNN/LLM để giải quyết các giới hạn căn bản đó.
 
 ## 17. Reproducibility Details
 
@@ -281,7 +285,7 @@ python3 scripts/build_report_tables.py
 PYTHONPATH=src python3 -m unittest discover -s tests -p test_core.py
 ```
 
-Verifier kiểm tra file hashes và tính lại **5.600 source×model×period evaluations** cho14mainmodels×200queries×2months; không phải retraining hay independent reimplementation của metric engine. Unit tests cung cấp analytic metric/oracle checks. Full local suite72tests đạt, gồm directed weights, stochastic transitions, candidate restrictions, metrics, temporal isolation, negative-dot regression và acquisition hash-corruption check. CI có Python3.11/3.13 core cùng Linux scientific backend; raw datasets không tải trong CI.
+Verifier kiểm tra file hashes và tính lại **5.600 source×model×period evaluations** cho14mainmodels×200queries×2months; không phải retraining hay independent reimplementation của metric engine. Unit tests cung cấp analytic metric/oracle checks. Full local suite hiện có86tests đạt, gồm directed weights, stochastic transitions, candidate restrictions, metrics, temporal isolation, negative-dot regression và acquisition hash-corruption check. CI có Python3.11/3.13 core cùng Linux scientific backend; raw datasets không tải trong CI.
 
 Code tạo final predictions ở commit `9b1f28ba90e21591afb23ed65c5fd0a17f4195d2`; freeze trung thực ghi `git_dirty=true` vì acquisition/documentation thay đổi trong lúc chạy. Algorithm files có digest riêng và được đối chiếu với commit; thay đổi sau test chỉ ở acquisition hardening, analysis/display/report/CI, không model/split/tuning. [Code provenance](../docs/evidence/final-verification.json) ghi đối chiếu. Không sửa frozen protocol sau khi xem kết quả.
 
@@ -298,12 +302,28 @@ Raw data, DuckDB/Parquet và model caches không commit; report bundle portable 
 | Topology có ích cho một số training-unobserved targets | A7 original-ranking recall, Danza case | Supported descriptively, không causal |
 | Weighted walks cải thiện embedding tại matched knobs | A5 matched contrast, seed tables | Supported trong settings đã chạy |
 | Graph giải quyết cold-start | May n0/June n1 | **Không đủ evidence; không claim** |
-| Framework tái lập được | Hashes,72tests, preparation replay, bundle verifier | Supported ở các mức đã kiểm tra; chưa full cross-platform replication |
+| Framework tái lập được | Hashes,86tests, preparation replay, bundle verifier | Supported ở các mức đã kiểm tra; chưa full cross-platform replication |
 
 ### Self-review năm chiều
 
 - **Contribution:** comparative framework và diễn giải negative/uncertain result đã đủ scope học phần; không algorithmic novelty.
 - **Writing clarity:** source-conditioned, full/conditional, macro/weighted và damping/restart được định nghĩa nhất quán; bảng case giữ actual titles/counts.
 - **Experimental strength:** có strong baseline, val tuning, controls và honest failures; sample nhỏ/one language giới hạn generalization, đã thu hẹp claim.
-- **Evaluation completeness:** đủ required metrics,A1–A9,coverage,source CI,seed diagnostics,cases; rolling origins và browser QA còn giới hạn được ghi rõ, không bị mô tả là đã làm.
+- **Evaluation completeness:** đủ required metrics,A1–A9,coverage,source CI,seed diagnostics,cases; rolling origins đã bổ sung; browser QA còn giới hạn được ghi rõ, không bị mô tả là đã làm.
 - **Method soundness:** graph độc lập, test barrier, historical redirects, no reliable-negative assumption; sampled boundary và native patch có evidence/limitations. Chi phí bổ sung chưa được gain tổng thể chứng minh là đáng giá.
+
+## 18. Extension results và tác động tới kết luận
+
+[Full extension report](EXTENSION_RESULTS.md) chứa toàn bộ bảng/figures và [cases mới](EXTENSION_CASES.md). Các cải tiến đáp ứng những phản biện quan trọng nhất:
+
+| Phản biện | Thí nghiệm hoàn tất | Kết luận có giới hạn |
+|---|---|---|
+| PPR kém vì graph bị cắt? | Full H 2.077.467 nodes/36.333.722 edges; same200 queries/candidates; δ0,15 | PPR tăng nhẹ, vẫn thấp hơn Markov; không suy mọi PPR setting đều kém |
+| Chỉ hợp hai test months? | Ba rolling windows, freeze trước từng test read | Primary tie-break CI chứa0 cả ba; 115 common observable sources được báo riêng |
+| Topology chỉ phản ánh degree? | Năm directed degree-preserving rewired controls, protected query rows | Real H tốt hơn các draws; không permutation significance/causal claim |
+| Phụ thuộc panel200? | Hai disjoint panels mới,50 mỗi train stratum, cùng full H | Markov vẫn hơn PPR-H; low cold-label observability không được khắc phục bằng cách chọn nguồn theo test |
+| Thêm model có giải thích được gì? | Bounded CycleRank, tie-break, adaptive fusion | CycleRank hơn PPR nhưng kém Markov; fallback-policy audit giải thích một số losses |
+
+Một chi tiết quan trọng: source zero eligible training mass khiến M1 dùng global popularity còn tie/adaptive dùng PPR. Primary contrast gồm cả thay fallback, không thuần tie-breaking. Audit này là post-hoc explanation, không thay primary estimand hoặc retune test.
+
+Original5600 và extension28600 evaluations đều được tính lại từ sealed portable artifacts. 86 tests đạt; full-graph stages dùng CPU, không cần GPU cluster. Demo mới hiển thị600 query-month records từ actual frozen models; UI visual/interaction QA vẫn chưa thực hiện vì origin denial đã ghi nhận.

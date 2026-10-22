@@ -1,0 +1,58 @@
+month,model,parameters
+2018-07,CycleRank,"{""max_length"": 3}"
+2018-07,HITS,{}
+2018-07,M0_global,{}
+2018-07,M1B_backoff,"{""eta"": 0.0, ""mu"": 0.0}"
+2018-07,M1_local,{}
+2018-07,M2D_indegree,{}
+2018-07,M2_uniform,{}
+2018-07,M3_ppr_h,"{""damping"": 0.15, ""mode"": ""H""}"
+2018-07,M4C_ppr_c,"{""damping"": 0.15, ""mode"": ""C""}"
+2018-07,M4H_ppr_wh,"{""damping"": 0.15, ""mode"": ""WH""}"
+2018-07,M6B_fusion,"{""lambda"": 0.5}"
+2018-07,N2V_H_s17,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 17}"
+2018-07,N2V_H_s29,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 29}"
+2018-07,N2V_H_s43,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 43}"
+2018-07,N2V_WH_s17,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 17}"
+2018-07,N2V_WH_s29,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 29}"
+2018-07,N2V_WH_s43,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 43}"
+2018-07,adaptive_fusion,"{""tau"": 1000.0}"
+2018-07,topology_tie,{}
+2018-08,CycleRank,"{""max_length"": 3}"
+2018-08,HITS,{}
+2018-08,M0_global,{}
+2018-08,M1B_backoff,"{""eta"": 0.5, ""mu"": 10.0}"
+2018-08,M1_local,{}
+2018-08,M2D_indegree,{}
+2018-08,M2_uniform,{}
+2018-08,M3_ppr_h,"{""damping"": 0.15, ""mode"": ""H""}"
+2018-08,M4C_ppr_c,"{""damping"": 0.15, ""mode"": ""C""}"
+2018-08,M4H_ppr_wh,"{""damping"": 0.15, ""mode"": ""WH""}"
+2018-08,M6B_fusion,"{""lambda"": 0.25}"
+2018-08,N2V_H_s17,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 17}"
+2018-08,N2V_H_s29,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 29}"
+2018-08,N2V_H_s43,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 43}"
+2018-08,N2V_WH_s17,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 17}"
+2018-08,N2V_WH_s29,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 29}"
+2018-08,N2V_WH_s43,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 43}"
+2018-08,adaptive_fusion,"{""tau"": 100.0}"
+2018-08,topology_tie,{}
+2018-09,CycleRank,"{""max_length"": 3}"
+2018-09,HITS,{}
+2018-09,M0_global,{}
+2018-09,M1B_backoff,"{""eta"": 0.0, ""mu"": 0.0}"
+2018-09,M1_local,{}
+2018-09,M2D_indegree,{}
+2018-09,M2_uniform,{}
+2018-09,M3_ppr_h,"{""damping"": 0.15, ""mode"": ""H""}"
+2018-09,M4C_ppr_c,"{""damping"": 0.15, ""mode"": ""C""}"
+2018-09,M4H_ppr_wh,"{""damping"": 0.15, ""mode"": ""WH""}"
+2018-09,M6B_fusion,"{""lambda"": 0.75}"
+2018-09,N2V_H_s17,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 17}"
+2018-09,N2V_H_s29,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 29}"
+2018-09,N2V_H_s43,"{""dimension"": 32, ""p"": 0.5, ""q"": 2.0, ""seed"": 43}"
+2018-09,N2V_WH_s17,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 17}"
+2018-09,N2V_WH_s29,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 29}"
+2018-09,N2V_WH_s43,"{""dimension"": 64, ""p"": 0.5, ""q"": 2.0, ""seed"": 43}"
+2018-09,adaptive_fusion,"{""tau"": 1000.0}"
+2018-09,topology_tie,{}

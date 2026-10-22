@@ -1,40 +1,43 @@
-# Thuyết trình 12–15 phút và kịch bản demo
+# Thuyết trình 12–15 phút và demo nghiên cứu
 
-Dùng số từ `study-v3`, không dùng validation/toy scores làm test result. Đọc [REPORT](REPORT.md), [RESULT_TABLES](RESULT_TABLES.md) và [DEFENSE](DEFENSE.md) trước khi trình bày.
+Dùng [REPORT](REPORT.md) cho nền tảng và [EXTENSION_RESULTS](EXTENSION_RESULTS.md) cho kết luận mới nhất. Không trình bày19 configurations như19 thuật toán độc lập. Giữ detailed grids/seeds/required metrics trong appendix.
 
-| Slide | Thời gian | Thông điệp và evidence | Speaker notes |
+| Slide | Thời gian | Thông điệp và evidence | Điểm cần nói rõ |
 |---|---:|---|---|
-| 1. Câu hỏi nghiên cứu | 0:45 | Khi nào hyperlink topology bổ sung cho click frequency? | Đề tài comparative analysis; không phát minh recommender mới |
-| 2. Task và data limitations | 1:00 | Source u → Top-K trong outgoing candidates; aggregate monthly counts | Không users/sessions; PPR query-personalized; absent ≠ zero |
-| 3. Data audit & chronology | 1:15 | Jan–Mar train / April val / May–June test; H01/03 độc lập | 200 queries,8.094 nodes,319.694 edges; candidate retention100%, intermediate outgoing retention30,82% |
-| 4. EDA → model choice | 1:00 | [Concentration](generated/figures/10_concentration_and_drift.png), [boundary](generated/figures/02_graph_degree_boundary.png) | Median top1 share0,5001; phải có local Markov và báo sample limitation |
-| 5. Model controls | 1:15 | Markov / PPR-H / PPR-C / weighted-H / fusion / N2V-H/W | Behavior-only là ranking signal, mọi model chung H eligibility. WH hơn H chỉ chứng minh clicks giúp graph |
-| 6. Evaluation | 1:15 | Recall5/10/20, MRR10, NDCG10; full vs conditional; macro vs weighted | May127/200 nguồn có labels; coverage95,54%mass. Freeze trước test; paired source bootstrap |
-| 7. Main results | 1:30 | [Main figure](generated/figures/04_main_comparison.png); Markov0,8991 vs fusion0,9034 | Δ0,00429,95%CI[−0,00076;0,01035]. Không gọi significant improvement. June weighted fusion giảm |
-| 8. Vì sao? Ablation + diagnostics | 1:30 | [Validation](generated/figures/05_validation_sensitivity.png), [convergence](generated/figures/06_numerical_diagnostics.png) | Matched weighted N2V gain0,2142; PPR-H train-unobserved Recall0,2335 vs Markov0,0912. Coldstart n0/n1 không đủ |
-| 9. Demo đối chiếu hai chiều | 2:30 | Ultimate Avengers, Tragacete,1944 | Xem workflow bên dưới; trình bày cả win/failure/coverage |
-| 10. Kết luận và khả năng tái lập | 1:00 | [Cost](generated/figures/09_cost_accuracy.png), tests/manifests | Markov mạnh/rẻ; topology giúp một số tail transitions, chưa đủ reliable overall gain.72 tests;5600 re-evaluations; chưa full-Wikipedia/online test |
+| 1. Câu hỏi nghiên cứu | 0:40 | Khi nào hyperlink topology bổ sung cho click frequency? | Empirical comparative study, không novelty claim |
+| 2. Task và dữ liệu | 1:00 | Source u → ranked outgoing hyperlinks; published monthly counts | Không users/sessions; missing≠negative; PPR query-personalized |
+| 3. Chronology và test barrier | 1:10 | Original Jan–March/April/May–June; ba rolling windows July–September | H01/03 cố định, test predictions freeze trước label read; extension protocol khóa trước new test |
+| 4. EDA → thiết kế | 0:55 | Traffic concentration, sparse labels, boundary loss | Local Markov là baseline mạnh; giữ coverage/full denominator; cần boundary control |
+| 5. Model families | 1:00 | Frequency, H-only, click-weighted walks, fusion, embeddings, cycle/tie controls | Mỗi model trả lời một câu hỏi; cùng candidates; graph scoring không tự là next-click probability |
+| 6. Main ranking comparison | 1:05 | Original Markov0,8991/fusion0,9034; [rolling figure](extensions/study-v2/figures/01_rolling.png) | Đủ Recall/MRR/NDCG trong appendix; macro/weighted không luôn cùng thứ tự |
+| 7. Uncertainty và temporal robustness | 1:05 | [Primary CIs](extensions/study-v2/figures/02_primary_intervals.png);128/127/124 observable sources | Ba tie−Markov CI chứa0; không equivalence claim, không nhân samples theo periods |
+| 8. Graph có bị cắt quá mạnh? | 1:00 | [Full vs induced](extensions/study-v2/figures/03_boundary.png),36,3m H edges | Full-H PPR vẫn kém Markov ở sample; graph size không biến query sample thành population |
+| 9. Structure hay chỉ degree? | 1:00 | [Degree-null](extensions/study-v2/figures/04_degree_null.png), [panels](extensions/study-v2/figures/05_query_panels.png) | Real H hơn5rewired draws, nhưng không causal/permutation significance;600 queries vẫn ít cold labels |
+| 10. Demo: gain và failure | 2:15 | [Rolling demo](extensions/study-v2/demo.html); Strathclyde/Emperador Alejandro | Xem actual counts/ranks; giải thích fallback-policy change, không chỉ chọn win |
+| 11. Diagnostics/cost/reproducibility | 1:00 | [Validation](extensions/study-v2/figures/06_validation.png),86tests, hashes, verifiers | PPR residual, seed variation; không fake Markov loss curve; stages CPU/laptop feasible |
+| 12. Kết luận và giới hạn | 0:50 | Structure chứa thông tin nhưng chưa reliable incremental gain trên frequency | Không users/online/cold-start/population claims; đóng góp là controlled comparison và giải thích có evidence |
 
 ## Demo 2–3 phút
 
-Mở `reports/generated/demo.html` bằng browser sau khi clone/tải repository; HTML offline, không cần server/API key/GPU. GitHub hiển thị source HTML, không render ứng dụng. Data và predictions được tạo bởi real pipeline, không hardcode các recommendation lists bằng tay.
+Clone/tải và mở `reports/extensions/study-v2/demo.html` bằng browser; GitHub chỉ hiển thị HTML source. Chạy offline, không server/API/GPU; sáu displayed models từ actual frozen results.
 
-1. Mở “Case studies”, chọn **Ultimate Avengers**. Giữ May và Full observable labels. Bốn cards là Markov/PPR-H/Node2Vec-H/fusion. Đọc training counts ở ba destinations đầu, so future evidence và phần tail. Fusion0,8887 vs Markov0,7583: topology giúp case này, chưa phải average effect.
-2. Chọn **Tragacete**. Fusion0,7353 vs Markov0,8616. Xem Top-10 và future target *Parque Cinegético Experimental de El Hosquillo*. Câu hỏi cho người xem: topology có thể làm mất một target hữu ích ở phần tail như thế nào?
-3. Chọn **1944**, xem các future targets ngoài candidates. Đổi denominator Full→Within candidates. Score đổi vì estimand, predictions không đổi; không được dùng conditional score để che coverage loss.
-4. Đổi tháng June: counts/metrics thay đổi, **rankings giữ nguyên**. Đổi một card sang M5W hoặc PPR-C để so signal; raw scores khác scale, chỉ so order/metric giữa models.
-5. Nếu còn thời gian, tìm **Danza posmoderna** để thấy training-unobserved Merce Cunningham, hoặc **Repollo relleno** để thấy Markov/PPR/fusion đều thất bại.
+1. Tìm **Strathclyde**, chọn **2018-09**. So M1_local và topology_tie. *Glasgow* có19 future clicks, chưa published training count; Markov ngoài Top-10, tie-break rank4, NDCG0→0,4307. Count22 của *Reino de Strathclyde* vẫn đứng đầu: tie-break không đảo unequal positive counts.
+2. Tìm **Emperador Alejandro**, chọn **2018-08**. Source không có eligible training clicks; M1 scores là global-popularity fallback. *Alejandro Magno* rank1 và *Reino de Macedonia* rank4; tie/PPR làm chúng rank3 và ngoài Top-10. NDCG Markov0,8822→tie0,3145. Adaptive cũng dùng PPR ở zero mass; fusion giữ được popularity order của hai targets này.
+3. Nhấn mạnh đây là hai extreme cases chọn sau test để giải thích. Average primary CI vẫn chứa0. Không đưa fallback failure thành câu chuyện “graph luôn kém ở cold start”: chỉ2–3 zero-eligible-mass sources có labels mỗi rolling period.
+4. Đổi tháng để thấy scope train/validation/test và predictions thay theo refit đã khóa. Khác demo gốc May/June: demo gốc chỉ đổi labels/metrics, predictions cố định.
+5. Nếu cần giải thích candidate limitation, mở original `reports/generated/demo.html`, source **1944**, đổi Full→Within candidates. Score thay vì denominator, không phải model cải thiện.
 
-Nguồn không có observable labels hiển thị N/A; không diễn giải N/A là zero accuracy. Future table hiển thị tối đa30destinations, metrics dùng toàn bộ labels. Trang chỉ hỗ trợ200 frozen queries, không tự crawl bài người dùng nhập.
+Nguồn không có future labels hiển thị N/A, không zero accuracy. Raw score scales giữa models khác nhau; tie score là ordinal encoding. Demo hiển thịTop10/futureTop30, evaluation dùng toàn bộ observable labels.
 
-## Kiểm tra trước buổi bảo vệ
+## Rehearsal và fallback
 
-- Chạy `PYTHONPATH=src python3 -m wikinav.verify_bundle`; expected5600 evaluations verified.
-- Mở HTML, thử case buttons, model/month/denominator selectors, search no-match và narrow viewport. **Browser QA chưa được agent thực hiện vì origin approval bị từ chối**; đây là bước rehearsal còn cần người trình bày kiểm tra trên browser của mình.
-- Kiểm tra font Vietnamese, bảng không tràn và đường dẫn ảnh trong Markdown viewer.
-- Không chạy download/build/training live trên sân khấu; thời gian245s là run trên máy đo, không cam kết mọi laptop.
-- Nếu browser không chạy được, dùng [CASE_STUDIES](CASE_STUDIES.md) và bảng thật làm demo tĩnh; không dựng kết quả giả để thay thế.
+- Chạy `PYTHONPATH=src python3 -m wikinav.verify_bundle` và `PYTHONPATH=src python3 -m wikinav.verify_extensions`.
+- Mở cả hai HTML, kiểm tra source/model/month controls, no-match search, narrow viewport, font và table overflow. **Agent chưa thực hiện browser rendering/interaction QA do origin access bị từ chối**; data verification/JS syntax check không thay bước này.
+- Không download/build/train live. Stage times là measured local batch cost, không SLA.
+- Nếu browser không hoạt động, dùng [EXTENSION_CASES](EXTENSION_CASES.md) và [CASE_STUDIES](CASE_STUDIES.md) làm demo tĩnh với số thật.
 
-## Câu kết luận nên dùng
+## Các câu trả lời cần chuẩn bị trong appendix
 
-“Trong mẫu lịch sử đã kiểm soát, local frequency là baseline rất mạnh. Topology giúp một số transitions chưa quan sát trong training, nhưng fusion chưa cho gain tổng thể đủ chắc chắn. Giá trị của đồ án là phép so sánh và audit có thể kiểm tra lại, kể cả khi model phức tạp không thắng.”
+[DEFENSE](DEFENSE.md) có answer/evidence matrix. Ưu tiên: PPR damping vs restart; bounded CycleRank cost; null graph invariants; tie-break khác fallback; count suppression; full vs conditional NDCG; overlapping windows/source bootstrap; tại sao không thêm GNN; topology có thông tin nhưng net incremental gain chưa chắc chắn.
+
+Câu kết luận: “Local frequency là baseline rất mạnh. Full-graph và degree controls cho thấy structure đáng phân tích, nhưng thêm structure chưa tạo improvement tổng thể ổn định trong đánh giá này. Đóng góp của đồ án là phép so sánh, phân tích lỗi và framework có thể kiểm tra lại, kể cả khi phương pháp phức tạp không thắng.”

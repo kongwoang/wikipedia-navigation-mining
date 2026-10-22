@@ -1,5 +1,7 @@
 # Nâng chất lượng học thuật — review ngày 22/10/2026
 
+> **Cập nhật hoàn tất 22/10/2026:** toàn bộ nhóm thí nghiệm dưới đây đã được thực hiện theo [EXTENSION_PROTOCOL](EXTENSION_PROTOCOL.md): full graph, ba rolling windows, tie-break, degree null, query panels, CycleRank và adaptive fusion. Xem [kết quả thực tế](../reports/EXTENSION_RESULTS.md). Availability blockers/effort bên dưới là lịch sử tại thời điểm review, không trạng thái hiện hành. Original study-v3 vẫn giữ nguyên.
+
 Mục tiêu là tăng sức thuyết phục khi giảng viên hỏi **“vì sao kết quả như vậy, có đáng tin và tái lập được không?”** Không thể bảo đảm điểm số khi chưa biết rubric. Giữ nguyên study-v3; mọi analysis mới sau khi xem May/June được ghi exploratory, và mọi model mới cần validation/fresh holdout phù hợp.
 
 ## 1. Đánh giá thẳng bản hiện tại

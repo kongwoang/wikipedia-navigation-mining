@@ -8,7 +8,7 @@
     "2018-06"
   ],
   "issue": "DuckDB reserved SQL alias position in source_panels; renamed sample_rank. No model grid or protocol change.",
-  "regression_test": "test_source_panels_are_stratified_and_disjoint",
+  "regression_test": "test_query_panels_are_disjoint_train_only_stratified_samples",
   "replacement_run": "results/extensions-v2",
   "note": "Replacement runs started with corrected source bytes; git commit follows without changing those bytes."
 }

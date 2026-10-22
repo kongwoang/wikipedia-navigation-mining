@@ -1,0 +1,39 @@
+{
+  "frozen_at_unix": 1792629015.578049,
+  "git_commit": "f4c8808c73d9f8dc62f5b133ec92af666be36a8f",
+  "predictions_sha256": "5d28736ef1c56c99df9c932ae6997adff458e24272fb51eaaf46e50148c79e5d",
+  "scope": {
+    "graph": "degree-matched perturbation, protected query outgoing edges",
+    "test_use": "exploratory"
+  },
+  "selected": {
+    "damping": 0.15,
+    "lambda": 0.5,
+    "seeds": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ]
+  },
+  "signature": {
+    "code": {
+      "embeddings.py": "a9cca3eb9d4893fb2c6438d05a77647c0006d47d8b82ecd4ab48132ac46c60bd",
+      "evaluation.py": "6ad97e6c95d60774e2bc66bf4d87ff2aece6876dc467d5311fe61a3b5ba0cc21",
+      "experiment.py": "1ead00a806ac784d66796b39e843b76ef881a1f23febfdbca7940b8d97ade104",
+      "extension_data.py": "138169943c0cae0f08770e09dca1403c43f2d70b14fae51b7b0a1d7d1cc2fc5a",
+      "extension_experiment.py": "d1ae71f833cc465e96497b213c651f00a6635a072c918cd676fc53ead292076b",
+      "extension_models.py": "05be399ee712d69f14e684daa4092e63204b5e75c57ca62504ecbe25d6944980",
+      "ranking.py": "961763066ed876164200c42c377a23cd891c7423d6fdec9ff5a6f7c38b4bcccd",
+      "redirects.py": "afb124ce960260e880d05872537be1cc442b3069c091b61c667985b639f4ce2c",
+      "sparse_models.py": "f341faeee02d228440993f6da6dfd0cffdb8df1fcbf2624e98d6b349ffdbbb6d",
+      "study_data.py": "c596acebcfe15ba26acb845e57ad73c68681393e5ab689802714430ad286c31e",
+      "utils.py": "2f257b1f483a80db9af3d5dfefb54f98fef97db0e50e6c2b269e4d57730b20ca"
+    },
+    "lock": "ad122f47863f58b76abadc96ca2367522b5228b0d0da806f11f12efe3f3fb420",
+    "prepared": "a58139ba2e541f4b2d3ac04a1baf53362d70ea15d999e2cba7c637b8e509583e",
+    "protocol": "1c58af12e0e2cc328c39e8d5d935c2ca561fe7a83b5a3fce9124f4e4af5860ca",
+    "python": "3.13.13"
+  }
+}

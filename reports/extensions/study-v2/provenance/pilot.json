@@ -1,0 +1,83 @@
+{
+  "diagnostics": [
+    {
+      "error_bound": 2.8466357591680053e-09,
+      "iterations": 8,
+      "residual": 2.4196403952928045e-09,
+      "seconds": 0.5302471670147497
+    },
+    {
+      "error_bound": 2.4014388574119436e-09,
+      "iterations": 8,
+      "residual": 2.041223028800152e-09,
+      "seconds": 0.5343031669908669
+    },
+    {
+      "error_bound": 1.900642287598899e-09,
+      "iterations": 8,
+      "residual": 1.615545944459064e-09,
+      "seconds": 0.5333929169864859
+    },
+    {
+      "error_bound": 1.796914466782754e-09,
+      "iterations": 8,
+      "residual": 1.527377296765341e-09,
+      "seconds": 0.5270519579935353
+    },
+    {
+      "error_bound": 2.3477219872046186e-09,
+      "iterations": 8,
+      "residual": 1.9955636891239258e-09,
+      "seconds": 0.5305945830186829
+    },
+    {
+      "error_bound": 1.8172244539452216e-09,
+      "iterations": 8,
+      "residual": 1.5446407858534383e-09,
+      "seconds": 0.5203428749809973
+    },
+    {
+      "error_bound": 1.928465371701319e-09,
+      "iterations": 8,
+      "residual": 1.6391955659461212e-09,
+      "seconds": 0.5353380409942474
+    },
+    {
+      "error_bound": 4.216979254714973e-09,
+      "iterations": 8,
+      "residual": 3.5844323665077272e-09,
+      "seconds": 0.542584207985783
+    },
+    {
+      "error_bound": 2.1271967140810724e-09,
+      "iterations": 8,
+      "residual": 1.8081172069689116e-09,
+      "seconds": 0.5454647080041468
+    },
+    {
+      "error_bound": 1.7474937074654133e-09,
+      "iterations": 8,
+      "residual": 1.4853696513456013e-09,
+      "seconds": 0.5329723329923581
+    }
+  ],
+  "edges": 36333722,
+  "max_rss_bytes": 1477771264,
+  "nodes": 2077467,
+  "pass": true,
+  "preparation_seconds": 1.6920284169900697,
+  "projected_200_seconds_conservative": 109.09294160082936,
+  "query_ids": [
+    "41233",
+    "107445",
+    "1843092",
+    "7285429",
+    "128256",
+    "100547",
+    "64430",
+    "317949",
+    "51035",
+    "7957715"
+  ],
+  "selection": "stable hash of original query IDs; no labels"
+}

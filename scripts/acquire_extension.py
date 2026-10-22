@@ -7,6 +7,8 @@ import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 from wikinav.utils import file_digest
 ROOT=Path('data/raw/eswiki')
+ROOT.mkdir(parents=True,exist_ok=True)
+PINNED={r['file']:r['sha256'] for r in json.loads((Path(__file__).resolve().parents[1]/'docs/evidence/extension-acquisition.json').read_text())['files']}
 SIZES={'2018-07':36083360,'2018-08':38059784,'2018-09':37187782}
 def one(item):
     month,size=item; name=f'clickstream-eswiki-{month}.tsv.gz';p=ROOT/name
@@ -17,7 +19,9 @@ def one(item):
         if part.stat().st_size!=size:raise ValueError('Unexpected archive size')
         part.rename(p)
     if p.stat().st_size!=size:raise ValueError('Archive size changed')
-    return {'month':month,'file':name,'url':url,'bytes':size,'sha256':file_digest(p),'license':'CC0','upstream_checksum':None}
+    checksum=file_digest(p)
+    if checksum!=PINNED[name]:raise ValueError('Archive SHA256 differs from pinned local acquisition fingerprint')
+    return {'month':month,'file':name,'url':url,'bytes':size,'sha256':checksum,'license':'CC0','upstream_checksum':None}
 with ThreadPoolExecutor(max_workers=2) as pool:rows=list(pool.map(one,SIZES.items()))
 manifest={'source_reference':'https://phabricator.wikimedia.org/T415193','parsed_labels':False,'files':rows}
 p=ROOT/'extension-acquisition.json'

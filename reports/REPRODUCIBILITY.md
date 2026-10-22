@@ -45,7 +45,7 @@ Không gọi rerun cùng held-out set là một kiểm định độc lập. N�
 - Final model code: `9b1f28ba90e21591afb23ed65c5fd0a17f4195d2`. [Verification record](../docs/evidence/final-verification.json) so byte contents của tám algorithm files với commit và so signature/config/protocol/lock/native installer với freeze. Freeze ghi dirty tree trung thực; acquisition/docs có thay đổi trong khi model chạy.
 - [Fresh preparation replay](../docs/evidence/preparation-replay.json): từ cùng pinned raw files sang thư mục mới, bốn Parquet hashes và full counters giống hệt. Đây không phải model retraining.
 - [Measured runtime](../docs/evidence/final-runtime.json): final validation/test run245,32 s; maximum RSS~1,82GiB trên macOS arm64. Không gồm download/preparation/build/report.
-- Full local suite72 tests không skip; core 57 tests dùng standard library. CI Linux ở model commit đã pass; latest CI status xem [Actions](https://github.com/kongwoang/wikipedia-navigation-mining/actions).
+- Full local suite hiện có86 tests không skip; core 57 tests dùng standard library. CI Linux ở model commit đã pass; latest CI status xem [Actions](https://github.com/kongwoang/wikipedia-navigation-mining/actions).
 - Portable bundle re-evaluation:14 main models×200 queries×2months =5600 lượt.28 configurations được báo trong CSV; verifier không retrain hoặc tính lại mọi ablation từ raw.
 - Raw acquisition hiện kiểm tra **pinned SHA256 cho cả chín files**, kể cả file đã tồn tại có đúng size. Không chỉ tin kích thước hoặc filename.
 
@@ -56,3 +56,29 @@ python3 scripts/build_report_tables.py
 ```
 
 Browser QA chưa thực hiện được do origin access bị từ chối; người trình bày cần mở offline HTML để rehearsal theo [presentation checklist](PRESENTATION.md). Data/rank/metric verification đã pass không thay thế visual/interaction QA.
+
+## Tái lập extensions
+
+Protocol độc lập ở [EXTENSION_PROTOCOL](../docs/EXTENSION_PROTOCOL.md); original model artifacts không thay. Chạy sau base reproduction hoặc để script bootstrap base nếu prepared data chưa có:
+
+```bash
+sh scripts/reproduce_extensions.sh
+```
+
+Script kiểm tra thêm ba Clickstream archives July–September bằng pinned local SHA256 (tổng111.330.926 bytes compressed), xuất full historical H/C từ DuckDB đã chuẩn bị, đo pilot rồi chạy boundary/rolling/null tuần tự. Output mặc định `results/extensions-reproduction/`, `reports/extensions/reproduced/`; không overwrite published bundle. Override bằng `WIKINAV_EXTENSION_RUN` và `WIKINAV_EXTENSION_REPORT`. Các completed model stages chỉ reuse khi signature khớp; report phải ở thư mục mới.
+
+CPU/RAM16–18GB vẫn phù hợp; full export peakRSS khoảng2,30GiB trong lần đo, full boundary khoảng2,20GiB. Đây là process measurements trên macOS, không peak concurrent-system memory hoặc cam kết SLA. Các original raw files khoảng1GB vẫn cần; dự trù disk10–20GB cho raw, DuckDB, CSR và kết quả.
+
+Không cần raw data/dependencies khoa học để kiểm tra portable extensions:
+
+```bash
+PYTHONPATH=src python3 -m wikinav.verify_extensions
+PYTHONPATH=src python3 -m unittest discover -s tests -p test_extension_verification.py
+python3 scripts/build_extension_writeup.py
+```
+
+Verifier xác minh SHA256, reconstruct exact original frozen prediction bytes, kiểm tra rank/score/ties, full/conditional macro/weighted metrics và recorded freeze-before-read chronology. Nó tính lại28600 evaluations,19600 rankings và3600 demo model views; không retrain và không chứng minh local timestamps là external preregistration. Same candidate consistency giữa contexts/models được kiểm tra.
+
+Artifact pipeline: `build_extension_report.py` tạo CSV/7figures/payloads/demo; `build_extension_writeup.py` tạo Markdown results/cases. Fallback audit là post-hoc analysis từ predictions/counts đã có; hashes của cả5 payloads giữ nguyên. Generic verifier dùng chung metric engine, còn analytic unit tests là lớp kiểm tra độc lập bằng toy-oracle expectations.
+
+[Final extension evidence](../docs/evidence/extension-final-verification.json) ghi code commit `1b48689`, exact file hashes, per-stage time/RSS,tests và giới hạn. Reproduction thay runtime/platform metadata có thể đổi bundle hashes; so predictions/metrics/sampling/selected parameters trước khi suy thay đổi thuật toán. Native/BLAS differences vẫn có thể gây numeric variation.

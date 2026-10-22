@@ -1,0 +1,15 @@
+{
+  "artifacts": {
+    "audit.json": "dcec543085d1da38ec9db82deb9243aaef583574d752d1340aa7db5f16618d4f",
+    "contrasts.json": "6235d552c6abeda6282cc8f944fe91aa551dfcd9b26ca1cb3611b091d3a4b1a0",
+    "diagnostics.json": "fdc39be94d854e63fa517297dd4f3392102ca35c2f88b7c91856c58b9496178b",
+    "freeze.json": "cb3924076c53570356f41cde700b8fb4a9d6c0ddbf43a3e5bec83e3cc15a30b3",
+    "labels.json": "7bb0a9bd9c348c351262b5a6eaeae98446f78da5c32c1cf0c385020b33ff3dba",
+    "metrics.json": "caaa769a5a9da514d2b918bbd72386ec4d5698dc622ba4cea57c49d1dde7ef9d",
+    "predictions.json": "a5ad98327b337660c7d70f7e986b625414ac18ae8c1d78749502ef6d47c47faa",
+    "source_metrics.json": "f47fddb62ad9693ad2d378e47db56c101e1cff135e968e9930486903066d349b"
+  },
+  "models": 19,
+  "status": "complete",
+  "test": "2018-09"
+}

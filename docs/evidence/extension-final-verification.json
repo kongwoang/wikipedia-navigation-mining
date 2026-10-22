@@ -1,0 +1,70 @@
+{
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "algorithm_commit": "1b48689",
+  "frozen_algorithm_sha256": {
+    "embeddings.py": "a9cca3eb9d4893fb2c6438d05a77647c0006d47d8b82ecd4ab48132ac46c60bd",
+    "evaluation.py": "6ad97e6c95d60774e2bc66bf4d87ff2aece6876dc467d5311fe61a3b5ba0cc21",
+    "experiment.py": "1ead00a806ac784d66796b39e843b76ef881a1f23febfdbca7940b8d97ade104",
+    "extension_data.py": "138169943c0cae0f08770e09dca1403c43f2d70b14fae51b7b0a1d7d1cc2fc5a",
+    "extension_experiment.py": "d1ae71f833cc465e96497b213c651f00a6635a072c918cd676fc53ead292076b",
+    "extension_models.py": "05be399ee712d69f14e684daa4092e63204b5e75c57ca62504ecbe25d6944980",
+    "ranking.py": "961763066ed876164200c42c377a23cd891c7423d6fdec9ff5a6f7c38b4bcccd",
+    "redirects.py": "afb124ce960260e880d05872537be1cc442b3069c091b61c667985b639f4ce2c",
+    "sparse_models.py": "f341faeee02d228440993f6da6dfd0cffdb8df1fcbf2624e98d6b349ffdbbb6d",
+    "study_data.py": "c596acebcfe15ba26acb845e57ad73c68681393e5ab689802714430ad286c31e",
+    "utils.py": "2f257b1f483a80db9af3d5dfefb54f98fef97db0e50e6c2b269e4d57730b20ca"
+  },
+  "protocol_sha256": "1c58af12e0e2cc328c39e8d5d935c2ca561fe7a83b5a3fce9124f4e4af5860ca",
+  "run": "results/extensions-v2",
+  "runtime": {
+    "boundary": {
+      "wall_seconds": 435.82,
+      "max_rss_bytes": 2362195968,
+      "measurement": "/usr/bin/time -l on macOS; stages ran concurrently"
+    },
+    "rolling": {
+      "wall_seconds": 385.53,
+      "max_rss_bytes": 1903804416,
+      "measurement": "/usr/bin/time -l on macOS; stages ran concurrently"
+    },
+    "null": {
+      "wall_seconds": 74.26,
+      "max_rss_bytes": 1668841472,
+      "measurement": "/usr/bin/time -l on macOS; stages ran concurrently"
+    }
+  },
+  "tests": {
+    "total": 86,
+    "status": "passed",
+    "skipped": 0
+  },
+  "extension_verification": {
+    "status": "verified",
+    "source_model_period_evaluations": 28600,
+    "ranking_checks": 19600,
+    "rolling_windows": [
+      "2018-07",
+      "2018-08",
+      "2018-09"
+    ],
+    "demo_model_checks": 3600,
+    "scope": "Frozen score/rank/label re-evaluation and recorded chronology; not model retraining."
+  },
+  "original_verification": {
+    "source_model_period_evaluations": 5600,
+    "main_models": 14,
+    "queries": 200,
+    "periods": [
+      "2018-05",
+      "2018-06"
+    ],
+    "status": "verified"
+  },
+  "payload_hashes_unchanged_after_fallback_analysis": true,
+  "browser_visual_qa": "not performed: prior origin denial; no bypass",
+  "limitations": [
+    "CI checks fixtures and bundles, not full raw-data retraining",
+    "Conditional source bootstrap; overlapping windows are not independent",
+    "Recorded freeze/read chronology is a local audit, not external preregistration"
+  ]
+}

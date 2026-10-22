@@ -1,0 +1,103 @@
+{
+  "frozen_at_unix": 1792629096.247307,
+  "git_commit": "f4c8808c73d9f8dc62f5b133ec92af666be36a8f",
+  "predictions_sha256": "4d06168a0235ca1408153c24f62aa7a8bf3fa513f8af45bfaac61c13661d54c8",
+  "scope": {
+    "graph": "original induced H; fixed candidates",
+    "test": "2018-07",
+    "train": [
+      "2018-03",
+      "2018-04",
+      "2018-05"
+    ],
+    "validation": "2018-06"
+  },
+  "selected": {
+    "CycleRank": {
+      "max_length": 3
+    },
+    "HITS": {},
+    "M0_global": {},
+    "M1B_backoff": {
+      "eta": 0.0,
+      "mu": 0.0
+    },
+    "M1_local": {},
+    "M2D_indegree": {},
+    "M2_uniform": {},
+    "M3_ppr_h": {
+      "damping": 0.15,
+      "mode": "H"
+    },
+    "M4C_ppr_c": {
+      "damping": 0.15,
+      "mode": "C"
+    },
+    "M4H_ppr_wh": {
+      "damping": 0.15,
+      "mode": "WH"
+    },
+    "M6B_fusion": {
+      "lambda": 0.5
+    },
+    "N2V_H_s17": {
+      "dimension": 32,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 17
+    },
+    "N2V_H_s29": {
+      "dimension": 32,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 29
+    },
+    "N2V_H_s43": {
+      "dimension": 32,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 43
+    },
+    "N2V_WH_s17": {
+      "dimension": 64,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 17
+    },
+    "N2V_WH_s29": {
+      "dimension": 64,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 29
+    },
+    "N2V_WH_s43": {
+      "dimension": 64,
+      "p": 0.5,
+      "q": 2.0,
+      "seed": 43
+    },
+    "adaptive_fusion": {
+      "tau": 1000.0
+    },
+    "topology_tie": {}
+  },
+  "signature": {
+    "code": {
+      "embeddings.py": "a9cca3eb9d4893fb2c6438d05a77647c0006d47d8b82ecd4ab48132ac46c60bd",
+      "evaluation.py": "6ad97e6c95d60774e2bc66bf4d87ff2aece6876dc467d5311fe61a3b5ba0cc21",
+      "experiment.py": "1ead00a806ac784d66796b39e843b76ef881a1f23febfdbca7940b8d97ade104",
+      "extension_data.py": "138169943c0cae0f08770e09dca1403c43f2d70b14fae51b7b0a1d7d1cc2fc5a",
+      "extension_experiment.py": "d1ae71f833cc465e96497b213c651f00a6635a072c918cd676fc53ead292076b",
+      "extension_models.py": "05be399ee712d69f14e684daa4092e63204b5e75c57ca62504ecbe25d6944980",
+      "ranking.py": "961763066ed876164200c42c377a23cd891c7423d6fdec9ff5a6f7c38b4bcccd",
+      "redirects.py": "afb124ce960260e880d05872537be1cc442b3069c091b61c667985b639f4ce2c",
+      "sparse_models.py": "f341faeee02d228440993f6da6dfd0cffdb8df1fcbf2624e98d6b349ffdbbb6d",
+      "study_data.py": "c596acebcfe15ba26acb845e57ad73c68681393e5ab689802714430ad286c31e",
+      "utils.py": "2f257b1f483a80db9af3d5dfefb54f98fef97db0e50e6c2b269e4d57730b20ca"
+    },
+    "lock": "ad122f47863f58b76abadc96ca2367522b5228b0d0da806f11f12efe3f3fb420",
+    "prepared": "a58139ba2e541f4b2d3ac04a1baf53362d70ea15d999e2cba7c637b8e509583e",
+    "protocol": "1c58af12e0e2cc328c39e8d5d935c2ca561fe7a83b5a3fce9124f4e4af5860ca",
+    "python": "3.13.13"
+  }
+}

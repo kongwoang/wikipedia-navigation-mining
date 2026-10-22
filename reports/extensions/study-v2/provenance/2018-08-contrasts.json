@@ -1,0 +1,67 @@
+{
+  "CycleRank - M3_ppr_h": {
+    "ci95": [
+      0.1904072495657372,
+      0.2837258060091575
+    ],
+    "difference": 0.23772700602907992,
+    "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+    "method": "paired_percentile_bootstrap",
+    "resamples": 2000,
+    "seed": 2026,
+    "sources": 127,
+    "unit": "source_article"
+  },
+  "M6B_fusion - M1B_backoff": {
+    "ci95": [
+      -0.0005235850681024425,
+      0.009462211354236964
+    ],
+    "difference": 0.004080669620226882,
+    "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+    "method": "paired_percentile_bootstrap",
+    "resamples": 2000,
+    "seed": 2026,
+    "sources": 127,
+    "unit": "source_article"
+  },
+  "adaptive_fusion - M1B_backoff": {
+    "ci95": [
+      -0.012646305150698828,
+      0.006386742421690824
+    ],
+    "difference": -0.0012365782314105555,
+    "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+    "method": "paired_percentile_bootstrap",
+    "resamples": 2000,
+    "seed": 2026,
+    "sources": 127,
+    "unit": "source_article"
+  },
+  "topology_tie - M1B_backoff": {
+    "ci95": [
+      -0.00705937529605691,
+      0.015904601164407173
+    ],
+    "difference": 0.005247559712133005,
+    "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+    "method": "paired_percentile_bootstrap",
+    "resamples": 2000,
+    "seed": 2026,
+    "sources": 127,
+    "unit": "source_article"
+  },
+  "topology_tie - M1_local": {
+    "ci95": [
+      -0.01075625009699256,
+      0.012656607829318708
+    ],
+    "difference": 0.002489534148346032,
+    "limitation": "Conditional query-level approximation; graph sources may be dependent.",
+    "method": "paired_percentile_bootstrap",
+    "resamples": 2000,
+    "seed": 2026,
+    "sources": 127,
+    "unit": "source_article"
+  }
+}

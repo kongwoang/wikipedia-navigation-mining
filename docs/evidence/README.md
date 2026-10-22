@@ -16,3 +16,15 @@ Các JSON nhỏ lưu audit/provenance, không raw datasets hoặc individual use
 wnm1 evidence nếu có được giữ như lịch sử, **không** chứng nhận backend final. Run history và frozen policy nằm trong [RUN_PROTOCOL](../RUN_PROTOCOL.md).
 
 SHA256 xác định bytes; checksum không tự chứng minh mọi mapping/graph label đều đúng. Query candidates giữ đầy đủ nhưng intermediate boundary loss lớn; redirects/title moves và exposure/suppression vẫn là limitations. Future raw-file checksum verification khác việc parse test labels để tuning.
+
+## Extension evidence — 22/10
+
+| Evidence | Nội dung |
+|---|---|
+| [extension-acquisition](extension-acquisition.json) | July–September bytes/URLs/local SHA256; mirror source; không publisher checksum |
+| [full-graph-export](full-graph-export.json) | Canonical H/C nodes/edges, CSR sizes, build cost và artifact hashes |
+| [full-graph-pilot](full-graph-pilot.json) | 10 train-only hash-selected queries; resource/convergence gate trước quality evaluation |
+| [extension-pretest-correction](extension-pretest-correction.json) | SQL alias fix; aborted run chỉ loaded Mar–June, chưa July test |
+| [extension-final-verification](extension-final-verification.json) | Exact algorithm bytes so commit/freeze,86tests, runtime,28600 re-evaluations và demo data checks |
+
+[Extension bundle](../../reports/extensions/study-v2/) chứa frozen compressed payloads và per-window event logs. Totals của verifier đếm các lần kiểm tra, có reuse giữa tables; không phải independent sample size.

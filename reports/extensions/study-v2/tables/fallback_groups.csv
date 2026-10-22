@@ -1,0 +1,19 @@
+month,group,model,queries,observable,delta_vs_local,ci_low,ci_high,interpretation
+2018-07,positive_eligible_mass,topology_tie,142,126,0.008560791393141727,-0.0009136908575675086,0.019377720912895184,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-07,positive_eligible_mass,M6B_fusion,142,126,0.008648135646325276,-0.00082555469852467,0.019543836227409687,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-07,positive_eligible_mass,adaptive_fusion,142,126,0.008685153673032296,-0.0007648033336018205,0.019544811552467078,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-07,zero_eligible_mass,topology_tie,58,2,-0.02455262638111523,-0.04910525276223046,0.0,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-07,zero_eligible_mass,M6B_fusion,58,2,0.0,0.0,0.0,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-07,zero_eligible_mass,adaptive_fusion,58,2,-0.02455262638111523,-0.04910525276223046,0.0,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-08,positive_eligible_mass,topology_tie,137,124,0.00712837607962956,0.00027277039196870156,0.015100846709329431,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-08,positive_eligible_mass,M6B_fusion,137,124,0.0013546435094182938,-0.0057107214880083995,0.007815425288597355,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-08,positive_eligible_mass,adaptive_fusion,137,124,0.00048736383100026864,-0.005981404800870681,0.0062776273877323775,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-08,zero_eligible_mass,topology_tie,63,3,-0.18924926567803987,-0.5677477970341196,0.0,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-08,zero_eligible_mass,M6B_fusion,63,3,0.0,0.0,0.0,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-08,zero_eligible_mass,adaptive_fusion,63,3,-0.18924926567803987,-0.5677477970341196,0.0,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-09,positive_eligible_mass,topology_tie,136,121,0.006078180861405569,-0.004011761600352899,0.017835596935855662,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-09,positive_eligible_mass,M6B_fusion,136,121,0.0061584197970696915,-0.003911831407314511,0.017931973470515637,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-09,positive_eligible_mass,adaptive_fusion,136,121,0.006472474531509204,-0.0037756701166476027,0.018268662074348,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-09,zero_eligible_mass,topology_tie,64,3,-0.2630216087726293,-0.5,0.0,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-09,zero_eligible_mass,M6B_fusion,64,3,0.0,0.0,0.0,post-hoc train-mass subgroup; zero-mass changes fallback policy
+2018-09,zero_eligible_mass,adaptive_fusion,64,3,-0.2630216087726293,-0.5,0.0,post-hoc train-mass subgroup; zero-mass changes fallback policy

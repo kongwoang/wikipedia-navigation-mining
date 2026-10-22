@@ -1,38 +1,44 @@
-# Trạng thái hoàn thiện — 21/10/2026
+# Trạng thái bàn giao — 22/10/2026
 
-Người dùng đã chuyển từ planning sang yêu cầu hoàn thiện toàn project. Scope đã thực hiện là **bounded university study trên real eswiki data**, không full-Wikipedia deployment. Bản planning trước đây được giữ để truy nguyên; trạng thái hiện hành ở đây và [báo cáo](../reports/REPORT.md).
+Đã hoàn thành implementation, nghiên cứu dữ liệu thật và toàn bộ quality-improvement extensions trong scope học phần. Đây là **empirical comparative study có literature review**, không survey thuần, không production recommender hoặc population benchmark. Bảy planning documents được lưu để truy nguyên; trạng thái hiện hành ở đây.
 
-| Thành phần | Trạng thái / bằng chứng |
+| Thành phần | Bằng chứng hoàn tất |
 |---|---|
-| Bảy planning documents | Đủ scope, dataset/literature matrices, protocol, roadmap, feedback/risk/defense |
-| Acquisition |9 raw artifacts pinned SHA256; source checksum validation; không commit rawdata |
-| Data pipeline | Historical redirect cutoff, duplicate quarantine, main namespace, shared candidates, train-only sampling; manifest |
-| Fresh preparation replay |4 Parquet files byte-identical, full counters identical: [evidence](evidence/preparation-replay.json) |
-| Core/scientific correctness |72 local tests pass; core 57, scientific 14, acquisition 1; tiny fixtures, không fake benchmark |
-| Native embedding backend | Gensim4.4.0+wnm2, typed SciPyBLAS, negative-dot regression, real finite-vector/loss smoke; Linux CI pass ở model-code commit9b1f28b |
-| Frozen real study | `study-v3` complete,14 main models/28totalconfigurations; full validation grid,freeze-before-test,May/June |
-| Models | Global/local/backoff/uniform/indegree,PPR-H/C/CH/WH,matrix/scorefusion,HITS,N2V-H/W |
-| Evaluation | Required ranking metrics, full/conditional, macro/weighted, coverage, paired sourceCI, source/pair groups,3embeddingseeds |
-| Ablations | A1–A9; fixed damping/support A4, matched knobs A5, history1/2/3months, fixed-model horizon/common sources |
-| Analysis/report |11 scientific figures PNG/SVG, automated CSV/Markdown tables,7 deep cases,17-section report |
-| Demo | Offline HTML from frozen real scores/labels;14 models,200 queries,2months; data/metric verified |
-| Browser QA | **Chưa thực hiện được**: localhost origin gate từ chối. Không workaround; rehearsal checklist và static case fallback đã có |
-| Presentation/defense | Markdown outline12–15 phút,2–3 phútdemo,25 evidence-backed answers |
-| Reproducibility | Pinned lock/build/source hashes, clean-output script, bundle SHA verifier;5600main-model re-evaluations verified |
-| Publication | Git main; [Actions](https://github.com/kongwoang/wikipedia-navigation-mining/actions) chứa status theo commit; không suy CI fixtures là full real-data rerun |
+| Planning / literature / defense | Bảy tài liệu thiết kế, verified literature matrix, feedback-to-action, risk register, câu hỏi bảo vệ |
+| Data | Historical H/redirect cutoff01/03/2018, Clickstream Jan–Sep2018, schema/mapping/duplicate audits; 12 pinned raw fingerprints |
+| Preprocessing | Train-only stratified sampling, candidate integrity, sparse artifacts/manifests; original preparation replay byte-identical bốn Parquets |
+| Original study-v3 | 14 main configurations/28 total runs, April tuning; frozen predictions trước May/June evaluation |
+| Full-graph boundary | 2.077.467 nodes/36.333.722 H edges; pilot qua gate; original candidates giữ nguyên; H/C/WH và fusion controls |
+| Rolling-origin extension | Ba windows July/August/September, 19 configurations mỗi window; protocol/grids khóa trước test labels |
+| Structural controls | Năm degree-preserving rewired H, query rows protected; hai disjoint query panels thêm400 queries trên cùng full H |
+| Model extensions | Topology tie-break, adaptive fusion, exact bounded CycleRank length2/3; diagnostics/tuning/three embedding seeds |
+| Analysis | Original11 + extension7 scientific figures PNG/SVG; required metrics, coverage, paired CIs, common-source, fallback/observed-unobserved analysis |
+| Case studies | Bảy original cases và hai extension cases sâu, gồm gain và fallback failure; real counts/rankings |
+| Correctness | **86 local tests pass, không skip**: core57, study14, acquisition1, extension10, portable extension verification4 |
+| Portable evidence | Original5600 + extension28600 metric evaluations; extension19600 ranking checks và3600 demo model views |
+| Reproduction | Pinned dependencies/native patch; `reproduce.sh`, `reproduce_extensions.sh`; raw-to-model và re-evaluation phân biệt rõ |
+| Demo | Original14 models/200 queries/2months; extension6 displayed models/200 queries/3rolling months, offline HTML từ actual predictions |
+| Browser QA | **Chưa thực hiện được** do origin access bị từ chối trước đó; không workaround. Static/data checks không thay visual/interaction rehearsal |
+| Publication | Code, reports, portable artifacts; [GitHub Actions](https://github.com/kongwoang/wikipedia-navigation-mining/actions) kiểm tra từng pushed commit |
 
-## Kết luận thực nghiệm đã chốt
+## Kết luận thực nghiệm
 
-May Markov macro full NDCG0,8991, fusion0,9034; Δ0,00429 và95%CI[−0,00076;0,01035]. Chưa reliable hybrid improvement. Pure H topology kém local frequency; weighted walks tốt hơn unweighted controls. Topology giúp một số training-unobserved targets; cold-start thiếu labels (May0/June1observable sources). June traffic-weighted fusion thấp hơn Markov. Báo đầy đủ cả positive/negative observations.
+Markov là strong baseline. Original fusion−Markov May Δ0,00429,95%CI[−0,00076;0,01035]. Full-H PPR vẫn thấp hơn Markov ở các sampled panels; graph boundary loss không đủ giải thích khoảng cách. Real topology tốt hơn degree-matched rewired controls, nhưng topology thêm vào behavior chưa cho reliable net gain: primary tie-break−Markov rolling Δ+0,00804/+0,00249/−0,00043, cả ba CI chứa0.
 
-## Scope/limitations còn lại, không che giấu thành việc đã hoàn tất
+Case **Emperador Alejandro** cho thấy zero-count fallback có ý nghĩa: global popularity có thể thắng PPR; không quy toàn bộ thay đổi cho count ties. Cold nhóm vẫn thiếu labels. Macro/weighted có thể đổi thứ tự model; báo cả hai.
 
-- 200train-stratifiedqueries;8.094 nodes/319.694 edges; intermediate outgoing retention30,82%. Không full-graphPPR/population claim.
-- Fixed model May/June, chưa rolling-origin retraining hay cross-language replication.
-- Local full run +fresh preparation replay+portable re-evaluation+Linux tinyCI; chưa clean full raw-to-model replication trên Linux.
-- Browser UI rendering/interactions cần rehearsal sau khi người dùng mở HTML; policy đã chặn agent truy cập origin.
-- CycleRank/CoCit, directed embedding scoring, fullgraph và true sessions làP2extensions; không nằm trên critical path của completed course study.
+## Phạm vi chưa được chứng minh
 
-## Code lineage
+- Full-graph processing không đồng nghĩa population evaluation: rolling200 queries, query-panel controls600; một language/time period.
+- Full graph chỉ dùng boundary/panel subset models; Node2Vec/CycleRank/rolling vẫn dùng induced context.
+- Chưa có true users/sessions, causal online uplift, current-Wikipedia hoặc independent language replication.
+- Local raw pipeline + preparation replay + portable verification + Linux tiny CI; chưa full real-data raw-to-model replication trên Linux.
+- Browser rendering/interactions cần người trình bày rehearsal; đây là giới hạn QA còn lại, không giấu thành bước đã hoàn tất.
 
-Frozen model code commit`9b1f28ba90e21591afb23ed65c5fd0a17f4195d2`; freeze ghi`git_dirty=true`, algorithm digest riêng được so lại với commit. Final packaging thêm acquisition integrity, presentation/analysis/report/CI; không sửa thuật toán hoặc tuning sau test. [Final verification](evidence/final-verification.json) ghi checks. study-v1 incomplete và study-v2 backend-portability run không dùng làm final results; lịch sử trong [RUN_PROTOCOL](RUN_PROTOCOL.md).
+## Lineage và đầu vào đọc báo cáo
+
+- Original model code `9b1f28ba90e21591afb23ed65c5fd0a17f4195d2`; original predictions/bundle không thay đổi.
+- Extension protocol commit `35d308f`; algorithms sau sửa SQL alias trước holdout khớp bytes commit `1b48689`. Freeze ghi commit đang có lúc chạy, kèm exact per-file hashes; record không phải external preregistration.
+- `extensions-v1` dừng trước July test; lỗi SQL alias được sửa/test trước run `extensions-v2`. [Pretest correction](evidence/extension-pretest-correction.json) ghi loaded months chỉ Mar–June.
+- [Extension verification](evidence/extension-final-verification.json): source hashes, runtime/RSS, tests, bundle checks. Report-only fallback analysis giữ nguyên cả năm frozen payload hashes.
+- Đọc [báo cáo chính](../reports/REPORT.md), [kết quả mở rộng](../reports/EXTENSION_RESULTS.md), [cases mới](../reports/EXTENSION_CASES.md) và [tái lập](../reports/REPRODUCIBILITY.md).

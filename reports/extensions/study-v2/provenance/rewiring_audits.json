@@ -1,0 +1,62 @@
+{
+  "101": {
+    "accepted_swaps": 1549180,
+    "attempts": 1931263,
+    "degree_invariant": true,
+    "edge_overlap": 0.13384674094602964,
+    "interpretation": "descriptive perturbation; not equilibrium null p-value",
+    "ppr_max_residual": 9.718765146231831e-09,
+    "query_candidates_invariant": true,
+    "seed": 101,
+    "target_reached": true,
+    "target_swaps": 1549180
+  },
+  "102": {
+    "accepted_swaps": 1549180,
+    "attempts": 1931890,
+    "degree_invariant": true,
+    "edge_overlap": 0.13403129242337986,
+    "interpretation": "descriptive perturbation; not equilibrium null p-value",
+    "ppr_max_residual": 9.663399047120105e-09,
+    "query_candidates_invariant": true,
+    "seed": 102,
+    "target_reached": true,
+    "target_swaps": 1549180
+  },
+  "103": {
+    "accepted_swaps": 1549180,
+    "attempts": 1931566,
+    "degree_invariant": true,
+    "edge_overlap": 0.13412513215762573,
+    "interpretation": "descriptive perturbation; not equilibrium null p-value",
+    "ppr_max_residual": 9.725865336186037e-09,
+    "query_candidates_invariant": true,
+    "seed": 103,
+    "target_reached": true,
+    "target_swaps": 1549180
+  },
+  "104": {
+    "accepted_swaps": 1549180,
+    "attempts": 1931784,
+    "degree_invariant": true,
+    "edge_overlap": 0.1341001082284935,
+    "interpretation": "descriptive perturbation; not equilibrium null p-value",
+    "ppr_max_residual": 9.967829200250185e-09,
+    "query_candidates_invariant": true,
+    "seed": 104,
+    "target_reached": true,
+    "target_swaps": 1549180
+  },
+  "105": {
+    "accepted_swaps": 1549180,
+    "attempts": 1930748,
+    "degree_invariant": true,
+    "edge_overlap": 0.1332618066025637,
+    "interpretation": "descriptive perturbation; not equilibrium null p-value",
+    "ppr_max_residual": 9.84526889267138e-09,
+    "query_candidates_invariant": true,
+    "seed": 105,
+    "target_reached": true,
+    "target_swaps": 1549180
+  }
+}
