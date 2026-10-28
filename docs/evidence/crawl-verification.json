@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "date": "2026-10-29",
+  "local_tests": 104,
+  "crawl_tests": 18,
+  "network_in_tests": false,
+  "resume": {
+    "status": "bounded_complete",
+    "requested_pages": 8,
+    "completed_pages": 8,
+    "failed_pages": 0,
+    "frontier_remaining": 311,
+    "distinct_edge_target_titles": 485,
+    "http_requests_this_invocation": 0,
+    "scope": "Crawl/extraction pilot, not recommendation evaluation; uncrawled frontier is boundary, not dangling."
+  },
+  "raw_parsing_replay_verified": true,
+  "pilot_report_hashes_verified": true,
+  "original_bundle": {
+    "source_model_period_evaluations": 5600,
+    "main_models": 14,
+    "queries": 200,
+    "periods": [
+      "2018-05",
+      "2018-06"
+    ],
+    "status": "verified"
+  },
+  "extension_bundle": {
+    "status": "verified",
+    "source_model_period_evaluations": 28600,
+    "ranking_checks": 19600,
+    "rolling_windows": [
+      "2018-07",
+      "2018-08",
+      "2018-09"
+    ],
+    "demo_model_checks": 3600,
+    "scope": "Frozen score/rank/label re-evaluation and recorded chronology; not model retraining."
+  },
+  "limitation": "Acquisition/extraction pilot only; no evaluation of crawled-feature recommender."
+}

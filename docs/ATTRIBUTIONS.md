@@ -15,3 +15,7 @@ Project dùng Python standard library, DuckDB, NumPy, SciPy, matplotlib và Gens
 Gensim source thuộc LGPL2.1; installer giữ copyright/license notices, lấy source từ upstream với SHA256 và chỉ tạo local build trong `.cache/`. Source transformation được công khai trong `scripts/install_gensim_fix.py`: typed SciPy BLAS wrappers, exception declarations và regression probe. Không commit native wheel hoặc upstream source archive. Source link và hash đủ để kiểm tra đúng bản đã sửa; đây không phải official Gensim release.
 
 Thuật toán/tham khảo học thuật được dẫn trong [LITERATURE_REVIEW](LITERATURE_REVIEW.md). Project không claim phát minh PPR, HITS, Node2Vec hoặc ý tưởng kết hợp click/graph.
+
+## Live crawl / historical revision collection — 29/10/2026
+
+MediaWiki Action API và canonical es.wikipedia.org HTML là nguồn tự thu thập, riêng với Clickstream. Article text theo license tại trang nguồn (thường CC BY-SA4.0), không tự gắn CC0. Raw captures lưu URL, revision ID, timestamp, SHA256; không publish article text/images trong repository. Processed text nếu redistribution cần giữ attribution và license phù hợp; xem [Wikimedia Content reuse](https://www.mediawiki.org/wiki/Wikimedia_APIs/Content_reuse). Pilot report chứa factual counts/provenance và source URLs.

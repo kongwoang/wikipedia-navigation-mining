@@ -1,0 +1,20 @@
+{
+  "api_edges": 654,
+  "capture_end": "2026-10-28T22:45:18.657227+00:00",
+  "capture_start": "2026-10-28T22:44:34.472531+00:00",
+  "completed_pages": 8,
+  "distinct_source_page_ids": 8,
+  "failed_pages": 0,
+  "frontier_remaining": 311,
+  "historical_available": 6,
+  "historical_unavailable": 2,
+  "html_edges": 556,
+  "html_occurrences": 1028,
+  "matched_revision_pairs": 8,
+  "nodes_in_export": 575,
+  "raw_bytes": 1423505,
+  "raw_captures": 26,
+  "raw_parsing_replay_verified": true,
+  "scope": "Current title-level crawl extraction pilot. No Clickstream labels, no recommendation accuracy claims.",
+  "unresolved_target_nodes": 567
+}

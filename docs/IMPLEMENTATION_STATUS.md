@@ -1,4 +1,4 @@
-# Trạng thái bàn giao — 22/10/2026
+# Trạng thái bàn giao — cập nhật crawl 29/10/2026
 
 Đã hoàn thành implementation, nghiên cứu dữ liệu thật và toàn bộ quality-improvement extensions trong scope học phần. Đây là **empirical comparative study có literature review**, không survey thuần, không production recommender hoặc population benchmark. Bảy planning documents được lưu để truy nguyên; trạng thái hiện hành ở đây.
 
@@ -14,7 +14,7 @@
 | Model extensions | Topology tie-break, adaptive fusion, exact bounded CycleRank length2/3; diagnostics/tuning/three embedding seeds |
 | Analysis | Original11 + extension7 scientific figures PNG/SVG; required metrics, coverage, paired CIs, common-source, fallback/observed-unobserved analysis |
 | Case studies | Bảy original cases và hai extension cases sâu, gồm gain và fallback failure; real counts/rankings |
-| Correctness | **86 local tests pass, không skip**: core57, study14, acquisition1, extension10, portable extension verification4 |
+| Correctness | **104 local tests pass, không skip**: core57, study14, acquisition1, extension10, portable extension verification4, crawl18 |
 | Portable evidence | Original5600 + extension28600 metric evaluations; extension19600 ranking checks và3600 demo model views |
 | Reproduction | Pinned dependencies/native patch; `reproduce.sh`, `reproduce_extensions.sh`; raw-to-model và re-evaluation phân biệt rõ |
 | Demo | Original14 models/200 queries/2months; extension6 displayed models/200 queries/3rolling months, offline HTML từ actual predictions |
@@ -42,3 +42,11 @@ Case **Emperador Alejandro** cho thấy zero-count fallback có ý nghĩa: globa
 - `extensions-v1` dừng trước July test; lỗi SQL alias được sửa/test trước run `extensions-v2`. [Pretest correction](evidence/extension-pretest-correction.json) ghi loaded months chỉ Mar–June.
 - [Extension verification](evidence/extension-final-verification.json): source hashes, runtime/RSS, tests, bundle checks. Report-only fallback analysis giữ nguyên cả năm frozen payload hashes.
 - Đọc [báo cáo chính](../reports/REPORT.md), [kết quả mở rộng](../reports/EXTENSION_RESULTS.md), [cases mới](../reports/EXTENSION_CASES.md) và [tái lập](../reports/REPRODUCIBILITY.md).
+
+## Nhánh crawl mới — 29/10/2026
+
+Đã triển khai hai cách thu thập theo yêu cầu: API và HTML độc lập, cùng mode đối chiếu. [Pilot](../reports/crawl/pilot-v2/PILOT.md) hoàn thành8pages,8matched revisions,654API/556HTMLedges,1028occurrences,6historical revisions; hash và raw parsing replay đã kiểm tra. Current data giữ riêng khỏi study2018.
+
+[CRAWLING_EXTENSION](CRAWLING_EXTENSION.md) mô tả graph/content/position features, temporally compatible evaluation và roadmap100–200source audit. Corpus crawl quy mô lớn và ranking experiments dùng features mới **chưa chạy**; không hiểu trạng thái completed của benchmark cũ là completed của scope mới.
+
+[Crawl verification](evidence/crawl-verification.json):18offline crawl tests; full suite104tests; resume dùng0network requests; old result bundles giữ nguyên và verify lại thành công.

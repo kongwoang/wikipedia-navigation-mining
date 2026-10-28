@@ -1,0 +1,9 @@
+source_title,page_id,depth,api_revision,html_revision,matched_revision,api_targets,html_body_targets,html_occurrences,body_jaccard,all_context_jaccard,historical_available
+Tag Team Championship,8017914,0,175328486,175328486,True,191,186,238,0.9738219895287958,0.9842931937172775,True
+Zapoteca,128256,0,168725260,168725260,True,8,8,8,1.0,1.0,True
+Ruslana,100547,0,172119452,172119452,True,147,102,168,0.6938775510204082,0.8639455782312925,True
+Municipio de Cumberland (condado de Adams),4412829,0,160937010,160937010,True,33,13,45,0.3939393939393939,1.0,True
+"Hotel, dulce hotel",1008171,0,173276965,173276965,True,22,10,26,0.45454545454545453,0.9545454545454546,True
+2 Cold Scorpio,4801510,1,175042990,175042990,True,62,51,73,0.8225806451612904,0.9516129032258065,True
+AEW Women's World Tag Team Championship,11315276,1,175560170,175560170,True,50,49,99,0.96,1.0,False
+AEW World Tag Team Championship,8975226,1,175884286,175884286,True,141,139,371,0.9787234042553191,1.0,False

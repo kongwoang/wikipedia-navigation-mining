@@ -1,0 +1,367 @@
+{
+  "captures": [
+    {
+      "bytes": 32229,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:52.570662+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "7dd8ce27aedd958ab795af2485f61e6160d492768266038bf52ca2fcada0aaee",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pageids=100547&prop=revisions&rvdir=older&rvlimit=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&rvstart=2018-03-01T00%3A00%3A00Z"
+    },
+    {
+      "bytes": 3456,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:59.100398+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "86bad0c8bcf34a6a2c94bd3fda7cef18ecfee0031559c081df3e58c2a42cd604",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pllimit=500&plnamespace=0&prop=revisions%7Clinks&redirects=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&titles=Hotel%2C+dulce+hotel"
+    },
+    {
+      "bytes": 37602,
+      "content_type": "application/json; charset=utf-8",
+      "elapsed_seconds": 0.8035305839985085,
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:15.064316+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "91424d26ba24afa2d719275229f5059327284b32637f47d2a12e8f382e5a4490",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pllimit=500&plnamespace=0&prop=revisions%7Clinks&redirects=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&titles=AEW+World+Tag+Team+Championship"
+    },
+    {
+      "bytes": 16703,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:09.171788+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "0ccbad36da2b1f7f602f97a75a765aefc18135f5b7e73cc9217b61d2020742a8",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pllimit=500&plnamespace=0&prop=revisions%7Clinks&redirects=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&titles=AEW+Women%27s+World+Tag+Team+Championship"
+    },
+    {
+      "bytes": 3225,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:57.601595+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "f1f51ada8a92017a1f66d1888493f06f7e28bd2eeb7ea8b34b6127edfb67ef12",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pageids=4412829&prop=revisions&rvdir=older&rvlimit=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&rvstart=2018-03-01T00%3A00%3A00Z"
+    },
+    {
+      "bytes": 39183,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:48.693065+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "2e0692d5d0e5d4dcab1dd59ac4513cb0bfb5b37ad036faca9b6ac3c6bf406dec",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pllimit=500&plnamespace=0&prop=revisions%7Clinks&redirects=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&titles=Ruslana"
+    },
+    {
+      "bytes": 110,
+      "content_type": "application/json; charset=utf-8",
+      "elapsed_seconds": 0.4532454170002893,
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:18.657227+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "ee33faec034699ca9386cf1b0ad68507424a17f778de18154c03f9f0295a414f",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pageids=8975226&prop=revisions&rvdir=older&rvlimit=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&rvstart=2018-03-01T00%3A00%3A00Z"
+    },
+    {
+      "bytes": 11956,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:03.819645+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "aa9f922f6d6f634a1bf5da7928fcceaccea9f275c2d0a2e5e2349c9498d0a07a",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pllimit=500&plnamespace=0&prop=revisions%7Clinks&redirects=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&titles=2+Cold+Scorpio"
+    },
+    {
+      "bytes": 25271,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:37.444693+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "45b2d4320618bc5e9a48826687c6ffa6023850ad02314b606965082e270e2843",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pllimit=500&plnamespace=0&prop=revisions%7Clinks&redirects=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&titles=Tag+Team+Championship"
+    },
+    {
+      "bytes": 73206,
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:00.813747+00:00",
+      "kind": "html",
+      "last_modified": "Wed, 14 Oct 2026 22:45:00 GMT",
+      "sha256": "66e81855baa94f0c97d1378764f038221d1bc6d6dd54bf096f25ac528b160472",
+      "status": 200,
+      "url": "https://es.wikipedia.org/wiki/Hotel%2C_dulce_hotel"
+    },
+    {
+      "bytes": 1519,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:43.271282+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "34514503cd191779aa7aa08d0e1265122438683e407df54741c0ba019b4146ed",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pllimit=500&plnamespace=0&prop=revisions%7Clinks&redirects=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&titles=Zapoteca"
+    },
+    {
+      "bytes": 111085,
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:05.916107+00:00",
+      "kind": "html",
+      "last_modified": "Wed, 14 Oct 2026 22:45:05 GMT",
+      "sha256": "8e18a25d593f77dc35c48b14e7491c1e6f0b452f46a4a1888a3507b08b17c6eb",
+      "status": 200,
+      "url": "https://es.wikipedia.org/wiki/2_Cold_Scorpio"
+    },
+    {
+      "bytes": 160411,
+      "content_type": "text/html; charset=UTF-8",
+      "elapsed_seconds": 0.46547145799922873,
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:11.747427+00:00",
+      "kind": "html",
+      "last_modified": "Wed, 14 Oct 2026 22:45:10 GMT",
+      "sha256": "bdfaa07a0f2860165ad8dfeb4e2a4611737ff1648ce55d09d3a027d263eb80d8",
+      "status": 200,
+      "url": "https://es.wikipedia.org/wiki/AEW_Women%27s_World_Tag_Team_Championship"
+    },
+    {
+      "bytes": 147072,
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:40.345045+00:00",
+      "kind": "html",
+      "last_modified": "Wed, 14 Oct 2026 22:44:38 GMT",
+      "sha256": "af3c14868bd688f5607ed6349d570265d6f54a103e7f59463ed074a8c172e87c",
+      "status": 200,
+      "url": "https://es.wikipedia.org/wiki/Tag_Team_Championship"
+    },
+    {
+      "bytes": 4620,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:34.472531+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "0701af147eef3df9a0345dc00189f40a16ada5693f0909b37d779edffd2919cf",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&meta=siteinfo&siprop=namespaces%7Cnamespacealiases"
+    },
+    {
+      "bytes": 301140,
+      "content_type": "text/html; charset=UTF-8",
+      "elapsed_seconds": 1.129864832997555,
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:17.198248+00:00",
+      "kind": "html",
+      "last_modified": "Sun, 18 Oct 2026 14:07:16 GMT",
+      "sha256": "f535c6587327bd8b29030a85901e7a1ce963fb5838ad4472a0275d718158f75b",
+      "status": 200,
+      "url": "https://es.wikipedia.org/wiki/AEW_World_Tag_Team_Championship"
+    },
+    {
+      "bytes": 2357,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:02.271295+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "4b3404e2dd55896e2faa2a48f5106d15692a306bdc50f28afa6d12d4438b45e7",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pageids=1008171&prop=revisions&rvdir=older&rvlimit=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&rvstart=2018-03-01T00%3A00%3A00Z"
+    },
+    {
+      "bytes": 10534,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:41.810343+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "6d40b5af554041e6b777170753371ec3b5dab3186e1a2f57218952bf476f9b00",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pageids=8017914&prop=revisions&rvdir=older&rvlimit=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&rvstart=2018-03-01T00%3A00%3A00Z"
+    },
+    {
+      "bytes": 10203,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:07.489216+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "7fe60688fea42df0c9a4e6231a14f6002fc44f07ca96a23fa5f7b74e9dad0ed6",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pageids=4801510&prop=revisions&rvdir=older&rvlimit=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&rvstart=2018-03-01T00%3A00%3A00Z"
+    },
+    {
+      "bytes": 102714,
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:56.146525+00:00",
+      "kind": "html",
+      "last_modified": "Wed, 14 Oct 2026 22:44:55 GMT",
+      "sha256": "c66cccf9b1ed9fb8e729d59872d5c1c9ccf62c5e02d381d6471bf86f88d8adcd",
+      "status": 200,
+      "url": "https://es.wikipedia.org/wiki/Municipio_de_Cumberland_%28condado_de_Adams%29"
+    },
+    {
+      "bytes": 1108,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:46.893920+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "5b4ee6ce90f2d9be4a0b7ad05a678f63ce22b421a6344fd59558523f28bd21a9",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pageids=128256&prop=revisions&rvdir=older&rvlimit=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&rvstart=2018-03-01T00%3A00%3A00Z"
+    },
+    {
+      "bytes": 52849,
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:45.371831+00:00",
+      "kind": "html",
+      "last_modified": "Wed, 14 Oct 2026 22:44:44 GMT",
+      "sha256": "3f0cdbcf4c6c15d79d2538c81338e9a7324dee7b661e9eb07bd284431b6c8fdc",
+      "status": 200,
+      "url": "https://es.wikipedia.org/wiki/Zapoteca"
+    },
+    {
+      "bytes": 19741,
+      "content_type": "text/plain; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:35.722852+00:00",
+      "kind": "robots",
+      "last_modified": "Wed, 08 Jul 2026 20:09:04 GMT",
+      "sha256": "5af808b5ebc7070bc95d19b1446b6a9beab79fa36ff024fe04a4cc334a75222e",
+      "status": 200,
+      "url": "https://es.wikipedia.org/robots.txt"
+    },
+    {
+      "bytes": 4696,
+      "content_type": "application/json; charset=utf-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:54.045259+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "84ad655e39ffd40f1ece9d29df2e4db69a5946d6dcba38d4669c7cad6b0b1bb3",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pllimit=500&plnamespace=0&prop=revisions%7Clinks&redirects=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&titles=Municipio+de+Cumberland+%28condado+de+Adams%2C+Pensilvania%29"
+    },
+    {
+      "bytes": 250396,
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "fetched_at": "2026-10-28T22:44:50.468965+00:00",
+      "kind": "html",
+      "last_modified": "Thu, 22 Oct 2026 17:59:29 GMT",
+      "sha256": "e4aea1e4230ec9f6868172640f2b9500a237a4ecfc93b5be055b7709f8f7793d",
+      "status": 200,
+      "url": "https://es.wikipedia.org/wiki/Ruslana"
+    },
+    {
+      "bytes": 119,
+      "content_type": "application/json; charset=utf-8",
+      "elapsed_seconds": 0.5027378750019125,
+      "etag": null,
+      "fetched_at": "2026-10-28T22:45:13.255778+00:00",
+      "kind": "api",
+      "last_modified": null,
+      "sha256": "8607e2eb98f7f01f127c39c1871359e78e5208e72431a4b29f4610e645933b8c",
+      "status": 200,
+      "url": "https://es.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&maxlag=5&pageids=11315276&prop=revisions&rvdir=older&rvlimit=1&rvprop=ids%7Ctimestamp%7Ccontent&rvslots=main&rvstart=2018-03-01T00%3A00%3A00Z"
+    }
+  ],
+  "crawl_signature": {
+    "code_sha256": "8ec79b113bb51a5457c792e7463b0d7174c3a4ef61d11bc7dc132b579413ea11",
+    "config": {
+      "delay_seconds": 1.0,
+      "edition": "es",
+      "historical_cutoff": "2018-03-01T00:00:00Z",
+      "max_depth": 1,
+      "max_pages": 8,
+      "max_requests": 80,
+      "max_response_bytes": 2000000,
+      "mode": "both",
+      "seeds": [
+        "Tag Team Championship",
+        "Zapoteca",
+        "Ruslana",
+        "Municipio de Cumberland (condado de Adams, Pensilvania)",
+        "Hotel, dulce hotel"
+      ]
+    },
+    "user_agent": "WikipediaNavigationMiningBot/0.1 (https://github.com/kongwoang/wikipedia-navigation-mining)"
+  },
+  "note": "Pilot-v2 reuses captures from pilot-v1; final transport adds 5s pause after slow API requests. Capture times are recorded; collection is not an atomic snapshot.",
+  "processed_manifest": {
+    "crawl_signature": {
+      "code_sha256": "8ec79b113bb51a5457c792e7463b0d7174c3a4ef61d11bc7dc132b579413ea11",
+      "config": {
+        "delay_seconds": 1.0,
+        "edition": "es",
+        "historical_cutoff": "2018-03-01T00:00:00Z",
+        "max_depth": 1,
+        "max_pages": 8,
+        "max_requests": 80,
+        "max_response_bytes": 2000000,
+        "mode": "both",
+        "seeds": [
+          "Tag Team Championship",
+          "Zapoteca",
+          "Ruslana",
+          "Municipio de Cumberland (condado de Adams, Pensilvania)",
+          "Hotel, dulce hotel"
+        ]
+      },
+      "user_agent": "WikipediaNavigationMiningBot/0.1 (https://github.com/kongwoang/wikipedia-navigation-mining)"
+    },
+    "files": {
+      "api_edges.jsonl": "065a8eb784ded423eb92e69d2376edc222ec578a4e35d072d58ee132218ce0b2",
+      "html_edges.jsonl": "367454a485174e7b5e137d1b6f030201ee42db15ae4cbaadd3ff3054ff5ef1ba",
+      "nodes.jsonl": "49b6eede2b1956de19f49a7bcc4231b1910ff3b35e2ec4476a5e1f30ad38cdea",
+      "occurrences.jsonl": "0554c25ff167af1062aa2f0342e2adf9899c6efa76672e86c6eeb496cd6aa5da",
+      "pages.jsonl": "2ebed52a0431618ecba204f9fd859b64050b8402e98b315d57c706af58776c82"
+    },
+    "summary": {
+      "api_edges": 654,
+      "capture_end": "2026-10-28T22:45:18.657227+00:00",
+      "capture_start": "2026-10-28T22:44:34.472531+00:00",
+      "completed_pages": 8,
+      "distinct_source_page_ids": 8,
+      "failed_pages": 0,
+      "frontier_remaining": 311,
+      "historical_available": 6,
+      "historical_unavailable": 2,
+      "html_edges": 556,
+      "html_occurrences": 1028,
+      "matched_revision_pairs": 8,
+      "nodes_in_export": 575,
+      "raw_bytes": 1423505,
+      "raw_captures": 26,
+      "raw_parsing_replay_verified": true,
+      "scope": "Current title-level crawl extraction pilot. No Clickstream labels, no recommendation accuracy claims.",
+      "unresolved_target_nodes": 567
+    }
+  }
+}

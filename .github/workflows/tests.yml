@@ -15,6 +15,7 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: PYTHONPATH=src python -m unittest discover -s tests -p test_core.py -v
       - run: PYTHONPATH=src python -m unittest discover -s tests -p test_extension_verification.py -v
+      - run: PYTHONPATH=src python -m unittest discover -s tests -p test_crawl.py -v
       - run: PYTHONPATH=src python -m wikinav.verify_extensions
       - run: PYTHONPATH=src python -m wikinav.verify_bundle
       - run: python scripts/diagnose_frozen_predictions.py --output "$RUNNER_TEMP/mechanism-analysis"

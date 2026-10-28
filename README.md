@@ -24,6 +24,12 @@ Kết quả chính: May macro full NDCG@10 của Markov **0,8991**, PPR-H **0,31
 
 Extension đã xử lý full historical H **2.077.467 nodes/36.333.722 edges**; full-H PPR vẫn kém Markov trên sampled queries. Ba rolling test months July–September có 128/127/124 observable sources; tie-break−Markov Δ **+0,00804 / +0,00249 / −0,00043**, cả ba 95% CI chứa 0. Năm degree-matched rewired graphs cho thấy real topology có thông tin beyond degree, nhưng chưa chứng minh reliable net gain khi bổ sung vào Markov. [Protocol khóa trước holdout](docs/EXTENSION_PROTOCOL.md).
 
+## Dữ liệu tự crawl — bổ sung 29/10/2026
+
+Đã có **MediaWiki API collector + direct HTML crawler**, chạy riêng hoặc cùng nhau, với caching/resume, request budgets, revision checks và HTML parser tự trích xuất links/anchor text/section/document order. Pilot thật:8 trang,654 API edges,556 body edges,1.028 link occurrences;6 historical revisions trước cutoff. Đây là acquisition pilot, chưa là thí nghiệm recommendation từ crawled features.
+
+[Thiết kế và cách chạy](docs/CRAWLING_EXTENSION.md) · [Kết quả pilot](reports/crawl/pilot-v2/PILOT.md). Current crawl không trộn vào benchmark2018. Clickstream tiếp tục cung cấp observed navigation labels; crawl trang web không thu được individual click sessions.
+
 ## Xem và kiểm tra nhanh — không tải dữ liệu lớn
 
 Python≥3.11; verifier/core dùng standard library:
@@ -37,7 +43,7 @@ python3 scripts/build_report_tables.py
 
 Mở `reports/generated/demo.html` trực tiếp bằng browser. Có200 frozen queries,14 models,2 test months và controls đổi source/model/denominator. Predictions đến từ pipeline thật; tháng khác chỉ đổi evidence/metrics. Agent chưa kiểm tra rendering/interactions trực tiếp vì browser origin approval bị từ chối; xem checklist rehearsal trong presentation.
 
-Hai verifiers kiểm tra hashes và tính lại **5.600 lượt của study gốc + 28.600 lượt của extension**, cùng 19.600 extension rankings và 3.600 demo model views; **không retrain**. Đây là số lượt kiểm tra, không sample size độc lập. Full suite **86 tests** đạt cục bộ; core dùng standard library. [GitHub Actions](https://github.com/kongwoang/wikipedia-navigation-mining/actions) kiểm tra core Python 3.11/3.13, portable bundle và scientific backend Linux. CI không tải real datasets.
+Hai verifiers kiểm tra hashes và tính lại **5.600 lượt của study gốc + 28.600 lượt của extension**, cùng 19.600 extension rankings và 3.600 demo model views; **không retrain**. Đây là số lượt kiểm tra, không sample size độc lập. Full suite **104 tests** đạt cục bộ; core dùng standard library. [GitHub Actions](https://github.com/kongwoang/wikipedia-navigation-mining/actions) kiểm tra core Python 3.11/3.13, portable bundle và scientific backend Linux. CI không tải real datasets.
 
 ## Tái tạo toàn bộ thực nghiệm
 
