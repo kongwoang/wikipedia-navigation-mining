@@ -37,4 +37,4 @@ SHA-256: `8ad3ecd52d8f92e27d9aa4f379e3c584a1c54b99f9eca5365ce2bbd198e09259`.
 5. **L03 tr.13–27 + L08 tr.15:** phân bố traffic, sparsity/drift và error analysis.
 6. **L02c tr.47,66–67 + L08 tr.50–58:** unlabeled≠negative; điều kiện để được gọi session recommendation.
 
-[COURSE_ALIGNMENT](COURSE_ALIGNMENT.md) quyết định giữ/bỏ và các bước cần làm; [COURSE_PRESENTATION](../reports/COURSE_PRESENTATION.md) là kịch bản12–15phút. [Manifest](evidence/course-slides-manifest.json) chứa filename, page count, checksum và phạm vi kiểm chứng để đối chiếu lại đúng bộ slide.
+[PROJECT_PLAN](PROJECT_PLAN.md) quyết định scope/backlog; [COURSE_ALIGNMENT](COURSE_ALIGNMENT.md) chỉ đối chiếu kiến thức; [COURSE_PRESENTATION](../reports/COURSE_PRESENTATION.md) là kịch bản12–15phút. [Manifest](evidence/course-slides-manifest.json) chứa filename, page count, checksum và phạm vi kiểm chứng để đối chiếu lại đúng bộ slide.

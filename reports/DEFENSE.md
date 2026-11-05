@@ -1,5 +1,7 @@
 # Câu hỏi bảo vệ — trả lời dựa trên kết quả thật
 
+> **Ngân hàng câu hỏi tham khảo.** Ưu tiên hai RQ và các phương pháp trong [REPORT](REPORT.md), dùng [PRESENTATION](PRESENTATION.md) để bảo vệ. Các câu hỏi CycleRank/null/tie-break thuộc appendix; không biến chúng thành nhiệm vụ mới.
+
 Đọc cùng [Feedback-to-Action Matrix](../docs/RISKS_AND_DEFENSE.md). Các câu trả lời dưới đây giới hạn ở final study-v3, không dùng giả định trong planning như experimental facts.
 
 | # | Câu hỏi khó | Câu trả lời | Evidence cần mở |

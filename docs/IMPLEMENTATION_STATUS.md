@@ -1,54 +1,35 @@
-# Trạng thái bàn giao — đối chiếu học phần 05/11/2026
+# Trạng thái hiện hành — scope thống nhất 05/11/2026
 
-Ngày05/11 đã review bộ14PDF/733trang IT4868E, tạo [course alignment](COURSE_ALIGNMENT.md), [slide index](COURSE_SLIDE_INDEX.md) và [outline học phần](../reports/COURSE_PRESENTATION.md). Đây là cập nhật scope/tài liệu; không có training/crawl lớn hoặc benchmark mới trong lượt review. Ưu tiên tiếp theo là manual extraction audit, trình bày7model cốt lõi và rehearsal; Global PageRank control là P1, TF-IDF là P2 có temporal gate. Kết quả/verification bên dưới giữ ngày và phạm vi của lần chạy trước.
+[PROJECT_PLAN](PROJECT_PLAN.md) là scope/backlog duy nhất; [REPORT](../reports/REPORT.md) là báo cáo chính; [PRESENTATION](../reports/PRESENTATION.md) là kịch bản bảo vệ. Các bản planning và quality roadmap cũ chỉ để truy nguyên.
 
-Đã hoàn thành implementation, nghiên cứu dữ liệu thật và toàn bộ quality-improvement extensions trong scope học phần. Đây là **empirical comparative study có literature review**, không survey thuần, không production recommender hoặc population benchmark. Bảy planning documents được lưu để truy nguyên; trạng thái hiện hành ở đây.
+## Đã hoàn thành và được giữ làm bằng chứng
 
-| Thành phần | Bằng chứng hoàn tất |
+| Thành phần | Trạng thái / evidence |
 |---|---|
-| Planning / literature / defense | Bảy tài liệu thiết kế, verified literature matrix, feedback-to-action, risk register, câu hỏi bảo vệ |
-| Data | Historical H/redirect cutoff01/03/2018, Clickstream Jan–Sep2018, schema/mapping/duplicate audits; 12 pinned raw fingerprints |
-| Preprocessing | Train-only stratified sampling, candidate integrity, sparse artifacts/manifests; original preparation replay byte-identical bốn Parquets |
-| Original study-v3 | 14 main configurations/28 total runs, April tuning; frozen predictions trước May/June evaluation |
-| Full-graph boundary | 2.077.467 nodes/36.333.722 H edges; pilot qua gate; original candidates giữ nguyên; H/C/WH và fusion controls |
-| Rolling-origin extension | Ba windows July/August/September, 19 configurations mỗi window; protocol/grids khóa trước test labels |
-| Structural controls | Năm degree-preserving rewired H, query rows protected; hai disjoint query panels thêm400 queries trên cùng full H |
-| Model extensions | Topology tie-break, adaptive fusion, exact bounded CycleRank length2/3; diagnostics/tuning/three embedding seeds |
-| Analysis | Original11 + extension7 scientific figures PNG/SVG; required metrics, coverage, paired CIs, common-source, fallback/observed-unobserved analysis |
-| Case studies | Bảy original cases và hai extension cases sâu, gồm gain và fallback failure; real counts/rankings |
-| Correctness | **104 local tests pass, không skip**: core57, study14, acquisition1, extension10, portable extension verification4, crawl18 |
-| Portable evidence | Original5600 + extension28600 metric evaluations; extension19600 ranking checks và3600 demo model views |
-| Reproduction | Pinned dependencies/native patch; `reproduce.sh`, `reproduce_extensions.sh`; raw-to-model và re-evaluation phân biệt rõ |
-| Demo | Original14 models/200 queries/2months; extension6 displayed models/200 queries/3rolling months, offline HTML từ actual predictions |
-| Browser QA | **Chưa thực hiện được** do origin access bị từ chối trước đó; không workaround. Static/data checks không thay visual/interaction rehearsal |
-| Publication | Code, reports, portable artifacts; [GitHub Actions](https://github.com/kongwoang/wikipedia-navigation-mining/actions) kiểm tra từng pushed commit |
+| Historical benchmark | Eswiki 2018, 200 sampled queries, independent H01/03, temporal protocol; [bảng đầy đủ](../reports/RESULT_TABLES.md) |
+| Năm phương pháp chính + hai references | Markov, HITS-global, PPR-H, Node2Vec-H, fusion; Uniform/Global; scores đã freeze |
+| Ablation/diagnostics | Matched weighting, validation grids/history, SGNS/PPR curves, seeds, coverage, macro/weighted, paired CIs |
+| Technical extensions | Full H 36.333.722 edges, rolling July–September, degree-null/panels, CycleRank/adaptive/tie; giữ appendix, dừng mở rộng |
+| API + HTML acquisition | Pilot 8 pages, 654 API / 556 body edges, 1.028 occurrences, 8 matched revisions; [pilot](../reports/crawl/pilot-v2/PILOT.md) |
+| Reproducibility | Raw hashes, preparation replay, portable verifiers, pinned dependencies, CI; [hướng dẫn](../reports/REPRODUCIBILITY.md) |
+| Course alignment / biên tập | Review 14 PDF / 733 trang; thống nhất 2 RQ, bảng 7 rows, report/demo cùng models; đây là documentation update, không experiment mới |
 
-## Kết luận thực nghiệm
+## Chưa hoàn thành
 
-Markov là strong baseline. Original fusion−Markov May Δ0,00429,95%CI[−0,00076;0,01035]. Full-H PPR vẫn thấp hơn Markov ở các sampled panels; graph boundary loss không đủ giải thích khoảng cách. Real topology tốt hơn degree-matched rewired controls, nhưng topology thêm vào behavior chưa cho reliable net gain: primary tie-break−Markov rolling Δ+0,00804/+0,00249/−0,00043, cả ba CI chứa0.
+1. **Manual extraction audit 20 pages**, annotations và precision/recall theo context. Pilot 8 pages không đủ để claim representative corpus hoặc extraction accuracy.
+2. **Visual/interaction rehearsal** của HTML demo. Portable data/metric checks không thay UI QA; trước đó browser origin access bị từ chối.
+3. **Deck render / cuộc bảo vệ thử** theo Markdown kịch bản hiện hành.
 
-Case **Emperador Alejandro** cho thấy zero-count fallback có ý nghĩa: global popularity có thể thắng PPR; không quy toàn bộ thay đổi cho count ties. Cold nhóm vẫn thiếu labels. Macro/weighted có thể đổi thứ tự model; báo cả hai.
+Crawled features chưa được evaluate cho recommendation; current crawl 2026 không đưa vào benchmark 2018. Corpus lớn / Global PR / content models không còn là việc cần làm để hoàn thành scope.
 
-## Phạm vi chưa được chứng minh
+## Verification và lineage
 
-- Full-graph processing không đồng nghĩa population evaluation: rolling200 queries, query-panel controls600; một language/time period.
-- Full graph chỉ dùng boundary/panel subset models; Node2Vec/CycleRank/rolling vẫn dùng induced context.
-- Chưa có true users/sessions, causal online uplift, current-Wikipedia hoặc independent language replication.
-- Local raw pipeline + preparation replay + portable verification + Linux tiny CI; chưa full real-data raw-to-model replication trên Linux.
-- Browser rendering/interactions cần người trình bày rehearsal; đây là giới hạn QA còn lại, không giấu thành bước đã hoàn tất.
+- Audit 29/10: [crawl verification](evidence/crawl-verification.json) ghi 104 local tests (18 crawl tests), raw parsing replay, resume 0 network requests. Đây là record lần chạy trước, không nhận lượt biên tập này đã rerun full suite.
+- Original verifier: 5.600 source×model×period evaluations; extension: 28.600 evaluations / 19.600 ranking checks / 3.600 demo views. Đây là check counts, không sample size độc lập và không retrain.
+- Original model code `9b1f28ba90e21591afb23ed65c5fd0a17f4195d2`; extension protocol `35d308f`, algorithm bytes khớp `1b48689`. [Extension audit](evidence/extension-final-verification.json), [pretest correction](evidence/extension-pretest-correction.json).
+- Benchmark/test payloads/protocols giữ nguyên khi thu gọn project. Bảng chính là subset biên tập sau thực nghiệm; full results vẫn được link.
+- Không claim full population, current Wikipedia, users, causal CTR, cold-start solution hoặc clean full Linux raw-to-model replication.
 
-## Lineage và đầu vào đọc báo cáo
+## Kết luận được bảo vệ
 
-- Original model code `9b1f28ba90e21591afb23ed65c5fd0a17f4195d2`; original predictions/bundle không thay đổi.
-- Extension protocol commit `35d308f`; algorithms sau sửa SQL alias trước holdout khớp bytes commit `1b48689`. Freeze ghi commit đang có lúc chạy, kèm exact per-file hashes; record không phải external preregistration.
-- `extensions-v1` dừng trước July test; lỗi SQL alias được sửa/test trước run `extensions-v2`. [Pretest correction](evidence/extension-pretest-correction.json) ghi loaded months chỉ Mar–June.
-- [Extension verification](evidence/extension-final-verification.json): source hashes, runtime/RSS, tests, bundle checks. Report-only fallback analysis giữ nguyên cả năm frozen payload hashes.
-- Đọc [báo cáo chính](../reports/REPORT.md), [kết quả mở rộng](../reports/EXTENSION_RESULTS.md), [cases mới](../reports/EXTENSION_CASES.md) và [tái lập](../reports/REPRODUCIBILITY.md).
-
-## Nhánh crawl mới — 29/10/2026
-
-Đã triển khai hai cách thu thập theo yêu cầu: API và HTML độc lập, cùng mode đối chiếu. [Pilot](../reports/crawl/pilot-v2/PILOT.md) hoàn thành8pages,8matched revisions,654API/556HTMLedges,1028occurrences,6historical revisions; hash và raw parsing replay đã kiểm tra. Current data giữ riêng khỏi study2018.
-
-[CRAWLING_EXTENSION](CRAWLING_EXTENSION.md) mô tả graph/content/position features, temporally compatible evaluation và roadmap100–200source audit. Corpus crawl quy mô lớn và ranking experiments dùng features mới **chưa chạy**; không hiểu trạng thái completed của benchmark cũ là completed của scope mới.
-
-[Crawl verification](evidence/crawl-verification.json):18offline crawl tests; full suite104tests; resume dùng0network requests; old result bundles giữ nguyên và verify lại thành công.
+Original fusion−behavior May Δ0,00429, 95%CI[−0,00076;0,01035]; June cũng chứa 0. PPR-H tìm một số training-unobserved destinations nhưng chưa có reliable net gain khi kết hợp. Full-H control không đảo ngược khoảng cách với Markov ở sample; rolling tie-break CIs là contrast khác, không thay CI fusion. Cases gốc dùng Danza posmoderna và Tragacete để giải thích gain/loss.

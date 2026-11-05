@@ -1,6 +1,6 @@
 # Bổ sung dữ liệu tự crawl: API, HTML và cấu trúc trang
 
-> **Ưu tiên học phần cập nhật05/11:** [COURSE_ALIGNMENT](COURSE_ALIGNMENT.md) nối phần crawl với L04 tr.28,53 (Web preprocessing/crawling), ưu tiên extraction audit20pages trước scale hoặc thêm model. HTML parser không được nhận là NER/relation extraction của L07. Kế hoạch dưới đây giữ làm thiết kế kỹ thuật chi tiết.
+> **Scope hiện hành:** [PROJECT_PLAN](PROJECT_PLAN.md) giữ API/HTML và extraction audit20pages. Content/position ranking và scale corpus ở các mục thiết kế dưới đây đã được rút khỏi backlog bản nộp; chỉ giữ để truy nguyên. HTML parser không nhận là NER/relation extraction.
 
 Ngày 29/10/2026. Người dùng yêu cầu thực hiện **cả API collection lẫn HTML crawling**. Phần nghiên cứu2018 và các frozen results được giữ nguyên; crawler là nhánh dữ liệu mới. Pilot đã chạy thật, không chỉ là proposal: [kết quả pilot](../reports/crawl/pilot-v2/PILOT.md).
 
@@ -93,7 +93,7 @@ Với *Municipio de Cumberland (condado de Adams)*, API có33 target titles, HTM
 
 Pilot thiên về wrestling do thứ tự BFS và seed đầu nhiều links. Nó chứng minh pipeline hoạt động, **chưa là corpus representative** và chưa chứng minh ranking improvement. Khoảng1,4MB là bytes đã đo cho pilot, không ngoại suy tuyến tính thành thời gian/RAM cho toàn Wikipedia.
 
-## 5. Thiết kế thí nghiệm tiếp theo
+## 5. Ý tưởng thí nghiệm lịch sử — không còn backlog hiện hành
 
 | Experiment | Hypothesis | Controls | Metrics / evidence | Trạng thái |
 |---|---|---|---|---|
@@ -113,7 +113,7 @@ Không dùng DOM document order như measured click exposure. Không dùng API-v
 
 Không cần bỏ bộ dữ liệu sẵn có: mỗi nguồn đóng vai trò khác nhau. Crawl cho content/structure, Clickstream cho observed behavior, historical independent graph cho benchmark đã chốt.
 
-## 6. Mở rộng có kiểm soát
+## 6. Kế hoạch mở rộng cũ — đã được thu gọn
 
 P0 đã hoàn thành: hai collectors, raw provenance/cache, bounded BFS, parser/features, historical revision fetch, unit tests, real pilot, raw replay và graph export.
 

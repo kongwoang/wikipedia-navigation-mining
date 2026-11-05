@@ -1,45 +1,57 @@
-# Thuyết trình 12–15 phút và demo nghiên cứu
+# Kịch bản bảo vệ thống nhất — 12–14 phút
 
-> **Đối với buổi nộp IT4868E:** ưu tiên [kịch bản học phần ngày05/11](COURSE_PRESENTATION.md), đã đối chiếu slide người dùng cung cấp. Outline dưới đây giữ làm bản nghiên cứu sâu; không cần trình bày mọi extension trong buổi học phần.
+**Wikipedia Navigation Mining: When Do Hyperlinks Help Beyond Click History?**
+Bản chính ngày 05/11/2026. Dùng cùng 2 RQ, 5 phương pháp + 2 references và kết luận trong [REPORT](REPORT.md); [PROJECT_PLAN](../docs/PROJECT_PLAN.md) là scope duy nhất.
 
-Dùng [REPORT](REPORT.md) cho nền tảng và [EXTENSION_RESULTS](EXTENSION_RESULTS.md) cho kết luận mới nhất. Không trình bày19 configurations như19 thuật toán độc lập. Giữ detailed grids/seeds/required metrics trong appendix.
+## Người nghe cần nhớ một điều
 
-| Slide | Thời gian | Thông điệp và evidence | Điểm cần nói rõ |
+“Hyperlinks cho biết đường đi khả dụng; historical clicks cho biết những đường đi đã được sử dụng. Trong dữ liệu này, frequency rất mạnh. Topology bổ sung một số gợi ý khi thiếu counts, nhưng hybrid chưa chứng minh gain tổng thể ổn định.”
+
+Không mở đầu bằng số algorithms, số triệu edges hoặc số tests. Những con số đó chứng minh phạm vi/kỹ thuật sau khi người nghe hiểu câu hỏi.
+
+## Mười slide, mỗi slide một thông điệp
+
+| Slide | Phút | Thông điệp | Evidence / điều phải nói |
 |---|---:|---|---|
-| 1. Câu hỏi nghiên cứu | 0:40 | Khi nào hyperlink topology bổ sung cho click frequency? | Empirical comparative study, không novelty claim |
-| 2. Task và dữ liệu | 1:00 | Source u → ranked outgoing hyperlinks; published monthly counts | Không users/sessions; missing≠negative; PPR query-personalized |
-| 3. Chronology và test barrier | 1:10 | Original Jan–March/April/May–June; ba rolling windows July–September | H01/03 cố định, test predictions freeze trước label read; extension protocol khóa trước new test |
-| 4. EDA → thiết kế | 0:55 | Traffic concentration, sparse labels, boundary loss | Local Markov là baseline mạnh; giữ coverage/full denominator; cần boundary control |
-| 5. Model families | 1:00 | Frequency, H-only, click-weighted walks, fusion, embeddings, cycle/tie controls | Mỗi model trả lời một câu hỏi; cùng candidates; graph scoring không tự là next-click probability |
-| 6. Main ranking comparison | 1:05 | Original Markov0,8991/fusion0,9034; [rolling figure](extensions/study-v2/figures/01_rolling.png) | Đủ Recall/MRR/NDCG trong appendix; macro/weighted không luôn cùng thứ tự |
-| 7. Uncertainty và temporal robustness | 1:05 | [Primary CIs](extensions/study-v2/figures/02_primary_intervals.png);128/127/124 observable sources | Ba tie−Markov CI chứa0; không equivalence claim, không nhân samples theo periods |
-| 8. Graph có bị cắt quá mạnh? | 1:00 | [Full vs induced](extensions/study-v2/figures/03_boundary.png),36,3m H edges | Full-H PPR vẫn kém Markov ở sample; graph size không biến query sample thành population |
-| 9. Structure hay chỉ degree? | 1:00 | [Degree-null](extensions/study-v2/figures/04_degree_null.png), [panels](extensions/study-v2/figures/05_query_panels.png) | Real H hơn5rewired draws, nhưng không causal/permutation significance;600 queries vẫn ít cold labels |
-| 10. Demo: gain và failure | 2:15 | [Rolling demo](extensions/study-v2/demo.html); Strathclyde/Emperador Alejandro | Xem actual counts/ranks; giải thích fallback-policy change, không chỉ chọn win |
-| 11. Diagnostics/cost/reproducibility | 1:00 | [Validation](extensions/study-v2/figures/06_validation.png),86tests, hashes, verifiers | PPR residual, seed variation; không fake Markov loss curve; stages CPU/laptop feasible |
-| 12. Kết luận và giới hạn | 0:50 | Structure chứa thông tin nhưng chưa reliable incremental gain trên frequency | Không users/online/cold-start/population claims; đóng góp là controlled comparison và giải thích có evidence |
+| 1. Tại sao cần xếp hạng links? | 0:45 | Một article có nhiều links, người đọc không chọn như nhau | Source-conditioned task; không user/session claim |
+| 2. Hai nguồn tín hiệu | 1:00 | H là availability/structure, C là observed behavior | Directed graph, independent H 2018, published/censored counts |
+| 3. Tự thu thập và preprocessing | 1:15 | Link graph phụ thuộc cách parse trang | API+HTML raw/revisions; Cumberland: 33 API vs 13 body; pilot 8 pages,2026 tách 2018 |
+| 4. EDA dẫn đến giả thuyết | 1:00 | Traffic concentration khiến Markov là baseline phải vượt | Concentration + degree–traffic scatter; không suy unobserved=zero |
+| 5. Các phương pháp có vai trò gì? | 1:30 | Frequency, authority, proximity, embedding và fusion | Markov/HITS-global/PPR/Node2Vec/fusion; Uniform/Global làm references; shared candidates |
+| 6. Đánh giá để kết luận đúng | 1:15 | So cùng future labels, không chọn test winner | Chronology, validation, full vs conditional, macro/weighted, primary CI |
+| 7. Kết quả tổng thể | 1:15 | Local counts mạnh; fusion gain nhỏ/chưa chắc chắn | Bảng 7 rows; May 0,8991→0,9034; paired CI chứa 0; June weighted reversal |
+| 8. Topology giúp gì và gây hại ở đâu? | 2:15 | Conditional usefulness khác aggregate benefit | A7 unobserved recall + Danza gain/Tragacete loss trong demo gốc |
+| 9. Có phải thuật toán chạy sai/graph quá nhỏ? | 1:15 | Chẩn đoán và controls hỗ trợ diễn giải có giới hạn | PPR residual/SGNS/seeds; full-H control; rolling là protocol khác; cost |
+| 10. Kết luận, giới hạn và đóng góp | 0:45 | Quyết định dựa trên signal/evidence, không độ phức tạp model | Sample/censoring/cold limitations, crawl audit còn thiếu, reproducible comparison |
 
-## Demo 2–3 phút
+Tổng 12 phút 15 giây; dành 1–2 phút buffer. Bảng 14 models và detailed grids ở appendix, không thêm slide chỉ để liệt kê một thuật toán đã chạy. Không đem CycleRank/tie-break thành nhân vật chính của một câu chuyện về score fusion.
 
-Clone/tải và mở `reports/extensions/study-v2/demo.html` bằng browser; GitHub chỉ hiển thị HTML source. Chạy offline, không server/API/GPU; sáu displayed models từ actual frozen results.
+## Demo chính: dùng đúng models và đúng thời điểm
 
-1. Tìm **Strathclyde**, chọn **2018-09**. So M1_local và topology_tie. *Glasgow* có19 future clicks, chưa published training count; Markov ngoài Top-10, tie-break rank4, NDCG0→0,4307. Count22 của *Reino de Strathclyde* vẫn đứng đầu: tie-break không đảo unequal positive counts.
-2. Tìm **Emperador Alejandro**, chọn **2018-08**. Source không có eligible training clicks; M1 scores là global-popularity fallback. *Alejandro Magno* rank1 và *Reino de Macedonia* rank4; tie/PPR làm chúng rank3 và ngoài Top-10. NDCG Markov0,8822→tie0,3145. Adaptive cũng dùng PPR ở zero mass; fusion giữ được popularity order của hai targets này.
-3. Nhấn mạnh đây là hai extreme cases chọn sau test để giải thích. Average primary CI vẫn chứa0. Không đưa fallback failure thành câu chuyện “graph luôn kém ở cold start”: chỉ2–3 zero-eligible-mass sources có labels mỗi rolling period.
-4. Đổi tháng để thấy scope train/validation/test và predictions thay theo refit đã khóa. Khác demo gốc May/June: demo gốc chỉ đổi labels/metrics, predictions cố định.
-5. Nếu cần giải thích candidate limitation, mở original `reports/generated/demo.html`, source **1944**, đổi Full→Within candidates. Score thay vì denominator, không phải model cải thiện.
+Mở [demo gốc](generated/demo.html), tháng May 2018, metric denominator **Full**. Chỉ hiển thị/giải thích `M1B_backoff`, `M3_ppr_h`, `M5H_node2vec`, `M6B_fusion`; UI vẫn có các models khác để audit, không cần click hết. Không đổi tháng để tìm case đẹp hơn.
 
-Nguồn không có future labels hiển thị N/A, không zero accuracy. Raw score scales giữa models khác nhau; tie score là ordinal encoding. Demo hiển thịTop10/futureTop30, evaluation dùng toàn bộ observable labels.
+1. **Danza posmoderna**: training chỉ có Danza contemporánea 62 clicks; future Merce Cunningham 16 clicks. Markov ngoài Top-10, PPR/fusion rank 5. NDCG 0,6805→0,8764. Mở count columns để chỉ ra graph phân biệt targets thiếu published counts; Node2Vec-H không tìm được positives ở case này.
+2. **Tragacete**: fusion NDCG 0,7353 thấp hơn Markov 0,8616. So tail destinations, counts và scores. Đừng nói topology luôn giúp unobserved links hoặc coi mọi missing count là irrelevant.
+3. Kết lại bằng average CI chứa 0: hai cases giải thích cơ chế, không chứng minh average improvement. Cases được chọn sau test theo rule để minh họa.
 
-## Rehearsal và fallback
+[CASE_STUDIES](CASE_STUDIES.md) có exact tables; nếu UI lỗi thì dùng bảng này, không hardcode lại predictions. **Remora** là backup khi được hỏi hub bias: PPR 0, Markov 1; không thay Tragacete vì Remora không phải fusion failure.
 
-- Chạy `PYTHONPATH=src python3 -m wikinav.verify_bundle` và `PYTHONPATH=src python3 -m wikinav.verify_extensions`.
-- Mở cả hai HTML, kiểm tra source/model/month controls, no-match search, narrow viewport, font và table overflow. **Agent chưa thực hiện browser rendering/interaction QA do origin access bị từ chối**; data verification/JS syntax check không thay bước này.
-- Không download/build/train live. Stage times là measured local batch cost, không SLA.
-- Nếu browser không hoạt động, dùng [EXTENSION_CASES](EXTENSION_CASES.md) và [CASE_STUDIES](CASE_STUDIES.md) làm demo tĩnh với số thật.
+Crawl demo chỉ cần mở [pilot report](crawl/pilot-v2/PILOT.md) và một raw/structured record đã cache: revision IDs, anchor/section, body exclusion. **Không nối current crawl page đó với clicks 2018 để minh họa causal effect.** Chưa có UI crawl inspector hoặc manual audit thì nói đúng trạng thái.
 
-## Các câu trả lời cần chuẩn bị trong appendix
+## Appendix chuẩn bị, không thuyết trình tuần tự
 
-[DEFENSE](DEFENSE.md) có answer/evidence matrix. Ưu tiên: PPR damping vs restart; bounded CycleRank cost; null graph invariants; tie-break khác fallback; count suppression; full vs conditional NDCG; overlapping windows/source bootstrap; tại sao không thêm GNN; topology có thông tin nhưng net incremental gain chưa chắc chắn.
+- Metric definitions, same-candidate/full-denominator contract và bảng Recall/MRR/NDCG cần có.
+- PageRank→PPR, HITS-global khác query-root HITS, Node2Vec p/q/SGNS/directed convention.
+- Matched H/weighted-H controls: clicks giúp walks không đồng nghĩa topology hơn frequency.
+- Full-H, rolling, degree-null/panels; nhắc comparator của rolling CI là tie−M1, không fusion−M1B.
+- Source/data hashes, code/tests và reproduction; không biến số tests thành kết luận nghiên cứu.
 
-Câu kết luận: “Local frequency là baseline rất mạnh. Full-graph và degree controls cho thấy structure đáng phân tích, nhưng thêm structure chưa tạo improvement tổng thể ổn định trong đánh giá này. Đóng góp của đồ án là phép so sánh, phân tích lỗi và framework có thể kiểm tra lại, kể cả khi phương pháp phức tạp không thắng.”
+[DEFENSE](DEFENSE.md) giữ ngân hàng câu hỏi rộng; chỉ ôn các phần hỗ trợ 2 RQ trước. [COURSE_ALIGNMENT](../docs/COURSE_ALIGNMENT.md) chỉ trang kiến thức trong slide.
+
+## Rehearsal và tiêu chí đạt
+
+- Chạy hai portable verifiers theo [REPRODUCIBILITY](REPRODUCIBILITY.md); không train/download live.
+- Tự mở HTML, kiểm tra tìm source, chọn models/month, full/conditional controls và overflow. Browser interaction/visual QA vẫn chưa được xác nhận trong evidence hiện có.
+- Kể được một gain/một loss bằng actual counts/ranks trong 2 phút; không chỉ đọc score.
+- Nói rõ current crawl 2026 chỉ là extraction pilot; audit 20 pages là việc còn lại, không nhận đã hoàn thành.
+- Kết luận phân biệt “chưa chứng minh improvement” với “hai model tương đương” hoặc “topology vô ích”.
