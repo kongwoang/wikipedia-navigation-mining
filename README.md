@@ -1,6 +1,8 @@
 # Wikipedia Navigation Mining
 
-**Đã hoàn thiện implementation, thực nghiệm dữ liệu thật và toàn bộ gói nâng chất lượng.** Study gốc có 14 model chính/28 configurations; extension có 19 configurations mỗi rolling window, full-graph controls, degree-preserving null và query-panel sensitivity. Đây là comparative empirical study, không survey thuần hoặc population benchmark.
+**Đã hoàn thiện benchmark lịch sử và gói thực nghiệm mở rộng; nhánh tự crawl hiện ở mức pilot.** Study gốc có 14 model chính/28 configurations; extension có 19 configurations mỗi rolling window, full-graph controls, degree-preserving null và query-panel sensitivity. Đây là comparative empirical study, không survey thuần hoặc population benchmark.
+
+**Định hướng học phần IT4868E — 05/11/2026:** đã đối chiếu 14 PDF/733 trang slide. Lấy Link Analysis làm lõi, nối API/HTML collection và Web preprocessing với ranking/evaluation. Bản trình bày chính dùng 7 model đã có; Node2Vec và HITS liên hệ trực tiếp bài học, các extensions sâu chuyển appendix. [Đối chiếu và scope](docs/COURSE_ALIGNMENT.md) · [Danh mục slide](docs/COURSE_SLIDE_INDEX.md) · [Kịch bản học phần](reports/COURSE_PRESENTATION.md). Manual extraction audit/corpus lớn và ranking từ crawled features chưa hoàn tất; current crawl không trộn với labels2018.
 
 **Topology-Aware Next-Article Ranking on Wikipedia: A Temporal Comparison of Click Frequency and Historical Hyperlink Structure**
 

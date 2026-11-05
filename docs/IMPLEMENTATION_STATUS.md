@@ -1,4 +1,6 @@
-# Trạng thái bàn giao — cập nhật crawl 29/10/2026
+# Trạng thái bàn giao — đối chiếu học phần 05/11/2026
+
+Ngày05/11 đã review bộ14PDF/733trang IT4868E, tạo [course alignment](COURSE_ALIGNMENT.md), [slide index](COURSE_SLIDE_INDEX.md) và [outline học phần](../reports/COURSE_PRESENTATION.md). Đây là cập nhật scope/tài liệu; không có training/crawl lớn hoặc benchmark mới trong lượt review. Ưu tiên tiếp theo là manual extraction audit, trình bày7model cốt lõi và rehearsal; Global PageRank control là P1, TF-IDF là P2 có temporal gate. Kết quả/verification bên dưới giữ ngày và phạm vi của lần chạy trước.
 
 Đã hoàn thành implementation, nghiên cứu dữ liệu thật và toàn bộ quality-improvement extensions trong scope học phần. Đây là **empirical comparative study có literature review**, không survey thuần, không production recommender hoặc population benchmark. Bảy planning documents được lưu để truy nguyên; trạng thái hiện hành ở đây.
 

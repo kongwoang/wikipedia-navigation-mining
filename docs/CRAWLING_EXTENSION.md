@@ -1,5 +1,7 @@
 # Bổ sung dữ liệu tự crawl: API, HTML và cấu trúc trang
 
+> **Ưu tiên học phần cập nhật05/11:** [COURSE_ALIGNMENT](COURSE_ALIGNMENT.md) nối phần crawl với L04 tr.28,53 (Web preprocessing/crawling), ưu tiên extraction audit20pages trước scale hoặc thêm model. HTML parser không được nhận là NER/relation extraction của L07. Kế hoạch dưới đây giữ làm thiết kế kỹ thuật chi tiết.
+
 Ngày 29/10/2026. Người dùng yêu cầu thực hiện **cả API collection lẫn HTML crawling**. Phần nghiên cứu2018 và các frozen results được giữ nguyên; crawler là nhánh dữ liệu mới. Pilot đã chạy thật, không chỉ là proposal: [kết quả pilot](../reports/crawl/pilot-v2/PILOT.md).
 
 ## 1. Hướng nghiên cứu được khuyến nghị

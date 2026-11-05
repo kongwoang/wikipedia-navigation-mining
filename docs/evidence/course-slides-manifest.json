@@ -1,0 +1,143 @@
+{
+  "date": "2026-11-05",
+  "archive": "Web Mining - IT4868E-20261105T032711Z-1-001.zip",
+  "archive_sha256": "8ad3ecd52d8f92e27d9aa4f379e3c584a1c54b99f9eca5365ce2bbd198e09259",
+  "pdf_files": 14,
+  "total_pdf_pages": 733,
+  "page_numbering": "1-based physical PDF pages including covers",
+  "review_method": "Text extracted for all 14 PDFs; agendas and topical sections reviewed, key pages visually inspected. No separate assignment rubric found in archive.",
+  "visual_checks": [
+    "L01 pages 1,2 (cover/decorative)",
+    "L04 page 28 (main content/anchor text)",
+    "L05b page 48 (Node2Vec algorithm image)"
+  ],
+  "raw_pdfs_published": false,
+  "files": [
+    {
+      "file": "16-9-en-L01-Intro.pdf",
+      "bytes": 1826529,
+      "sha256": "600c412e98fec6ec505ae03f3b5ed92a46c8a2d3cfbbc37f6ec8960718a35c6b",
+      "key": "L01",
+      "pages": 47,
+      "review_reference_pages": "13–14,39–46",
+      "topic_mapping": "KDD, dữ liệu Web, crawling, động học và giới hạn dữ liệu"
+    },
+    {
+      "file": "16-9-en-L02-MachineLearning-01.pdf",
+      "bytes": 2444334,
+      "sha256": "8f62135c90595aab6c1d4adcaa25da59d55c83a31e59f1982dfe804b69e07ad0",
+      "key": "L02a",
+      "pages": 55,
+      "review_reference_pages": "8–12,27,32",
+      "topic_mapping": "Task/metric, validation, temporal splitting, overfit, smoothing"
+    },
+    {
+      "file": "16-9-en-L02-MachineLearning-02.pdf",
+      "bytes": 2050175,
+      "sha256": "b565401679e192f8bf330e90e2f3ff26ea21bf533b3955906b3e5a1f4d6d3d0e",
+      "key": "L02b",
+      "pages": 52,
+      "review_reference_pages": "4–18,31–51",
+      "topic_mapping": "FNN/RNN/LSTM/ensemble: nền tảng tham khảo; không tạo thêm prediction task"
+    },
+    {
+      "file": "16-9-en-L02-MachineLearning-03.pdf",
+      "bytes": 2264815,
+      "sha256": "9df0dcbe3a8df29b381297028fe1088adc3ec711053ad09061293ca228933f43",
+      "key": "L02c",
+      "pages": 68,
+      "review_reference_pages": "23–26,47–67",
+      "topic_mapping": "Distance/Jaccard, normalization, Positive–Unlabeled và selection assumption"
+    },
+    {
+      "file": "16-9-en-L03-DataVisualization.pdf",
+      "bytes": 2143630,
+      "sha256": "b9c79ecaf7a147171aac838ff8a70a14210b73f9e6a584e2795c7c69b8404684",
+      "key": "L03",
+      "pages": 44,
+      "review_reference_pages": "13–27,31–34",
+      "topic_mapping": "Thống kê, quantiles, boxplot, histogram, scatter"
+    },
+    {
+      "file": "16-9-en-L04-InformationRetrieval.pdf",
+      "bytes": 2564241,
+      "sha256": "f04180818c72bc7269f33085063ff861a1a886f8c5f46421b44676a45751410a",
+      "key": "L04",
+      "pages": 64,
+      "review_reference_pages": "7,11–12,20–30,31–37,53–58",
+      "topic_mapping": "Document query, VSM, metrics, HTML/main-content/anchors, index, rank fusion"
+    },
+    {
+      "file": "16-9-en-L05-LinkAnalysis-01.pdf",
+      "bytes": 2333640,
+      "sha256": "9a64d0c5df2932367d47a96799426729ed5a56e5a024dd319acb48f196432976",
+      "key": "L05a",
+      "pages": 45,
+      "review_reference_pages": "6–8,22–33,37–44",
+      "topic_mapping": "Graph, centrality/prestige, PageRank, convergence, HITS root/base graph"
+    },
+    {
+      "file": "16-9-en-L05-LinkAnalysis-02.pdf",
+      "bytes": 3187496,
+      "sha256": "493b363234100277a51eeaf1e6736ee0db7fe9c81ee5429b99964f49ce7fde7e",
+      "key": "L05b",
+      "pages": 52,
+      "review_reference_pages": "4–31,32–51",
+      "topic_mapping": "Community algorithms; Node2Vec/SGNS/p–q/graph representations"
+    },
+    {
+      "file": "16-9-en-L06-OpinionMining-01.pdf",
+      "bytes": 2606734,
+      "sha256": "632de4cd8cb50c97d40ef0d8bbaec9e4f49114fa0e6c08ecf0e17060f9883b2d",
+      "key": "L06a",
+      "pages": 41,
+      "review_reference_pages": "5–25,26–31",
+      "topic_mapping": "Opinion/sentiment; Word2Vec background, không phải task chính"
+    },
+    {
+      "file": "16-9-en-L06-OpinionMining-02.pdf",
+      "bytes": 2869135,
+      "sha256": "34210c310b50774bc37e8b5b2050f551bce1ab04066bccebd8ad0f309ea49ac5",
+      "key": "L06b",
+      "pages": 58,
+      "review_reference_pages": "4–16,17–32,33–57",
+      "topic_mapping": "Aspect/sentiment, Twitter/forums, active learning: ngoài scope"
+    },
+    {
+      "file": "16-9-en-L06-OpinionMining-03.pdf",
+      "bytes": 2121281,
+      "sha256": "7f5fc43121b6483663ca9566d93808e4e58d6cd03c1dbc064ee2d1fec41cc97d",
+      "key": "L06c",
+      "pages": 39,
+      "review_reference_pages": "4–26,27–38",
+      "topic_mapping": "Entity assignment, comparative opinions: ngoài scope"
+    },
+    {
+      "file": "16-9-en-L07-InformationExtraction.pdf",
+      "bytes": 2657942,
+      "sha256": "94dfa516258cdadcb333e1e3fb24042af51e7ffbd066aefe6f997b6fd699fda7",
+      "key": "L07",
+      "pages": 66,
+      "review_reference_pages": "5–8,13–27,28–45,46–65",
+      "topic_mapping": "NER, relation extraction, distant supervision, coreference; không đồng nhất HTML parsing"
+    },
+    {
+      "file": "16-9-en-L08-RecommendationSystems.pdf",
+      "bytes": 2411855,
+      "sha256": "9fbe3f0e5e6a218488e0fa5b23a5b4c40bfe87a3d0b24121b9ce616ddc1461e9",
+      "key": "L08",
+      "pages": 59,
+      "review_reference_pages": "6,10,15–24,30–35,49–58",
+      "topic_mapping": "Recommendation, metrics, CF/MF, implicit feedback và session constraints"
+    },
+    {
+      "file": "16-9-en-L09-OnlineAd-QueryMining.pdf",
+      "bytes": 2290971,
+      "sha256": "a8466d1064c32bca16bb4721c6f8c147ddaed84292f9d61745ffcd0fc04218ba",
+      "key": "L09",
+      "pages": 43,
+      "review_reference_pages": "21–24,28–35",
+      "topic_mapping": "Feedback/logs, query preprocessing và n-gram: liên hệ giới hạn, không thêm ads task"
+    }
+  ]
+}

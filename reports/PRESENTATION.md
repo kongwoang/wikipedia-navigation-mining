@@ -1,5 +1,7 @@
 # Thuyết trình 12–15 phút và demo nghiên cứu
 
+> **Đối với buổi nộp IT4868E:** ưu tiên [kịch bản học phần ngày05/11](COURSE_PRESENTATION.md), đã đối chiếu slide người dùng cung cấp. Outline dưới đây giữ làm bản nghiên cứu sâu; không cần trình bày mọi extension trong buổi học phần.
+
 Dùng [REPORT](REPORT.md) cho nền tảng và [EXTENSION_RESULTS](EXTENSION_RESULTS.md) cho kết luận mới nhất. Không trình bày19 configurations như19 thuật toán độc lập. Giữ detailed grids/seeds/required metrics trong appendix.
 
 | Slide | Thời gian | Thông điệp và evidence | Điểm cần nói rõ |
