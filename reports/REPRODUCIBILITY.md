@@ -82,3 +82,15 @@ Verifier xác minh SHA256, reconstruct exact original frozen prediction bytes, k
 Artifact pipeline: `build_extension_report.py` tạo CSV/7figures/payloads/demo; `build_extension_writeup.py` tạo Markdown results/cases. Fallback audit là post-hoc analysis từ predictions/counts đã có; hashes của cả5 payloads giữ nguyên. Generic verifier dùng chung metric engine, còn analytic unit tests là lớp kiểm tra độc lập bằng toy-oracle expectations.
 
 [Final extension evidence](../docs/evidence/extension-final-verification.json) ghi code commit `1b48689`, exact file hashes, per-stage time/RSS,tests và giới hạn. Reproduction thay runtime/platform metadata có thể đổi bundle hashes; so predictions/metrics/sampling/selected parameters trước khi suy thay đổi thuật toán. Native/BLAS differences vẫn có thể gây numeric variation.
+
+
+## Final submission artifacts (05/11/2026)
+
+```sh
+python3 scripts/verify_crawl_audit.py
+python3 scripts/verify_presentation.py
+```
+
+Hai lệnh chỉ cần standard library, chạy được trên clone có tracked artifacts. Crawl audit verifier kiểm tra report/annotation hashes và confusion table, không thay raw HTML replay. Deck verifier kiểm tra chart values theo frozen source data, không thay native Office/browser QA. Xem [crawl audit](crawl/audit-v2/AUDIT.md) và [deck QA/build instructions](deliverables/README.md).
+
+Sau parser correction, export raw cũ cần explicit `--reparse` với output mới; giữ original raw signature, thêm current parser hash và changed-page list. Raw captures không ở Git: clone sạch chưa replay được extraction nếu không có archive gốc. Re-crawl là collection mới với revisions có thể khác. Optional DOM audit dùng environment riêng và `requirements-audit.lock`; không thêm BeautifulSoup vào core ranking dependencies.

@@ -1,0 +1,76 @@
+{
+  "recorded_at": "2026-11-05T09:45:38.872566+00:00",
+  "base_commit": "e84dd3f383b4581394b3ba4fae3bf0b2a7d6eb02",
+  "scope": "Final course submission: crawl audit, parser correction, deck, documentation. Frozen ranking artifacts unchanged; no retraining.",
+  "tests": {
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -q",
+    "passed": 108,
+    "crawl_tests": 22,
+    "result": "OK"
+  },
+  "original_verifier": {
+    "source_model_period_evaluations": 5600,
+    "main_models": 14,
+    "queries": 200,
+    "periods": [
+      "2018-05",
+      "2018-06"
+    ],
+    "status": "verified"
+  },
+  "extension_verifier": {
+    "status": "verified",
+    "source_model_period_evaluations": 28600,
+    "ranking_checks": 19600,
+    "rolling_windows": [
+      "2018-07",
+      "2018-08",
+      "2018-09"
+    ],
+    "demo_model_checks": 3600,
+    "scope": "Frozen score/rank/label re-evaluation and recorded chronology; not model retraining."
+  },
+  "crawl_audit": {
+    "command": "python3 scripts/verify_crawl_audit.py",
+    "status": "verified",
+    "pages": 20,
+    "occurrences_reviewed": 120,
+    "reviewer": "agent DOM-context review",
+    "human_adjudication": false,
+    "held_out_extraction_accuracy": false,
+    "independent_dom_differential_pages": 0,
+    "raw_capture_hashes_verified": true,
+    "api_replay_verified": true,
+    "original_html_replay_equivalence": false,
+    "explicit_offline_reparse": true
+  },
+  "presentation": {
+    "command": "python3 scripts/verify_presentation.py",
+    "status": "verified",
+    "slides": 10,
+    "native_charts": 4,
+    "native_tables": 4,
+    "speaker_notes": 10,
+    "final_file_render_review": "All ten slides individually inspected after final-file import/render",
+    "native_powerpoint_or_google_slides_tested": false
+  },
+  "browser_demo": {
+    "status": "blocked",
+    "attempted_origin": "http://127.0.0.1:8765",
+    "tool": "CUA createBrowserTab",
+    "reason": "Saved user permission setting blocks origin/network egress",
+    "workaround_attempted": false,
+    "visual_interaction_qa": false,
+    "human_rehearsal": false
+  },
+  "evidence_sha256": {
+    "src/wikinav/crawl.py": "a1d22767936cda4d0f6c6ba1191712a5bcfa148bbfe8a1f436ee7088d199abeb",
+    "src/wikinav/crawl_export.py": "158f51666c9dd27813a526941203a2538e866bff6bbe86afc80de21839ed7955",
+    "tests/test_crawl.py": "27fb0e4f2c47b81cd201d4aa3d668a51652edc03f23c1011d88a78baad3b672b",
+    "reports/crawl/audit-v2/manifest.json": "e3bedb625093c0b24855d9ea6ccfbeab374781f0b74f65c1b59485e8c0428229",
+    "docs/evidence/crawl-audit-labels.json": "af9a2dace0e94917b1aa37c351d72d05fed3a4be64bdc0e7bcda031058cc0f39",
+    "docs/evidence/crawl-audit-protocol.json": "3c343464e512c1e563f39ae490055bc4e11ae4552fc0e78651b2daa7eabda57e",
+    "reports/deliverables/manifest.json": "fbfa8608266dcd3fa9479727838ba54178e3b46c8c73485042e1b05eedc4c1aa",
+    "reports/deliverables/Wikipedia_Navigation_IT4868E.pptx": "f02dc9658ff524a9d3ec13102c882b0bbbff894f31e9d3a672f33ca3652f6265"
+  }
+}

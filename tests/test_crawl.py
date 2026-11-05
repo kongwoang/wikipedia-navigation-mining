@@ -189,3 +189,64 @@ class CrawlTests(unittest.TestCase):
         api=[{'source':'1','target':'2','target_title':'Alias','weight':1},{'source':'1','target':'2','target_title':'Canonical','weight':1},{'source':'2','target':'1','target_title':'Reverse','weight':1}]
         self.assertEqual(len(collapse_edges(api)),2)
         self.assertEqual(collapse_edges(api)[0]['weight'],1)
+
+    def test_indicator_roots_and_authority_icons_are_not_body(self):
+        html='''<div class="mw-indicators"><div class="mw-parser-output"><a href="/wiki/Coordinates">Coordinates</a></div></div>
+        <div class="mw-parser-output"><p><a href="/wiki/Article">Article</a></p>
+        <div class="mw-authority-control"><div class="mw-mf-linked-projects"><a href="/wiki/Project">Icon</a></div></div></div>'''
+        result=parse_article(html,BASE,set())
+        self.assertEqual(result['body_roots'],1)
+        self.assertEqual(result['body_targets'],['Article'])
+        self.assertEqual(result['all_article_targets'],['Article','Project'])
+        self.assertEqual(result['occurrences'][0]['body_link_position'],0)
+        self.assertTrue(result['occurrences'][1]['excluded_context'])
+
+    def test_gzip_transport_decodes_and_caps_expansion(self):
+        import gzip,io
+        class Reply(io.BytesIO):
+            status=200
+            headers={'Content-Encoding':'gzip'}
+        for body,cap,raises in [(b'{}',100,False),(b' '*300,100,True)]:
+            with self.subTest(raises=raises),tempfile.TemporaryDirectory() as tmp,patch('wikinav.crawl.time.sleep'):
+                c=Client(Path(tmp),'es.wikipedia.org',max_bytes=cap)
+                c.opener=Mock();c.opener.open.return_value=Reply(gzip.compress(body))
+                if raises:
+                    with self.assertRaisesRegex(ValueError,'Decoded response'):c.fetch('https://es.wikipedia.org/w/api.php','api')
+                    self.assertFalse(list((Path(tmp)/'raw').glob('*.body')))
+                else:
+                    raw,meta=c.fetch('https://es.wikipedia.org/w/api.php','api')
+                    self.assertEqual(raw,body);self.assertEqual(meta['bytes'],len(body))
+                    self.assertEqual(meta['wire_bytes'],len(gzip.compress(body)))
+                    self.assertEqual(c.opener.open.call_args.args[0].get_header('Accept-encoding'),'gzip')
+
+    def test_unknown_content_encoding_is_rejected(self):
+        import io
+        class Reply(io.BytesIO):
+            status=200
+            headers={'Content-Encoding':'br'}
+        with tempfile.TemporaryDirectory() as tmp,patch('wikinav.crawl.time.sleep'):
+            c=Client(Path(tmp),'es.wikipedia.org');c.opener=Mock();c.opener.open.return_value=Reply(b'{}')
+            with self.assertRaisesRegex(ValueError,'Unsupported content encoding'):c.fetch('https://es.wikipedia.org/w/api.php','api')
+
+    def test_offline_reparse_is_explicit_and_does_not_mutate_captures(self):
+        import io,hashlib
+        from wikinav.crawl_export import export
+        class Reply(io.BytesIO):
+            status=200
+            headers={}
+        site={'query':{'namespaces':{'0':{'id':0,'name':''}},'namespacealiases':[]}}
+        bodies=[json.dumps(site).encode(),b'User-agent: *\nAllow: /wiki/\n',json.dumps(response(['Alpha'])[0]).encode(),HTML.encode()]
+        with tempfile.TemporaryDirectory() as tmp,patch('wikinav.crawl.time.sleep'),patch('urllib.request.OpenerDirector.open',side_effect=lambda *a,**kw:Reply(bodies.pop(0))):
+            root=Path(tmp);cfg=root/'c.toml'
+            cfg.write_text('edition="es"\nmode="both"\nmax_pages=1\nmax_depth=0\nmax_requests=4\nmax_response_bytes=20000\ndelay_seconds=1.0\nseeds=["Source"]\n')
+            run(cfg,root/'raw')
+            hashes=lambda:{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in (root/'raw').rglob('*') if p.is_file()}
+            before=hashes()
+            def corrected(*args):return {**parse_article(*args),'text':'Explicit parser-version change'}
+            with patch('wikinav.crawl_export.parse_article',side_effect=corrected):
+                with self.assertRaisesRegex(ValueError,'explicit --reparse'):export(root/'raw',root/'badprocessed',root/'badreport')
+                result=export(root/'raw',root/'processed',root/'report',reparse=True)
+            self.assertEqual(result['reparsed_pages'],['Source'])
+            self.assertFalse(result['raw_parsing_replay_verified'])
+            self.assertTrue(result['api_replay_verified'])
+            self.assertEqual(hashes(),before)

@@ -1,0 +1,1206 @@
+{
+  "reviewer": "Codex agent; DOM-context review, not human gold or independent adjudication",
+  "sample": "120 fixed occurrences, 6 per train-selected source; inspected before parser correction",
+  "labels": [
+    {
+      "id": "6567985:47",
+      "page_title": "Alexandr Zhapozhnik",
+      "raw_sha256": "87036e801069691a99d545c9c864cd0e7d834dc922c59857bcc879c188a2043f",
+      "href": "https://es.wikipedia.org/wiki/Ucrania",
+      "anchor_text": "Ucrania",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Alexandr_Zhapozhnik.rootpage-Alexandr_Zhapozhnik.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox > tbody > tr > td > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "6567985:50",
+      "page_title": "Alexandr Zhapozhnik",
+      "raw_sha256": "87036e801069691a99d545c9c864cd0e7d834dc922c59857bcc879c188a2043f",
+      "href": "https://es.wikipedia.org/wiki/Campeonato_Europeo_de_Taekwondo",
+      "anchor_text": "Campeonato Europeo",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Alexandr_Zhapozhnik.rootpage-Alexandr_Zhapozhnik.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox > tbody > tr > th.section > div.NavFrame.collapsed > div.NavContent > table > tbody > tr > td > table > tbody > tr > th > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "6567985:52",
+      "page_title": "Alexandr Zhapozhnik",
+      "raw_sha256": "87036e801069691a99d545c9c864cd0e7d834dc922c59857bcc879c188a2043f",
+      "href": "https://es.wikipedia.org/wiki/Ucrania",
+      "anchor_text": "ucraniano",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Alexandr_Zhapozhnik.rootpage-Alexandr_Zhapozhnik.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "6567985:58",
+      "page_title": "Alexandr Zhapozhnik",
+      "raw_sha256": "87036e801069691a99d545c9c864cd0e7d834dc922c59857bcc879c188a2043f",
+      "href": "https://es.wikipedia.org/wiki/Campeonato_Europeo_de_Taekwondo_de_2002",
+      "anchor_text": "2002",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Alexandr_Zhapozhnik.rootpage-Alexandr_Zhapozhnik.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.wikitable.center.col2izq > tbody > tr > td > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "6567985:63",
+      "page_title": "Alexandr Zhapozhnik",
+      "raw_sha256": "87036e801069691a99d545c9c864cd0e7d834dc922c59857bcc879c188a2043f",
+      "href": "https://www.taekwondodata.com/oleksandr-shaposhnik.a50r.html",
+      "anchor_text": "«Alexandr Zhapozhnik»",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Alexandr_Zhapozhnik.rootpage-Alexandr_Zhapozhnik.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-reference-text.reference-text > span.citation.web > a.external.text",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "6567985:83",
+      "page_title": "Alexandr Zhapozhnik",
+      "raw_sha256": "87036e801069691a99d545c9c864cd0e7d834dc922c59857bcc879c188a2043f",
+      "href": "/wiki/Wikipedia:Limitaci%C3%B3n_general_de_responsabilidad",
+      "anchor_text": "Limitación de responsabilidad",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Alexandr_Zhapozhnik.rootpage-Alexandr_Zhapozhnik.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-footer-container > footer.mw-footer > ul.mw-portlet.mw-portlet-footer-places > li > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "4199047:47",
+      "page_title": "Estación Experimental Pavlovsk",
+      "raw_sha256": "29a81086435e336197bf14b59886ce6cb990f3c475503fa81b19eb7beaf17baa",
+      "href": "https://es.wikipedia.org/wiki/Coordenadas_geográficas",
+      "anchor_text": "Coordenadas",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Estación_Experimental_Pavlovsk.rootpage-Estación_Experimental_Pavlovsk.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.vector-body-before-content > div.mw-indicators > div.mw-indicator > div.mw-parser-output > span > a",
+      "include": false,
+      "reason": "Page indicator above body; nested mw-parser-output is not article content"
+    },
+    {
+      "id": "4199047:49",
+      "page_title": "Estación Experimental Pavlovsk",
+      "raw_sha256": "29a81086435e336197bf14b59886ce6cb990f3c475503fa81b19eb7beaf17baa",
+      "href": "https://es.wikipedia.org/wiki/Archivo:Pavlovsk_Station_Gate.jpg",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Estación_Experimental_Pavlovsk.rootpage-Estación_Experimental_Pavlovsk.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > figure.mw-halign-right > a.mw-file-description",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "4199047:59",
+      "page_title": "Estación Experimental Pavlovsk",
+      "raw_sha256": "29a81086435e336197bf14b59886ce6cb990f3c475503fa81b19eb7beaf17baa",
+      "href": "https://es.wikipedia.org/wiki/Cerco_de_Leningrado",
+      "anchor_text": "cerco de Leningrado",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Estación_Experimental_Pavlovsk.rootpage-Estación_Experimental_Pavlovsk.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a.mw-redirect",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "4199047:90",
+      "page_title": "Estación Experimental Pavlovsk",
+      "raw_sha256": "29a81086435e336197bf14b59886ce6cb990f3c475503fa81b19eb7beaf17baa",
+      "href": "https://es.wikipedia.org/wiki/Dmitri_Medvédev",
+      "anchor_text": "Dmitri Medvédev",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Estación_Experimental_Pavlovsk.rootpage-Estación_Experimental_Pavlovsk.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-reference-text.reference-text > span.citation.noticia > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "4199047:108",
+      "page_title": "Estación Experimental Pavlovsk",
+      "raw_sha256": "29a81086435e336197bf14b59886ce6cb990f3c475503fa81b19eb7beaf17baa",
+      "href": "https://es.wikipedia.org/wiki/Control_de_autoridades",
+      "anchor_text": "Control de autoridades",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Estación_Experimental_Pavlovsk.rootpage-Estación_Experimental_Pavlovsk.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > th.navbox-group > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "4199047:117",
+      "page_title": "Estación Experimental Pavlovsk",
+      "raw_sha256": "29a81086435e336197bf14b59886ce6cb990f3c475503fa81b19eb7beaf17baa",
+      "href": "/wiki/Categor%C3%ADa:Institutos_de_investigaci%C3%B3n_de_la_Uni%C3%B3n_Sovi%C3%A9tica",
+      "anchor_text": "Institutos de investigación de la Unión Soviética",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Estación_Experimental_Pavlovsk.rootpage-Estación_Experimental_Pavlovsk.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.catlinks > div.mw-normal-catlinks > ul > li > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "4400667:55",
+      "page_title": "Punta Whymper",
+      "raw_sha256": "b0b305e73e07daf9ef4242f0983d75975e303231feb3c5b4e2ce1c9a5d2d1829",
+      "href": "https://es.wikipedia.org/wiki/Francia",
+      "anchor_text": "Francia",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Punta_Whymper.rootpage-Punta_Whymper.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox > tbody > tr > td > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "4400667:74",
+      "page_title": "Punta Whymper",
+      "raw_sha256": "b0b305e73e07daf9ef4242f0983d75975e303231feb3c5b4e2ce1c9a5d2d1829",
+      "href": "https://es.wikipedia.org/wiki/Edward_Whymper",
+      "anchor_text": "Edward Whymper",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Punta_Whymper.rootpage-Punta_Whymper.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "4400667:76",
+      "page_title": "Punta Whymper",
+      "raw_sha256": "b0b305e73e07daf9ef4242f0983d75975e303231feb3c5b4e2ce1c9a5d2d1829",
+      "href": "https://es.wikipedia.org/wiki/Prominencia_topográfica",
+      "anchor_text": "prominencia",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Punta_Whymper.rootpage-Punta_Whymper.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a.mw-redirect",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "4400667:86",
+      "page_title": "Punta Whymper",
+      "raw_sha256": "b0b305e73e07daf9ef4242f0983d75975e303231feb3c5b4e2ce1c9a5d2d1829",
+      "href": "/w/index.php?title=Punta_Whymper&action=edit&section=1",
+      "anchor_text": "editar",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Punta_Whymper.rootpage-Punta_Whymper.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-heading.mw-heading2 > span.mw-editsection > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "4400667:88",
+      "page_title": "Punta Whymper",
+      "raw_sha256": "b0b305e73e07daf9ef4242f0983d75975e303231feb3c5b4e2ce1c9a5d2d1829",
+      "href": "https://es.wikipedia.org/wiki/UIAA",
+      "anchor_text": "UIAA",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Punta_Whymper.rootpage-Punta_Whymper.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-reference-text.reference-text > a.mw-redirect",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "4400667:125",
+      "page_title": "Punta Whymper",
+      "raw_sha256": "b0b305e73e07daf9ef4242f0983d75975e303231feb3c5b4e2ce1c9a5d2d1829",
+      "href": "https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct",
+      "anchor_text": "Código de conducta",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Punta_Whymper.rootpage-Punta_Whymper.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-footer-container > footer.mw-footer > ul.mw-portlet.mw-portlet-footer-places > li > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "6451883:10",
+      "page_title": "Challenger de Porto Alegre 2014 (dobles masculino)",
+      "raw_sha256": "63f99cdfa541d752789d9a55a5888c162368077bde9ebd8d8436ea771d617be3",
+      "href": "/wiki/Wikipedia:Portada",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Challenger_de_Porto_Alegre_2014_dobles_masculino.rootpage-Challenger_de_Porto_Alegre_2014_dobles_masculino.skin--responsive.skin-vector.skin-vector-search-vue > div.vector-header-container > header.vector-header.mw-header.no-font-mode-scale > div.vector-header-start > a.mw-logo",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "6451883:54",
+      "page_title": "Challenger de Porto Alegre 2014 (dobles masculino)",
+      "raw_sha256": "63f99cdfa541d752789d9a55a5888c162368077bde9ebd8d8436ea771d617be3",
+      "href": "https://es.wikipedia.org/wiki/Nicolás_Barrientos",
+      "anchor_text": "Nicolás Barrientos",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Challenger_de_Porto_Alegre_2014_dobles_masculino.rootpage-Challenger_de_Porto_Alegre_2014_dobles_masculino.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table > tbody > tr > td > span > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "6451883:74",
+      "page_title": "Challenger de Porto Alegre 2014 (dobles masculino)",
+      "raw_sha256": "63f99cdfa541d752789d9a55a5888c162368077bde9ebd8d8436ea771d617be3",
+      "href": "https://es.wikipedia.org/wiki/Archivo:Flag_of_Brazil.svg",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Challenger_de_Porto_Alegre_2014_dobles_masculino.rootpage-Challenger_de_Porto_Alegre_2014_dobles_masculino.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div > table > tbody > tr > td > div > ol > li > span.flagicon > span.mw-image-border.notpageimage.noviewer > a.mw-file-description",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "6451883:156",
+      "page_title": "Challenger de Porto Alegre 2014 (dobles masculino)",
+      "raw_sha256": "63f99cdfa541d752789d9a55a5888c162368077bde9ebd8d8436ea771d617be3",
+      "href": "https://es.wikipedia.org/wiki/João_Menezes",
+      "anchor_text": "J. Menezes",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Challenger_de_Porto_Alegre_2014_dobles_masculino.rootpage-Challenger_de_Porto_Alegre_2014_dobles_masculino.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table > tbody > tr > td > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "6451883:199",
+      "page_title": "Challenger de Porto Alegre 2014 (dobles masculino)",
+      "raw_sha256": "63f99cdfa541d752789d9a55a5888c162368077bde9ebd8d8436ea771d617be3",
+      "href": "https://es.wikipedia.org/wiki/Control_de_autoridades",
+      "anchor_text": "Control de autoridades",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Challenger_de_Porto_Alegre_2014_dobles_masculino.rootpage-Challenger_de_Porto_Alegre_2014_dobles_masculino.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > th.navbox-group > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "6451883:200",
+      "page_title": "Challenger de Porto Alegre 2014 (dobles masculino)",
+      "raw_sha256": "63f99cdfa541d752789d9a55a5888c162368077bde9ebd8d8436ea771d617be3",
+      "href": "https://es.wikipedia.org/wiki/Wikidata",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Challenger_de_Porto_Alegre_2014_dobles_masculino.rootpage-Challenger_de_Porto_Alegre_2014_dobles_masculino.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span > span > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "148407:127",
+      "page_title": "Maravedí",
+      "raw_sha256": "4523fc960770a5c0ea6e152f869da0f9ccc33bd32abd575a858ce1ae903ee356",
+      "href": "https://es.wikipedia.org/wiki/Colonia_(Alemania)",
+      "anchor_text": "Colonia",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Maravedí.rootpage-Maravedí.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > p > i > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "148407:171",
+      "page_title": "Maravedí",
+      "raw_sha256": "4523fc960770a5c0ea6e152f869da0f9ccc33bd32abd575a858ce1ae903ee356",
+      "href": "/w/index.php?title=Maraved%C3%AD&action=edit&section=9",
+      "anchor_text": "editar",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Maravedí.rootpage-Maravedí.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > div.mw-heading.mw-heading3 > span.mw-editsection > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "148407:298",
+      "page_title": "Maravedí",
+      "raw_sha256": "4523fc960770a5c0ea6e152f869da0f9ccc33bd32abd575a858ce1ae903ee356",
+      "href": "https://es.wikipedia.org/wiki/Felipe_IV_de_España",
+      "anchor_text": "Felipe IV",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Maravedí.rootpage-Maravedí.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "148407:314",
+      "page_title": "Maravedí",
+      "raw_sha256": "4523fc960770a5c0ea6e152f869da0f9ccc33bd32abd575a858ce1ae903ee356",
+      "href": "https://es.wikipedia.org/wiki/Reconquista",
+      "anchor_text": "Reconquista",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Maravedí.rootpage-Maravedí.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-reference-text.reference-text > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "148407:391",
+      "page_title": "Maravedí",
+      "raw_sha256": "4523fc960770a5c0ea6e152f869da0f9ccc33bd32abd575a858ce1ae903ee356",
+      "href": "https://es.wikipedia.org/wiki/Wikidata",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Maravedí.rootpage-Maravedí.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span > span > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "148407:409",
+      "page_title": "Maravedí",
+      "raw_sha256": "4523fc960770a5c0ea6e152f869da0f9ccc33bd32abd575a858ce1ae903ee356",
+      "href": "/wiki/Categor%C3%ADa:Econom%C3%ADa_monetaria",
+      "anchor_text": "Economía monetaria",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Maravedí.rootpage-Maravedí.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.catlinks > div.mw-normal-catlinks > ul > li > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "4430214:5",
+      "page_title": "Daniel Peter",
+      "raw_sha256": "f88a94043743d582fc385ecd96b1f8d92be5b3c9378f46974dbccdc943f0f31b",
+      "href": "/wiki/Especial:P%C3%A1ginasNuevas",
+      "anchor_text": "Páginas nuevas",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Daniel_Peter.rootpage-Daniel_Peter.skin--responsive.skin-vector.skin-vector-search-vue > div.vector-header-container > header.vector-header.mw-header.no-font-mode-scale > div.vector-header-start > nav.vector-main-menu-landmark > div.vector-dropdown.vector-main-menu-dropdown.vector-button-flush-left.vector-button-flush-right > div.vector-dropdown-content > div.vector-unpinned-container > div.vector-main-menu.vector-pinnable-element > div.vector-menu.mw-portlet.mw-portlet-navigation > div.vector-menu-content > ul.vector-menu-content-list > li.mw-list-item > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "4430214:66",
+      "page_title": "Daniel Peter",
+      "raw_sha256": "f88a94043743d582fc385ecd96b1f8d92be5b3c9378f46974dbccdc943f0f31b",
+      "href": "https://es.wikipedia.org/wiki/Suiza",
+      "anchor_text": "suizo",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Daniel_Peter.rootpage-Daniel_Peter.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "4430214:68",
+      "page_title": "Daniel Peter",
+      "raw_sha256": "f88a94043743d582fc385ecd96b1f8d92be5b3c9378f46974dbccdc943f0f31b",
+      "href": "#cite_note-toms-1",
+      "anchor_text": "[1]",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Daniel_Peter.rootpage-Daniel_Peter.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > sup.mw-ref.reference > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "4430214:69",
+      "page_title": "Daniel Peter",
+      "raw_sha256": "f88a94043743d582fc385ecd96b1f8d92be5b3c9378f46974dbccdc943f0f31b",
+      "href": "https://es.wikipedia.org/wiki/Candil",
+      "anchor_text": "candiles",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Daniel_Peter.rootpage-Daniel_Peter.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "4430214:84",
+      "page_title": "Daniel Peter",
+      "raw_sha256": "f88a94043743d582fc385ecd96b1f8d92be5b3c9378f46974dbccdc943f0f31b",
+      "href": "https://es.wikipedia.org/wiki/Control_de_autoridades",
+      "anchor_text": "Control de autoridades",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Daniel_Peter.rootpage-Daniel_Peter.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > th.navbox-group > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "4430214:95",
+      "page_title": "Daniel Peter",
+      "raw_sha256": "f88a94043743d582fc385ecd96b1f8d92be5b3c9378f46974dbccdc943f0f31b",
+      "href": "https://es.wikipedia.org/wiki/Diccionario_histórico_de_Suiza",
+      "anchor_text": "DHS",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Daniel_Peter.rootpage-Daniel_Peter.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "8341703:53",
+      "page_title": "Mando Conjunto de Canarias",
+      "raw_sha256": "b8016b88cbac8c8edfa5ca6b96bec5e9e3064a91237493fb582f52a32b7762c1",
+      "href": "https://es.wikipedia.org/wiki/OTAN",
+      "anchor_text": "OTAN",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Mando_Conjunto_de_Canarias.rootpage-Mando_Conjunto_de_Canarias.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "8341703:59",
+      "page_title": "Mando Conjunto de Canarias",
+      "raw_sha256": "b8016b88cbac8c8edfa5ca6b96bec5e9e3064a91237493fb582f52a32b7762c1",
+      "href": "https://es.wikipedia.org/wiki/Mando_de_Operaciones",
+      "anchor_text": "Mando de Operaciones",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Mando_Conjunto_de_Canarias.rootpage-Mando_Conjunto_de_Canarias.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > ul > li > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "8341703:65",
+      "page_title": "Mando Conjunto de Canarias",
+      "raw_sha256": "b8016b88cbac8c8edfa5ca6b96bec5e9e3064a91237493fb582f52a32b7762c1",
+      "href": "/w/index.php?title=Mando_Conjunto_de_Canarias&action=edit&section=2",
+      "anchor_text": "editar",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Mando_Conjunto_de_Canarias.rootpage-Mando_Conjunto_de_Canarias.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-heading.mw-heading2 > span.mw-editsection > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "8341703:68",
+      "page_title": "Mando Conjunto de Canarias",
+      "raw_sha256": "b8016b88cbac8c8edfa5ca6b96bec5e9e3064a91237493fb582f52a32b7762c1",
+      "href": "https://es.wikipedia.org/wiki/Control_de_autoridades",
+      "anchor_text": "Control de autoridades",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Mando_Conjunto_de_Canarias.rootpage-Mando_Conjunto_de_Canarias.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > th.navbox-group > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "8341703:69",
+      "page_title": "Mando Conjunto de Canarias",
+      "raw_sha256": "b8016b88cbac8c8edfa5ca6b96bec5e9e3064a91237493fb582f52a32b7762c1",
+      "href": "https://es.wikipedia.org/wiki/Wikidata",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Mando_Conjunto_de_Canarias.rootpage-Mando_Conjunto_de_Canarias.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span > span > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "8341703:101",
+      "page_title": "Mando Conjunto de Canarias",
+      "raw_sha256": "b8016b88cbac8c8edfa5ca6b96bec5e9e3064a91237493fb582f52a32b7762c1",
+      "href": "#",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Mando_Conjunto_de_Canarias.rootpage-Mando_Conjunto_de_Canarias.skin--responsive.skin-vector.skin-vector-search-vue > div.vector-header-container.vector-sticky-header-container.no-font-mode-scale > div.vector-sticky-header > div.vector-sticky-header-end > div.vector-sticky-header-icons > a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet.cdx-button--icon-only",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "1341701:55",
+      "page_title": "Fernando Arias-Salgado",
+      "raw_sha256": "fff8206a671f8c627f9ea3c5111bede4dd00b59e3537840b7aedeaaed23273a9",
+      "href": "https://es.wikipedia.org/wiki/Universidad_Complutense_de_Madrid",
+      "anchor_text": "Universidad Complutense de Madrid",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Fernando_Arias-Salgado.rootpage-Fernando_Arias-Salgado.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox.biography.vcard > tbody > tr > td.plainlist > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "1341701:60",
+      "page_title": "Fernando Arias-Salgado",
+      "raw_sha256": "fff8206a671f8c627f9ea3c5111bede4dd00b59e3537840b7aedeaaed23273a9",
+      "href": "https://www.wikidata.org/wiki/Q1406596",
+      "anchor_text": "editar datos en Wikidata",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Fernando_Arias-Salgado.rootpage-Fernando_Arias-Salgado.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox.biography.vcard > tbody > tr > td.noprint > div.plainlinks.wikidata-link > a.extiw",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "1341701:63",
+      "page_title": "Fernando Arias-Salgado",
+      "raw_sha256": "fff8206a671f8c627f9ea3c5111bede4dd00b59e3537840b7aedeaaed23273a9",
+      "href": "https://es.wikipedia.org/wiki/Gabriel_Arias-Salgado",
+      "anchor_text": "Gabriel Arias-Salgado",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Fernando_Arias-Salgado.rootpage-Fernando_Arias-Salgado.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "1341701:83",
+      "page_title": "Fernando Arias-Salgado",
+      "raw_sha256": "fff8206a671f8c627f9ea3c5111bede4dd00b59e3537840b7aedeaaed23273a9",
+      "href": "https://es.wikipedia.org/wiki/Luis_Guillermo_de_Perinat_y_Elío",
+      "anchor_text": "Luis Guillermo de Perinat y Elío",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Fernando_Arias-Salgado.rootpage-Fernando_Arias-Salgado.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.wikitable > tbody > tr > td > b > a.mw-redirect",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "1341701:86",
+      "page_title": "Fernando Arias-Salgado",
+      "raw_sha256": "fff8206a671f8c627f9ea3c5111bede4dd00b59e3537840b7aedeaaed23273a9",
+      "href": "https://es.wikipedia.org/wiki/Control_de_autoridades",
+      "anchor_text": "Control de autoridades",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Fernando_Arias-Salgado.rootpage-Fernando_Arias-Salgado.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > th.navbox-group > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "1341701:123",
+      "page_title": "Fernando Arias-Salgado",
+      "raw_sha256": "fff8206a671f8c627f9ea3c5111bede4dd00b59e3537840b7aedeaaed23273a9",
+      "href": "https://stats.wikimedia.org/#/es.wikipedia.org",
+      "anchor_text": "Estadísticas",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Fernando_Arias-Salgado.rootpage-Fernando_Arias-Salgado.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-footer-container > footer.mw-footer > ul.mw-portlet.mw-portlet-footer-places > li > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "1875596:66",
+      "page_title": "Repollo relleno",
+      "raw_sha256": "6ea0a01f3b58d3e667f728a645d1c55e50df6ee9434116776f8a3b6cab44bcbd",
+      "href": "/wiki/Col_rellena",
+      "anchor_text": "Leer",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Col_rellena.rootpage-Col_rellena.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-page-toolbar > div.vector-page-toolbar-container > div.vector-collapsible > nav > div.vector-menu.vector-menu-tabs.mw-portlet.mw-portlet-views > div.vector-menu-content > ul.vector-menu-content-list > li.selected.mw-list-item.vector-menu-item--collapsible.vector-tab-noicon > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "1875596:96",
+      "page_title": "Repollo relleno",
+      "raw_sha256": "6ea0a01f3b58d3e667f728a645d1c55e50df6ee9434116776f8a3b6cab44bcbd",
+      "href": "https://es.wikipedia.org/wiki/China_del_Norte",
+      "anchor_text": "China del Norte",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Col_rellena.rootpage-Col_rellena.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a.mw-redirect",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "1875596:130",
+      "page_title": "Repollo relleno",
+      "raw_sha256": "6ea0a01f3b58d3e667f728a645d1c55e50df6ee9434116776f8a3b6cab44bcbd",
+      "href": "https://es.wikipedia.org/wiki/Seta_comestible",
+      "anchor_text": "setas",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Col_rellena.rootpage-Col_rellena.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "1875596:139",
+      "page_title": "Repollo relleno",
+      "raw_sha256": "6ea0a01f3b58d3e667f728a645d1c55e50df6ee9434116776f8a3b6cab44bcbd",
+      "href": "/w/index.php?title=Col_rellena&action=edit&section=2",
+      "anchor_text": "editar",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Col_rellena.rootpage-Col_rellena.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-heading.mw-heading2 > span.mw-editsection > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "1875596:154",
+      "page_title": "Repollo relleno",
+      "raw_sha256": "6ea0a01f3b58d3e667f728a645d1c55e50df6ee9434116776f8a3b6cab44bcbd",
+      "href": "https://es.wikipedia.org/wiki/ISBN",
+      "anchor_text": "ISBN",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Col_rellena.rootpage-Col_rellena.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-reference-text.reference-text > span.citation.libro > small > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "1875596:162",
+      "page_title": "Repollo relleno",
+      "raw_sha256": "6ea0a01f3b58d3e667f728a645d1c55e50df6ee9434116776f8a3b6cab44bcbd",
+      "href": "https://es.wikipedia.org/wiki/Wikimedia_Commons",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Col_rellena.rootpage-Col_rellena.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span > span > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "100547:139",
+      "page_title": "Ruslana",
+      "raw_sha256": "514c354b92b1b37e952f414d85afdcdc5029c73bbe1f3fa39fb233a9b983b0c7",
+      "href": "https://es.wikipedia.org/wiki/Ucrania",
+      "anchor_text": "Ucrania",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Ruslana.rootpage-Ruslana.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox.biography.vcard > tbody > tr > td > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "100547:167",
+      "page_title": "Ruslana",
+      "raw_sha256": "514c354b92b1b37e952f414d85afdcdc5029c73bbe1f3fa39fb233a9b983b0c7",
+      "href": "https://es.wikipedia.org/wiki/Festival_de_la_Canción_de_Eurovisión_2004",
+      "anchor_text": "2004",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Ruslana.rootpage-Ruslana.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "100547:245",
+      "page_title": "Ruslana",
+      "raw_sha256": "514c354b92b1b37e952f414d85afdcdc5029c73bbe1f3fa39fb233a9b983b0c7",
+      "href": "https://es.wikipedia.org/wiki/Canadá",
+      "anchor_text": "Canadá",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Ruslana.rootpage-Ruslana.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "100547:325",
+      "page_title": "Ruslana",
+      "raw_sha256": "514c354b92b1b37e952f414d85afdcdc5029c73bbe1f3fa39fb233a9b983b0c7",
+      "href": "https://es.wikipedia.org/wiki/Anexo:Discografía_de_Ruslana",
+      "anchor_text": "Anexo:Discografía de Ruslana",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Ruslana.rootpage-Ruslana.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.noprint.AP.rellink > i > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "100547:429",
+      "page_title": "Ruslana",
+      "raw_sha256": "514c354b92b1b37e952f414d85afdcdc5029c73bbe1f3fa39fb233a9b983b0c7",
+      "href": "https://es.wikipedia.org/wiki/Ukrayinska_Pravda",
+      "anchor_text": "Ukrayinska Pravda",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Ruslana.rootpage-Ruslana.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-reference-text.reference-text > i > a.mw-redirect",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "100547:517",
+      "page_title": "Ruslana",
+      "raw_sha256": "514c354b92b1b37e952f414d85afdcdc5029c73bbe1f3fa39fb233a9b983b0c7",
+      "href": "/wiki/Categor%C3%ADa:Representantes_de_Ucrania_en_Eurovisi%C3%B3n",
+      "anchor_text": "Representantes de Ucrania en Eurovisión",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Ruslana.rootpage-Ruslana.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.catlinks > div.mw-normal-catlinks > ul > li > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "2205329:5",
+      "page_title": "Remora",
+      "raw_sha256": "956f3436ff670e660355e1e0423549ab04f02c9d3e7417d6c869cbd8f473ea3a",
+      "href": "/wiki/Especial:P%C3%A1ginasNuevas",
+      "anchor_text": "Páginas nuevas",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Remora.rootpage-Remora.skin--responsive.skin-vector.skin-vector-search-vue > div.vector-header-container > header.vector-header.mw-header.no-font-mode-scale > div.vector-header-start > nav.vector-main-menu-landmark > div.vector-dropdown.vector-main-menu-dropdown.vector-button-flush-left.vector-button-flush-right > div.vector-dropdown-content > div.vector-unpinned-container > div.vector-main-menu.vector-pinnable-element > div.vector-menu.mw-portlet.mw-portlet-navigation > div.vector-menu-content > ul.vector-menu-content-list > li.mw-list-item > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "2205329:89",
+      "page_title": "Remora",
+      "raw_sha256": "956f3436ff670e660355e1e0423549ab04f02c9d3e7417d6c869cbd8f473ea3a",
+      "href": "https://es.wikipedia.org/wiki/Remora_australis?action=edit&redlink=1",
+      "anchor_text": "Remora australis",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Remora.rootpage-Remora.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > ul > li > i > a.new",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "2205329:100",
+      "page_title": "Remora",
+      "raw_sha256": "956f3436ff670e660355e1e0423549ab04f02c9d3e7417d6c869cbd8f473ea3a",
+      "href": "https://es.wikipedia.org/wiki/FishBase",
+      "anchor_text": "FishBase",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Remora.rootpage-Remora.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-reference-text.reference-text > i > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "2205329:106",
+      "page_title": "Remora",
+      "raw_sha256": "956f3436ff670e660355e1e0423549ab04f02c9d3e7417d6c869cbd8f473ea3a",
+      "href": "https://es.wikipedia.org/wiki/Wikispecies",
+      "anchor_text": "Wikispecies",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Remora.rootpage-Remora.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > ul > li > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "2205329:121",
+      "page_title": "Remora",
+      "raw_sha256": "956f3436ff670e660355e1e0423549ab04f02c9d3e7417d6c869cbd8f473ea3a",
+      "href": "https://es.wikipedia.org/wiki/Enciclopedia_de_la_vida",
+      "anchor_text": "EOL",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Remora.rootpage-Remora.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "2205329:137",
+      "page_title": "Remora",
+      "raw_sha256": "956f3436ff670e660355e1e0423549ab04f02c9d3e7417d6c869cbd8f473ea3a",
+      "href": "https://es.wikipedia.org/wiki/Wikispecies",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Remora.rootpage-Remora.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.mw-mf-linked-projects.hlist > ul > li > span > span > a",
+      "include": false,
+      "reason": "Authority-control linked-project icon, not article content"
+    },
+    {
+      "id": "548337:40",
+      "page_title": "Augusto Ferrando",
+      "raw_sha256": "945d2c7365fbdca76e485bb2f9ecb5e952e8f628cb7898662b7e7759f2b1fb15",
+      "href": "/w/index.php?title=Augusto_Ferrando&oldid=175090328",
+      "anchor_text": "Enlace permanente",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Augusto_Ferrando.rootpage-Augusto_Ferrando.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-page-toolbar > div.vector-page-toolbar-container > div.vector-collapsible > nav.vector-page-tools-landmark > div.vector-dropdown.vector-page-tools-dropdown > div.vector-dropdown-content > div.vector-unpinned-container > div.vector-page-tools.vector-pinnable-element > div.vector-menu.mw-portlet.mw-portlet-tb > div.vector-menu-content > ul.vector-menu-content-list > li.mw-list-item > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "548337:53",
+      "page_title": "Augusto Ferrando",
+      "raw_sha256": "945d2c7365fbdca76e485bb2f9ecb5e952e8f628cb7898662b7e7759f2b1fb15",
+      "href": "https://es.wikipedia.org/wiki/Perú",
+      "anchor_text": "Perú",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Augusto_Ferrando.rootpage-Augusto_Ferrando.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox.biography.vcard > tbody > tr > td > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "548337:61",
+      "page_title": "Augusto Ferrando",
+      "raw_sha256": "945d2c7365fbdca76e485bb2f9ecb5e952e8f628cb7898662b7e7759f2b1fb15",
+      "href": "https://es.wikipedia.org/wiki/Presentador",
+      "anchor_text": "Presentador",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Augusto_Ferrando.rootpage-Augusto_Ferrando.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox.biography.vcard > tbody > tr > td.role > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "548337:111",
+      "page_title": "Augusto Ferrando",
+      "raw_sha256": "945d2c7365fbdca76e485bb2f9ecb5e952e8f628cb7898662b7e7759f2b1fb15",
+      "href": "https://es.wikipedia.org/wiki/Nelson_Pinedo",
+      "anchor_text": "Nelson Pinedo",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Augusto_Ferrando.rootpage-Augusto_Ferrando.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "548337:118",
+      "page_title": "Augusto Ferrando",
+      "raw_sha256": "945d2c7365fbdca76e485bb2f9ecb5e952e8f628cb7898662b7e7759f2b1fb15",
+      "href": "https://es.wikipedia.org/wiki/Panamericana_Televisión",
+      "anchor_text": "Panamericana Televisión",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Augusto_Ferrando.rootpage-Augusto_Ferrando.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "548337:161",
+      "page_title": "Augusto Ferrando",
+      "raw_sha256": "945d2c7365fbdca76e485bb2f9ecb5e952e8f628cb7898662b7e7759f2b1fb15",
+      "href": "https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=%22Q5711654%22",
+      "anchor_text": "Q5711654",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Augusto_Ferrando.rootpage-Augusto_Ferrando.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span.uid > span.plainlinks > a.external.text",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "5458838:56",
+      "page_title": "Morella Zuleta",
+      "raw_sha256": "863d6bef2e5a260fee0c4154548e3c91c267b8c4260e56a5c682dff5dcc79d84",
+      "href": "https://es.wikipedia.org/wiki/Colombia",
+      "anchor_text": "Colombiana",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Morella_Zuleta.rootpage-Morella_Zuleta.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox.biography.vcard > tbody > tr > td.category > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "5458838:86",
+      "page_title": "Morella Zuleta",
+      "raw_sha256": "863d6bef2e5a260fee0c4154548e3c91c267b8c4260e56a5c682dff5dcc79d84",
+      "href": "https://es.wikipedia.org/wiki/Salvador_de_mujeres",
+      "anchor_text": "Salvador de mujeres",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Morella_Zuleta.rootpage-Morella_Zuleta.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.wikitable > tbody > tr > td > i > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "5458838:99",
+      "page_title": "Morella Zuleta",
+      "raw_sha256": "863d6bef2e5a260fee0c4154548e3c91c267b8c4260e56a5c682dff5dcc79d84",
+      "href": "https://es.wikipedia.org/wiki/Buscando_a_Miguel",
+      "anchor_text": "Buscando a Miguel",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Morella_Zuleta.rootpage-Morella_Zuleta.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.wikitable > tbody > tr > td > i > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "5458838:123",
+      "page_title": "Morella Zuleta",
+      "raw_sha256": "863d6bef2e5a260fee0c4154548e3c91c267b8c4260e56a5c682dff5dcc79d84",
+      "href": "https://www.actuemos.net/entrevistas/1491-M%C3%B3rella%20Zuleta.html",
+      "anchor_text": "Morella Zuleta en Actuemos",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Morella_Zuleta.rootpage-Morella_Zuleta.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > ul > li > a.external.text",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "5458838:130",
+      "page_title": "Morella Zuleta",
+      "raw_sha256": "863d6bef2e5a260fee0c4154548e3c91c267b8c4260e56a5c682dff5dcc79d84",
+      "href": "https://es.wikipedia.org/wiki/Control_de_autoridades",
+      "anchor_text": "Control de autoridades",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Morella_Zuleta.rootpage-Morella_Zuleta.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > th.navbox-group > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "5458838:166",
+      "page_title": "Morella Zuleta",
+      "raw_sha256": "863d6bef2e5a260fee0c4154548e3c91c267b8c4260e56a5c682dff5dcc79d84",
+      "href": "#",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Morella_Zuleta.rootpage-Morella_Zuleta.skin--responsive.skin-vector.skin-vector-search-vue > div.vector-header-container.vector-sticky-header-container.no-font-mode-scale > div.vector-sticky-header > div.vector-sticky-header-end > div.vector-sticky-header-icons > a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet.cdx-button--icon-only",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "382024:65",
+      "page_title": "Radio Futuro",
+      "raw_sha256": "6c1dcdb066978a0093760e90c2f8bb8fac8209f56c32fa8799114c1887396f5d",
+      "href": "https://es.wikipedia.org/wiki/Arica",
+      "anchor_text": "Arica",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Radio_Futuro.rootpage-Radio_Futuro.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox > tbody > tr > td > div.mw-collapsible.mw-collapsed > div.mw-collapsible-content > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "382024:74",
+      "page_title": "Radio Futuro",
+      "raw_sha256": "6c1dcdb066978a0093760e90c2f8bb8fac8209f56c32fa8799114c1887396f5d",
+      "href": "https://es.wikipedia.org/wiki/Punta_Arenas",
+      "anchor_text": "Punta Arenas",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Radio_Futuro.rootpage-Radio_Futuro.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox > tbody > tr > td > div.mw-collapsible.mw-collapsed > div.mw-collapsible-content > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "382024:105",
+      "page_title": "Radio Futuro",
+      "raw_sha256": "6c1dcdb066978a0093760e90c2f8bb8fac8209f56c32fa8799114c1887396f5d",
+      "href": "https://es.wikipedia.org/wiki/VTR_(Chile)",
+      "anchor_text": "VTR",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Radio_Futuro.rootpage-Radio_Futuro.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "382024:111",
+      "page_title": "Radio Futuro",
+      "raw_sha256": "6c1dcdb066978a0093760e90c2f8bb8fac8209f56c32fa8799114c1887396f5d",
+      "href": "#cite_note-alvarado-1",
+      "anchor_text": "[1]",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Radio_Futuro.rootpage-Radio_Futuro.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > sup.mw-ref.reference > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "382024:119",
+      "page_title": "Radio Futuro",
+      "raw_sha256": "6c1dcdb066978a0093760e90c2f8bb8fac8209f56c32fa8799114c1887396f5d",
+      "href": "https://es.wikipedia.org/wiki/Ibero_Americana_Radio_Chile",
+      "anchor_text": "Iberoamericana Radio Chile",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Radio_Futuro.rootpage-Radio_Futuro.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a.mw-redirect",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "382024:202",
+      "page_title": "Radio Futuro",
+      "raw_sha256": "6c1dcdb066978a0093760e90c2f8bb8fac8209f56c32fa8799114c1887396f5d",
+      "href": "#",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Radio_Futuro.rootpage-Radio_Futuro.skin--responsive.skin-vector.skin-vector-search-vue > div.vector-header-container.vector-sticky-header-container.no-font-mode-scale > div.vector-sticky-header > div.vector-sticky-header-end > div.vector-sticky-header-icons > a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet.cdx-button--icon-only",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "2193677:78",
+      "page_title": "May It Be",
+      "raw_sha256": "65246033b3fbfea29ec07bde0d521cd58b18f3d1740113920b70b8e88e792f15",
+      "href": "https://es.wikipedia.org/wiki/El_Señor_de_los_Anillos:_la_Comunidad_del_Anillo#Banda_sonora",
+      "anchor_text": "B. S. O. de la película El Señor de los Anillos: la Comunidad del Anillo",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-May_It_Be.rootpage-May_It_Be.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox > tbody > tr > th.section > i > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "2193677:142",
+      "page_title": "May It Be",
+      "raw_sha256": "65246033b3fbfea29ec07bde0d521cd58b18f3d1740113920b70b8e88e792f15",
+      "href": "https://es.wikipedia.org/wiki/El_Señor_de_los_Anillos:_la_Comunidad_del_Anillo",
+      "anchor_text": "El Señor de los Anillos: la Comunidad del Anillo",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-May_It_Be.rootpage-May_It_Be.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > i > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "2193677:240",
+      "page_title": "May It Be",
+      "raw_sha256": "65246033b3fbfea29ec07bde0d521cd58b18f3d1740113920b70b8e88e792f15",
+      "href": "https://es.wikipedia.org/wiki/Vídeo_musical",
+      "anchor_text": "vídeo musical",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-May_It_Be.rootpage-May_It_Be.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > p > a.mw-redirect",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "2193677:336",
+      "page_title": "May It Be",
+      "raw_sha256": "65246033b3fbfea29ec07bde0d521cd58b18f3d1740113920b70b8e88e792f15",
+      "href": "https://es.wikipedia.org/wiki/Los_Angeles_Times",
+      "anchor_text": "Los Angeles Times",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-May_It_Be.rootpage-May_It_Be.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-reference-text.reference-text > span.citation.web > i > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "2193677:342",
+      "page_title": "May It Be",
+      "raw_sha256": "65246033b3fbfea29ec07bde0d521cd58b18f3d1740113920b70b8e88e792f15",
+      "href": "#cite_ref-Libreto_de_1_9-0",
+      "anchor_text": "1",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-May_It_Be.rootpage-May_It_Be.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-cite-backlink > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "2193677:420",
+      "page_title": "May It Be",
+      "raw_sha256": "65246033b3fbfea29ec07bde0d521cd58b18f3d1740113920b70b8e88e792f15",
+      "href": "/wiki/Especial:Categor%C3%ADas",
+      "anchor_text": "Categorías",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-May_It_Be.rootpage-May_It_Be.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.catlinks > div.mw-normal-catlinks > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "602546:74",
+      "page_title": "Principio de Aufbau",
+      "raw_sha256": "0c9ac9c3451b6d437a8727cb1851cf97dfedfd6e7fe694cc2036ba9220c8cad9",
+      "href": "https://es.wikipedia.org/wiki/Electrón",
+      "anchor_text": "electrones",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Principio_de_Aufbau.rootpage-Principio_de_Aufbau.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "602546:78",
+      "page_title": "Principio de Aufbau",
+      "raw_sha256": "0c9ac9c3451b6d437a8727cb1851cf97dfedfd6e7fe694cc2036ba9220c8cad9",
+      "href": "https://es.wikipedia.org/wiki/Diagrama_de_Moeller",
+      "anchor_text": "diagrama de Moeller",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Principio_de_Aufbau.rootpage-Principio_de_Aufbau.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "602546:89",
+      "page_title": "Principio de Aufbau",
+      "raw_sha256": "0c9ac9c3451b6d437a8727cb1851cf97dfedfd6e7fe694cc2036ba9220c8cad9",
+      "href": "https://es.wikipedia.org/wiki/Wikidata",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Principio_de_Aufbau.rootpage-Principio_de_Aufbau.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span > span > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "602546:94",
+      "page_title": "Principio de Aufbau",
+      "raw_sha256": "0c9ac9c3451b6d437a8727cb1851cf97dfedfd6e7fe694cc2036ba9220c8cad9",
+      "href": "https://es.wikipedia.org/wiki/Enciclopedia_Británica",
+      "anchor_text": "Britannica",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Principio_de_Aufbau.rootpage-Principio_de_Aufbau.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "602546:95",
+      "page_title": "Principio de Aufbau",
+      "raw_sha256": "0c9ac9c3451b6d437a8727cb1851cf97dfedfd6e7fe694cc2036ba9220c8cad9",
+      "href": "https://www.britannica.com/science/Aufbau-principle",
+      "anchor_text": "url",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Principio_de_Aufbau.rootpage-Principio_de_Aufbau.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span.uid > a.external.text",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "602546:126",
+      "page_title": "Principio de Aufbau",
+      "raw_sha256": "0c9ac9c3451b6d437a8727cb1851cf97dfedfd6e7fe694cc2036ba9220c8cad9",
+      "href": "#",
+      "anchor_text": "",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Principio_de_Aufbau.rootpage-Principio_de_Aufbau.skin--responsive.skin-vector.skin-vector-search-vue > div.vector-header-container.vector-sticky-header-container.no-font-mode-scale > div.vector-sticky-header > div.vector-sticky-header-end > div.vector-sticky-header-icons > a.cdx-button.cdx-button--fake-button.cdx-button--fake-button--enabled.cdx-button--weight-quiet.cdx-button--icon-only",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "112497:74",
+      "page_title": "Joseph Kabila",
+      "raw_sha256": "d42b52c3cb601d61207533b916a5bcdba53463a4205c211be5619afe53d2f0ca",
+      "href": "https://ms.wikipedia.org/wiki/Joseph_Kabila",
+      "anchor_text": "Bahasa Melayu",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Joseph_Kabila.rootpage-Joseph_Kabila.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > header.mw-body-header.vector-page-titlebar.no-font-mode-scale > div.vector-dropdown.mw-portlet.mw-portlet-lang > div.vector-dropdown-content > div.vector-menu-content > ul.vector-menu-content-list > li.interlanguage-link.interwiki-ms.mw-list-item > a.interlanguage-link-target",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "112497:129",
+      "page_title": "Joseph Kabila",
+      "raw_sha256": "d42b52c3cb601d61207533b916a5bcdba53463a4205c211be5619afe53d2f0ca",
+      "href": "https://es.wikipedia.org/wiki/Félix_Tshisekedi",
+      "anchor_text": "Félix Tshisekedi",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Joseph_Kabila.rootpage-Joseph_Kabila.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox.biography.vcard > tbody > tr > td > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "112497:148",
+      "page_title": "Joseph Kabila",
+      "raw_sha256": "d42b52c3cb601d61207533b916a5bcdba53463a4205c211be5619afe53d2f0ca",
+      "href": "https://es.wikipedia.org/wiki/Grado_militar",
+      "anchor_text": "Rango militar",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Joseph_Kabila.rootpage-Joseph_Kabila.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox.biography.vcard > tbody > tr > th.label > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "112497:251",
+      "page_title": "Joseph Kabila",
+      "raw_sha256": "d42b52c3cb601d61207533b916a5bcdba53463a4205c211be5619afe53d2f0ca",
+      "href": "https://es.wikipedia.org/wiki/Movimiento_23_de_Marzo",
+      "anchor_text": "M23",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Joseph_Kabila.rootpage-Joseph_Kabila.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "112497:378",
+      "page_title": "Joseph Kabila",
+      "raw_sha256": "d42b52c3cb601d61207533b916a5bcdba53463a4205c211be5619afe53d2f0ca",
+      "href": "/w/index.php?title=Joseph_Kabila&action=edit&section=12",
+      "anchor_text": "editar",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Joseph_Kabila.rootpage-Joseph_Kabila.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-heading.mw-heading2 > span.mw-editsection > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "112497:382",
+      "page_title": "Joseph Kabila",
+      "raw_sha256": "d42b52c3cb601d61207533b916a5bcdba53463a4205c211be5619afe53d2f0ca",
+      "href": "https://es.wikipedia.org/wiki/Félix_Tshisekedi",
+      "anchor_text": "Félix Tshisekedi",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Joseph_Kabila.rootpage-Joseph_Kabila.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.wikitable > tbody > tr > td > b > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "7285429:58",
+      "page_title": "Medici: Masters of Florence",
+      "raw_sha256": "2c6cf8c65381ba5328310b1f252d9954116d49e1ecff2ddde14a71c1d3c75892",
+      "href": "/w/index.php?title=Medici:_Masters_of_Florence&action=history",
+      "anchor_text": "Ver historial",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Medici_Masters_of_Florence.rootpage-Medici_Masters_of_Florence.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-page-toolbar > div.vector-page-toolbar-container > div.vector-collapsible > nav > div.vector-menu.vector-menu-tabs.mw-portlet.mw-portlet-views > div.vector-menu-content > ul.vector-menu-content-list > li.mw-list-item.vector-menu-item--collapsible.vector-tab-noicon > a",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "7285429:85",
+      "page_title": "Medici: Masters of Florence",
+      "raw_sha256": "2c6cf8c65381ba5328310b1f252d9954116d49e1ecff2ddde14a71c1d3c75892",
+      "href": "https://es.wikipedia.org/wiki/Valentina_Bellè",
+      "anchor_text": "Valentina Bellè",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Medici_Masters_of_Florence.rootpage-Medici_Masters_of_Florence.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox.plainlist.plainlinks > tbody > tr > td.attendee > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "7285429:94",
+      "page_title": "Medici: Masters of Florence",
+      "raw_sha256": "2c6cf8c65381ba5328310b1f252d9954116d49e1ecff2ddde14a71c1d3c75892",
+      "href": "https://es.wikipedia.org/wiki/Sarah_Parish",
+      "anchor_text": "Sarah Parish",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Medici_Masters_of_Florence.rootpage-Medici_Masters_of_Florence.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > table.infobox.plainlist.plainlinks > tbody > tr > td.attendee > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "7285429:135",
+      "page_title": "Medici: Masters of Florence",
+      "raw_sha256": "2c6cf8c65381ba5328310b1f252d9954116d49e1ecff2ddde14a71c1d3c75892",
+      "href": "#cite_note-2",
+      "anchor_text": "[2]",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Medici_Masters_of_Florence.rootpage-Medici_Masters_of_Florence.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > p > sup.mw-ref.reference > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "7285429:184",
+      "page_title": "Medici: Masters of Florence",
+      "raw_sha256": "2c6cf8c65381ba5328310b1f252d9954116d49e1ecff2ddde14a71c1d3c75892",
+      "href": "https://es.wikipedia.org/wiki/Girolamo_Riario",
+      "anchor_text": "Girolamo Riario",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Medici_Masters_of_Florence.rootpage-Medici_Masters_of_Florence.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > p > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "7285429:292",
+      "page_title": "Medici: Masters of Florence",
+      "raw_sha256": "2c6cf8c65381ba5328310b1f252d9954116d49e1ecff2ddde14a71c1d3c75892",
+      "href": "https://es.wikipedia.org/wiki/Sebastian_de_Souza",
+      "anchor_text": "Sebastian de Souza",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Medici_Masters_of_Florence.rootpage-Medici_Masters_of_Florence.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > div.columns > ul > li > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "41233:66",
+      "page_title": "Las metamorfosis",
+      "raw_sha256": "65e7b29c08c70318cad92e9fac127b1d45e2dc5f09688b0f7035e3446f8b3c51",
+      "href": "https://la.wikipedia.org/wiki/Metamorphoses_(Ovidius)",
+      "anchor_text": "Latina",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Las_metamorfosis.rootpage-Las_metamorfosis.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > header.mw-body-header.vector-page-titlebar.no-font-mode-scale > div.vector-dropdown.mw-portlet.mw-portlet-lang > div.vector-dropdown-content > div.vector-menu-content > ul.vector-menu-content-list > li.interlanguage-link.interwiki-la.mw-list-item > a.interlanguage-link-target",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "41233:177",
+      "page_title": "Las metamorfosis",
+      "raw_sha256": "65e7b29c08c70318cad92e9fac127b1d45e2dc5f09688b0f7035e3446f8b3c51",
+      "href": "https://es.wikipedia.org/wiki/Cadmo",
+      "anchor_text": "Cadmo",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Las_metamorfosis.rootpage-Las_metamorfosis.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > ul > li > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "41233:251",
+      "page_title": "Las metamorfosis",
+      "raw_sha256": "65e7b29c08c70318cad92e9fac127b1d45e2dc5f09688b0f7035e3446f8b3c51",
+      "href": "https://es.wikipedia.org/wiki/Julio_César",
+      "anchor_text": "César",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Las_metamorfosis.rootpage-Las_metamorfosis.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > ul > li > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "41233:257",
+      "page_title": "Las metamorfosis",
+      "raw_sha256": "65e7b29c08c70318cad92e9fac127b1d45e2dc5f09688b0f7035e3446f8b3c51",
+      "href": "#cite_note-Johnston-5",
+      "anchor_text": "[5]",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Las_metamorfosis.rootpage-Las_metamorfosis.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > p > sup.mw-ref.reference > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "41233:570",
+      "page_title": "Las metamorfosis",
+      "raw_sha256": "65e7b29c08c70318cad92e9fac127b1d45e2dc5f09688b0f7035e3446f8b3c51",
+      "href": "https://es.wikipedia.org/wiki/Control_de_autoridades",
+      "anchor_text": "Control de autoridades",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Las_metamorfosis.rootpage-Las_metamorfosis.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > th.navbox-group > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "41233:587",
+      "page_title": "Las metamorfosis",
+      "raw_sha256": "65e7b29c08c70318cad92e9fac127b1d45e2dc5f09688b0f7035e3446f8b3c51",
+      "href": "https://es.wikipedia.org/wiki/Gemeinsame_Normdatei",
+      "anchor_text": "GND",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Las_metamorfosis.rootpage-Las_metamorfosis.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.mw-authority-control > div.navbox > table.hlist.navbox-inner > tbody > tr > td.navbox-list.navbox-odd > div > ul > li > span > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "5792668:46",
+      "page_title": "Elecciones generales de Guatemala de 2015",
+      "raw_sha256": "5b9e1a03f2beef85bd910a4c4ed4fb1a541a4ace7b21246ce3304a69548b48cf",
+      "href": "#Primera_Vuelta_2",
+      "anchor_text": "5.1 Primera Vuelta",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Elecciones_generales_de_Guatemala_de_2015.rootpage-Elecciones_generales_de_Guatemala_de_2015.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.vector-column-start > div.vector-sticky-pinned-container > nav.mw-table-of-contents-container.vector-toc-landmark > div.vector-pinned-container > div.vector-toc.vector-pinnable-element > ul.vector-toc-contents > li.vector-toc-list-item.vector-toc-level-1 > ul.vector-toc-list > li.vector-toc-list-item.vector-toc-level-2 > a.vector-toc-link",
+      "include": false,
+      "reason": "Outside article body"
+    },
+    {
+      "id": "5792668:189",
+      "page_title": "Elecciones generales de Guatemala de 2015",
+      "raw_sha256": "5b9e1a03f2beef85bd910a4c4ed4fb1a541a4ace7b21246ce3304a69548b48cf",
+      "href": "/w/index.php?title=Elecciones_generales_de_Guatemala_de_2015&action=edit&section=3",
+      "anchor_text": "editar",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Elecciones_generales_de_Guatemala_de_2015.rootpage-Elecciones_generales_de_Guatemala_de_2015.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > section > div.mw-heading.mw-heading4 > span.mw-editsection > a",
+      "include": false,
+      "reason": "Non-article/external/edit/fragment/redlink destination"
+    },
+    {
+      "id": "5792668:669",
+      "page_title": "Elecciones generales de Guatemala de 2015",
+      "raw_sha256": "5b9e1a03f2beef85bd910a4c4ed4fb1a541a4ace7b21246ce3304a69548b48cf",
+      "href": "https://es.wikipedia.org/wiki/Jimmy_Morales",
+      "anchor_text": "Jimmy Morales",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Elecciones_generales_de_Guatemala_de_2015.rootpage-Elecciones_generales_de_Guatemala_de_2015.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > table.wikitable.col5der > tbody > tr > td > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "5792668:722",
+      "page_title": "Elecciones generales de Guatemala de 2015",
+      "raw_sha256": "5b9e1a03f2beef85bd910a4c4ed4fb1a541a4ace7b21246ce3304a69548b48cf",
+      "href": "https://es.wikipedia.org/wiki/Departamento_de_El_Progreso",
+      "anchor_text": "El Progreso",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Elecciones_generales_de_Guatemala_de_2015.rootpage-Elecciones_generales_de_Guatemala_de_2015.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > section > section > table.wikitable > tbody > tr > th > a",
+      "include": true,
+      "reason": "Internal main-namespace article link in narrative/list/content table"
+    },
+    {
+      "id": "5792668:800",
+      "page_title": "Elecciones generales de Guatemala de 2015",
+      "raw_sha256": "5b9e1a03f2beef85bd910a4c4ed4fb1a541a4ace7b21246ce3304a69548b48cf",
+      "href": "https://es.wikipedia.org/wiki/La_Hora_(Guatemala)",
+      "anchor_text": "La Hora",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Elecciones_generales_de_Guatemala_de_2015.rootpage-Elecciones_generales_de_Guatemala_de_2015.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-reference-text.reference-text > span.citation.publicación > i > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    },
+    {
+      "id": "5792668:855",
+      "page_title": "Elecciones generales de Guatemala de 2015",
+      "raw_sha256": "5b9e1a03f2beef85bd910a4c4ed4fb1a541a4ace7b21246ce3304a69548b48cf",
+      "href": "https://es.wikipedia.org/wiki/Prensa_Libre",
+      "anchor_text": "Prensa Libre",
+      "ancestry": "html.client-nojs.vector-feature-language-in-header-enabled.vector-feature-language-in-main-menu-disabled.vector-feature-language-in-main-page-header-disabled.vector-feature-page-tools-pinned-disabled.vector-feature-toc-pinned-clientpref-1.vector-feature-main-menu-pinned-disabled.vector-feature-limited-width-clientpref-1.vector-feature-limited-width-content-enabled.vector-feature-custom-font-size-clientpref-1.vector-feature-appearance-pinned-clientpref-1.skin-theme-clientpref-day.vector-sticky-header-enabled.vector-toc-available.skin-thumbsize-clientpref-standard.skin-underline-clientpref-browser > body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.action-view.skin-vector-2022.ns-0.ns-subject.mw-editable.page-Elecciones_generales_de_Guatemala_de_2015.rootpage-Elecciones_generales_de_Guatemala_de_2015.skin--responsive.skin-vector.skin-vector-search-vue > div.mw-page-container > div.mw-page-container-inner > div.mw-content-container > main.mw-body > div.vector-body > div.mw-body-content > div.mw-content-ltr.mw-parser-output > section > div.listaref > ol.mw-references.references > li > span.mw-reference-text.reference-text > span.citation.publicación > i > a",
+      "include": false,
+      "reason": "Infobox/reference/authority-navigation context"
+    }
+  ]
+}

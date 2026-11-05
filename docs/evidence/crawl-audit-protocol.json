@@ -1,0 +1,173 @@
+{
+  "protocol": "crawl-audit-v1",
+  "date": "2026-11-05",
+  "seed_rule": "Within each original train-defined traffic stratum, sort 50 sources by historical out-degree then ID; partition into five consecutive blocks of 10; choose minimum SHA256(crawl-audit-v1:source_id) per block. 20 explicit seeds, depth 0, no replacements for failures.",
+  "files": {
+    "data/processed/study-v2/queries.parquet": "51ec52ef8c0ab37ff31f6d0ce2df64282d4d78112c29fd3af04fe67f9ff3e93d",
+    "data/processed/study-v2/nodes.parquet": "c267dd6d9e756be95cfa08247e7219a72f4faddc89261562557b84c6ca392b8c",
+    "configs/crawl-audit.toml": "88e1905e7b4fc120db401533b13bfd3852ff57cba3d27768f7593161a0606665"
+  },
+  "seeds": [
+    {
+      "source_id": 6567985,
+      "degree": 5,
+      "traffic": 0.0,
+      "stratum": 0,
+      "title": "Alexandr Zhapozhnik",
+      "degree_band": 0
+    },
+    {
+      "source_id": 4199047,
+      "degree": 13,
+      "traffic": 0.0,
+      "stratum": 0,
+      "title": "Estación Experimental Pavlovsk",
+      "degree_band": 1
+    },
+    {
+      "source_id": 4400667,
+      "degree": 20,
+      "traffic": 0.0,
+      "stratum": 0,
+      "title": "Punta Whymper",
+      "degree_band": 2
+    },
+    {
+      "source_id": 6451883,
+      "degree": 31,
+      "traffic": 0.0,
+      "stratum": 0,
+      "title": "Challenger de Porto Alegre 2014 (dobles masculino)",
+      "degree_band": 3
+    },
+    {
+      "source_id": 148407,
+      "degree": 108,
+      "traffic": 0.0,
+      "stratum": 0,
+      "title": "Maravedí",
+      "degree_band": 4
+    },
+    {
+      "source_id": 4430214,
+      "degree": 8,
+      "traffic": 61.0,
+      "stratum": 1,
+      "title": "Daniel Peter",
+      "degree_band": 0
+    },
+    {
+      "source_id": 8341703,
+      "degree": 19,
+      "traffic": 40.0,
+      "stratum": 1,
+      "title": "Mando Conjunto de Canarias",
+      "degree_band": 1
+    },
+    {
+      "source_id": 1341701,
+      "degree": 28,
+      "traffic": 20.0,
+      "stratum": 1,
+      "title": "Fernando Arias-Salgado",
+      "degree_band": 2
+    },
+    {
+      "source_id": 1875596,
+      "degree": 36,
+      "traffic": 10.0,
+      "stratum": 1,
+      "title": "Repollo relleno",
+      "degree_band": 3
+    },
+    {
+      "source_id": 100547,
+      "degree": 99,
+      "traffic": 55.0,
+      "stratum": 1,
+      "title": "Ruslana",
+      "degree_band": 4
+    },
+    {
+      "source_id": 2205329,
+      "degree": 12,
+      "traffic": 120.0,
+      "stratum": 2,
+      "title": "Remora",
+      "degree_band": 0
+    },
+    {
+      "source_id": 548337,
+      "degree": 18,
+      "traffic": 681.0,
+      "stratum": 2,
+      "title": "Augusto Ferrando",
+      "degree_band": 1
+    },
+    {
+      "source_id": 5458838,
+      "degree": 28,
+      "traffic": 104.0,
+      "stratum": 2,
+      "title": "Morella Zuleta",
+      "degree_band": 2
+    },
+    {
+      "source_id": 382024,
+      "degree": 51,
+      "traffic": 203.0,
+      "stratum": 2,
+      "title": "Radio Futuro",
+      "degree_band": 3
+    },
+    {
+      "source_id": 2193677,
+      "degree": 98,
+      "traffic": 102.0,
+      "stratum": 2,
+      "title": "May It Be",
+      "degree_band": 4
+    },
+    {
+      "source_id": 602546,
+      "degree": 10,
+      "traffic": 1792.0,
+      "stratum": 3,
+      "title": "Principio de Aufbau",
+      "degree_band": 0
+    },
+    {
+      "source_id": 112497,
+      "degree": 49,
+      "traffic": 1786.0,
+      "stratum": 3,
+      "title": "Joseph Kabila",
+      "degree_band": 1
+    },
+    {
+      "source_id": 7285429,
+      "degree": 55,
+      "traffic": 5084.0,
+      "stratum": 3,
+      "title": "Medici: Masters of Florence",
+      "degree_band": 2
+    },
+    {
+      "source_id": 41233,
+      "degree": 116,
+      "traffic": 6243.0,
+      "stratum": 3,
+      "title": "Las metamorfosis",
+      "degree_band": 3
+    },
+    {
+      "source_id": 5792668,
+      "degree": 166,
+      "traffic": 1331.0,
+      "stratum": 3,
+      "title": "Elecciones generales de Guatemala de 2015",
+      "degree_band": 4
+    }
+  ],
+  "audit_design": "Exhaustive differential extraction against independent HTML5 DOM parser; agent-reviewed occurrence samples from raw DOM include body, excluded, outside, and ineligible links. Review is not independent multi-human ground truth. Sample recall conditional on annotated pool only; no population/full-page recall claim."
+}

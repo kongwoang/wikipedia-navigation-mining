@@ -9,7 +9,7 @@
 
 1. [Phạm vi và backlog đã thống nhất](docs/PROJECT_PLAN.md).
 2. [Báo cáo chính: câu hỏi → dữ liệu → so sánh → insight](reports/REPORT.md).
-3. [Kịch bản bảo vệ](reports/PRESENTATION.md) và [demo từ predictions thật](reports/generated/demo.html).
+3. [Slide thuyết trình (PPTX)](reports/deliverables/Wikipedia_Navigation_IT4868E.pptx), [kịch bản bảo vệ](reports/PRESENTATION.md) và [demo từ predictions thật](reports/generated/demo.html).
 4. [Trạng thái thực tế](docs/IMPLEMENTATION_STATUS.md) và [tái lập](reports/REPRODUCIBILITY.md).
 
 [Đối chiếu slide môn học](docs/COURSE_ALIGNMENT.md) · [Danh mục14 PDF/733 trang](docs/COURSE_SLIDE_INDEX.md).
@@ -22,7 +22,7 @@
 
 Benchmark eswiki 2018 đã hoàn tất: Jan–Mar train, April validation, May primary test, June fixed-model horizon; independent H 01/03/2018. Có200 sampled sources,127/122có observable labels ở May/June. May macro full NDCG@10: Markov 0,8991; PPR-H0,3126; fusion 0,9034. Fusion−behavior Δ0,00429,95% CI [−0,00076;0,01035]: chưa xác nhận reliable improvement.
 
-**Nhánh crawl mới chỉ ở mức pilot:**8 pages,654 API edges,556 HTMLbody edges,1.028 occurrences. Current crawl 2026 không dùng làm features cho labels 2018. Manual extraction audit 20 pages còn thiếu; chưa có recommendation experiment dùng crawled features. [Pilot và provenance](reports/crawl/pilot-v2/PILOT.md) · [Cách chạy crawler](docs/CRAWLING_EXTENSION.md).
+**Đã tự crawl và audit 20 trang bằng API + HTML:** 20/20 revision matches, 1.397 API edges, 1.049 body edges sau sửa extraction. Rà 120 occurrences bằng agent phát hiện 2 lỗi context; raw captures được giữ nguyên, parser correction có provenance riêng. Đây là diagnostic audit, chưa có human gold hoặc held-out extraction accuracy. Current crawl 2026 tách khỏi ranking2018. [Audit và annotations](reports/crawl/audit-v2/AUDIT.md) · [Cách chạy crawler](docs/CRAWLING_EXTENSION.md).
 
 Không thêm model/dataset để mở rộng số lượng. CycleRank/adaptive/null/panel experiments đã có được giữ làm phụ lục; Global PR mới, content ranking, sentiment/NER/CF/RNN không còn backlog bản nộp.
 
@@ -33,10 +33,11 @@ Python≥3.11, không tải real datasets hoặc retrain:
 ```bash
 PYTHONPATH=src python3 -m wikinav.verify_bundle
 PYTHONPATH=src python3 -m wikinav.verify_extensions
+python3 scripts/verify_crawl_audit.py
 PYTHONPATH=src python3 -m unittest discover -s tests -p test_core.py
 ```
 
-Mở `reports/generated/demo.html` trực tiếp để xem frozen rankings. Data verification không thay browser interaction QA; rehearsal vẫn cần thực hiện. [Reproduction guide](reports/REPRODUCIBILITY.md) chứa lệnh raw-to-model, dependencies, CPU/RAM requirements và giới hạn cross-platform.
+Mở `reports/generated/demo.html` trực tiếp để xem frozen rankings. Ngày05/11 browser origin bị saved permission chặn; interaction/visual rehearsal vẫn cần người trình bày thực hiện. Data verification không thay UI QA. [Reproduction guide](reports/REPRODUCIBILITY.md) chứa lệnh raw-to-model, dependencies, CPU/RAM requirements và giới hạn cross-platform.
 
 ## Phụ lục và bằng chứng đầy đủ
 

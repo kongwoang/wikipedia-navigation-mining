@@ -1,7 +1,7 @@
 # Kịch bản bảo vệ thống nhất — 12–14 phút
 
 **Wikipedia Navigation Mining: When Do Hyperlinks Help Beyond Click History?**
-Bản chính ngày 05/11/2026. Dùng cùng 2 RQ, 5 phương pháp + 2 references và kết luận trong [REPORT](REPORT.md); [PROJECT_PLAN](../docs/PROJECT_PLAN.md) là scope duy nhất.
+Bản chính ngày 05/11/2026. [Deck PPTX 10 slides](deliverables/Wikipedia_Navigation_IT4868E.pptx) có native editable charts/tables và speaker notes; [QA/lineage](deliverables/README.md). Dùng cùng 2 RQ, 5 phương pháp + 2 references và kết luận trong [REPORT](REPORT.md); [PROJECT_PLAN](../docs/PROJECT_PLAN.md) là scope duy nhất.
 
 ## Người nghe cần nhớ một điều
 
@@ -15,14 +15,14 @@ Không mở đầu bằng số algorithms, số triệu edges hoặc số tests.
 |---|---:|---|---|
 | 1. Tại sao cần xếp hạng links? | 0:45 | Một article có nhiều links, người đọc không chọn như nhau | Source-conditioned task; không user/session claim |
 | 2. Hai nguồn tín hiệu | 1:00 | H là availability/structure, C là observed behavior | Directed graph, independent H 2018, published/censored counts |
-| 3. Tự thu thập và preprocessing | 1:15 | Link graph phụ thuộc cách parse trang | API+HTML raw/revisions; Cumberland: 33 API vs 13 body; pilot 8 pages,2026 tách 2018 |
+| 3. Tự thu thập và preprocessing | 1:15 | Link graph phụ thuộc cách parse trang | Audit20pages: API1.397 vs body1.049edges; 20matched revisions; agent tìm2context errors trong120occurrences;2026tách2018 |
 | 4. EDA dẫn đến giả thuyết | 1:00 | Traffic concentration khiến Markov là baseline phải vượt | Concentration + degree–traffic scatter; không suy unobserved=zero |
 | 5. Các phương pháp có vai trò gì? | 1:30 | Frequency, authority, proximity, embedding và fusion | Markov/HITS-global/PPR/Node2Vec/fusion; Uniform/Global làm references; shared candidates |
 | 6. Đánh giá để kết luận đúng | 1:15 | So cùng future labels, không chọn test winner | Chronology, validation, full vs conditional, macro/weighted, primary CI |
 | 7. Kết quả tổng thể | 1:15 | Local counts mạnh; fusion gain nhỏ/chưa chắc chắn | Bảng 7 rows; May 0,8991→0,9034; paired CI chứa 0; June weighted reversal |
 | 8. Topology giúp gì và gây hại ở đâu? | 2:15 | Conditional usefulness khác aggregate benefit | A7 unobserved recall + Danza gain/Tragacete loss trong demo gốc |
 | 9. Có phải thuật toán chạy sai/graph quá nhỏ? | 1:15 | Chẩn đoán và controls hỗ trợ diễn giải có giới hạn | PPR residual/SGNS/seeds; full-H control; rolling là protocol khác; cost |
-| 10. Kết luận, giới hạn và đóng góp | 0:45 | Quyết định dựa trên signal/evidence, không độ phức tạp model | Sample/censoring/cold limitations, crawl audit còn thiếu, reproducible comparison |
+| 10. Kết luận, giới hạn và đóng góp | 0:45 | Quyết định dựa trên signal/evidence, không độ phức tạp model | Sample/censoring/cold limitations, agent audit chưa là human gold, reproducible comparison |
 
 Tổng 12 phút 15 giây; dành 1–2 phút buffer. Bảng 14 models và detailed grids ở appendix, không thêm slide chỉ để liệt kê một thuật toán đã chạy. Không đem CycleRank/tie-break thành nhân vật chính của một câu chuyện về score fusion.
 
@@ -36,7 +36,7 @@ Mở [demo gốc](generated/demo.html), tháng May 2018, metric denominator **Fu
 
 [CASE_STUDIES](CASE_STUDIES.md) có exact tables; nếu UI lỗi thì dùng bảng này, không hardcode lại predictions. **Remora** là backup khi được hỏi hub bias: PPR 0, Markov 1; không thay Tragacete vì Remora không phải fusion failure.
 
-Crawl demo chỉ cần mở [pilot report](crawl/pilot-v2/PILOT.md) và một raw/structured record đã cache: revision IDs, anchor/section, body exclusion. **Không nối current crawl page đó với clicks 2018 để minh họa causal effect.** Chưa có UI crawl inspector hoặc manual audit thì nói đúng trạng thái.
+Crawl demo mở [audit report](crawl/audit-v2/AUDIT.md), [annotation4199047:47](../docs/evidence/crawl-audit-labels.json) và raw/structured record đã cache nếu có: page indicator có nested `mw-parser-output` nhưng nằm ngoài article body. Giải thích vì sao hai parsers cùng đồng ý vẫn cùng sai policy. Agent review120occurrences không phải human gold. Không nối current crawl với clicks2018 để minh họa causal effect.
 
 ## Appendix chuẩn bị, không thuyết trình tuần tự
 
@@ -53,5 +53,11 @@ Crawl demo chỉ cần mở [pilot report](crawl/pilot-v2/PILOT.md) và một ra
 - Chạy hai portable verifiers theo [REPRODUCIBILITY](REPRODUCIBILITY.md); không train/download live.
 - Tự mở HTML, kiểm tra tìm source, chọn models/month, full/conditional controls và overflow. Browser interaction/visual QA vẫn chưa được xác nhận trong evidence hiện có.
 - Kể được một gain/một loss bằng actual counts/ranks trong 2 phút; không chỉ đọc score.
-- Nói rõ current crawl 2026 chỉ là extraction pilot; audit 20 pages là việc còn lại, không nhận đã hoàn thành.
+- Nói rõ current crawl2026 là extraction audit,20pages/120occurrences đã làm bằng agent; chưa có human adjudication và held-out accuracy.
 - Kết luận phân biệt “chưa chứng minh improvement” với “hai model tương đương” hoặc “topology vô ích”.
+
+## Handoff khi không thể thao tác browser
+
+Ngày05/11/2026, CUA từ chối mở `http://127.0.0.1:8765/demo.html` vì saved user permission blocks origin. Không thử browser khác, raw CDP hoặc workaround. Hai portable verifiers đã kiểm tra payloads/ranks/metrics; chúng không chứng minh DOM interactions hay visual layout đúng.
+
+Người trình bày tự mở `reports/generated/demo.html`, làm hai cases trên, đổi May/June và Full/Conditional rồi kiểm tra source/model controls, bảng counts và overflow. Nếu lỗi UI, dùng [CASE_STUDIES](CASE_STUDIES.md) làm bảng evidence dự phòng và ghi nhận lỗi, không thêm predictions hardcoded. Chưa ghi nhận một cuộc bảo vệ thử có người trình bày hoặc thời lượng đo thực tế; 12–14phút là time budget của kịch bản.

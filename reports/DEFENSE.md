@@ -60,3 +60,15 @@ Nếu bị hỏi ngoài evidence, trả lời rõ “chưa kiểm chứng trong 
 | 35 | Vì sao không thêm nhiều neural baselines? | Các controls hiện có trả lời frequency/topology/boundary/time/degree/fallback. GNN cần research question, compatible labels, budget và leakage protocol riêng; số model không thay experimental quality. | Completed quality plan và RQ–evidence mapping |
 
 Không gọi full-graph processing là full-population evaluation, không gọi28600 verifier checks là28600 independent examples, và không gọi local timestamp audit là external preregistration.
+
+
+## Câu hỏi cho phần crawl và bản nộp cuối
+
+| Câu hỏi | Trả lời có giới hạn | Evidence |
+|---|---|---|
+| Hai parsers cùng cho kết quả giống nhau, đã đủ chứng minh đúng chưa? | Chưa. Cả hai từng nhận page-indicator root là body. Agent đọc DOM context phát hiện lỗi dù differential agreement=100% ở20pages. Cần kiểm tra semantics ngoài parser agreement. | Audit20pages, occurrence4199047:47 |
+| Vì sao gọi120labels là agent review thay vì manual gold? | Không có independent human annotator/adjudicator. Sau sửa dùng lại cùng sample, chỉ là regression check;38TP/0FP không là held-out accuracy hoặc population estimate. | annotations, review_summary, AUDIT.md |
+| Crawl tự làm có đóng góp vào model accuracy2018 không? | Chưa có compatible experiment. Nó chứng minh acquisition/extraction và ảnh hưởng định nghĩa graph; current2026táchhistorical2018 để tránh leakage. | capture timestamps và RUN_PROTOCOL |
+| Vì sao API1.397edges, body1.049edges? | Phạm vi khác nhau: API có links trong templates/boxes/references mà body policy loại. Không gọi API là gold hoặc body tốt hơn cho prediction khi chưa có labels tương thích. | source_comparison.csv, raw hashes và parser tests |
+| Có thể reproduce extraction từ GitHub không? | Clone kiểm tra published artifacts/labels được. Replay cần raw archive Git-ignored; crawl lại có revisions mới. Explicit reparse giữ cả original và corrected parser provenance. | verify_crawl_audit.py, provenance.json |
+| Demo và slide đã được kiểm tra đến đâu? | Frozen payloads/ranks/metrics đã pass; PPTX đã import/render và đọc10slides, nativechartworkbooks đã verify. Browserlocalhost bị saved permission chặn; native Office/human rehearsal chưa thực hiện. | final verification và deliverables/README.md |

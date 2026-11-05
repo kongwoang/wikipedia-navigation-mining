@@ -61,7 +61,7 @@ Không dẫn dắt bằng danh sách 14 models, số triệu edges hoặc số t
 
 | Nhóm | Evidence giữ ở bản chính | Trạng thái |
 |---|---|---|
-| Data quality | API/HTML same-revision comparison, một ví dụ body/all-context, manual extraction audit | Pilot 8 pages đã có; audit 20 pages chưa có |
+| Data quality | API/HTML same-revision comparison, một ví dụ body/all-context, agent extraction audit | Audit20pages/120occurrences đã có bằng agent; chưa có human gold |
 | Main comparison | Bảng 7 rows; Recall@5/10/20, MRR@10, NDCG@10; fusion−behavior CI | Đã có frozen results; primary metric/protocol không đổi |
 | Signal/condition analysis | Matched H vs weighted-H; validation lambda; train-observed/unobserved; macro/weighted; một win/một loss | Đã có; không gọi unobserved là cold-start, không suy causal effect |
 | Robustness/diagnostics | May/June, rolling summary đúng comparator; full-H control; PPR residual, Node2Vec seeds/SGNS, cost | Đã có; detailed controls trong appendix |
@@ -72,17 +72,17 @@ Không cần thêm algorithm để hoàn thành bốn nhóm này. Bootstrap qua 
 
 API collector và HTML parser đã chạy thật 8 pages, kiểm tra 8/8 revision matches, 654 API edges/556 body edges / 1.028 occurrences. Đây là acquisition/extraction pilot. Crawl 2026 chưa làm input cho benchmark 2018; không ghép hai kết quả thành pipeline end-to-end cùng thời điểm.
 
-Việc còn lại là audit 20 source pages với seed/selection rule được khóa trước, đa dạng về cấu trúc trang; không chọn theo test performance. Gán nhãn occurrences trên raw captures, kiểm tra precision/recall theo context, phân loại khác biệt API/body và ghi failures/redirects/coverage. API không là gold ground truth. Unknown frontier không phải true dangling. Quy trình chi tiết giữ ở [CRAWLING_EXTENSION](CRAWLING_EXTENSION.md).
+Audit20source pages hoàn thành với seed rule khóa trước,20matched revisions,1.397API/1.049body edges sau correction. Agent đọc120fixed occurrences, phát hiện page indicator và authority icon bị nhận nhầm; raw archive giữ nguyên, explicit offline reparse lưu parser hash. [Audit](../reports/crawl/audit-v2/AUDIT.md) ghi annotations, trước/sau và limitations. API không là gold; unknown frontier không là true dangling.
 
-Nếu không kịp audit, báo đúng pilot-only và hạn chế extraction quality. Không lấy 8 pages làm corpus representative. Nếu rubric yêu cầu toàn bộ recommendation data phải tự crawl, đây là yêu cầu mới cần temporal dataset design riêng; chưa thấy yêu cầu đó trong bộ slide.
+Không có human adjudication hoặc held-out extraction accuracy. Đây là giới hạn công khai của bản nộp; không phát triển thêm corpus/models chỉ để che hạn chế. Nếu rubric yêu cầu toàn bộ recommendation data tự crawl, cần temporal design riêng; chưa thấy yêu cầu đó trong slide.
 
-## 7. Backlog hoàn thiện còn ba việc
+## 7. Hoàn thiện bản nộp và điểm dừng
 
-1. **P0 — Extraction audit:** guideline + 20 pages + raw-linked annotations + quality/coverage table. Ước lượng 6–10 giờ công; chưa bao gồm chờ mạng. Chưa làm trong lượt thống nhất scope này.
-2. **P0 — Biên tập minh chứng:** dùng báo cáo/kịch bản đã thống nhất, chỉ chọn hình phục vụ 4 nhóm evidence; đưa full grids/models vào appendix. Kiểm tra mọi con số trỏ được tới artifact. Lượt này hoàn tất bản Markdown; deck render riêng chưa có.
-3. **P0 — Rehearsal và tái kiểm tra:** mở demo gốc, kể một win/một failure của đúng models trong bảng; verifier và link/claim audit; browser interaction QA phải được làm thực tế. Không train/download live.
+1. **P0 — Extraction audit: đã làm**20pages,120agent-reviewed occurrences, sửa2context errors, raw-linked labels, hash manifests và portable audit verifier. Chưa claim human gold.
+2. **P0 — Biên tập minh chứng: đã làm** báo cáo, kịch bản và deck10slides có charts/tables editable. Full grids/models giữ appendix. Deck preview được rà từng trang; đọc [QA](../reports/deliverables/README.md) để biết phạm vi kiểm tra.
+3. **P0 — Tái kiểm tra: đã làm**108tests,2benchmark verifiers và crawl audit integrity checks. **Browser rehearsal còn cần người trình bày:** saved permission chặn origin ngày05/11. Không bypass để nhận đã UI QA. Hướng dẫn thao tác và bảng dự phòng ở [PRESENTATION](../reports/PRESENTATION.md).
 
-Global PR/TF-IDF và việc scale crawl không còn P1/P2 mặc định. Chỉ mở lại khi có một requirement hoặc câu hỏi mới cụ thể. **Điểm dừng:** một câu chuyện dễ bảo vệ, dữ liệu được kiểm tra, so sánh công bằng, uncertainty/limitations rõ; không yêu cầu graph model phải thắng.
+Human review độc lập là bước nâng chất lượng nếu có reviewer, không được tự giả định hoàn thành. Không thêm GlobalPR/TF-IDF/corpus scale. **Điểm dừng:** kết luận có evidence, so sánh công bằng, limitations rõ và bộ tài liệu nộp được; không yêu cầu graph model phải thắng.
 
 ## 8. Một nguồn cho mỗi loại thông tin
 

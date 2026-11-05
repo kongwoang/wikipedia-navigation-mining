@@ -1,0 +1,30 @@
+# Locked before new collection; no labels or performance used in seed selection.
+edition = "es"
+mode = "both"
+max_pages = 20
+max_depth = 0
+max_requests = 100
+max_response_bytes = 5000000
+delay_seconds = 1.5
+seeds = [
+  "Alexandr Zhapozhnik",
+  "Estación Experimental Pavlovsk",
+  "Punta Whymper",
+  "Challenger de Porto Alegre 2014 (dobles masculino)",
+  "Maravedí",
+  "Daniel Peter",
+  "Mando Conjunto de Canarias",
+  "Fernando Arias-Salgado",
+  "Repollo relleno",
+  "Ruslana",
+  "Remora",
+  "Augusto Ferrando",
+  "Morella Zuleta",
+  "Radio Futuro",
+  "May It Be",
+  "Principio de Aufbau",
+  "Joseph Kabila",
+  "Medici: Masters of Florence",
+  "Las metamorfosis",
+  "Elecciones generales de Guatemala de 2015"
+]

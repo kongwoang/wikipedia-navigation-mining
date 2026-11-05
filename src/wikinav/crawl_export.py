@@ -27,7 +27,7 @@ def collapse_edges(rows,count_key=None):
     return [groups[k] for k in sorted(groups)]
 
 
-def export(raw,processed,report):
+def export(raw,processed,report,*,reparse=False):
     state=json.loads((raw/'state.json').read_text())
     if processed.exists() or report.exists():raise FileExistsError('Use fresh output directories')
     records=[]
@@ -53,13 +53,18 @@ def export(raw,processed,report):
             for n in site['namespaces'].values():
                 if n['id']!=0:namespaces.update(title_key(n[k]).casefold() for k in ('name','canonical') if n.get(k))
             namespaces.update(title_key(n['alias']).casefold() for n in site['namespacealiases'] if n['id']!=0)
+    reparsed_pages=[]
     for r in records:
         if 'html' in r:
             h=r['html'];replayed=parse_article(body_for(h['request']).decode('utf-8'),h['request']['url'],namespaces)
             if state['signature']['config']['mode']=='html':
                 for field in ('body_targets','all_article_targets'):replayed[field]=[t for t in replayed[field] if ':' not in t]
             expected={k:v for k,v in h.items() if k not in ('request','namespace_policy')}
-            if replayed!=expected:raise ValueError('HTML parsing replay differs')
+            if replayed!=expected:
+                if not reparse:raise ValueError('HTML parsing replay differs; explicit --reparse required for a new parser')
+                reparsed_pages.append(r['seed_or_discovered_title'])
+                r['html']={**h,**replayed}
+                if 'api' in r:r['comparison']=compare(r['api'],r['html'])
         if 'api' in r:
             class ReplayClient:
                 def __init__(self):self.pending=iter(r['api']['requests'])
@@ -136,7 +141,10 @@ def export(raw,processed,report):
              'api_edges':len(api_edges),'html_edges':len(html_edges),'html_occurrences':len(occurrences),
              'nodes_in_export':len(nodes),'unresolved_target_nodes':sum(n['outgoing_unknown'] for n in nodes.values()),
              'frontier_remaining':len(state['pending']),
-             'raw_parsing_replay_verified':True,
+             'raw_parsing_replay_verified':not reparsed_pages,
+             'raw_hashes_verified':True,'api_replay_verified':True,
+             'offline_reparse_requested':reparse,'reparsed_pages':reparsed_pages,
+             'export_parser_sha256':file_digest(Path(__file__).with_name('crawl.py')),
              'scope':'Current title-level crawl extraction pilot. No Clickstream labels, no recommendation accuracy claims.'}
     write_json(report/'summary.json',summary);write_json(report/'historical_revisions.json',history)
     with (report/'source_comparison.csv').open('x',newline='') as f:
@@ -145,7 +153,7 @@ def export(raw,processed,report):
         'files':{p.name:file_digest(p) for p in sorted(processed.glob('*.jsonl'))}})
     write_json(report/'provenance.json',{'crawl_signature':state['signature'],'captures':captures,
         'processed_manifest':json.loads((processed/'manifest.json').read_text()),
-        'note':'Pilot-v2 reuses captures from pilot-v1; final transport adds 5s pause after slow API requests. Capture times are recorded; collection is not an atomic snapshot.'})
+        'note':'Original capture records and signature are preserved. Explicit offline reparse, if requested, is versioned separately in summary. Capture times are not an atomic snapshot.'})
     lines=['# Crawl pilot: MediaWiki API và HTML','',
            'Đây là dữ liệu tự thu thập từ Wikipedia, không tải một graph dataset có sẵn. Pilot kiểm tra acquisition/extraction; chưa đánh giá model recommendation.','',
            f"Hoàn thành **{summary['completed_pages']} trang**, {summary['matched_revision_pairs']} cặp API/HTML khớp revision, {summary['historical_available']} historical revisions trước cutoff. {summary['historical_unavailable']} trang không có revision phù hợp cutoff được ghi nhận, không lấy bản hiện tại thay thế.",'',
@@ -155,7 +163,7 @@ def export(raw,processed,report):
         fmt=lambda v:'N/A' if v is None else f'{v:.4f}'
         lines.append(f"| {row['source_title']} | {row['api_targets']} | {row['html_body_targets']} | {fmt(row['body_jaccard'])} | {fmt(row['all_context_jaccard'])} |")
     lines += ['', 'API links và body links đo hai phạm vi khác nhau: infobox/reference/template links có thể bị loại khỏi body graph. Jaccard thấp không tự chứng minh scraper sai hoặc một graph tốt hơn cho recommendation. Equal article revision cũng không bảo đảm templates/cache hoàn toàn đồng thời.','',
-              'Seed sampling: năm nguồn từ original train-defined panel, thứ tự SHA256(`crawl-pilot-v1:` + source ID), rồi depth1 BFS deterministic. Frontier thiên về wrestling vì seed đầu có nhiều links và budget nhỏ; đây là pilot kỹ thuật, không representative corpus.','',
+              f"Seed/config gốc nằm trong provenance.json; max_depth={state['signature']['config']['max_depth']}. Thiết kế chọn mẫu riêng phải được dẫn từ protocol của run; đây không phải representative corpus. Offline reparse: {reparse}; số trang đổi extraction: {len(reparsed_pages)}.",'',
               'Xem [thiết kế tích hợp](../../../docs/CRAWLING_EXTENSION.md) cho hướng mở rộng và temporal safeguards. Raw HTML/wikitext ở data/raw (Git-ignored), graph/features ở data/processed (Git-ignored); report lưu counts, provenance và URLs. Không nhập current graph vào benchmark2018.']
     (report/'PILOT.md').write_text('\n'.join(lines)+'\n')
     write_json(report/'manifest.json',{'files':{p.name:file_digest(p) for p in sorted(report.iterdir()) if p.is_file()}})
@@ -165,5 +173,5 @@ def export(raw,processed,report):
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--raw',type=Path,default=Path('data/raw/crawl/pilot-v2'))
     p.add_argument('--processed',type=Path,default=Path('data/processed/crawl/pilot-v2'))
-    p.add_argument('--report',type=Path,default=Path('reports/crawl/pilot-v2'));a=p.parse_args()
-    print(json.dumps(export(a.raw,a.processed,a.report),indent=2))
+    p.add_argument('--report',type=Path,default=Path('reports/crawl/pilot-v2'));p.add_argument('--reparse',action='store_true');a=p.parse_args()
+    print(json.dumps(export(a.raw,a.processed,a.report,reparse=a.reparse),indent=2))

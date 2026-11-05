@@ -22,7 +22,9 @@ Prior work đã nghiên cứu navigation và kết hợp structural/behavioral s
 
 **Graph definition là một phần của phương pháp, không chỉ là bước đọc file.** API collector và direct HTML crawler lưu raw bytes, hashes, page IDs/revisions, pagination, anchors/section/occurrences; HTML parser phân biệt main body với infobox/navbox/references. Cache/resume và raw parsing replay giúp truy nguyên edge đến dữ liệu gốc. [Thiết kế crawler](../docs/CRAWLING_EXTENSION.md), [pilot](crawl/pilot-v2/PILOT.md).
 
-Pilot current crawl có 8 pages,8/8 API–HTML revision matches, 654 API edges,556 body edges và 1.028 occurrences. Với *Municipio de Cumberland (condado de Adams)*, API có 33 target titles, body-only có 13; all-context agreement=1,0. Đây là bằng chứng phạm vi extraction khác nhau, không phải bằng chứng body-only tốt hơn hoặc API là gold. Manual extraction audit 20 pages còn thiếu;8 pages thiên về wrestling không phải representative corpus. Export 575 nodes cũng không có nghĩa 575 pages đã crawl: 567 targets chưa resolve.
+[Audit 20 trang](crawl/audit-v2/AUDIT.md) hoàn thành ngày05/11/2026 với20/20 API–HTML revision matches,1.397 API edges,1.049 body edges và1.936 article-link occurrences sau sửa. Seeds được khóa bằng train traffic/degree, không test outcome. Graph export1.283 nodes nhưng chỉ20 source pages đã crawl;1.263 outgoing neighborhoods còn unknown. Sample này không đại diện toàn Wikipedia.
+
+**Đồng ý giữa parsers không đảm bảo đúng định nghĩa body.** Differential audit HTMLParser với BeautifulSoup/html5lib đồng ý cả20 trang, nhưng agent rà120 fixed occurrences phát hiện2false positives: link trong page indicator và icon trong authority-control block. Đã sửa policy và chạy lại cùng raw captures, không sửa archive gốc. Trên sample:38TP/2FP/80TN/0FN trước sửa,38TP/0FP/82TN/0FN sau sửa. Đây là regression evidence trên sample đã dùng để sửa, **không phải human gold, independent adjudication hoặc held-out accuracy**. [Nhãn và lý do](../docs/evidence/crawl-audit-labels.json) cho phép người học kiểm tra lại. Pilot8pages trước đó vẫn giữ riêng để truy nguyên, không gộp thành sample28trang độc lập.
 
 **Benchmark ranking dùng dữ liệu lịch sử tương thích thời gian.** Clickstream cung cấp `prev,curr,type,n`; chỉ giữ `type=link`, aggregate counts, không users/sessions/impressions. H lấy độc lập từ WikiLinkGraphs 01/03/2018; training Jan–Mar, validation April, primary test May, June dùng cùng predictions để kiểm tra horizon. Các raw-source references, checksums và redirect audit ở [DATA_AUDIT](../docs/DATA_AUDIT.md) và [ATTRIBUTIONS](../docs/ATTRIBUTIONS.md).
 
@@ -139,7 +141,7 @@ Original full model run đo245,32 s, peak RSS≈1,82 GiB trên máy macOS đã g
 
 Kết luận giới hạn ở một language/time period, train-stratified sample, censored labels và graph/mapping policy đã mô tả. Không claim user personalization, causal effect, cold-start solution, population performance hoặc graph không bao giờ hữu ích. Full data/code vẫn được công bố để kiểm tra cả kết quả bất lợi.
 
-Phần cần hoàn thiện cho bản nộp là manual extraction audit 20 pages và rehearsal giao diện demo. Corpus lớn, content recommendation và thêm algorithms không nằm trong scope hiện hành. Nếu chưa có audit thì giữ pilot-only label; không quảng bá crawl 2026 đã cải thiện ranking2018.
+Bản nộp có extraction audit20pages, annotations bằng agent và [deck10slides](deliverables/Wikipedia_Navigation_IT4868E.pptx). Rehearsal giao diện demo vẫn chưa xác nhận: browser origin bị saved permission chặn ngày05/11; portable verifiers đã pass. Người trình bày cần tự mở demo và diễn tập theo [kịch bản](PRESENTATION.md). Human adjudication/held-out extraction audit là limitation còn lại, không thay bằng claim “100% accuracy”. Corpus lớn, content recommendation và thêm algorithms không thuộc scope.
 
 ## 9. Tái lập và tự kiểm tra lập luận
 
@@ -150,7 +152,7 @@ Phần cần hoàn thiện cho bản nộp là manual extraction audit 20 pages 
 | Local behavior mạnh hơn topology-only trong sample | Same-candidate main table | Supported, sample-conditional |
 | Topology tìm thêm một số training-unobserved destinations | A7 original-ranking recall, Danza case | Supported descriptively; không causal/significance claim |
 | Fusion chưa reliable net gain | May/June paired CIs, June weighted reversal | Supported; không equivalence claim |
-| Preprocessing thay link scope | Same-revision API/body pilot | Supported về agreement; chưa manual extraction accuracy |
+| Preprocessing thay link scope | Same-revision API/body pilot | Supported về scope và lỗi context; agent review, chưa human/held-out accuracy |
 | Current crawl giúp prediction2018 | Không có compatible experiment | **Không claim** |
 
-Self-review năm chiều: **contribution** là comparative insight và reproducible evidence; **clarity** dùng2 RQ và7 rows; **experimental strength** giữ strong baseline/negative results; **evaluation completeness** giữ required metrics, controls, diagnostics/coverage và ghi extraction audit còn thiếu; **method soundness** giữ temporal separation, shared candidates và label-censoring caveats. Không giải quyết một hạn chế bằng cách giấu nó ở appendix.
+Self-review năm chiều: **contribution** là comparative insight và reproducible evidence; **clarity** dùng2 RQ và7 rows; **experimental strength** giữ strong baseline/negative results; **evaluation completeness** giữ required metrics, controls, diagnostics/coverage và ghi giới hạn agent extraction audit và UI QA; **method soundness** giữ temporal separation, shared candidates và label-censoring caveats. Không giải quyết một hạn chế bằng cách giấu nó ở appendix.

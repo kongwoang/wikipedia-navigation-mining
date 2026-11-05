@@ -8,6 +8,8 @@ from collections import deque
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 import hashlib
+import gzip
+import io
 from html.parser import HTMLParser
 import json
 import math
@@ -22,7 +24,7 @@ from .utils import digest, file_digest, write_json
 
 USER_AGENT='WikipediaNavigationMiningBot/0.1 (https://github.com/kongwoang/wikipedia-navigation-mining)'
 VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
-EXCLUDE={'navbox','vertical-navbox','infobox','reference','references','reflist','toc','mw-editsection','metadata'}
+EXCLUDE={'navbox','vertical-navbox','infobox','reference','references','reflist','toc','mw-editsection','metadata','mw-authority-control','mw-mf-linked-projects'}
 
 
 def utc():return datetime.now(timezone.utc).isoformat()
@@ -54,11 +56,12 @@ class ArticleHTML(HTMLParser):
 
     def handle_starttag(self,tag,attrs):
         a=dict(attrs);classes=set(a.get('class','').split())
-        parent=self.stack[-1] if self.stack else {'body':False,'excluded':False}
-        root='mw-parser-output' in classes and not parent['body']
+        parent=self.stack[-1] if self.stack else {'body':False,'excluded':False,'outside_article':False}
+        outside=parent['outside_article'] or bool(classes & {'mw-indicators','mw-indicator','vector-body-before-content'})
+        root='mw-parser-output' in classes and not parent['body'] and not outside
         body=parent['body'] or root
         excluded=parent['excluded'] or bool(classes&EXCLUDE) or tag in {'script','style','nav'}
-        entry={'tag':tag,'body':body,'excluded':excluded}
+        entry={'tag':tag,'body':body,'excluded':excluded,'outside_article':outside}
         if tag not in VOID:self.stack.append(entry)
         if root:self.body_roots+=1
         if not body:return
@@ -137,12 +140,20 @@ class Client:
             if self.calls>=self.max_requests:raise CrawlStop('Request budget exhausted; resume with same budget per invocation')
             time.sleep(max(0,max(self.delay,self.next_delay)-(time.monotonic()-self.last)));self.calls+=1
             started=time.monotonic()
-            req=request.Request(url,headers={'User-Agent':USER_AGENT,'Accept':'text/html' if kind=='html' else '*/*'})
+            req=request.Request(url,headers={'User-Agent':USER_AGENT,'Accept':'text/html' if kind=='html' else '*/*','Accept-Encoding':'gzip'})
             try:
                 with self.opener.open(req,timeout=25) as r:
                     raw=r.read(self.max_bytes+1)
                     if len(raw)>self.max_bytes:raise ValueError('Response exceeds byte cap')
+                    wire_bytes=len(raw)
+                    encoding=(r.headers.get('Content-Encoding') or 'identity').lower()
+                    if encoding=='gzip':
+                        with gzip.GzipFile(fileobj=io.BytesIO(raw)) as stream:
+                            raw=stream.read(self.max_bytes+1)
+                        if len(raw)>self.max_bytes:raise ValueError('Decoded response exceeds byte cap')
+                    elif encoding!='identity':raise ValueError('Unsupported content encoding: '+encoding)
                     info={'url':url,'kind':kind,'status':r.status,'fetched_at':utc(),'bytes':len(raw),
+                          'wire_bytes':wire_bytes,'content_encoding':encoding,
                           'sha256':hashlib.sha256(raw).hexdigest(),'content_type':r.headers.get('Content-Type'),
                           'etag':r.headers.get('ETag'),'last_modified':r.headers.get('Last-Modified')}
                 self.last=time.monotonic()

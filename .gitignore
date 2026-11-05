@@ -17,3 +17,7 @@ results/
 !.env.example
 
 reports/reproduced/
+
+# Optional extraction audit environment and private PPTX staging
+.audit-venv/
+.chart-data-*/

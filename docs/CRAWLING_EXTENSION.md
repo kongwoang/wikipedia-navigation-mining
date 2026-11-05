@@ -130,3 +130,12 @@ Definition of done cho **crawl-based study** rộng hơn: corpus và temporal ma
 Crawler dùng User-Agent có project URL, một request tại một thời điểm, tối thiểu1s giữa requests; pause5s sau API request mất>1s; `maxlag=5`, Retry-After/backoff có giới hạn, dừng khi401/403 thay vì đổi identity/proxy. HTML kiểm tra robots và chỉ lấy `/wiki/Title` không query parameters; không crawl `oldid` HTML. Đây là lựa chọn bám [Wikimedia Robot policy](https://wikitech.wikimedia.org/wiki/Robot_policy), [API etiquette](https://www.mediawiki.org/wiki/API:Etiquette) và [rate limits](https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits), đã kiểm tra ngày29/10/2026; giới hạn server có thể thay đổi.
 
 Wikipedia article text không mang license CC0 của Clickstream. Lưu article URL/revision và attribution; kiểm tra license của nội dung trước redistribution. Xem [Content reuse](https://www.mediawiki.org/wiki/Wikimedia_APIs/Content_reuse). Không thu ảnh/media trong pilot. Published report chỉ có counts, source titles, provenance và URLs; raw HTML/wikitext ở thư mục Git-ignored.
+
+
+## 8. Cập nhật hoàn thiện 05/11/2026
+
+[AUDIT20pages](../reports/crawl/audit-v2/AUDIT.md) thay trạng thái pilot-only cho acquisition/extraction: fixed train-stratified seeds,120agent-reviewed occurrences,2context errors được sửa. Body parser loại indicator roots và authority/linked-project blocks. Gzip có wire/decode cap, metadata ghi cả hai bytes. Không thêm ranking model/corpus lớn; các ý tưởng §5–6 vẫn ngoài backlog hiện hành.
+
+Parser mới khác parser tạo pilot-v2 và audit-v1 records. Strict export mặc định sẽ từ chối mismatch; dùng `--reparse` với output directory mới khi chủ động xuất theo policy mới. Original raw signature/record hashes giữ nguyên; report lưu `export_parser_sha256`, `reparsed_pages`, API replay và raw-hash checks riêng. Không overwrite published pilot-v2 report bằng kết quả parser mới.
+
+Config audit: `configs/crawl-audit.toml`. Portable check: `python3 scripts/verify_crawl_audit.py`. Differential DOM audit cần optional `requirements-audit.lock`, raw captures và script `scripts/audit_crawl.py`. Re-crawl ngày khác không bảo đảm bit-identical vì Wikipedia thay đổi. 120labels là agent review, không human gold hoặc held-out estimate.

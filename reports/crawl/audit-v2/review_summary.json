@@ -1,0 +1,42 @@
+{
+  "review_type": "agent DOM-context review, no independent human adjudication",
+  "sample_size": 120,
+  "positive_labels": 38,
+  "before": {
+    "tp": 38,
+    "fp": 2,
+    "tn": 80,
+    "fn": 0
+  },
+  "after": {
+    "tp": 38,
+    "fp": 0,
+    "tn": 82,
+    "fn": 0
+  },
+  "interpretation": "Conditional diagnostic sample, reused for correction; not population accuracy or held-out validation.",
+  "dom_differential_pages_before": 0,
+  "dom_differential_pages_after": 0,
+  "before_export": {
+    "api_edges": 1397,
+    "capture_end": "2026-11-05T07:05:34.542451+00:00",
+    "capture_start": "2026-11-05T07:03:53.890647+00:00",
+    "completed_pages": 20,
+    "distinct_source_page_ids": 20,
+    "failed_pages": 0,
+    "frontier_remaining": 0,
+    "historical_available": 0,
+    "historical_unavailable": 0,
+    "html_edges": 1076,
+    "html_occurrences": 1938,
+    "matched_revision_pairs": 20,
+    "nodes_in_export": 1283,
+    "raw_bytes": 3979415,
+    "raw_captures": 42,
+    "raw_parsing_replay_verified": true,
+    "scope": "Current title-level crawl extraction pilot. No Clickstream labels, no recommendation accuracy claims.",
+    "unresolved_target_nodes": 1263
+  },
+  "sample_sha256": "0859aa268d52e93f982367b291698f7016fe97d16e778cc3fa4cc857d022924a",
+  "labels_sha256": "af9a2dace0e94917b1aa37c351d72d05fed3a4be64bdc0e7bcda031058cc0f39"
+}
